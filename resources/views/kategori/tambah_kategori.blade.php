@@ -323,7 +323,8 @@
                             </div>
                         </div>
 
-                        <form action="/listkategori" method="POST">
+                        <form action="{{ route('insertkategori') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
                                     <div class="row no-gutters">
@@ -341,15 +342,17 @@
                                                         <input type="file" name="file" class="form-control" id="lname" placeholder="Gambar" value="">
                                                     </div>
                                                 </div>
+                                                <button type="submit" class="btn btn-success">Save</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </form>
 
                                 
-                                <div class="text-right mb-5">
+                                {{-- <div class="text-right mb-5">
                                     <a href="/listkategori"><button type="submit" class="btn btn-success">Save</button></a>
-                                </div>
+                                </div> --}}
                             </div>
 
                     </div>

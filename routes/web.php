@@ -23,8 +23,8 @@ Route::get('/index', function () {
 
 // Route Login
 
-Route::get('/login',[LoginController::class, 'login']);
-Route::post('/login',[LoginController::class, 'authenticate']);
+// Route::get('/login',[LoginController::class, 'login']);
+// Route::post('/login',[LoginController::class, 'authenticate']);
 
 // Route Profile - Backendspo
 
@@ -100,15 +100,15 @@ Route::get('/tambah_konfirmasi', function () {
 
 // Route Kategori - Backend
 
-Route::get('/listkategori', [KategoriController::class, 'index']);
+Route::get('/listkategori', [KategoriController::class, 'index'])->name('kategori.index');
 
-Route::get('/tambah_kategori',[KategoriController::class, 'tambah_kategori'])->name('tambah_kategori')  ;
-Route::post('/insertkategori',[KategoriController::class, 'insertkategori'])->name('insertkategori')  ;
+Route::get('/tambah_kategori',[KategoriController::class, 'create'])->name('tambah_kategori')  ;
+Route::post('/insertkategori',[KategoriController::class, 'store'])->name('insertkategori')  ;
 
-Route::get('/edit_kategori/{id}',[KategoriController::class, 'edit'])->name('edit_kategori')  ;
-Route::post('/updatekategori/{id}',[KategoriController::class, 'update'])->name('updatekategori')  ;
+Route::get('/edit_kategori{kategori}',[KategoriController::class, 'edit'])->name('edit.kategori')  ;
+Route::post('/updatekategori{kategori}',[KategoriController::class, 'update'])->name('updatekategori')  ;
 
-Route::get('/delete/{id}',[KategoriController::class, 'delete'])->name('delete')  ;
+Route::delete('/delete/{kategori}',[KategoriController::class, 'delete'])->name('delete.kategori')  ;
 
 
 // Route History - Backend

@@ -369,11 +369,14 @@
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->kategori }}</td>
                                                 <td>
-                                                    <img src="{{ asset('foto/'.$row->file)}}" alt="">
-                                                </td>
+                                                    <img src="{{ Storage::url('public/foto/').$row->file }}" class="rounded" style="width: 150px">                                                </td>
                                                 <td>
-                                                    <a href="/edit_kategori/{{ $row->id }}"><button type="button" class="btn btn-warning">Edit</button></a>
-                                                    <a href="/delete/{{ $row->id }}"><button type="button" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus genre ini?')">Hapus</button></a>
+                                                    <form class="btn sweet-confirm" action="{{ route('delete.kategori', $row->id) }}" method="POST">
+                                                <a href="{{ route('edit.kategori', $row->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn sweet-confirm">HAPUS</button>
+                                            </form>
                                                 </td>
                                             </tr>
                                         @endforeach

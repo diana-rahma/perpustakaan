@@ -342,7 +342,7 @@
                             </div>
                         </div>
 
-                        <form action="/listkategori" method="POST">
+                        <form action="{{ route('updatekategori', $kategori->id) }}" method="POST">
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
                                     <div class="row no-gutters">
@@ -352,16 +352,16 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname" class="form-label">Kategori</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $data->kategori}}">
+                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $kategori->kategori}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="opass" class="form-label">Gambar</label>
-                                                        <input type="file" name="file" class="form-control" id="lname" value="{{ $data->file}}">
+                                                        <input type="file" name="file" class="form-control" id="lname" value="{{ $kategori->file}}">
                                                     </div>
                                                     <div>
-                                                    <img src="{{ asset('foto/'.$data->file)}}">
+                                                    <img src="{{ asset('foto/'.$kategori->file)}}">
                                                     </div>
                                                 </div>
                                             </div>

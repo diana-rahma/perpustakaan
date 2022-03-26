@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorekategoriRequest;
 use App\Http\Requests\UpdatekategoriRequest;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 class KategoriController extends Controller
 {
      /**
@@ -48,13 +48,15 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         //
-        $image = $request->file('file')->store('foto');
+        $image = $request->file('file');
+        $image->storeAs('public/foto', $image->hashName());
         Kategori::create([
             'kategori' => $request->nama,
-            'file' => $request->file
+            'file' => $image->hashName(),
         ]);
         
-        return redirect()->route('kategori.listkategori')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('kategori.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        // return view('kategori.listkategori');
     }
 
     /**
@@ -78,7 +80,7 @@ class KategoriController extends Controller
     {
         //
         $data = $kategori::all();
-        return view('kategori.edit_kategori',compact('data'));
+        return view('kategori.edit_kategori',compact('data', 'kategori'));
         
     }
 
@@ -93,13 +95,16 @@ class KategoriController extends Controller
     {
         //
         if ($request->hasFile('file')) {
+            Storage::disk('local')->delete('public/foto/'.$kategori->image);
 
-            //upload new image
             $image = $request->file('file');
             $image->storeAs('public/foto', $image->hashName());
+            //upload new image
+            // $image = $request->file('file');
+            // $image->storeAs('public/foto', $image->hashName());
 
             //delete old image
-            Storage::delete('public/foto/'.$kategori->gambar);
+            // Storage::delete('public/foto/'.$kategori->gambar);
 
             //update post with new image
             $kategori->update([
@@ -112,11 +117,10 @@ class KategoriController extends Controller
 
             //update post without image
             $kategori->update([
-                'file'     => $image->hashName(),
                 'kategori'     => $request->nama,
             ]);
         }
-        return redirect()->route('kategori.listkategori')->with('success',' Data Berhasil di Update');
+        return redirect()->route('kategori.index')->with('success',' Data Berhasil di Update');
 }
 
     
@@ -129,8 +133,11 @@ class KategoriController extends Controller
      */
     public function delete(Kategori $kategori)
     {
-        // $data = Kategori::find($id);
-        $data->delete();
-        return redirect()->route('kategori/listkategori')->with('success',' Data Berhasil di Hapus');
+        // $kategori = Kategori::findOrFail($kategori->id);
+        // dd($blog);
+        Storage::delete('public/foto/'.$kategori->file);
+        $kategori->delete();
+       //redirect to index
+       return redirect()->route('kategori.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }
