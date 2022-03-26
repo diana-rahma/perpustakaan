@@ -22,7 +22,7 @@ class KategoriController extends Controller
             $data = Kategori::all();
         // }
 
-        return view('backend.listkategori',compact('data'));
+        return view('kategori.listkategori',compact('data'));
     }
 
     /**
@@ -33,7 +33,7 @@ class KategoriController extends Controller
     public function create()
     {
         //
-        return view('backend.tambah_kategori');
+        return view('kategori.tambah_kategori');
 
     }
 
@@ -52,7 +52,7 @@ class KategoriController extends Controller
             'file' => $request->file
         ]);
         
-        return redirect()->route('backend.listkategori')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('kategori.listkategori')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -76,7 +76,7 @@ class KategoriController extends Controller
     {
         //
         $data = $kategori::all();
-        return view('backend.edit_kategori',compact('data'));
+        return view('kategori.edit_kategori',compact('data'));
         
     }
 
@@ -114,7 +114,7 @@ class KategoriController extends Controller
                 'kategori'     => $request->nama,
             ]);
         }
-        return redirect()->route('backend.listkategori')->with('success',' Data Berhasil di Update');
+        return redirect()->route('kategori.listkategori')->with('success',' Data Berhasil di Update');
 }
 
     
@@ -129,6 +129,6 @@ class KategoriController extends Controller
     {
         // $data = Kategori::find($id);
         $data->delete();
-        return redirect()->route('backend/listkategori')->with('success',' Data Berhasil di Hapus');
+        return redirect()->route('kategori/listkategori')->with('success',' Data Berhasil di Hapus');
     }
 }
