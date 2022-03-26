@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\KelasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,15 +48,15 @@ Route::get('/edit_siswa', function () {
 
 // Route List Kelas - Backend
 
-Route::get('/listkelas', function () {
-    return view('datakelas.listkelas');
-});
-Route::get('/tambah_kelas', function () {
-    return view('datakelas.tambah_kelas');
-});
-Route::get('/edit_kelas', function () {
-    return view('datakelas.edit_kelas');
-});
+Route::get('/listkelas', [KelasController::class, 'index']);
+
+Route::get('/tambah_kelas',[KelasController::class, 'tambah_kelas'])->name('tambah_kelas')  ;
+Route::post('/insertkelas',[KelasController::class, 'insertkelas'])->name('insertkelas')  ;
+
+Route::get('/edit_kelas/{id}',[KelasController::class, 'edit'])->name('edit_kelas')  ;
+Route::post('/updatekelas/{id}',[KelasController::class, 'update'])->name('updatekelas')  ;
+
+Route::get('/delete/{id}',[KelasController::class, 'delete'])->name('delete')  ;
 
 
 // Route Data Peminjam - Backend
