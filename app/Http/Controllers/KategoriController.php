@@ -127,7 +127,7 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function delete(Kategori $kategori)
     {
         // $data = Kategori::find($id);
         $data->delete();
