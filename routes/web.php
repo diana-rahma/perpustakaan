@@ -27,76 +27,76 @@ Route::post('/login',[LoginController::class, 'authenticate']);
 // Route Profile - Backendspo
 
 Route::get('/profile', function () {
-    return view('backend.profile');
+    return view('profile');
 });
 
 
 // Route Data Siswa - Backend
 
 Route::get('/datasiswa', function () {
-    return view('backend.datasiswa');
+    return view('datasiswa.datasiswa');
 });
 Route::get('/tambah_siswa', function () {
-    return view('backend.tambah_siswa');
+    return view('datasiswa.tambah_siswa');
 });
 Route::get('/edit_siswa', function () {
-    return view('backend.edit_siswa');
+    return view('datasiswa.edit_siswa');
 });
 
 
 // Route List Kelas - Backend
 
 Route::get('/listkelas', function () {
-    return view('backend.listkelas');
+    return view('datakelas.listkelas');
 });
 Route::get('/tambah_kelas', function () {
-    return view('backend.tambah_kelas');
+    return view('datakelas.tambah_kelas');
 });
 Route::get('/edit_kelas', function () {
-    return view('backend.edit_kelas');
+    return view('datakelas.edit_kelas');
 });
 
 
 // Route Data Peminjam - Backend
 
 Route::get('/datapeminjam', function () {
-    return view('backend.datapeminjam');
+    return view('datapeminjam.datapeminjam');
 });
 Route::get('/tambah_peminjam', function () {
-    return view('backend.tambah_peminjam');
+    return view('datapeminjam.tambah_peminjam');
 });
 Route::get('/profildata', function () {
-    return view('backend.profildata');
+    return view('datapeminjam.profildata');
 });
 Route::get('/edit_peminjam', function () {
-    return view('backend.edit_peminjam');
+    return view('datapeminjam.edit_peminjam');
 });
 
 
 // Route Data Buku - Backend
 
 Route::get('/databuku', function () {
-    return view('backend.databuku');
+    return view('databuku.databuku');
 });
 Route::get('/tambah_buku', function () {
-    return view('backend.tambah_buku');
+    return view('databuku.tambah_buku');
 });
 Route::get('/edit_buku', function () {
-    return view('backend.edit_buku');
+    return view('databuku.edit_buku');
 });
 
 
 // Route Konfirmasi - Backend
 
 Route::get('/konfirmasi', function () {
-    return view('backend.konfirmasi');
+    return view('konfirmasi.konfirmasi');
 });
 Route::get('/tambah_konfirmasi', function () {
-    return view('backend.tambah_konfirmasi');
+    return view('konfirmasi.tambah_konfirmasi');
 });
 
 
-// Route Kategori - Frontend
+// Route Kategori - Backend
 
 Route::get('/listkategori', [KategoriController::class, 'index']);
 
@@ -112,13 +112,13 @@ Route::get('/delete/{id}',[KategoriController::class, 'delete'])->name('delete')
 // Route History - Backend
 
 Route::get('/historydenda', function () {
-    return view('backend.historydenda');
+    return view('history.historydenda');
 });
 Route::get('/tambah_history', function () {
-    return view('backend.tambah_history');
+    return view('history.tambah_history');
 });
 Route::get('/edit_history', function () {
-    return view('backend.edit_history');
+    return view('history.edit_history');
 });
 
 
