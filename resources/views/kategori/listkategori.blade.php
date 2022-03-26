@@ -372,7 +372,7 @@
                                                     <img src="{{ asset('foto/'.$row->file)}}" alt="">
                                                 </td>
                                                 <td>
-                                                    <a href="/edit_kategori{{ $row->id }}"><button type="button" class="btn btn-warning">Edit</button></a>
+                                                    <a href="/edit_kategori/{{ $row->id }}"><button type="button" class="btn btn-warning">Edit</button></a>
                                                     <a href="/delete/{{ $row->id }}"><button type="button" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus genre ini?')">Hapus</button></a>
                                                 </td>
                                             </tr>

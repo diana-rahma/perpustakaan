@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\kategori;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorekategoriRequest;
 use App\Http\Requests\UpdatekategoriRequest;
+use Illuminate\Http\Request;
 
 class KategoriController extends Controller
 {
