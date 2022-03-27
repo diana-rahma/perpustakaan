@@ -8,7 +8,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>List Kategori</title>
+        <title>Profile</title>
 
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
@@ -56,25 +56,6 @@
             gtag('config', 'UA-133433427-1');
         </script>
 
-        <!-- Flatpickr -->
-        <link type="text/css"
-              href="css/vendor-flatpickr.css"
-              rel="stylesheet">
-        <link type="text/css"
-              href="css/vendor-flatpickr.rtl.css"
-              rel="stylesheet">
-        <link type="text/css"
-              href="css/vendor-flatpickr-airbnb.css"
-              rel="stylesheet">
-        <link type="text/css"
-              href="css/vendor-flatpickr-airbnb.rtl.css"
-              rel="stylesheet">
-
-        <!-- Vector Maps -->
-        <link type="text/css"
-              href="vendor/jqvmap/jqvmap.min.css"
-              rel="stylesheet">
-
     </head>
 
     <body class="layout-default">
@@ -105,14 +86,14 @@
                             </button>
 
                             <!-- Navbar Brand -->
-                            <a href="/index"
+                            <a href="/indexuser"
                                class="navbar-brand ">
 
                                 <span>Perpustakaan</span>
                             </a>
 
                             <form class="search-form d-none d-sm-flex flex"
-                                  action="/index">
+                                  action="/indexuser">
                                 <button class="btn"
                                         type="submit"><i class="material-icons">search</i></button>
                                 <input type="text"
@@ -286,9 +267,9 @@
                                        data-toggle="dropdown"
                                        data-caret="false">
                                         <span class="mr-1 d-flex-inline">
-                                            <span class="text-light">Admin A.</span>
+                                            <span class="text-light">User A.</span>
                                         </span>
-                                        <img src="images/avatar/profile.png"
+                                        <img src="images/avatar/profile-user.jpg"
                                              class="rounded-circle"
                                              width="32"
                                              alt="Frontted">
@@ -296,12 +277,12 @@
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">
                                         <div class="dropdown-item-text dropdown-item-text--lh">
-                                            <div><strong>Admin Account</strong></div>
-                                            <div class="text-muted">@adminacc</div>
+                                            <div><strong>User Account</strong></div>
+                                            <div class="text-muted">@usersacc</div>
                                         </div>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
-                                           href="/profile"><i class="material-icons">account_circle</i> My profile</a>
+                                           href="/profileuser"><i class="material-icons">account_circle</i> My profile</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
                                            href="/login"><i class="material-icons">exit_to_app</i> Logout</a>
@@ -325,109 +306,194 @@
                      data-responsive-width="992px">
                     <div class="mdk-drawer-layout__content page">
 
-                        <div class="container-fluid page__heading-container">
-                            <div class="page__heading d-flex align-items-center">
-                                <div class="flex">
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb mb-0">
-                                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                            <li class="breadcrumb-item active"
-                                                aria-current="page">List Kategori</li>
-                                        </ol>
-                                    </nav>
-                                    <h1 class="m-0">List Kategori</h1>
+                        <div style="padding-bottom: calc(5.125rem / 2); position: relative; margin-bottom: 1.5rem;">
+                            <div class="bg-primary"
+                                 style="min-height: 150px;">
+                                <div class="d-flex align-items-end container-fluid page__container"
+                                     style="position: absolute; left: 0; right: 0; bottom: 0;">
+                                    <div class="avatar avatar-xl">
+                                        <img src="images/avatar/profile-user.jpg"
+                                             alt="avatar"
+                                             class="avatar-img rounded"
+                                             style="border: 2px solid white;">
+                                    </div>
                                 </div>
-                                <a href="/tambah_kategori"
-                                   class="btn btn-success ml-3">Tambah Kategori <i class="material-icons">add</i></a>
                             </div>
                         </div>
 
                         <div class="container-fluid page__container">
-                            <div class="card">
-                                <div class="table-responsive"
-                                     data-toggle="lists"
-                                     data-lists-values='["js-lists-values-employee-name"]'>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <h1 class="h4 mb-1">User Account</h1>
+                                    <p class="text-muted">@usersacc</p>
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active"
+                                             id="activity">
 
-                                    <table class="table mb-0 thead-border-top-0 table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">No</th>
-                                                <th scope="col">Kategori</th>
-                                                <th scope="col">Gambar</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                        @php
-                                            $no = 1;
-                                        @endphp
+                        <div class="container-fluid page__container">
+                            <div class="card card-form">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-4 card-body">
+                                        <p><strong class="headings-color">Basic Information</strong></p>
+                                    </div>
+                                    <div class="col-lg-8 card-form__body card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="fname">Nama Siswa</label>
+                                                    <input id="fname"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="User Account"
+                                                           value="">
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                        @foreach ($data as $row)
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="fname">NISN</label>
+                                                    <input id="fname"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="123456"
+                                                           value="">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="lname">Kelas</label>
+                                                    <input id="lname"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="XI TKJ B"
+                                                           value="">
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                            <tr>
-                                                <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row->kategori }}</td>
-                                                <td>
-                                                    <img src="{{ Storage::url('public/foto/').$row->file }}" class="rounded" style="width: 150px">                                                </td>
-                                                <td>
-                                                    <form class="btn sweet-confirm" action="{{ route('delete.kategori', $row->id) }}" method="POST">
-                                                <a href="{{ route('edit.kategori', $row->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                            </form>
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="fname">No Telepon</label>
+                                                    <input id="fname"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="083831432980"
+                                                           value="">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="lname">Jenis Kelamin</label>
+                                                        <select class="form-control" name="jk">
+                                                            <option value="">Jenis Kelamin</option>
+                                                            <option>Perempuan</option>
+                                                            <option>Laki-Laki</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                        </tbody>
-                                    </table>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="fname">Alamat</label>
+                                                    <input id="fname"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="Jl Anggrek"
+                                                           value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
                                 </div>
                             </div>
 
-                        <br>
+                            <div class="card card-form">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-4 card-body">
+                                        <p><strong class="headings-color">Update Your Password</strong></p>
+                                    </div>
+                                    <div class="col-lg-8 card-form__body card-body">
+                                        <div class="form-group">
+                                            <label for="opass">Old Password</label>
+                                            <input style="width: 270px;"
+                                                   id="opass"
+                                                   type="password"
+                                                   class="form-control"
+                                                   placeholder="Old password"
+                                                   value="****">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="npass">New Password</label>
+                                            <input style="width: 270px;"
+                                                   id="npass"
+                                                   type="password"
+                                                   class="form-control is-invalid">
+                                            <small class="invalid-feedback">The new password must not be empty.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cpass">Confirm Password</label>
+                                            <input style="width: 270px;"
+                                                   id="cpass"
+                                                   type="password"
+                                                   class="form-control"
+                                                   placeholder="Confirm password">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <ul class="pagination m-0">
-
-                            <li class="page-item disabled">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="Previous">
-                                    <span aria-hidden="true"
-                                          class="material-icons">chevron_left</span>
-                                    <span>Prev</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item active">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="1">
-                                    <span>1</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="2">
-                                    <span>2</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="Next">
-                                    <span>Next</span>
-                                    <span aria-hidden="true"
-                                          class="material-icons">chevron_right</span>
-                                </a>
-                            </li>
-                        </ul>
-
+                            <div class="card card-form">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-4 card-body">
+                                        <p><strong class="headings-color">Profile Settings</strong></p>
+                                    </div>
+                                    <div class="col-lg-8 card-form__body card-body">
+                                        <div class="form-group">
+                                            <label>Avatar</label>
+                                            <div class="dz-clickable media align-items-center"
+                                                 data-toggle="dropzone"
+                                                 data-dropzone-url="http://"
+                                                 data-dropzone-clickable=".dz-clickable"
+                                                 data-dropzone-files='["images/account-add-photo.svg"]'>
+                                                <div class="dz-preview dz-file-preview dz-clickable mr-3">
+                                                    <div class="avatar"
+                                                         style="width: 80px; height: 80px;">
+                                                        <img src="images/account-add-photo.svg"
+                                                             class="avatar-img rounded"
+                                                             alt="..."
+                                                             data-dz-thumbnail>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body">
+                                                    <input type="file" class="input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right mb-5">
+                                <a href=""
+                                   class="btn btn-success">Save</a>
+                            </div>
                         </div>
+
                     </div>
                     <!-- // END drawer-layout__content -->
 
@@ -447,54 +513,43 @@
                                             <span class="sidebar-menu-text">Menu Utama</span>
                                             <span class="ml-auto sidebar-menu-toggle-icon"></span>
                                         </a>
+                                        
                                         <ul class="sidebar-submenu collapse show "
                                             id="dashboards_menu">
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/index">
+                                                   href="/indexuser">
                                                     <span class="sidebar-menu-text">Dashboard</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/datasiswa">
-                                                    <span class="sidebar-menu-text">Data Siswa</span>
+                                                   href="/listbuku">
+                                                    <span class="sidebar-menu-text">List Buku</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/listkelas">
-                                                    <span class="sidebar-menu-text">Data Kelas</span>
+                                                   href="/dipinjam">
+                                                    <span class="sidebar-menu-text">Sedang Dipinjam</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/datapeminjam">
-                                                    <span class="sidebar-menu-text">Data Peminjam</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/databuku">
-                                                    <span class="sidebar-menu-text">Data Buku</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/konfirmasi">
+                                                   href="/konfirmasiuser">
                                                     <span class="sidebar-menu-text">Konfirmasi</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/listkategori">
-                                                    <span class="sidebar-menu-text">List Kategori</span>
+                                                   href="/history">
+                                                    <span class="sidebar-menu-text">History Peminjaman</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/historydenda">
-                                                    <span class="sidebar-menu-text">History Denda</span>
+                                                   href="/denda">
+                                                    <span class="sidebar-menu-text">Denda</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -513,7 +568,7 @@
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
                                                    href="/login">
-                                                    <span class="sidebar-menu-text">Login User</span>
+                                                    <span class="sidebar-menu-text">Login Admin</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">
@@ -542,10 +597,10 @@
         <div id="app-settings">
             <app-settings layout-active="default"
                           :layout-location="{
-      'default': 'datasiswa.html',
-      'fixed': 'fixed-datasiswa.html',
-      'fluid': 'fluid-datasiswa.html',
-      'mini': 'mini-datasiswa.html'
+      'default': 'profile.html',
+      'fixed': 'fixed-profile.html',
+      'fluid': 'fluid-profile.html',
+      'mini': 'mini-profile.html'
     }"></app-settings>
         </div>
 
@@ -574,28 +629,6 @@
 
         <!-- App Settings (safe to remove) -->
         <script src="js/app-settings.js"></script>
-
-        <!-- Flatpickr -->
-        <script src="vendor/flatpickr/flatpickr.min.js"></script>
-        <script src="js/flatpickr.js"></script>
-
-        <!-- Global Settings -->
-        <script src="js/settings.js"></script>
-
-        <!-- Chart.js -->
-        <script src="vendor/Chart.min.js"></script>
-
-        <!-- App Charts JS -->
-        <script src="js/charts.js"></script>
-        <script src="js/progress-charts.js"></script>
-
-        <!-- Chart Samples -->
-        <script src="js/page.analytics.js"></script>
-
-        <!-- Vector Maps -->
-        <script src="vendor/jqvmap/jquery.vmap.min.js"></script>
-        <script src="vendor/jqvmap/maps/jquery.vmap.world.js"></script>
-        <script src="js/vector-maps.js"></script>
 
     </body>
 
