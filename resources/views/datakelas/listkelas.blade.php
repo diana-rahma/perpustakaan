@@ -365,7 +365,7 @@
                                             $no = 1;
                                         @endphp
 
-                                        @foreach ($data as $row)
+                                        @foreach ($kelas as $row)
 
                                             <tr>
                                             <th scope="row">{{ $no++ }}</th>

@@ -342,6 +342,7 @@
                             </div>
                         </div>
 
+                        <form action="{{ route('insertkategori') }}" method="POST" enctype="multipart/form-data">
                         <div class="container-fluid page__container">
                             <div class="card card-form">
                                 <div class="row no-gutters">
@@ -386,10 +387,11 @@
 
                             
                             <div class="text-right mb-5">
-                                <a href="listkelas.html"
+                                <a href="/listkelas"
                                    class="btn btn-success">Save</a>
                             </div>
                         </div>
+                        </form>
 
                     </div>
                     <!-- // END drawer-layout__content -->

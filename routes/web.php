@@ -48,10 +48,10 @@ Route::delete('/delete/{siswa}',[SiswaController::class, 'delete'])->name('delet
 
 // Route List Kelas - Backend
 
-Route::get('/listkelas', [KelasController::class, 'index']);
+Route::get('/listkelas', [KelasController::class, 'index'])->name('kelas.index');
 
-Route::get('/tambah_kelas',[KelasController::class, 'tambah_kelas'])->name('tambah_kelas')  ;
-Route::post('/insertkelas',[KelasController::class, 'insertkelas'])->name('insertkelas')  ;
+Route::get('/tambah_kelas',[KelasController::class, 'create'])->name('tambah_kelas')  ;
+Route::post('/insertkelas',[KelasController::class, 'store'])->name('insertkelas')  ;
 
 Route::get('/edit_kelas/{id}',[KelasController::class, 'edit'])->name('edit_kelas')  ;
 Route::post('/updatekelas/{id}',[KelasController::class, 'update'])->name('updatekelas')  ;
