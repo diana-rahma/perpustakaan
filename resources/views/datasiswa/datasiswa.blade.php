@@ -467,17 +467,16 @@
 
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row->siswa }}</td>
+                                                <td>{{ $row->nama_siswa }}</td>
                                                 <td>{{ $row->kelas }}</td>
                                                 <td>{{ $row->jk }}</td>
                                                 <td>{{ $row->telp }}</td>
                                                 <form class="btn sweet-confirm" action="{{ route('delete.siswa', $row->id) }}" method="POST">
-                                                <a href="{{ route('edit.siswa', $row->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                            </form>
-                                                </td>
+                                                    <a href="{{ route('edit.siswa', $row->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
+                                                </form>
                                             </tr>
                                         @endforeach
 

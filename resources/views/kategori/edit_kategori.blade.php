@@ -351,13 +351,13 @@
                                                 @csrf 
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="lname" class="form-label">Kategori</label>
+                                                        <label for="lname">Kategori</label>
                                                         <input type="text" name="nama" class="form-control" id="lname" value="{{ $kategori->kategori}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="opass" class="form-label">Gambar</label>
+                                                        <label for="opass">Gambar</label>
                                                         <input type="file" name="file" class="form-control" id="lname" value="{{ $kategori->file}}">
                                                     </div>
                                                     <div>
@@ -370,7 +370,7 @@
                                 </div>
 
                                 <div class="text-right mb-5">
-                                    <a href="/listkategori"><button type="submit" class="btn btn-success">Save</button></a>
+                                    <a href="/listkategori"><button type="submit" class="btn btn-success">Update</button></a>
                                 </div>
                             </div>
 

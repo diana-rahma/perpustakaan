@@ -41,7 +41,7 @@ class KelasController extends Controller
     public function store(StorekelasRequest $request)
     {
         //
-        kelas::create([
+        Kelas::create([
             'kelas' => $request->kelas,
             'jurusan'=> $request->jurusan,
             'alfabet' => $request->alfabet

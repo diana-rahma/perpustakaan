@@ -46,6 +46,7 @@ class SiswaController extends Controller
     {
         //
         Siswa::create([
+            'nisn' => $request->nisn,
             'nama_siswa' => $request->nama,
             'kelas' => $request->kelas,
             'jk' => $request->jk,

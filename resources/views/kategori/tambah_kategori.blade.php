@@ -332,13 +332,13 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="lname" class="form-label">Kategori</label>
+                                                        <label for="lname">Kategori</label>
                                                         <input type="text" name="nama" class="form-control" id="lname" placeholder="Kategori" value="">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="opass" class="form-label">Gambar</label>
+                                                        <label for="opass">Gambar</label>
                                                         <input type="file" name="file" class="form-control" id="lname" placeholder="Gambar" value="">
                                                     </div>
                                                 </div>
@@ -351,13 +351,9 @@
                                 <div class="text-right mb-5">
                                     <button type="submit" class="btn btn-success">Save</button>
                                 </div>
-                            </form>
-
-                                
-                                {{-- <div class="text-right mb-5">
-                                    <a href="/listkategori"><button type="submit" class="btn btn-success">Save</button></a>
-                                </div> --}}
                             </div>
+                        </form>
+
                     </div>
                     <!-- // END drawer-layout__content -->
 

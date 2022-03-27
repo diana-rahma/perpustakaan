@@ -342,101 +342,91 @@
                             </div>
                         </div>
 
-                        <div class="container-fluid page__container">
-                            <div class="card card-form">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-15 card-form__body card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Kelas</label>
-                                                        <select class="form-control" name="kelas">
-                                                            <option value="">Kelas</option>
-                                                            <option>X</option>
-                                                            <option>XI</option>
-                                                            <option>XII</option>
-                                                        </select>
+                        <form action="{{ route('insertsiswa') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                            <div class="container-fluid page__container">
+                                <div class="card card-form">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-15 card-form__body card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Kelas</label>
+                                                            <select class="form-control" name="kelas">
+                                                                <option value="">Kelas</option>
+                                                                <option>X</option>
+                                                                <option>XI</option>
+                                                                <option>XII</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Jurusan</label>
+                                                            <select class="form-control" name="kelas">
+                                                                <option value="">Jurusan</option>
+                                                                <option>MM</option>
+                                                                <option>RPL</option>
+                                                                <option>TKJ</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Alfabet</label>
+                                                            <select class="form-control" name="kelas">
+                                                                <option value="">Alfabet</option>
+                                                                <option>A</option>
+                                                                <option>B</option>
+                                                                <option>C</option>
+                                                            </select>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Jurusan</label>
-                                                        <select class="form-control" name="kelas">
-                                                            <option value="">Jurusan</option>
-                                                            <option>MM</option>
-                                                            <option>RPL</option>
-                                                            <option>TKJ</option>
-                                                        </select>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Alfabet</label>
-                                                        <select class="form-control" name="kelas">
-                                                            <option value="">Alfabet</option>
-                                                            <option>A</option>
-                                                            <option>B</option>
-                                                            <option>C</option>
-                                                        </select>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">NISN</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="NISN"
-                                                           value="">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">NISN</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="NISN" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Nama Siswa</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Nama Siswa" value="">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Nama Siswa</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="Nama Siswa"
-                                                           value="">
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Jenis Kelamin</label>
-                                                        <select class="form-control" name="jk">
-                                                            <option value="">Jenis Kelamin</option>
-                                                            <option>Perempuan</option>
-                                                            <option>Laki-Laki</option>
-                                                        </select>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Jenis Kelamin</label>
+                                                            <select class="form-control" name="jk">
+                                                                <option value="">Jenis Kelamin</option>
+                                                                <option>Perempuan</option>
+                                                                <option>Laki-Laki</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">No Telepon</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="No Telepon" value="">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">No Telepon</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="No Telepon"
-                                                           value="">
-                                                </div>
-                                            </div>
+                                            
                                         </div>
-                                        
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="text-right mb-5">
-                                <a href="datasiswa.html"
-                                   class="btn btn-success">Save</a>
+                                <div class="text-right mb-5">
+                                        <button type="submit" class="btn btn-success">Save</button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
 
                     </div>
                     <!-- // END drawer-layout__content -->
