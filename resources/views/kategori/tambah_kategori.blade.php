@@ -342,10 +342,14 @@
                                                         <input type="file" name="file" class="form-control" id="lname" placeholder="Gambar" value="">
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-success">Save</button>
+                                                
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="text-right mb-5">
+                                    <button type="submit" class="btn btn-success">Save</button>
                                 </div>
                             </form>
 
@@ -354,7 +358,6 @@
                                     <a href="/listkategori"><button type="submit" class="btn btn-success">Save</button></a>
                                 </div> --}}
                             </div>
-
                     </div>
                     <!-- // END drawer-layout__content -->
 
