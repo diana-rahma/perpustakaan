@@ -54,10 +54,10 @@ Route::get('/listkelas', [KelasController::class, 'index'])->name('kelas.index')
 Route::get('/tambah_kelas',[KelasController::class, 'create'])->name('tambah_kelas')  ;
 Route::post('/insertkelas',[KelasController::class, 'store'])->name('insertkelas')  ;
 
-Route::get('/edit_kelas/{id}',[KelasController::class, 'edit'])->name('edit_kelas')  ;
-Route::post('/updatekelas/{id}',[KelasController::class, 'update'])->name('updatekelas')  ;
+Route::get('/edit_kelas/{kelas}',[KelasController::class, 'edit'])->name('edit_kelas')  ;
+Route::post('/updatekelas/{kelas}',[KelasController::class, 'update'])->name('updatekelas')  ;
 
-Route::get('/delete/{id}',[KelasController::class, 'delete'])->name('delete')  ;
+Route::get('/delete/{kelas}',[KelasController::class, 'delete'])->name('delete')  ;
 
 
 // Route Data Peminjam - Backend

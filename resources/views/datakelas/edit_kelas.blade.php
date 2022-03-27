@@ -342,15 +342,16 @@
                             </div>
                         </div>
 
+                        <form action="{{ route('updatekelas', $kelas->id) }}" method="POST">
                         <div class="container-fluid page__container">
-                            <div class="card card-form" action="/listkategori" method="POST">
+                            <div class="card card-form">
                                 <div class="row no-gutters">
                                     <div class="col-lg-15 card-form__body card-body">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="lname">Kelas</label>
-                                                        <select class="form-control" name="jk">
+                                                        <select class="form-control" name="kelas" value="{{ $kelas->kelas}}">
                                                             <option value="">Kelas</option>
                                                             <option>10</option>
                                                             <option>11</option>
@@ -363,9 +364,9 @@
                                                     <label for="lname">Jurusan</label>
                                                     <input id="lname"
                                                            type="text"
+                                                           name="jurusan"
                                                            class="form-control"
-                                                           placeholder="RPL"
-                                                           value="">
+                                                           value="{{ $kelas->jurusan}}">
                                                 </div>
                                             </div>
                                             <div class="col">
@@ -373,9 +374,9 @@
                                                     <label for="lname">Alfabet</label>
                                                     <input id="lname"
                                                            type="text"
+                                                           name="alfabet"
                                                            class="form-control"
-                                                           placeholder="A"
-                                                           value="">
+                                                           value="{{ $kelas->alfabet}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -390,6 +391,7 @@
                                    class="btn btn-success">Update</a>
                             </div>
                         </div>
+                        </form>
 
                     </div>
                     <!-- // END drawer-layout__content -->
