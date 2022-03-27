@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\kelas;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorekelasRequest;
 use App\Http\Requests\UpdatekelasRequest;
+use Illuminate\Http\Request;
 
 class KelasController extends Controller
 {
@@ -15,7 +17,9 @@ class KelasController extends Controller
      */
     public function index()
     {
-        return view('datakelas.listkelas');
+        $kelas = kelas::all();
+
+        return view('datakelas.listkelas',compact('kelas'));
     }
 
     /**
@@ -25,7 +29,7 @@ class KelasController extends Controller
      */
     public function create()
     {
-        //
+        return view('datakelas.tambah_kelas');
     }
 
     /**
@@ -37,6 +41,14 @@ class KelasController extends Controller
     public function store(StorekelasRequest $request)
     {
         //
+        kelas::create([
+            'kelas' => $request->kelas,
+            'jurusan'=> $request->jurusan,
+            'alfabet' => $request->alfabet
+            
+        ]);
+        
+        return redirect()->route('datakelas.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
