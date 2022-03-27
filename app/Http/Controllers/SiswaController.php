@@ -53,7 +53,7 @@ class SiswaController extends Controller
             'telp' => $request->telp,
         ]);
         
-        return redirect()->route('datasiswa.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('siswa.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -101,9 +101,8 @@ class SiswaController extends Controller
     public function delete(Siswa $siswa)
     {
         //
-        Storage::delete('public/foto/'.$siswa->file);
         $siswa->delete();
        //redirect to index
-       return redirect()->route('datasiswa.index')->with(['success' => 'Data Berhasil Dihapus!']);
+       return redirect()->route('siswa.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }
