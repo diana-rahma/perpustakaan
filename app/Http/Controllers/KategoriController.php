@@ -8,6 +8,7 @@ use App\Http\Requests\StorekategoriRequest;
 use App\Http\Requests\UpdatekategoriRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
 class KategoriController extends Controller
 {
      /**

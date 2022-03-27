@@ -35,15 +35,15 @@ Route::get('/profile', function () {
 
 // Route Data Siswa - Backend
 
-Route::get('/datasiswa', function () {
-    return view('datasiswa.datasiswa');
-});
-Route::get('/tambah_siswa', function () {
-    return view('datasiswa.tambah_siswa');
-});
-Route::get('/edit_siswa', function () {
-    return view('datasiswa.edit_siswa');
-});
+Route::get('/datasiswa', [SiswaController::class, 'index'])->name('siswa.index');
+
+Route::get('/tambah_siswa',[SiswaController::class, 'create'])->name('tambah_siswa')  ;
+Route::post('/insertsiswa',[SiswaController::class, 'store'])->name('insertsiswa')  ;
+
+Route::get('/edit_siswa{siswa}',[SiswaController::class, 'edit'])->name('edit.siswa')  ;
+Route::post('/updatekategori{siswa}',[SiswaController::class, 'update'])->name('updatesiswa')  ;
+
+Route::delete('/delete/{siswa}',[SiswaController::class, 'delete'])->name('delete.siswa')  ;
 
 
 // Route List Kelas - Backend

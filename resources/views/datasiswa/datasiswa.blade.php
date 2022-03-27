@@ -457,117 +457,30 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="list"
-                                               id="staff">
+                                        <tbody>
+
+                                        @php
+                                            $no = 1;
+                                        @endphp
+
+                                        @foreach ($data as $row)
 
                                             <tr>
-                                                <td>
-                                                    <div class="badge badge-soft-dark">4010</div>
-                                                </td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <a href="">Vania Bunga</a>
-                                                    </div>
-                                                </td>
-                                                <td>X RPL A</td>
-                                                <td>Perempuan</td>
-                                                <td>087654231424</small></td>
-                                                <td>
-                                                    <a href="/edit_siswa" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_siswa"type="button" class="btn btn-danger">Delete</a>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->siswa }}</td>
+                                                <td>{{ $row->kelas }}</td>
+                                                <td>{{ $row->jk }}</td>
+                                                <td>{{ $row->telp }}</td>
+                                                <form class="btn sweet-confirm" action="{{ route('delete.siswa', $row->id) }}" method="POST">
+                                                <a href="{{ route('edit.siswa', $row->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
+                                            </form>
                                                 </td>
                                             </tr>
+                                        @endforeach
 
-                                            <tr>
-                                                <td>
-                                                    <div class="badge badge-soft-dark">4126</div>
-                                                </td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <a href="">Jesika Novanda</a>
-                                                    </div>
-                                                </td>
-                                                <td>XI RPL B</td>
-                                                <td>Perempuan</td>
-                                                <td>083833479561</small></td>
-                                                <td>
-                                                    <a href="/edit_siswa" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_siswa"type="button" class="btn btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="badge badge-soft-dark">4016</div>
-                                                </td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <a href="">Clarissa Putri</a>
-                                                    </div>
-                                                </td>
-                                                <td>XI RPL A</td>
-                                                <td>Perempuan</td>
-                                                <td>085143283494</small></td>
-                                                <td>
-                                                    <a href="/edit_siswa" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="delete_siswa"type="button" class="btn btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="badge badge-soft-dark">4114</div>
-                                                </td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <a href="">Michael Putra</a>
-                                                    </div>
-                                                </td>
-                                                <td>XII MM C</td>
-                                                <td>Laki-Laki</td>
-                                                <td>083856438935</small></td>
-                                                <td>
-                                                    <a href="/edit_siswa" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_siswa"type="button" class="btn btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="badge badge-soft-dark">4101</div>
-                                                </td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <a href="">Christiana Inggit</a>
-                                                    </div>
-                                                </td>
-                                                <td>X TKJ C</td>
-                                                <td>Perempuan</td>
-                                                <td>083827342378</small></td>
-                                                <td>
-                                                    <a href="/edit_siswa" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_siswa"type="button" class="btn btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="badge badge-soft-dark">4112</div>
-                                                </td>
-                                                <td>
-                                                    <div class="media align-items-center">
-                                                        <a href="">Riviera Ghia</a>
-                                                    </div>
-                                                </td>
-                                                <td>X MM B</td>
-                                                <td>Perempuan</td>
-                                                <td>083867509812</small></td>
-                                                <td>
-                                                    <a href="/edit_siswa" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_siswa"type="button" class="btn btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
-                                            
                                         </tbody>
                                     </table>
                                 </div>

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\siswa;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoresiswaRequest;
 use App\Http\Requests\UpdatesiswaRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SiswaController extends Controller
 {
@@ -16,6 +19,10 @@ class SiswaController extends Controller
     public function index()
     {
         //
+
+        $data = Siswa::all();
+
+        return view('datasiswa.datasiswa',compact('data'));
     }
 
     /**
@@ -26,6 +33,7 @@ class SiswaController extends Controller
     public function create()
     {
         //
+        return view('datasiswa.tambah_siswa');
     }
 
     /**
@@ -34,9 +42,17 @@ class SiswaController extends Controller
      * @param  \App\Http\Requests\StoresiswaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoresiswaRequest $request)
+    public function store(Request $request)
     {
         //
+        Siswa::create([
+            'nama_siswa' => $request->nama,
+            'kelas' => $request->kelas,
+            'jk' => $request->jk,
+            'telp' => $request->telp,
+        ]);
+        
+        return redirect()->route('datasiswa.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -59,6 +75,8 @@ class SiswaController extends Controller
     public function edit(siswa $siswa)
     {
         //
+        $data = $siswa::all();
+        return view('datasiswa.edit_siswa',compact('data', 'siswa'));
     }
 
     /**
@@ -68,7 +86,7 @@ class SiswaController extends Controller
      * @param  \App\Models\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatesiswaRequest $request, siswa $siswa)
+    public function update(Request $request, Siswa $siswa)
     {
         //
     }
@@ -79,8 +97,12 @@ class SiswaController extends Controller
      * @param  \App\Models\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function destroy(siswa $siswa)
+    public function delete(Siswa $siswa)
     {
         //
+        Storage::delete('public/foto/'.$siswa->file);
+        $siswa->delete();
+       //redirect to index
+       return redirect()->route('datasiswa.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }
