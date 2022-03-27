@@ -71,6 +71,8 @@ class KelasController extends Controller
     public function edit(kelas $kelas)
     {
         //
+        $kelas = $kelas::all();
+        return view('datakelas.edit_kelas',compact('data', 'kelas'));
     }
 
     /**
@@ -83,6 +85,12 @@ class KelasController extends Controller
     public function update(UpdatekelasRequest $request, kelas $kelas)
     {
         //
+        $kelas->update([
+            'kelas'     => $request->kelas,
+            'jurusan'     => $request->jurusan,
+            'alfabet'     => $request->alfabet,
+        ]);
+    return redirect()->route('kelas.index')->with('success',' Data Berhasil di Update');
     }
 
     /**
@@ -94,5 +102,7 @@ class KelasController extends Controller
     public function destroy(kelas $kelas)
     {
         //
+        $kelas->delete();
+        return redirect()->route('kelas.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

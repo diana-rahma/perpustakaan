@@ -342,7 +342,8 @@
                             </div>
                         </div>
 
-                        <form action="{{ route('insertkategori') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('insertkelas') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="container-fluid page__container">
                             <div class="card card-form">
                                 <div class="row no-gutters">
@@ -351,7 +352,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="lname">Kelas</label>
-                                                        <select class="form-control" name="jk">
+                                                        <select class="form-control" name="kelas">
                                                             <option value="">Kelas</option>
                                                             <option>10</option>
                                                             <option>11</option>
@@ -364,6 +365,7 @@
                                                     <label for="lname">Jurusan</label>
                                                     <input id="lname"
                                                            type="text"
+                                                           name="jurusan"
                                                            class="form-control"
                                                            placeholder="Jurusan"
                                                            value="">
@@ -374,6 +376,7 @@
                                                     <label for="lname">Alfabet</label>
                                                     <input id="lname"
                                                            type="text"
+                                                           name="alfabet"
                                                            class="form-control"
                                                            placeholder="Alfabet"
                                                            value="">

@@ -358,8 +358,7 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="list"
-                                               id="databuku">
+                                        <tbody>
 
                                         @php
                                             $no = 1;
