@@ -344,56 +344,57 @@
 
                         <form action="{{ route('insertkelas') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="container-fluid page__container">
-                            <div class="card card-form">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-15 card-form__body card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Kelas</label>
-                                                        <select class="form-control" name="kelas">
-                                                            <option value="">Kelas</option>
-                                                            <option>10</option>
-                                                            <option>11</option>
-                                                            <option>12</option>
-                                                        </select>
+                            <div class="container-fluid page__container">
+                                <div class="card card-form">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-15 card-form__body card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Kelas</label>
+                                                            <select class="form-control" name="kelas">
+                                                                <option value="">Kelas</option>
+                                                                <option>10</option>
+                                                                <option>11</option>
+                                                                <option>12</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Jurusan</label>
+                                                        <input id="lname"
+                                                            type="text"
+                                                            name="jurusan"
+                                                            class="form-control"
+                                                            placeholder="Jurusan"
+                                                            value="">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Alfabet</label>
+                                                        <input id="lname"
+                                                            type="text"
+                                                            name="alfabet"
+                                                            class="form-control"
+                                                            placeholder="Alfabet"
+                                                            value="">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Jurusan</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           name="jurusan"
-                                                           class="form-control"
-                                                           placeholder="Jurusan"
-                                                           value="">
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Alfabet</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           name="alfabet"
-                                                           class="form-control"
-                                                           placeholder="Alfabet"
-                                                           value="">
-                                                </div>
-                                            </div>
-                                        </div>
 
+                                        </div>
                                     </div>
                                 </div>
+
+                                
+                                <div class="text-right mb-5">
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                </div>
+
                             </div>
 
-                            
-                            <div class="text-right mb-5">
-                                <a href="/listkelas"
-                                   class="btn btn-success">Save</a>
-                            </div>
-                        </div>
                         </form>
 
                     </div>

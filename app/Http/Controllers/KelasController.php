@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorekelasRequest;
 use App\Http\Requests\UpdatekelasRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class KelasController extends Controller
 {
@@ -17,9 +18,9 @@ class KelasController extends Controller
      */
     public function index()
     {
-        $kelas = kelas::all();
+        $data = Kelas::all();
 
-        return view('datakelas.listkelas',compact('kelas'));
+        return view('datakelas.listkelas',compact('data'));
     }
 
     /**
@@ -38,17 +39,16 @@ class KelasController extends Controller
      * @param  \App\Http\Requests\StorekelasRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorekelasRequest $request)
+    public function store(Request $request)
     {
         //
         Kelas::create([
             'kelas' => $request->kelas,
             'jurusan'=> $request->jurusan,
             'alfabet' => $request->alfabet
-            
         ]);
         
-        return redirect()->route('datakelas.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('kelas.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -68,10 +68,10 @@ class KelasController extends Controller
      * @param  \App\Models\kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function edit(kelas $kelas)
+    public function edit(Kelas $kelas)
     {
         //
-        $kelas = $kelas::all();
+        $data = $kelas::all();
         return view('datakelas.edit_kelas',compact('data', 'kelas'));
     }
 
@@ -82,7 +82,7 @@ class KelasController extends Controller
      * @param  \App\Models\kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatekelasRequest $request, kelas $kelas)
+    public function update(Request $request, Kelas $kelas)
     {
         //
         $kelas->update([
@@ -99,10 +99,11 @@ class KelasController extends Controller
      * @param  \App\Models\kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(kelas $kelas)
+    public function delete(Kelas $kelas)
     {
         //
         $kelas->delete();
-        return redirect()->route('kelas.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        //redirect to index
+       return redirect()->route('kelas.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

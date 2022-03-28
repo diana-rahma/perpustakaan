@@ -73,7 +73,7 @@ class SiswaController extends Controller
      * @param  \App\Models\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function edit(siswa $siswa)
+    public function edit(Siswa $siswa)
     {
         //
         $data = $siswa::all();

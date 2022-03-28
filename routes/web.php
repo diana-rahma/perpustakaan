@@ -54,10 +54,10 @@ Route::get('/listkelas', [KelasController::class, 'index'])->name('kelas.index')
 Route::get('/tambah_kelas',[KelasController::class, 'create'])->name('tambah_kelas')  ;
 Route::post('/insertkelas',[KelasController::class, 'store'])->name('insertkelas')  ;
 
-Route::get('/edit_kelas/{kelas}',[KelasController::class, 'edit'])->name('edit_kelas')  ;
-Route::post('/updatekelas/{kelas}',[KelasController::class, 'update'])->name('updatekelas')  ;
+Route::get('/edit_kelas{kelas}',[KelasController::class, 'edit'])->name('edit.kelas')  ;
+Route::post('/updatekelas{kelas}',[KelasController::class, 'update'])->name('updatekelas')  ;
 
-Route::get('/delete/{kelas}',[KelasController::class, 'delete'])->name('delete')  ;
+Route::delete('/delete{kelas}',[KelasController::class, 'delete'])->name('delete.kelas')  ;
 
 
 // Route Data Peminjam - Backend
@@ -131,49 +131,49 @@ Route::get('/edit_history', function () {
 // Frontend
 
 Route::get('/indexuser', function () {
-    return view('frontend.index');
+    return view('indexuser');
 });
 
 
 // Route List Buku - Frontend
 
 Route::get('/listbuku', function () {
-    return view('frontend.listbuku');
+    return view('listbuku');
 });
 
 
 // Route Dipinjam - Frontend
 
 Route::get('/dipinjam', function () {
-    return view('frontend.dipinjam');
+    return view('dipinjam');
 });
 
 
 // Route Konfirmasi - Frontend
 
 Route::get('/konfirmasiuser', function () {
-    return view('frontend.konfirmasi');
+    return view('konfirmasiuser');
 });
 
 
 // Route History - Frontend
 
 Route::get('/history', function () {
-    return view('frontend.history');
+    return view('history');
 });
 
 
 // Route Denda - Frontend
 
 Route::get('/denda', function () {
-    return view('frontend.denda');
+    return view('denda');
 });
 
 
 // Route Profile - Frontend
 
 Route::get('/profileuser', function () {
-    return view('frontend.profile');
+    return view('profileuser');
 });
 
 
