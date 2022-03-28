@@ -364,24 +364,24 @@
                                             $no = 1;
                                         @endphp
 
-                                        @foreach ($data as $row)
+                                         @foreach ($data as $row)
 
                                             <tr>
-                                                <th scope="row">{{ $no++ }}</th>
+                                            <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->kelas }}</td>
                                                 <td>{{ $row->jurusan }}</td>
                                                 <td>{{ $row->alfabet }}</td>
-
-                                                <form class="btn sweet-confirm" action="{{ route('delete.kelas', $row->id) }}" method="POST">
-                                                    <a href="{{ route('edit.kelas', $row->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                                <td>
+                                                <form action="{{ route('delete.kelas', $row->id) }}" method="POST">
+                                                    <a href="{{ route('edit.kelas', $row->id) }}" class="btn btn-warning btn sweet-confirm" >Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
                                                 </form>
-                                            </tr>
-                                        @endforeach
+                                                </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
-                                        
                                     </table>
                                 </div>
                             </div>

@@ -371,8 +371,8 @@
                                                 <td>
                                                     <img src="{{ Storage::url('public/foto/').$row->file }}" class="rounded" style="width: 150px">                                                </td>
                                                 <td>
-                                                    <form class="btn sweet-confirm" action="{{ route('delete.kategori', $row->id) }}" method="POST">
-                                                <a href="{{ route('edit.kategori', $row->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                                    <form action="{{ route('delete.kategori', $row->id) }}" method="POST">
+                                                <a href="{{ route('edit.kategori', $row->id) }}" class="btn btn-warning btn sweet-confirm">Edit</a>
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
