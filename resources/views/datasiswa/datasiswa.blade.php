@@ -471,12 +471,14 @@
                                                 <td>{{ $row->kelas }}</td>
                                                 <td>{{ $row->jk }}</td>
                                                 <td>{{ $row->telp }}</td>
+                                                <td>
                                                 <form action="{{ route('delete.siswa', $row->id) }}" method="POST">
                                                     <a href="{{ route('edit.siswa', $row->id) }} "class="btn btn-warning btn sweet-confirm">Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
                                                 </form>
+                                                </td>
                                             </tr>
                                         @endforeach
 

@@ -28,7 +28,7 @@ class KelasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createkelas()
     {
         return view('datakelas.tambah_kelas');
     }
@@ -39,7 +39,7 @@ class KelasController extends Controller
      * @param  \App\Http\Requests\StorekelasRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storekelas(Request $request)
     {
         //
         Kelas::create([
@@ -68,7 +68,7 @@ class KelasController extends Controller
      * @param  \App\Models\kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kelas $kelas)
+    public function editkelas(Kelas $kelas)
     {
         //
         $data = $kelas::all();
@@ -82,7 +82,7 @@ class KelasController extends Controller
      * @param  \App\Models\kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kelas $kelas)
+    public function updatekelas(Request $request, Kelas $kelas)
     {
         //
         $kelas->update([
@@ -99,7 +99,7 @@ class KelasController extends Controller
      * @param  \App\Models\kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function delete(Kelas $kelas)
+    public function deletekelas(Kelas $kelas)
     {
         //
         $kelas->delete();

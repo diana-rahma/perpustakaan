@@ -38,26 +38,26 @@ Route::get('/profile', function () {
 
 Route::get('/datasiswa', [SiswaController::class, 'index'])->name('siswa.index');
 
-Route::get('/tambah_siswa',[SiswaController::class, 'create'])->name('tambah_siswa')  ;
-Route::post('/insertsiswa',[SiswaController::class, 'store'])->name('insertsiswa')  ;
+Route::get('/tambah_siswa',[SiswaController::class, 'createsiswa'])->name('tambah_siswa')  ;
+Route::post('/insertsiswa',[SiswaController::class, 'storesiswa'])->name('insertsiswa')  ;
 
-Route::get('/edit_siswa{siswa}',[SiswaController::class, 'edit'])->name('edit.siswa')  ;
-Route::post('/updatekategori{siswa}',[SiswaController::class, 'update'])->name('updatesiswa')  ;
+Route::get('/edit_siswa{siswa}',[SiswaController::class, 'editsiswa'])->name('edit.siswa')  ;
+Route::post('/updatekategori{siswa}',[SiswaController::class, 'updatesiswa'])->name('updatesiswa')  ;
 
-Route::delete('/delete/{siswa}',[SiswaController::class, 'delete'])->name('delete.siswa')  ;
+Route::delete('/delete/{siswa}',[SiswaController::class, 'deletesiswa'])->name('delete.siswa')  ;
 
 
 // Route List Kelas - Backend
 
 Route::get('/listkelas', [KelasController::class, 'index'])->name('kelas.index');
 
-Route::get('/tambah_kelas',[KelasController::class, 'create'])->name('tambah_kelas')  ;
-Route::post('/insertkelas',[KelasController::class, 'store'])->name('insertkelas')  ;
+Route::get('/tambah_kelas',[KelasController::class, 'createkelas'])->name('tambah_kelas')  ;
+Route::post('/insertkelas',[KelasController::class, 'storekelas'])->name('insertkelas')  ;
 
-Route::get('/edit_kelas{kelas}',[KelasController::class, 'edit'])->name('edit.kelas')  ;
-Route::post('/updatekelas{kelas}',[KelasController::class, 'update'])->name('updatekelas')  ;
+Route::get('/edit_kelas{kelas}',[KelasController::class, 'editkelas'])->name('edit.kelas')  ;
+Route::post('/updatekelas{kelas}',[KelasController::class, 'updatekelas'])->name('updatekelas')  ;
 
-Route::delete('/delete{kelas}',[KelasController::class, 'delete'])->name('delete.kelas')  ;
+Route::delete('/delete{kelas}',[KelasController::class, 'deletekelas'])->name('delete.kelas')  ;
 
 
 // Route Data Peminjam - Backend
