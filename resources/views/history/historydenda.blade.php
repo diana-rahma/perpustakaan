@@ -343,50 +343,46 @@
                                      data-toggle="lists"
                                      data-lists-values='["js-lists-values-employee-name"]'>
 
-                                    <table class="table mb-0 thead-border-top-0 table-striped">
+                                     <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
-                                                <th>Nama Siswa</th>
-                                                <th>Judul Buku</th>
-                                                <th>Gambar Buku</th>
-                                                <th>Nominal Denda</th>
-                                                <th>Keterangan</th>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Nama Siswa</th>
+                                                <th scope="col">Judul Buku</th>
+                                                <th scope="col">Gambar Buku</th>
+                                                <th scope="col">Nominal Denda</th>
+                                                <th scope="col">Keterangan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="list"
-                                               id="companies">
+                                        <tbody>
+
+                                        @php
+                                            $no = 1;
+                                        @endphp
+
+                                        @foreach ($data as $row)
 
                                             <tr>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->namasiswa }}</td>
+                                                <td>{{ $row->judulbuku }}</td>
                                                 <td>
-                                                    <div class="badge badge-soft-dark">#21518</div>
-                                                </td>
-                                                <td>Jeje</td>
-                                                <td>Tujuh Kelana</td>
-                                                <td><img src="images/stories/tujuhkelana.jpg" style="width: 75px; height: 35;" alt=""></td>
-                                                <td>Rp. 10000</td>
-                                                <td>Telat 2 Hari</td>
+                                                    <img src="{{ Storage::url('public/foto/').$row->file }}" class="rounded" style="width: 150px">                                                </td>
                                                 <td>
-                                                    <a href="/edit_history" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_history"type="button" class="btn btn-danger">Delete</a>
+                                                <td>{{ $row->nominal }}</td>
+                                                <td>{{ $row->keterangan }}</td>
+                                                <td>
+                                                    <form action="{{ route('delete.history', $row->id) }}" method="POST">
+                                                <a href="{{ route('edit.history', $row->id) }}" class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
+                                            </form>
                                                 </td>
                                             </tr>
+                                        @endforeach
 
-                                            <tr>
-                                                <td>
-                                                    <div class="badge badge-soft-dark">#28763</div>
-                                                </td>
-                                                <td>Caca</td>
-                                                <td>Sembilu</td>
-                                                <td><img src="images/stories/romance3.jpg" style="width: 75px; height: 35;" alt=""></td>
-                                                <td>Rp. 15000</td>
-                                                <td>Telat 3 Hari</td>
-                                                <td>
-                                                    <a href="/edit_history" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_history"type="button" class="btn btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>

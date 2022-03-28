@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\HistorydendaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,15 +115,15 @@ Route::delete('/delete/{kategori}',[KategoriController::class, 'delete'])->name(
 
 // Route History - Backend
 
-Route::get('/historydenda', function () {
-    return view('history.historydenda');
-});
-Route::get('/tambah_history', function () {
-    return view('history.tambah_history');
-});
-Route::get('/edit_history', function () {
-    return view('history.edit_history');
-});
+Route::get('/historydenda', [HistorydendaController::class, 'index'])->name('history.index');
+
+Route::get('/tambah_history',[HistorydendaController::class, 'create'])->name('tambah_history')  ;
+Route::post('/inserthistory',[HistorydendaController::class, 'store'])->name('inserthistory')  ;
+
+Route::get('/edit_history{history}',[HistorydendaController::class, 'edit'])->name('edit.history')  ;
+Route::post('/updatehistory{history}',[HistorydendaController::class, 'update'])->name('updatehistory')  ;
+
+Route::delete('/delete/{history}',[HistorydendaController::class, 'delete'])->name('delete.history')  ;
 
 
 
