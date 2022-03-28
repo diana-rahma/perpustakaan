@@ -30,7 +30,7 @@ class SiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createsiswa()
     {
         //
         return view('datasiswa.tambah_siswa');
@@ -42,7 +42,7 @@ class SiswaController extends Controller
      * @param  \App\Http\Requests\StoresiswaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storesiswa(Request $request)
     {
         //
         Siswa::create([
@@ -73,7 +73,7 @@ class SiswaController extends Controller
      * @param  \App\Models\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function edit(Siswa $siswa)
+    public function editsiswa(Siswa $siswa)
     {
         //
         $data = $siswa::all();
@@ -87,9 +87,18 @@ class SiswaController extends Controller
      * @param  \App\Models\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Siswa $siswa)
+    public function updatesiswa(Request $request, Siswa $siswa)
     {
         //
+        $siswa->update([
+            'nisn'     => $request->nisn,
+            'nama_siswa'     => $request->nama_siswa,
+            'kelas'     => $request->kelas,
+            'jk'     => $request->jk,
+            'telp'     => $request->telp,
+        ]);
+    
+        return redirect()->route('siswa.index')->with('success',' Data Berhasil di Update');
     }
 
     /**
@@ -98,7 +107,7 @@ class SiswaController extends Controller
      * @param  \App\Models\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function delete(Siswa $siswa)
+    public function deletesiswa(Siswa $siswa)
     {
         //
         $siswa->delete();
