@@ -449,6 +449,7 @@
                                     <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
+                                                <th>ID</th>
                                                 <th>NISN</th>
                                                 <th>Nama Siswa</th>
                                                 <th>Kelas</th>
@@ -467,6 +468,7 @@
 
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->nisn }}</td>
                                                 <td>{{ $row->nama_siswa }}</td>
                                                 <td>{{ $row->kelas }}</td>
                                                 <td>{{ $row->jk }}</td>
