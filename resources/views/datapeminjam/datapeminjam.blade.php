@@ -387,6 +387,7 @@
                                      <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th scope="col">Nama Siswa</th>
                                                 <th scope="col">Judul Buku</th>
                                                 <th scope="col">Tanggal Pinjam</th>

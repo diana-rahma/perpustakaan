@@ -364,7 +364,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Jurusan</label>
-                                                            <select class="form-control" name="kelas">
+                                                            <select class="form-control" name="jurusan">
                                                                 <option value="">Jurusan</option>
                                                                 <option>MM</option>
                                                                 <option>RPL</option>
@@ -375,7 +375,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Alfabet</label>
-                                                            <select class="form-control" name="kelas">
+                                                            <select class="form-control" name="alfabet">
                                                                 <option value="">Alfabet</option>
                                                                 <option>A</option>
                                                                 <option>B</option>
@@ -389,13 +389,13 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">NISN</label>
-                                                        <input id="lname" type="text" class="form-control" value="{{ $siswa->nisn}}">
+                                                        <input id="lname" type="text" class="form-control" name="nisn" value="{{ $siswa->nisn}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Nama Siswa</label>
-                                                        <input id="lname" type="text" class="form-control" value="{{ $siswa->nama_siswa}}">
+                                                        <input id="lname" type="text" class="form-control" name="nama_siswa" value="{{ $siswa->nama_siswa}}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -404,7 +404,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Jenis Kelamin</label>
-                                                            <select class="form-control" name="jk">
+                                                            <select class="form-control" name="jk" name="jk">
                                                                 <option value="">Jenis Kelamin</option>
                                                                 <option>Perempuan</option>
                                                                 <option>Laki-Laki</option>
@@ -414,7 +414,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">No Telepon</label>
-                                                        <input id="lname" type="text" class="form-control" value="{{ $siswa->telp}}">
+                                                        <input id="lname" type="text" class="form-control" name="telp" value="{{ $siswa->telp}}">
                                                     </div>
                                                 </div>
                                             </div>
