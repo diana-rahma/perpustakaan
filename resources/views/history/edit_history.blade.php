@@ -349,42 +349,36 @@
                                     <div class="row no-gutters">
                                         <div class="col-lg-15 card-form__body card-body">
                                             <div class="row">
-                                                @csrf 
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="lname">ID</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->history}}">
-                                                    </div>
-                                                </div>
-                                                <div class="col">
+                                                @csrf
+                                                <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Nama Siswa</label>
                                                         <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->namasiswa}}">
                                                     </div>
                                                 </div>
-                                                <div class="col">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="lname" class="form-label">Judul Buku</label>
+                                                        <label for="lname">Judul Buku</label>
                                                         <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->judulbuku}}">
                                                     </div>
                                                 </div>
-                                                <div class="col">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="opass" class="form-label">Gambar Buku</label>
+                                                        <label for="opass">Gambar Buku</label>
                                                         <input type="file" name="file" class="form-control" id="lname" value="{{ $history->file}}">
                                                     </div>
                                                 </div> <div>
                                                     <img src="{{ asset('foto/'.$history->file)}}">
                                                     </div>
-                                                <div class="col">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="lname" class="form-label">Nominal Denda</label>
+                                                        <label for="lname">Nominal Denda</label>
                                                         <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->nominaldenda}}">
                                                     </div>
                                                 </div>
-                                                <div class="col">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="lname" class="form-label">Keterangan</label>
+                                                        <label for="lname">Keterangan</label>
                                                         <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->history}}">
                                                     </div>
                                                     <div>
@@ -398,9 +392,8 @@
                                     <a href="/historydenda"><button type="submit" class="btn btn-success">Update</button></a>
                                 </div>
                             </div>
-
                         </form>
-
+                    </div>
                     </div>
                     <!-- // END drawer-layout__content -->
 

@@ -11,5 +11,5 @@ class historydenda extends Model
 
     protected $table = "historys";
     protected $primarykey = "id";
-    protected $fillable = ['id','namasiswa','judulbuku', 'file', 'nominal', 'keterangan'];
+    protected $fillable = ['id','namasiswa','judulbuku', 'file', 'nominaldenda', 'keterangan'];
 }

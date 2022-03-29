@@ -15,7 +15,7 @@ class CreateHistorydendasTable extends Migration
     {
         Schema::create('historys', function (Blueprint $table) {
             $table->id();
-            $table->string('namasiswa');
+            $table->string('namasiswa')->nullable();
             $table->string('judulbuku');
             $table->string('file');
             $table->string('nominaldenda');

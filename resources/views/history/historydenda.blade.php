@@ -370,7 +370,7 @@
                                                 <td>
                                                     <img src="{{ Storage::url('public/foto/').$row->file }}" class="rounded" style="width: 150px">                                                </td>
                                                 <td>
-                                                <td>{{ $row->nominal }}</td>
+                                                <td>{{ $row->nominaldenda }}</td>
                                                 <td>{{ $row->keterangan }}</td>
                                                 <td>
                                                     <form action="{{ route('delete.history', $row->id) }}" method="POST">
