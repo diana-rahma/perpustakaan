@@ -384,62 +384,41 @@
                                      data-toggle="lists"
                                      data-lists-values='["js-lists-values-employee-name"]'>
 
-                                    <table class="table mb-0 thead-border-top-0 table-striped">
+                                     <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Nama Siswa</th>
-                                                <th>Judul Buku</th>
-                                                <th>Tgl Pinjam</th>
-                                                <th>Tgl Kembali</th>
+                                                <th scope="col">Nama Siswa</th>
+                                                <th scope="col">Judul Buku</th>
+                                                <th scope="col">Tanggal Pinjam</th>
+                                                <th scope="col">Tanggal Kembali</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="list"
-                                               id="databuku">
+                                        <tbody>
 
-                                               <tr>
-                                                <td><a href="/profildata">Jesika Novanda</a></td>
-                                                <td>Kamus Bhs Inggris</td>
-                                                <td>23/01/2022</td>
-                                                <td>28/01/2022</td>
-                                                <td>
-                                                    <a href="/edit_peminjam" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_peminjam"type="button" class="btn btn-danger">Delete</a>         
-                                                </td>
-                                            </tr>
+                                        @php
+                                            $no = 1;
+                                        @endphp
+
+                                        @foreach ($data as $row)
 
                                             <tr>
-                                                <td><a href="/profildata">Diana Rahmawati</a></td>
-                                                <td>Novel Hujan</td>
-                                                <td>23/01/2022</td>
-                                                <td>25/01/2022</td>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->namasiswa }}</td>
+                                                <td>{{ $row->judulbuku }}</td>
+                                                <td>{{ $row->tanggalpinjam }}</td>
+                                                <td>{{ $row->tanggalkembali }}</td>
                                                 <td>
-                                                    <a href="/edit_peminjam" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_peminjam"type="button" class="btn btn-danger">Delete</a>         
+                                                    <form action="{{ route('delete.peminjam', $row->id) }}" method="POST">
+                                                <a href="{{ route('edit.peminjam', $row->id) }}" class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
+                                            </form>
                                                 </td>
                                             </tr>
+                                        @endforeach
 
-                                            <tr>
-                                                <td><a href="/profildata">Meita Wilianisa</a></td>
-                                                <td>Biografi Gus Dur</td>
-                                                <td>24/01/2022</td>
-                                                <td>28/01/2022</td>
-                                                <td>
-                                                    <a href="/edit_peminjam" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_peminjam"type="button" class="btn btn-danger">Delete</a>         
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td><a href="/profildata">Vani Winanda</a></td>
-                                                <td>Kamus Bahasa Jawa</td>
-                                                <td>24/01/2022</td>
-                                                <td>28/01/2022</td>
-                                                <td>
-                                                    <a href="/edit_peminjam" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_peminjam"type="button" class="btn btn-danger">Delete</a>         
-                                                </td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>

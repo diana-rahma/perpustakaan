@@ -363,7 +363,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Jurusan</label>
-                                                            <select class="form-control" name="kelas">
+                                                            <select class="form-control" name="jurusan">
                                                                 <option value="">Jurusan</option>
                                                                 <option>MM</option>
                                                                 <option>RPL</option>
@@ -374,7 +374,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Alfabet</label>
-                                                            <select class="form-control" name="kelas">
+                                                            <select class="form-control" name="alfabet">
                                                                 <option value="">Alfabet</option>
                                                                 <option>A</option>
                                                                 <option>B</option>
@@ -388,7 +388,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">NISN</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="NISN" value="">
+                                                        <input type="text" name="nisn" class="form-control" id="lname" placeholder="NISN" value="">
                                                     </div>
                                                 </div>
                                                 <div class="col">
@@ -413,7 +413,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">No Telepon</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="No Telepon" value="">
+                                                        <input type="text" name="telp" class="form-control" id="lname" placeholder="No Telepon" value="">
                                                     </div>
                                                 </div>
                                             </div>

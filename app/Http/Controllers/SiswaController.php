@@ -49,6 +49,8 @@ class SiswaController extends Controller
             'nisn' => $request->nisn,
             'nama_siswa' => $request->nama,
             'kelas' => $request->kelas,
+            'jurusan' => $request->jurusan,
+            'alfabet' => $request->alfabet,
             'jk' => $request->jk,
             'telp' => $request->telp,
         ]);
@@ -94,6 +96,8 @@ class SiswaController extends Controller
             'nisn'     => $request->nisn,
             'nama_siswa'     => $request->nama_siswa,
             'kelas'     => $request->kelas,
+            'jurusan'     => $request->jurusan,
+            'alfabet'     => $request->alfabet,
             'jk'     => $request->jk,
             'telp'     => $request->telp,
         ]);

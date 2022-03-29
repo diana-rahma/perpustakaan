@@ -15,6 +15,10 @@ class CreatePeminjamsTable extends Migration
     {
         Schema::create('peminjams', function (Blueprint $table) {
             $table->id();
+            $table->string('namasiswa');
+            $table->string('judulbuku');
+            $table->string('tanggalpinjam');
+            $table->string('tanggalkembali');
             $table->timestamps();
         });
     }
