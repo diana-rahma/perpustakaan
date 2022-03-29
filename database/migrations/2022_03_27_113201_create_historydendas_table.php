@@ -6,15 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateHistorydendasTable extends Migration
 {
-    /**
+     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('historydendas', function (Blueprint $table) {
+        Schema::create('historys', function (Blueprint $table) {
             $table->id();
+            $table->string('namasiswa');
+            $table->string('judulbuku');
+            $table->string('file');
+            $table->string('nominaldenda');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateHistorydendasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('historydendas');
+        Schema::dropIfExists('historys');
     }
 }

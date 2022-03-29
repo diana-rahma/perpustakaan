@@ -343,77 +343,63 @@
                             </div>
                         </div>
 
-                        <div class="container-fluid page__container">
-                            <div class="card card-form">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-15 card-form__body card-body">
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="fname">Nama Siswa</label>
-                                                    <input id="fname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="Jeje"
-                                                           value="">
+                        <form action="{{ route('updatehistory', $history->id) }}" method="POST">
+                            <div class="container-fluid page__container">
+                                <div class="card card-form">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-15 card-form__body card-body">
+                                            <div class="row">
+                                                @csrf 
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">ID</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->history}}">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Judul Buku</label>
-                                                    <input id="lname"
-                                                           type="number"
-                                                           class="form-control"
-                                                           placeholder="Tujuh Kelana"
-                                                           value="">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Nama Siswa</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->namasiswa}}">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="opass">Gambar</label>
-                                            <input style="width: 510px;"
-                                                   id="opass"
-                                                   type="file"
-                                                   class="form-control"
-                                                   placeholder="Gambar Buku"
-                                                   value="">
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="fname">Nominal Denda</label>
-                                                    <input id="fname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="Rp. 10000"
-                                                           value="">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname" class="form-label">Judul Buku</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->judulbuku}}">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Keterangan</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="Telat 2 Hari"
-                                                           value="">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="opass" class="form-label">Gambar Buku</label>
+                                                        <input type="file" name="file" class="form-control" id="lname" value="{{ $history->file}}">
+                                                    </div>
+                                                </div> <div>
+                                                    <img src="{{ asset('foto/'.$history->file)}}">
+                                                    </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname" class="form-label">Nominal Denda</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->nominaldenda}}">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname" class="form-label">Keterangan</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->history}}">
+                                                    </div>
+                                                    <div>
                                                 </div>
                                             </div>
                                         </div>
-                                        
                                     </div>
+                                </div>
+
+                                <div class="text-right mb-5">
+                                    <a href="/historydenda"><button type="submit" class="btn btn-success">Update</button></a>
                                 </div>
                             </div>
 
-                            
-                            <div class="text-right mb-5">
-                                <a href="historydenda.html"
-                                   class="btn btn-success">Update</a>
-                            </div>
-                        </div>
+                        </form>
 
                     </div>
                     <!-- // END drawer-layout__content -->
