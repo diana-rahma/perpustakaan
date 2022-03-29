@@ -17,8 +17,8 @@ class CreatePeminjamsTable extends Migration
             $table->id();
             $table->string('namasiswa');
             $table->string('judulbuku');
-            $table->string('tanggalpinjam');
-            $table->string('tanggalkembali');
+            $table->date('tanggalpinjam');
+            $table->date('tanggalkembali');
             $table->timestamps();
         });
     }

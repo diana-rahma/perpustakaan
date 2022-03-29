@@ -22,7 +22,7 @@ class PeminjamController extends Controller
         // if($request->has('search')) {
         //     $data = Peminjam::where('peminjam','LIKE','%' .$request->search.'%');
         // } else {
-            $data = peminjam::all();
+            $data = Peminjam::all();
         // }
 
         return view('datapeminjam.datapeminjam',compact('data'));
@@ -49,14 +49,14 @@ class PeminjamController extends Controller
     public function storepeminjam(Request $request)
     {
         //
-        peminjam::create([
+        Peminjam::create([
             'namasiswa' => $request->namasiswa,
             'judulbuku' => $request->judulbuku,
             'tanggalpinjam' => $request->tanggalpinjam,
             'tanggalkembali' => $request->tanggalkembali,
         ]);
         
-        return redirect()->route('datapeminjam.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('peminjam.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -94,10 +94,13 @@ class PeminjamController extends Controller
     public function updatepeminjam(Request $request, Peminjam $peminjam)
     {
         //
-            $peminjam->update([
-                'peminjam'     => $request->nama,
-            ]);
-        return redirect()->route('datapeminjam.index')->with('success',' Data Berhasil di Update');
+        $peminjam->update([
+            'namasiswa'     => $request->namasiswa,
+            'judulbuku'     => $request->judulbuku,
+            'tanggalpinjam'     => $request->tanggalpinjam,
+            'tanggalkembali'     => $request->tanggalkembali,
+        ]);
+        return redirect()->route('peminjam.index')->with('success',' Data Berhasil di Update');
     }
 
 
@@ -109,11 +112,9 @@ class PeminjamController extends Controller
      */
     public function deletepeminjam(Peminjam $peminjam)
     {
-        // $peminjam = Peminjam::findOrFail($peminjam->id);
-        // dd($blog);
         $peminjam->delete();
        //redirect to index
-       return redirect()->route('datapeminjam.index')->with(['success' => 'Data Berhasil Dihapus!']);
+       return redirect()->route('peminjam.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }
 

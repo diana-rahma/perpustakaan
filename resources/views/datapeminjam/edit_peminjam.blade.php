@@ -343,7 +343,7 @@
                             </div>
                         </div>
 
-                        <form action="{{ route('updatepeminnjam', $peminjam->id) }}" method="POST">
+                        <form action="{{ route('updatepeminjam', $peminjam->id) }}" method="POST">
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
                                     <div class="row no-gutters">
@@ -353,25 +353,25 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Nama Siswa</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $peminjam->namasiswa}}">
+                                                        <input type="text" name="namasiswa" class="form-control" id="lname" value="{{ $peminjam->namasiswa}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname" class="form-label">Judul Buku</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $peminjam->judulbuku}}">
+                                                        <input type="text" name="judulbuku" class="form-control" id="lname" value="{{ $peminjam->judulbuku}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname" class="form-label">Tanggal Pinjam</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $peminjam->tanggalpinjam}}">
+                                                        <input type="text" name="tanggalpinjam" class="form-control" id="lname" value="{{ $peminjam->tanggalpinjam}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname" class="form-label">Tanggal Kembali</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $peminjam->tanggalkembali}}">
+                                                        <input type="text" name="tanggalkembali" class="form-control" id="lname" value="{{ $peminjam->tanggalkembali}}">
                                                     </div>
                                                     <div>
                                                 </div>

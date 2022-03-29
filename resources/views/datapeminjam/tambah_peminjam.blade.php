@@ -352,25 +352,25 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Nama Siswa</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Nama Siswa" value="">
+                                                        <input type="text" name="namasiswa" class="form-control" id="lname" placeholder="Nama Siswa" value="">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Judul Buku</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Judul Buku" value="">
+                                                        <input type="text" name="judulbuku" class="form-control" id="lname" placeholder="Judul Buku" value="">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Tanggal Pinjam</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Tanggal Pinjam" value="">
+                                                        <input type="date" name="tanggalpinjam" class="form-control" id="lname" placeholder="Tanggal Pinjam" value="">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Tanggal Kembali</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Tanggal Kembali" value="">
+                                                        <input type="date" name="tanggalkembali" class="form-control" id="lname" placeholder="Tanggal Kembali" value="">
                                                     </div>
                                                 </div>
                                                 
