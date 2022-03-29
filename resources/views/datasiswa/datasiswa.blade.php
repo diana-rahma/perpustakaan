@@ -449,10 +449,12 @@
                                     <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
+                                                <th>#</th>
                                                 <th>NISN</th>
                                                 <th>Nama Siswa</th>
                                                 <th>Kelas</th>
+                                                <th>Jurusan</th>
+                                                <th>Alfabet</th>
                                                 <th>Jenis Kelamin</th>
                                                 <th>No Telepon</th>
                                                 <th>Aksi</th>
@@ -471,6 +473,8 @@
                                                 <td>{{ $row->nisn }}</td>
                                                 <td>{{ $row->nama_siswa }}</td>
                                                 <td>{{ $row->kelas }}</td>
+                                                <td>{{ $row->jurusan }}</td>
+                                                <td>{{ $row->alfabet }}</td>
                                                 <td>{{ $row->jk }}</td>
                                                 <td>{{ $row->telp }}</td>
                                                 <td>

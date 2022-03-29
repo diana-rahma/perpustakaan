@@ -369,7 +369,7 @@
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->kategori }}</td>
                                                 <td>
-                                                    <img src="{{ Storage::url('public/foto/').$row->file }}" class="rounded" style="width: 150px">                                                </td>
+                                                    <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 150px">                                                </td>
                                                 <td>
                                                     <form action="{{ route('delete.kategori', $row->id) }}" method="POST">
                                                 <a href="{{ route('edit.kategori', $row->id) }}" class="btn btn-warning btn sweet-confirm">Edit</a>

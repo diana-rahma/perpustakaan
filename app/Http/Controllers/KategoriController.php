@@ -94,7 +94,7 @@ class KategoriController extends Controller
      */
     public function update(Request $request, Kategori $kategori)
     {
-        //
+        //dd($request->all());
         if ($request->hasFile('file')) {
             Storage::disk('local')->delete('public/foto/'.$kategori->image);
 
@@ -121,7 +121,7 @@ class KategoriController extends Controller
                 'kategori'     => $request->nama,
             ]);
         }
-        return redirect()->route('kategori.index')->with('success',' Data Berhasil di Update');
+        return redirect()->route('')->with('success',' Data Berhasil di Update');
 }
 
     
@@ -139,6 +139,6 @@ class KategoriController extends Controller
         Storage::delete('public/foto/'.$kategori->file);
         $kategori->delete();
        //redirect to index
-       return redirect()->route('kategori.index')->with(['success' => 'Data Berhasil Dihapus!']);
+       return redirect()->route('listkategori')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }
