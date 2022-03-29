@@ -342,20 +342,37 @@
                             </div>
                         </div>
 
+                        <form action="{{ route('insertbuku') }}" method="POST" enctype="multipart/form-data">
                         <div class="container-fluid page__container">
                             <div class="card card-form">
                                 <div class="row no-gutters">
                                     <div class="col-lg-15 card-form__body card-body">
 
-                                        <div class="form-group">
-                                            <label for="opass">Judul Buku</label>
-                                            <input 
-                                                   id="opass"
-                                                   type="text"
-                                                   class="form-control"
-                                                   placeholder="Judul Buku"
-                                                   value="">
+                                         <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="opass">Kode</label>
+                                                <input 
+                                                    id="opass"
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder="Kode"
+                                                    value="">
+                                            </div>
                                         </div>
+
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="opass">Judul Buku</label>
+                                                <input 
+                                                    id="opass"
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder="Judul Buku"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                    </div>
 
                                         <div class="row">
                                             <div class="col">
@@ -433,10 +450,11 @@
 
                             
                             <div class="text-right mb-5">
-                                <a href="databuku.html"
+                                <a href="/databuku"
                                    class="btn btn-success">Save</a>
                             </div>
                         </div>
+                        </form>
 
                     </div>
                     <!-- // END drawer-layout__content -->

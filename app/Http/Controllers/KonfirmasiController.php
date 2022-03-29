@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\konfirmasi;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorekonfirmasiRequest;
 use App\Http\Requests\UpdatekonfirmasiRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class KonfirmasiController extends Controller
 {
@@ -15,7 +19,9 @@ class KonfirmasiController extends Controller
      */
     public function index()
     {
-        //
+            $data = konfirmasi::all();
+
+        return view('konfirmasi.konfirmasi',compact('data'));
     }
 
     /**
@@ -23,20 +29,33 @@ class KonfirmasiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createkonfirmasi()
     {
         //
+        $data = konfirmasi::all();
+        return view('konfirmasi.tambah_konfirmasi');
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorekonfirmasiRequest  $request
+     * @param  \App\Http\Requests\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorekonfirmasiRequest $request)
+    public function storekonfirmasi(Request $request)
     {
         //
+        $image = $request->file('file');
+        $image->storeAs('public/foto', $image->hashName());
+        konfirmasi::create([
+            'namasiswa' => $request->namasiswa,
+            'judulbuku' => $request->judulbuku,
+            'file' => $image->hashName(),
+            'status' => $request->status,
+        ]);
+        
+        return redirect()->route('konfirmasi.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**

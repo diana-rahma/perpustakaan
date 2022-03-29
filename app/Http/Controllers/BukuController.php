@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\buku;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorebukuRequest;
 use App\Http\Requests\UpdatebukuRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BukuController extends Controller
 {
@@ -16,6 +19,9 @@ class BukuController extends Controller
     public function index()
     {
         //
+        $data = Buku::all();
+
+        return view('databuku.databuku',compact('data'));
     }
 
     /**
@@ -23,9 +29,10 @@ class BukuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createbuku()
     {
         //
+        return view('databuku.tambah_buku');
     }
 
     /**
@@ -34,9 +41,23 @@ class BukuController extends Controller
      * @param  \App\Http\Requests\StorebukuRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorebukuRequest $request)
+    public function storebuku(Request $request)
     {
         //
+        $image = $request->file('file');
+        $image->storeAs('public/foto', $image->hashName());
+        Buku::create([
+            'kode' => $request->kode,
+            'judulbuku' => $request->judulbuku,
+            'pengarang' => $request->pengarang,
+            'penerbit' => $request->penerbit,
+            'tahun' => $request->tahun,
+            'lokasi' => $request->lokasi,
+            'kategori' => $request->kategori,
+            'file' => $image->hashName(),
+        ]);
+        
+        return redirect()->route('buku.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -56,9 +77,11 @@ class BukuController extends Controller
      * @param  \App\Models\buku  $buku
      * @return \Illuminate\Http\Response
      */
-    public function edit(buku $buku)
+    public function editbuku(Buku $buku)
     {
         //
+        $data = $buku::all();
+        return view('databuku.edit_buku',compact('data', 'buku'));
     }
 
     /**
@@ -68,9 +91,20 @@ class BukuController extends Controller
      * @param  \App\Models\buku  $buku
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatebukuRequest $request, buku $buku)
+    public function updatebuku(Request $request, Buku $buku)
     {
         //
+        $buku->update([
+            'kode'     => $request->kode,
+            'judulbuku'     => $request->judulbuku,
+            'pengarang'     => $request->pengarang,
+            'penerbit'     => $request->penerbit,
+            'tahun'     => $request->tahun,
+            'lokasi'     => $request->lokasi,
+            'kategori'     => $request->kategori,
+        ]);
+    
+        return redirect()->route('buku.index')->with('success',' Data Berhasil di Update');
     }
 
     /**
@@ -79,8 +113,11 @@ class BukuController extends Controller
      * @param  \App\Models\buku  $buku
      * @return \Illuminate\Http\Response
      */
-    public function destroy(buku $buku)
+    public function deletebuku(Buku $buku)
     {
         //
+        $buku->delete();
+        //redirect to index
+        return redirect()->route('buku.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

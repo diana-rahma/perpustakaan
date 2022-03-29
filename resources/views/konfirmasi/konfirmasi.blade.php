@@ -359,73 +359,29 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="list"
-                                               id="databuku">
+                                        <tbody>
+
+                                        @php
+                                            $no = 1;
+                                        @endphp
+
+                                        @foreach ($data as $row)
 
                                             <tr>
-                                                <td>1</td>
-                                                <td>Diana Rahmawati</td>
-                                                <td>Kamus Bahasa Jawa</td>
-                                                <td><img src="images/stories/dictionary7.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>Pending</td>
-                                                <td>
-                                                    <a href=" " type="button" class="btn btn-success">F</a>
-                                                    <a href=" " type="button" class="btn btn-warning">P</a>
-                                                    <a href=" "type="button" class="btn btn-danger">A</a>         
-                                                </td>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                    <td>{{ $row->namasiswa}}</td>
+                                                    <td>{{ $row->judulbuku }}</td>
+                                                    <td>
+                                                        <img src="{{ Storage::url('public/foto/').$row->file }}" class="rounded" style="width: 150px">                                                </td>
+                                                    <td>
+                                                    <td>{{ $row->status }}</td>
+                                                    <td>
+                                                        <a href="{{ route('konfirmasi.index', $row->id) }}" type="button" class="btn btn-success">F</a>
+                                                        <a href="{{ route('konfirmasi.index', $row->id) }}" type="button" class="btn btn-warning">P</a>
+                                                        <a href="{{ route('konfirmasi.index', $row->id) }}" type="button" class="btn btn-danger">A</a>         
+                                                    </td>
                                             </tr>
-
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Meita Wilianisa</td>
-                                                <td>Critical Eleven</td>
-                                                <td><img src="images/stories/romance4.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>Pending</td>
-                                                <td>
-                                                    <a href=" " type="button" class="btn btn-success">F</a>
-                                                    <a href=" " type="button" class="btn btn-warning">P</a>
-                                                    <a href=" "type="button" class="btn btn-danger">A</a>         
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Jesika Novanda</td>
-                                                <td>Kamus Bahasa Inggris</td>
-                                                <td><img src="images/stories/dictionary1.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>Pending</td>
-                                                <td>
-                                                    <a href=" " type="button" class="btn btn-success">F</a>
-                                                    <a href=" " type="button" class="btn btn-warning">P</a>
-                                                    <a href=" "type="button" class="btn btn-danger">A</a>         
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Vani Winanda Suci</td>
-                                                <td>Holy Mother</td>
-                                                <td><img src="images/stories/misteri1.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>Pending</td>
-                                                <td>
-                                                    <a href=" " type="button" class="btn btn-success">F</a>
-                                                    <a href=" " type="button" class="btn btn-warning">P</a>
-                                                    <a href=" "type="button" class="btn btn-danger">A</a>         
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Rahmalia Putri</td>
-                                                <td>Those Eyes</td>
-                                                <td><img src="images/stories/horor8.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>Pending</td>
-                                                <td>
-                                                    <a href=" " type="button" class="btn btn-success">F</a>
-                                                    <a href=" " type="button" class="btn btn-warning">P</a>
-                                                    <a href=" "type="button" class="btn btn-danger">A</a>         
-                                                </td>
-                                            </tr>
+                                        @endforeach
                                         
                                         </tbody>
                                     </table>

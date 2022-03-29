@@ -352,8 +352,8 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Kelas</label>
-                                                            <select class="form-control" name="kelas" value="{{ $kelas->kelas}}">
-                                                                <option value="">Kelas</option>
+                                                            <select class="form-control" value="{{ $kelas->kelas}}" name="kelas">
+                                                                <option>Kelas</option>
                                                                 <option>10</option>
                                                                 <option>11</option>
                                                                 <option>12</option>
