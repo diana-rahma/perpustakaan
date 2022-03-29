@@ -5,6 +5,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\HistorydendaController;
+use App\Http\Controllers\PeminjamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,18 +64,15 @@ Route::delete('/delete{kelas}',[KelasController::class, 'deletekelas'])->name('d
 
 // Route Data Peminjam - Backend
 
-Route::get('/datapeminjam', function () {
-    return view('datapeminjam.datapeminjam');
-});
-Route::get('/tambah_peminjam', function () {
-    return view('datapeminjam.tambah_peminjam');
-});
-Route::get('/profildata', function () {
-    return view('datapeminjam.profildata');
-});
-Route::get('/edit_peminjam', function () {
-    return view('datapeminjam.edit_peminjam');
-});
+Route::get('/datapeminjam', [PeminjamController::class, 'index'])->name('peminjam.index');
+
+Route::get('/tambah_peminjam',[PeminjamController::class, 'createpeminjam'])->name('tambah_peminjam')  ;
+Route::post('/insertpeminjam',[PeminjamController::class, 'storepeminjam'])->name('insertpeminjam')  ;
+
+Route::get('/edit_peminjam{peminjam}',[PeminjamController::class, 'editpeminjam'])->name('edit.peminjam')  ;
+Route::post('/updatepeminjam{peminjam}',[PeminjamController::class, 'updatepeminjam'])->name('updatepeminjam')  ;
+
+Route::delete('/delete{peminjam}',[PeminjamController::class, 'deletepeminjam'])->name('delete.peminjam')  ;
 
 
 // Route Data Buku - Backend

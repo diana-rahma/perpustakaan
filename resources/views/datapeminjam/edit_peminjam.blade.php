@@ -343,67 +343,49 @@
                             </div>
                         </div>
 
-                        <div class="container-fluid page__container">
-                            <div class="card card-form">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-15 card-form__body card-body">
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Nama Siswa</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="Jesika Novanda"
-                                                           value="">
+                        <form action="{{ route('updatepeminnjam', $peminjam->id) }}" method="POST">
+                            <div class="container-fluid page__container">
+                                <div class="card card-form">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-15 card-form__body card-body">
+                                            <div class="row">
+                                                @csrf 
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Nama Siswa</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $peminjam->namasiswa}}">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Judul Buku</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="Kamus Bahasa Inggris"
-                                                           value="">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname" class="form-label">Judul Buku</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $peminjam->judulbuku}}">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="fname">Tgl Pinjam</label>
-                                                    <input id="fname"
-                                                           type="date"
-                                                           class="form-control"
-                                                           placeholder="Tgl Pinjam"
-                                                           value="23/01/2022">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname" class="form-label">Tanggal Pinjam</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $peminjam->tanggalpinjam}}">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Tgl Kembali</label>
-                                                    <input id="lname"
-                                                           type="date"
-                                                           class="form-control"
-                                                           placeholder="Tgl Kembali"
-                                                           value="28/01/2022">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname" class="form-label">Tanggal Kembali</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $peminjam->tanggalkembali}}">
+                                                    </div>
+                                                    <div>
                                                 </div>
                                             </div>
                                         </div>
-                                        
                                     </div>
+                                </div>
+
+                                <div class="text-right mb-5">
+                                    <a href="/datapeminjam"><button type="submit" class="btn btn-success">Update</button></a>
                                 </div>
                             </div>
 
-                            
-                            <div class="text-right mb-5">
-                                <a href="/datapeminjam"
-                                   class="btn btn-success">Update</a>
-                            </div>
-                        </div>
+                        </form>
 
                     </div>
                     <!-- // END drawer-layout__content -->

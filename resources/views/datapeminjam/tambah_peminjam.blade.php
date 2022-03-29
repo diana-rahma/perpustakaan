@@ -342,67 +342,48 @@
                             </div>
                         </div>
 
-                        <div class="container-fluid page__container">
-                            <div class="card card-form">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-15 card-form__body card-body">
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Nama Siswa</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="Nama Siswa"
-                                                           value="">
+                        <form action="{{ route('insertpeminjam') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                            <div class="container-fluid page__container">
+                                <div class="card card-form">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-15 card-form__body card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="lname">Nama Siswa</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Nama Siswa" value="">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Judul Buku</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="Judul Buku"
-                                                           value="">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="lname">Judul Buku</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Judul Buku" value="">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="fname">Tgl Pinjam</label>
-                                                    <input id="fname"
-                                                           type="date"
-                                                           class="form-control"
-                                                           placeholder="Tgl Pinjam"
-                                                           value="">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="lname">Tanggal Pinjam</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Tanggal Pinjam" value="">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Tgl Kembali</label>
-                                                    <input id="lname"
-                                                           type="date"
-                                                           class="form-control"
-                                                           placeholder="Tgl Kembali"
-                                                           value="">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="lname">Tanggal Kembali</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Tanggal Kembali" value="">
+                                                    </div>
                                                 </div>
+                                                
                                             </div>
                                         </div>
-                                        
                                     </div>
                                 </div>
-                            </div>
 
-                            
-                            <div class="text-right mb-5">
-                                <a href="datapeminjam.html"
-                                   class="btn btn-success">Save</a>
+                                <div class="text-right mb-5">
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
 
                     </div>
                     <!-- // END drawer-layout__content -->

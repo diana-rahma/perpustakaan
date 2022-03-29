@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\peminjam;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorepeminjamRequest;
 use App\Http\Requests\UpdatepeminjamRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PeminjamController extends Controller
 {
@@ -16,6 +19,13 @@ class PeminjamController extends Controller
     public function index()
     {
         //
+        // if($request->has('search')) {
+        //     $data = Peminjam::where('peminjam','LIKE','%' .$request->search.'%');
+        // } else {
+            $data = peminjam::all();
+        // }
+
+        return view('datapeminjam.datapeminjam',compact('data'));
     }
 
     /**
@@ -23,64 +33,92 @@ class PeminjamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createpeminjam()
     {
         //
+        return view('datapeminjam.tambah_peminjam');
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorepeminjamRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorepeminjamRequest $request)
+    public function storepeminjam(Request $request)
     {
         //
+        peminjam::create([
+            'namasiswa' => $request->namasiswa,
+            'judulbuku' => $request->judulbuku,
+            'tanggalpinjam' => $request->tanggalpinjam,
+            'tanggalkembali' => $request->tanggalkembali,
+        ]);
+        
+        return redirect()->route('datapeminjam.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\peminjam  $peminjam
+     * @param  \App\Models\Peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function show(peminjam $peminjam)
+    public function show(Peminjam $peminjam)
     {
-        //
+        // 
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\peminjam  $peminjam
+     * @param  \App\Models\Peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function edit(peminjam $peminjam)
+    public function editpeminjam(Peminjam $peminjam)
     {
         //
+        $data = $peminjam::all();
+        return view('datapeminjam.edit_peminjam',compact('data', 'peminjam'));
+        
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatepeminjamRequest  $request
-     * @param  \App\Models\peminjam  $peminjam
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatepeminjamRequest $request, peminjam $peminjam)
+    public function updatepeminjam(Request $request, Peminjam $peminjam)
     {
         //
+            $peminjam->update([
+                'peminjam'     => $request->nama,
+            ]);
+        return redirect()->route('datapeminjam.index')->with('success',' Data Berhasil di Update');
     }
 
-    /**
+
+     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\peminjam  $peminjam
+     * @param  \App\Models\Peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function destroy(peminjam $peminjam)
+    public function deletepeminjam(Peminjam $peminjam)
     {
-        //
+        // $peminjam = Peminjam::findOrFail($peminjam->id);
+        // dd($blog);
+        $peminjam->delete();
+       //redirect to index
+       return redirect()->route('datapeminjam.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }
+
+    
+
+   
+
+
