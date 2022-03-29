@@ -343,21 +343,38 @@
                             </div>
                         </div>
 
+                        <form action="{{ route('updatebuku', $buku->id) }}" method="POST">
                         <div class="container-fluid page__container">
                             <div class="card card-form">
                                 <div class="row no-gutters">
                                     <div class="col-lg-15 card-form__body card-body">
 
-                                        <div class="form-group">
-                                            <label for="opass">Judul Buku</label>
-                                            <input 
-                                                   id="opass"
-                                                   type="text"
-                                                   class="form-control"
-                                                   placeholder="Hujan"
-                                                   value="">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="opass">Kode</label>
+                                                <input 
+                                                    id="opass"
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder=""
+                                                    value="{{ $buku->kode}}">
+                                            </div>
                                         </div>
 
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="opass">Judul Buku</label>
+                                                <input 
+                                                    id="opass"
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder=""
+                                                    value="{{ $buku->judulbuku}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
@@ -365,8 +382,8 @@
                                                     <input id="lname"
                                                            type="text"
                                                            class="form-control"
-                                                           placeholder="Tere Liye"
-                                                           value="">
+                                                           placeholder=""
+                                                           value="{{ $buku->pengarang}}">
                                                 </div>
                                             </div>
                                             <div class="col">
@@ -375,8 +392,8 @@
                                                     <input id="lname"
                                                            type="text"
                                                            class="form-control"
-                                                           placeholder="Gramedia"
-                                                           value="">
+                                                           placeholder=""
+                                                           value="{{ $buku->penerbit}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -388,8 +405,8 @@
                                                     <input id="fname"
                                                            type="number"
                                                            class="form-control"
-                                                           placeholder="2009"
-                                                           value="">
+                                                           placeholder=""
+                                                           value="{{ $buku->tahun}}">
                                                 </div>
                                             </div>
                                             <div class="col">
@@ -398,8 +415,8 @@
                                                     <input id="lname"
                                                            type="text"
                                                            class="form-control"
-                                                           placeholder="Bekasi"
-                                                           value="">
+                                                           placeholder=""
+                                                           value="{{ $buku->lokasi}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -425,8 +442,8 @@
                                                    id="opass"
                                                    type="file"
                                                    class="form-control"
-                                                   placeholder="Gambar"
-                                                   value="">
+                                                   placeholder=""
+                                                   value="{{ $buku->file}}">
                                         </div>
                                     </div>
                                 </div>
@@ -437,6 +454,7 @@
                                    class="btn btn-success">Update</a>
                             </div>
                         </div>
+                        </form>
 
                     </div>
                     <!-- // END drawer-layout__content -->

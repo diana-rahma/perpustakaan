@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class buku extends Model
 {
     use HasFactory;
+
+    protected $table = "bukus";
+    protected $primarykey = "id";
+    protected $fillable = ['id','kode','judulbuku', 'pengarang', 'penerbit', 'tahun', 'lokasi', 'kategori', 'file'];
 }

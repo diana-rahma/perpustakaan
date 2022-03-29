@@ -342,6 +342,8 @@
                             </div>
                         </div>
 
+                        <form action="{{ route('insertkonfirmasi') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="container-fluid page__container">
                             <div class="card card-form">
                                 <div class="row no-gutters">
@@ -382,10 +384,11 @@
                                     </div>
                                 </div>
                             </div>
+                        </form>
 
                             
                             <div class="text-right mb-5">
-                                <a href="konfirmasi.html"
+                                <a href="/konfirmasi"
                                    class="btn btn-success">Save</a>
                             </div>
                         </div>

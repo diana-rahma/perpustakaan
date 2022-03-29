@@ -347,6 +347,7 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
+                                                <th>Kode</th>
                                                 <th>Judul Buku</th>
                                                 <th>Pengarang</th>
                                                 <th>Penerbit</th>
@@ -357,58 +358,36 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="list"
-                                               id="databuku">
+                                        <tbody>
+
+                                        @php
+                                            $no = 1;
+                                        @endphp
+
+                                        @foreach ($data as $row)
 
                                             <tr>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->kode }}</td>
+                                                <td>{{ $row->judulbuku }}</td>
+                                                <td>{{ $row->pengarang }}</td>
+                                                <td>{{ $row->penerbit }}</td>
+                                                <td>{{ $row->tahun }}</td>
+                                                <td>{{ $row->lokasi }}</td>
+                                                <td>{{ $row->kategori }}</td>
                                                 <td>
-                                                    <div class="badge badge-soft-dark">#29178</div>
-                                                </td>
-                                                <td>Hujan</td>
-                                                <td>Tere Liye</td>
-                                                <td>Gramedia</td>
-                                                <td>2009</td>
-                                                <td>Bekasi</td>
-                                                <td>Novel </td>
-                                                <td><img src="images/stories/hujan.jpg" style="width: 125px; height: 85;" alt="hujan"></td>
+                                                    <img src="{{ Storage::url('public/foto/').$row->file }}" class="rounded" style="width: 150px">                                                </td>
                                                 <td>
-                                                    <a href="/edit_buku" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_buku"type="button" class="btn btn-danger">Delete</a>         
+                                                <td>
+                                                    <form action="{{ route('delete.buku', $row->id) }}" method="POST">
+                                                        <a href="{{ route('edit.buku', $row->id) }}" class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
+                                                    </form>
                                                 </td>
                                             </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="badge badge-soft-dark">#29179</div>
-                                                </td>
-                                                <td>Bulan</td>
-                                                <td>Tere Liye</td>
-                                                <td>Gramedia</td>
-                                                <td>2010</td>
-                                                <td>Bekasi</td>
-                                                <td>Novel</td>
-                                                <td><img src="images/stories/bulan.jpg" style="width: 125px; height: 85;" alt="hujan"></td>
-                                                <td><a href="/edit_buku" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_buku"type="button" class="btn btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="badge badge-soft-dark">#29180</div>
-                                                </td>
-                                                <td>Matahari</td>
-                                                <td>Tere Liye</td>
-                                                <td>Gramedia</td>
-                                                <td>2011</td>
-                                                <td>Bekasi</td>
-                                                <td>Novel</td>
-                                                <td><img src="images/stories/matahari.jpg" style="width: 125px; height: 85;" alt="hujan"></td>
-                                                <td>
-                                                    <a href="/edit_buku" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_buku"type="button" class="btn btn-danger">Delete</a>         
-                                                </td>
-                                            </tr>
+                                        @endforeach
 
                                         </tbody>
                                     </table>
