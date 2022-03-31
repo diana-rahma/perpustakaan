@@ -352,7 +352,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Kategori</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $kategori->kategori}}">
+                                                        <input type="text" name="kategori" class="form-control" id="lname" value="{{ $kategori->kategori}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">

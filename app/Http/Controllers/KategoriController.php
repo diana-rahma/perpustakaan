@@ -52,7 +52,7 @@ class KategoriController extends Controller
         $image = $request->file('file');
         $image->storeAs('public/foto', $image->hashName());
         Kategori::create([
-            'kategori' => $request->nama,
+            'kategori' => $request->kategori,
             'file' => $image->hashName(),
         ]);
         
@@ -110,7 +110,7 @@ class KategoriController extends Controller
             //update post with new image
             $kategori->update([
                 'file'     => $image->hashName(),
-                'kategori'     => $request->nama,
+                'kategori'     => $request->kategori,
                
             ]);
 
@@ -118,7 +118,7 @@ class KategoriController extends Controller
 
             //update post without image
             $kategori->update([
-                'kategori'     => $request->nama,
+                'kategori'     => $request->kategori,
             ]);
         }
         return redirect()->route('')->with('success',' Data Berhasil di Update');

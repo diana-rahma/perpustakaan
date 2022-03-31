@@ -333,7 +333,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Kategori</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Kategori" value="">
+                                                        <input type="text" name="kategori" class="form-control" id="lname" placeholder="Kategori" value="">
                                                     </div>
                                                 </div>
                                                 <div class="col">
