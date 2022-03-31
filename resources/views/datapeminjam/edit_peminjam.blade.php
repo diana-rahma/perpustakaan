@@ -348,8 +348,8 @@
                                 <div class="card card-form">
                                     <div class="row no-gutters">
                                         <div class="col-lg-15 card-form__body card-body">
-
                                             <div class="row">
+                                                @csrf
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Nama Siswa</label>
@@ -383,8 +383,7 @@
                                 </div>
 
                                 <div class="text-right mb-5">
-                                    <a href="/datapeminjam"
-                                    type="submit" class="btn btn-success">Update</a>
+                                    <a href="/datapeminjam"><button type="submit" class="btn btn-success">Update</button></a>
                                 </div>
                             </div>
                         </form>

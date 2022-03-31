@@ -388,10 +388,10 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th scope="col">Nama Siswa</th>
-                                                <th scope="col">Judul Buku</th>
-                                                <th scope="col">Tanggal Pinjam</th>
-                                                <th scope="col">Tanggal Kembali</th>
+                                                <th>Nama Siswa</th>
+                                                <th>Judul Buku</th>
+                                                <th>Tanggal Pinjam</th>
+                                                <th>Tanggal Kembali</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -411,11 +411,11 @@
                                                 <td>{{ $row->tanggalkembali }}</td>
                                                 <td>
                                                     <form action="{{ route('delete.peminjam', $row->id) }}" method="POST">
-                                                <a href="{{ route('edit.peminjam', $row->id) }}" class="btn btn-warning btn sweet-confirm">Edit</a>
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                            </form>
+                                                    <a href="{{ route('edit.peminjam', $row->id) }} "class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
+                                                </form>
                                                 </td>
                                             </tr>
                                         @endforeach

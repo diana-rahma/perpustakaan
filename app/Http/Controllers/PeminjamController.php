@@ -19,11 +19,8 @@ class PeminjamController extends Controller
     public function index()
     {
         //
-        // if($request->has('search')) {
-        //     $data = Peminjam::where('peminjam','LIKE','%' .$request->search.'%');
-        // } else {
-            $data = Peminjam::all();
-        // }
+
+        $data = Peminjam::all();
 
         return view('datapeminjam.datapeminjam',compact('data'));
     }
@@ -65,7 +62,7 @@ class PeminjamController extends Controller
      * @param  \App\Models\Peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function show(Peminjam $peminjam)
+    public function show(peminjam $peminjam)
     {
         // 
     }

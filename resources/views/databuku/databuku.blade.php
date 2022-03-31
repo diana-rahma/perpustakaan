@@ -380,11 +380,11 @@
                                                 <td>
                                                 <td>
                                                     <form action="{{ route('delete.buku', $row->id) }}" method="POST">
-                                                        <a href="{{ route('edit.buku', $row->id) }}" class="btn btn-warning btn sweet-confirm">Edit</a>
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                                    </form>
+                                                    <a href="{{ route('edit.buku', $row->id) }} "class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
+                                                </form>
                                                 </td>
                                             </tr>
                                         @endforeach
