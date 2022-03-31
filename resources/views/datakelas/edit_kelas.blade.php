@@ -386,8 +386,7 @@
                                 </div>
 
                                 <div class="text-right mb-5">
-                                        <a href="/listkelas"
-                                        class="btn btn-success" type="submit">Update</a>
+                                        <a href="/listkelas" class="btn btn-success" type="submit">Update</a>
                                 </div>
                                 
 
