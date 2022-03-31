@@ -387,7 +387,7 @@
 
                                 <div class="text-right mb-5">
                                         <a href="/listkelas"
-                                        class="btn btn-success">Update</a>
+                                        class="btn btn-success" type="submit">Update</a>
                                 </div>
                                 
 
