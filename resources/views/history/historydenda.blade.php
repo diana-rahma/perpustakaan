@@ -346,7 +346,7 @@
                                      <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
-                                                <th scope="col">ID</th>
+                                                <th scope="col">#</th>
                                                 <th scope="col">Nama Siswa</th>
                                                 <th scope="col">Judul Buku</th>
                                                 <th scope="col">Gambar Buku</th>
