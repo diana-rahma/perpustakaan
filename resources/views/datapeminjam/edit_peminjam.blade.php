@@ -342,38 +342,40 @@
                                 
                             </div>
                         </div>
-
+{
                         <form action="{{ route('updatepeminjam', $peminjam->id) }}" method="POST">
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
                                     <div class="row no-gutters">
                                         <div class="col-lg-15 card-form__body card-body">
+
                                             <div class="row">
-                                                @csrf 
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Nama Siswa</label>
-                                                        <input type="text" name="namasiswa" class="form-control" id="lname" value="{{ $peminjam->namasiswa}}">
+                                                        <input id="lname" type="text" class="form-control" name="namasiswa" value="{{ $peminjam->namasiswa}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="lname" class="form-label">Judul Buku</label>
-                                                        <input type="text" name="judulbuku" class="form-control" id="lname" value="{{ $peminjam->judulbuku}}">
+                                                        <label for="lname">Judul Buku</label>
+                                                        <input id="lname" type="text" class="form-control" name="judulbuku" value="{{ $peminjam->judulbuku}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Tgl Pinjam</label>
+                                                        <input id="lname" type="date" class="form-control" name="tanggalpinjam" value="{{ $peminjam->tanggalpinjam}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="lname" class="form-label">Tanggal Pinjam</label>
-                                                        <input type="text" name="tanggalpinjam" class="form-control" id="lname" value="{{ $peminjam->tanggalpinjam}}">
+                                                        <label for="lname">Tgl kembali</label>
+                                                        <input id="lname" type="date" class="form-control" name="tanggalkembali" value="{{ $peminjam->tanggalkembali}}">
                                                     </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="lname" class="form-label">Tanggal Kembali</label>
-                                                        <input type="text" name="tanggalkembali" class="form-control" id="lname" value="{{ $peminjam->tanggalkembali}}">
-                                                    </div>
-                                                    <div>
                                                 </div>
                                             </div>
                                         </div>
@@ -381,14 +383,15 @@
                                 </div>
 
                                 <div class="text-right mb-5">
-                                    <a href="/datapeminjam"><button type="submit" class="btn btn-success">Update</button></a>
+                                    <a href="/datapeminjam"
+                                    type="submit" class="btn btn-success">Update</a>
                                 </div>
                             </div>
-
                         </form>
 
                     </div>
                     <!-- // END drawer-layout__content -->
+
 
                     <div class="mdk-drawer  js-mdk-drawer"
                          id="default-drawer"
