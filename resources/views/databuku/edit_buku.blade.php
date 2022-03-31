@@ -350,6 +350,7 @@
                                     <div class="col-lg-15 card-form__body card-body">
 
                                     <div class="row">
+                                     @csrf 
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="opass">Kode</label>
@@ -357,7 +358,7 @@
                                                     id="opass"
                                                     type="text"
                                                     class="form-control"
-                                                    placeholder=""
+                                                    name="kode"
                                                     value="{{ $buku->kode}}">
                                             </div>
                                         </div>
@@ -369,7 +370,7 @@
                                                     id="opass"
                                                     type="text"
                                                     class="form-control"
-                                                    placeholder=""
+                                                    name="judulbuku"
                                                     value="{{ $buku->judulbuku}}">
                                             </div>
                                         </div>
@@ -382,7 +383,7 @@
                                                     <input id="lname"
                                                            type="text"
                                                            class="form-control"
-                                                           placeholder=""
+                                                           name="pengarang"
                                                            value="{{ $buku->pengarang}}">
                                                 </div>
                                             </div>
@@ -392,7 +393,7 @@
                                                     <input id="lname"
                                                            type="text"
                                                            class="form-control"
-                                                           placeholder=""
+                                                           name="penerbit"
                                                            value="{{ $buku->penerbit}}">
                                                 </div>
                                             </div>
@@ -405,7 +406,7 @@
                                                     <input id="fname"
                                                            type="number"
                                                            class="form-control"
-                                                           placeholder=""
+                                                           name="tahun"
                                                            value="{{ $buku->tahun}}">
                                                 </div>
                                             </div>
@@ -415,7 +416,7 @@
                                                     <input id="lname"
                                                            type="text"
                                                            class="form-control"
-                                                           placeholder=""
+                                                           name="lokasi"
                                                            value="{{ $buku->lokasi}}">
                                                 </div>
                                             </div>
@@ -423,7 +424,7 @@
 
                                         <div class="form-group" >
                                             <label for="opass">Kategori</label>
-                                            <select class="form-control" name="jk">
+                                            <select class="form-control" name="kategori">
                                                 <option value="">Kategori</option>
                                                 <option>Fantasy</option>
                                                 <option>Romance</option>
@@ -442,7 +443,7 @@
                                                    id="opass"
                                                    type="file"
                                                    class="form-control"
-                                                   placeholder=""
+                                                   name="file"
                                                    value="{{ $buku->file}}">
                                         </div>
                                     </div>
@@ -450,9 +451,8 @@
                             </div>
 
                             <div class="text-right mb-5">
-                                <a href="/databuku"
-                                   class="btn btn-success">Update</a>
-                            </div>
+                                    <a href="/databuku"><button type="submit" class="btn btn-success">Update</button></a>
+                                </div>
                         </div>
                         </form>
 
