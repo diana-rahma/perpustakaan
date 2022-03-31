@@ -126,7 +126,6 @@ class HistorydendaController extends Controller
             $history->update([
                 'namasiswa'     => $request->namasiswa,
                 'judulbuku'     => $request->judulbuku,
-                'file'     => $image->hashName(),
                 'nominaldenda'     => $request->nominaldenda,
                 'keterangan'     => $request->keterangan,
             ]);
