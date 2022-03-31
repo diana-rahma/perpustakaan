@@ -349,34 +349,34 @@
                                     <div class="row no-gutters">
                                         <div class="col-lg-15 card-form__body card-body">
                                             <div class="row">
-                                                <div class="col">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="lname" class="form-label">Nama Siswa</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="namasiswa" value="">
+                                                        <label for="lname">Nama Siswa</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Nama Siswa" value="">
                                                     </div>
                                                 </div>
-                                                <div class="col">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="lname" class="form-label">Judul Buku</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="judulbuku" value="">
+                                                        <label for="lname">Judul Buku</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Judul Buku" value="">
                                                     </div>
                                                 </div>
-                                                <div class="col">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="opass" class="form-label">Gambar Buku</label>
+                                                        <label for="opass">Gambar Buku</label>
                                                         <input type="file" name="file" class="form-control" id="lname" placeholder="Gambar" value="">
                                                     </div>
                                                 </div>
-                                                <div class="col">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="lname" class="form-label">Nominal Denda</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="nominaldenda" value="">
+                                                        <label for="lname">Nominal Denda</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Nomina Denda" value="">
                                                     </div>
                                                 </div>
-                                                <div class="col">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="lname" class="form-label">Keterangan</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="keterangan" value="">
+                                                        <label for="lname">Keterangan</label>
+                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Keterangan" value="">
                                                     </div>
                                                 </div>
                                                 

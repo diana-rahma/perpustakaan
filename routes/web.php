@@ -6,6 +6,8 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\HistorydendaController;
 use App\Http\Controllers\PeminjamController;
+use App\Http\Controllers\KonfirmasiController;
+use App\Http\Controllers\BukuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,25 +79,22 @@ Route::delete('/delete{peminjam}',[PeminjamController::class, 'deletepeminjam'])
 
 // Route Data Buku - Backend
 
-Route::get('/databuku', function () {
-    return view('databuku.databuku');
-});
-Route::get('/tambah_buku', function () {
-    return view('databuku.tambah_buku');
-});
-Route::get('/edit_buku', function () {
-    return view('databuku.edit_buku');
-});
+Route::get('/databuku', [BukuController::class, 'index'])->name('buku.index');
 
+Route::get('/tambah_buku',[BukuController::class, 'createbuku'])->name('tambah_buku')  ;
+Route::post('/insertbuku',[BukuController::class, 'storebuku'])->name('insertbuku')  ;
+
+Route::get('/edit_buku{buku}',[BukuController::class, 'editbuku'])->name('edit.buku')  ;
+Route::post('/updatekategori{buku}',[BukuController::class, 'updatebuku'])->name('updatebuku')  ;
+
+Route::delete('/delete/{buku}',[BukuController::class, 'deletebuku'])->name('delete.buku')  ;
 
 // Route Konfirmasi - Backend
 
-Route::get('/konfirmasi', function () {
-    return view('konfirmasi.konfirmasi');
-});
-Route::get('/tambah_konfirmasi', function () {
-    return view('konfirmasi.tambah_konfirmasi');
-});
+Route::get('/konfirmasi', [KonfirmasiController::class, 'index'])->name('konfirmasi.index');
+
+Route::get('/tambah_konfirmasi',[KonfirmasiController::class, 'createkonfirmasi'])->name('tambah_konfirmasi')  ;
+Route::post('/insertkonfirmasi',[KonfirmasiController::class, 'storekonfirmasi'])->name('insertkonfirmasi')  ;
 
 
 // Route Kategori - Backend

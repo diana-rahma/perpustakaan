@@ -51,7 +51,7 @@ class HistorydendaController extends Controller
         //
         $image = $request->file('file');
         $image->storeAs('public/foto', $image->hashName());
-        History::create([
+        historydenda::create([
             'namasiswa' => $request->namasiswa,
             'judulbuku' => $request->judulbuku,
             'file' => $image->hashName(),
@@ -69,7 +69,7 @@ class HistorydendaController extends Controller
      * @param  \App\Models\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function show(History $history)
+    public function show(historydenda $history)
     {
         // 
     }
@@ -80,7 +80,7 @@ class HistorydendaController extends Controller
      * @param  \App\Models\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function edit(History $history)
+    public function edit(historydenda $history)
     {
         //
         $data = $history::all();
@@ -95,7 +95,7 @@ class HistorydendaController extends Controller
      * @param  \App\Models\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, History $history)
+    public function update(Request $request, historydenda $history)
     {
         //
         if ($request->hasFile('file')) {
@@ -135,7 +135,7 @@ class HistorydendaController extends Controller
      * @param  \App\Models\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function delete(History $history)
+    public function delete(historydenda $history)
     {
         // $history = History::findOrFail($history->id);
         // dd($blog);
