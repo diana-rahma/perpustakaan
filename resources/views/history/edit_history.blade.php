@@ -353,13 +353,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Nama Siswa</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->namasiswa}}">
+                                                        <input type="text" name="namasiswa" class="form-control" id="lname" value="{{ $history->namasiswa}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Judul Buku</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->judulbuku}}">
+                                                        <input type="text" name="judulbuku" class="form-control" id="lname" value="{{ $history->judulbuku}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -373,13 +373,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Nominal Denda</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->nominaldenda}}">
+                                                        <input type="text" name="nominaldenda" class="form-control" id="lname" value="{{ $history->nominaldenda}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Keterangan</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" value="{{ $history->history}}">
+                                                        <input type="text" name="keterangan" class="form-control" id="lname" value="{{ $history->keterangan}}">
                                                     </div>
                                                     <div>
                                                 </div>

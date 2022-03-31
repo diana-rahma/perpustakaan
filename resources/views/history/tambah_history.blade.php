@@ -352,13 +352,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Nama Siswa</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Nama Siswa" value="">
+                                                        <input type="text" name="namasiswa" class="form-control" id="lname" placeholder="Nama Siswa" value="">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Judul Buku</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Judul Buku" value="">
+                                                        <input type="text" name="judulbuku" class="form-control" id="lname" placeholder="Judul Buku" value="">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -370,13 +370,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Nominal Denda</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Nomina Denda" value="">
+                                                        <input type="text" name="nominaldenda" class="form-control" id="lname" placeholder="Nominal Denda" value="">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="lname">Keterangan</label>
-                                                        <input type="text" name="nama" class="form-control" id="lname" placeholder="Keterangan" value="">
+                                                        <input type="text" name="keterangan" class="form-control" id="lname" placeholder="Keterangan" value="">
                                                     </div>
                                                 </div>
                                                 

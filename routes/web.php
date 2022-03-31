@@ -114,13 +114,13 @@ Route::delete('/delete/{kategori}',[KategoriController::class, 'delete'])->name(
 
 Route::get('/historydenda', [HistorydendaController::class, 'index'])->name('history.index');
 
-Route::get('/tambah_history',[HistorydendaController::class, 'create'])->name('tambah_history')  ;
-Route::post('/inserthistory',[HistorydendaController::class, 'store'])->name('inserthistory')  ;
+Route::get('/tambah_history',[HistorydendaController::class, 'createhistory'])->name('tambah_history')  ;
+Route::post('/inserthistory',[HistorydendaController::class, 'storehistory'])->name('inserthistory')  ;
 
-Route::get('/edit_history{history}',[HistorydendaController::class, 'edit'])->name('edit.history')  ;
-Route::post('/updatehistory{history}',[HistorydendaController::class, 'update'])->name('updatehistory')  ;
+Route::get('/edit_history{history}',[HistorydendaController::class, 'edithistory'])->name('edit.history')  ;
+Route::post('/updatehistory{history}',[HistorydendaController::class, 'updatehistory'])->name('updatehistory')  ;
 
-Route::delete('/delete/{history}',[HistorydendaController::class, 'delete'])->name('delete.history')  ;
+Route::delete('/delete/{history}',[HistorydendaController::class, 'deletehistory'])->name('delete.history')  ;
 
 
 
