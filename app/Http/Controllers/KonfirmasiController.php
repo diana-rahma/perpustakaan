@@ -40,7 +40,7 @@ class KonfirmasiController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Request  $request
+     * @param  \App\Http\Requests\StorekonfirmasiRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function storekonfirmasi(Request $request)

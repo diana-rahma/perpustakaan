@@ -355,6 +355,7 @@
                                                     <label for="lname">Nama Siswa</label>
                                                     <input id="lname"
                                                            type="text"
+                                                           name="namasiswa"
                                                            class="form-control"
                                                            placeholder="Nama Siswa"
                                                            value="">
@@ -365,8 +366,20 @@
                                                     <label for="lname">Judul Buku</label>
                                                     <input id="lname"
                                                            type="text"
+                                                           name="judulbuku"
                                                            class="form-control"
                                                            placeholder="Judul Buku"
+                                                           value="">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="lname">status</label>
+                                                    <input id="lname"
+                                                           type="text"
+                                                           name="status"
+                                                           class="form-control"
+                                                           placeholder="Status"
                                                            value="">
                                                 </div>
                                             </div>
@@ -377,6 +390,7 @@
                                             <input 
                                                    id="opass"
                                                    type="file"
+                                                   name="file"
                                                    class="form-control"
                                                    placeholder="Gambar"
                                                    value="">
@@ -388,9 +402,8 @@
 
                             
                             <div class="text-right mb-5">
-                                <a href="/konfirmasi"
-                                   class="btn btn-success">Save</a>
-                            </div>
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                </div>
                         </div>
 
                     </div>
