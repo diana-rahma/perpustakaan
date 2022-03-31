@@ -85,7 +85,7 @@ Route::get('/tambah_buku',[BukuController::class, 'createbuku'])->name('tambah_b
 Route::post('/insertbuku',[BukuController::class, 'storebuku'])->name('insertbuku')  ;
 
 Route::get('/edit_buku{buku}',[BukuController::class, 'editbuku'])->name('edit.buku')  ;
-Route::post('/updatekategori{buku}',[BukuController::class, 'updatebuku'])->name('updatebuku')  ;
+Route::post('/updatebuku{buku}',[BukuController::class, 'updatebuku'])->name('updatebuku')  ;
 
 Route::delete('/delete/{buku}',[BukuController::class, 'deletebuku'])->name('delete.buku')  ;
 

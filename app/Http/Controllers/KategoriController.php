@@ -121,7 +121,7 @@ class KategoriController extends Controller
                 'kategori'     => $request->kategori,
             ]);
         }
-        return redirect()->route('')->with('success',' Data Berhasil di Update');
+        return redirect()->route('kategori.index')->with('success',' Data Berhasil di Update');
 }
 
     

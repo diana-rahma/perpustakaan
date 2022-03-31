@@ -343,6 +343,7 @@
                         </div>
 
                         <form action="{{ route('insertbuku') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="container-fluid page__container">
                             <div class="card card-form">
                                 <div class="row no-gutters">
@@ -355,6 +356,7 @@
                                                 <input 
                                                     id="opass"
                                                     type="text"
+                                                    name="kode"
                                                     class="form-control"
                                                     placeholder="Kode"
                                                     value="">
@@ -367,6 +369,7 @@
                                                 <input 
                                                     id="opass"
                                                     type="text"
+                                                    name="judulbuku"
                                                     class="form-control"
                                                     placeholder="Judul Buku"
                                                     value="">
@@ -380,6 +383,7 @@
                                                     <label for="lname">Pengarang</label>
                                                     <input id="lname"
                                                            type="text"
+                                                           name="pengarang"
                                                            class="form-control"
                                                            placeholder="Pengarang"
                                                            value="">
@@ -390,6 +394,7 @@
                                                     <label for="lname">Penerbit</label>
                                                     <input id="lname"
                                                            type="text"
+                                                           name="penerbit"
                                                            class="form-control"
                                                            placeholder="Penerbit"
                                                            value="">
@@ -403,6 +408,7 @@
                                                     <label for="fname">Tahun</label>
                                                     <input id="fname"
                                                            type="number"
+                                                           name="tahun"
                                                            class="form-control"
                                                            placeholder="Tahun"
                                                            value="">
@@ -413,6 +419,7 @@
                                                     <label for="lname">Lokasi</label>
                                                     <input id="lname"
                                                            type="text"
+                                                           name="lokasi"
                                                            class="form-control"
                                                            placeholder="Lokasi"
                                                            value="">
@@ -422,7 +429,7 @@
 
                                         <div class="form-group" >
                                             <label for="opass">Kategori</label>
-                                            <select class="form-control" name="jk">
+                                            <select class="form-control" name="kategori">
                                                 <option value="">Kategori</option>
                                                 <option>Fantasy</option>
                                                 <option>Romance</option>
@@ -440,6 +447,7 @@
                                             <input 
                                                    id="opass"
                                                    type="file"
+                                                   name="file"
                                                    class="form-control"
                                                    placeholder="Gambar"
                                                    value="">
@@ -449,10 +457,9 @@
                             </div>
 
                             
-                            <div class="text-right mb-5">
-                                <a href="/databuku"
-                                   class="btn btn-success">Save</a>
-                            </div>
+                             <div class="text-right mb-5">
+                                        <button type="submit" class="btn btn-success">Save</button>
+                                </div>
                         </div>
                         </form>
 
