@@ -379,11 +379,7 @@
                                                            type="text"
                                                            name="status"
                                                            class="form-control"
-<<<<<<< Updated upstream
                                                            placeholder="Status"
-=======
-                                                           placeholder="status"
->>>>>>> Stashed changes
                                                            value="">
                                                 </div>
                                             </div>
@@ -406,11 +402,7 @@
                         </form>
 
                             
-<<<<<<< Updated upstream
                             <div class="text-right mb-5">
-=======
-                           <div class="text-right mb-5">
->>>>>>> Stashed changes
                                     <button type="submit" class="btn btn-success">Save</button>
                                 </div>
                         </div>
