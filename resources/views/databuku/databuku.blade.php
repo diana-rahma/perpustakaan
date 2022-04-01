@@ -369,7 +369,7 @@
 
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
-                                                    <td class="badge badge-soft-dark">#{{ $row->kode }}</td>
+                                                    <td>{{ $row->kode }}</td>
                                                     <td>{{ $row->judulbuku }}</td>
                                                     <td>{{ $row->pengarang }}</td>
                                                     <td>{{ $row->penerbit }}</td>

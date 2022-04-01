@@ -348,7 +348,7 @@
                                      data-toggle="lists"
                                      data-lists-values='["js-lists-values-employee-name"]'>
 
-                                    <table class="table mb-0 thead-border-top-0 table-striped">
+                                     <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -365,24 +365,25 @@
                                             $no = 1;
                                         @endphp
 
-                                        @foreach ($data as $row)
+                                            @foreach ($data as $row)
 
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                    <td>{{ $row->namasiswa}}</td>
-                                                    <td>{{ $row->judulbuku }}</td>
-                                                    <td>
-                                                        <img src="{{ Storage::url('public/foto/').$row->file }}" class="rounded" style="width: 150px">                                                </td>
-                                                    <td>
-                                                    <td>{{ $row->status }}</td>
-                                                    <td>
+                                                <td>{{ $row->namasiswa}}</td>
+                                                <td>{{ $row->judulbuku }}</td>
+                                                <td>
+                                                    <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 150px">
+                                                </td>
+                                                <td>{{ $row->status }}</td>
+                                                <td>
+                                                    <form action="{{ route('konfirmasi.index', $row->id) }}" method="POST">
                                                         <a href="{{ route('konfirmasi.index', $row->id) }}" type="button" class="btn btn-success">F</a>
                                                         <a href="{{ route('konfirmasi.index', $row->id) }}" type="button" class="btn btn-warning">P</a>
-                                                        <a href="{{ route('konfirmasi.index', $row->id) }}" type="button" class="btn btn-danger">A</a>         
-                                                    </td>
+                                                        <a href="{{ route('konfirmasi.index', $row->id) }}" type="button" class="btn btn-danger">A</a>
+                                                    </form>    
+                                                </td>
                                             </tr>
-                                        @endforeach
-                                        
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
