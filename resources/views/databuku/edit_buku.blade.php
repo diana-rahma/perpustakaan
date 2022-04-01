@@ -350,7 +350,11 @@
                                     <div class="col-lg-15 card-form__body card-body">
 
                                     <div class="row">
+<<<<<<< Updated upstream
                                      @csrf 
+=======
+                                         @csrf 
+>>>>>>> Stashed changes
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="opass">Kode</label>
@@ -425,7 +429,11 @@
                                         <div class="form-group" >
                                             <label for="opass">Kategori</label>
                                             <select class="form-control" name="kategori">
+<<<<<<< Updated upstream
                                                 <option value="">Kategori</option>
+=======
+                                                <option value="{{ $buku->kategori}}">Kategori</option>
+>>>>>>> Stashed changes
                                                 <option>Fantasy</option>
                                                 <option>Romance</option>
                                                 <option>Horror</option>
@@ -450,7 +458,11 @@
                                 </div>
                             </div>
 
+<<<<<<< Updated upstream
                             <div class="text-right mb-5">
+=======
+                             <div class="text-right mb-5">
+>>>>>>> Stashed changes
                                     <a href="/databuku"><button type="submit" class="btn btn-success">Update</button></a>
                                 </div>
                         </div>

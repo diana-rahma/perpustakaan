@@ -101,13 +101,13 @@ Route::post('/insertkonfirmasi',[KonfirmasiController::class, 'storekonfirmasi']
 
 Route::get('/listkategori', [KategoriController::class, 'index'])->name('kategori.index');
 
-Route::get('/tambah_kategori',[KategoriController::class, 'create'])->name('tambah_kategori')  ;
-Route::post('/insertkategori',[KategoriController::class, 'store'])->name('insertkategori')  ;
+Route::get('/tambah_kategori',[KategoriController::class, 'createkategori'])->name('tambah_kategori')  ;
+Route::post('/insertkategori',[KategoriController::class, 'storekategori'])->name('insertkategori')  ;
 
-Route::get('/edit_kategori{kategori}',[KategoriController::class, 'edit'])->name('edit.kategori')  ;
-Route::post('/updatekategori{kategori}',[KategoriController::class, 'update'])->name('updatekategori')  ;
+Route::get('/edit_kategori{kategori}',[KategoriController::class, 'editkategori'])->name('edit.kategori')  ;
+Route::post('/updatekategori{kategori}',[KategoriController::class, 'updatekategori'])->name('updatekategori')  ;
 
-Route::delete('/delete/{kategori}',[KategoriController::class, 'delete'])->name('delete.kategori')  ;
+Route::delete('/delete/{kategori}',[KategoriController::class, 'deletekategori'])->name('delete.kategori')  ;
 
 
 // Route History - Backend

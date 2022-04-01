@@ -304,7 +304,7 @@
                                            href="/profile"><i class="material-icons">account_circle</i> My profile</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
-                                           href="/login"><i class="material-icons">exit_to_app</i> Logout</a>
+                                           href="login.html"><i class="material-icons">exit_to_app</i> Logout</a>
                                     </div>
                                 </li>
                             </ul>
@@ -330,7 +330,7 @@
                                 <div class="flex">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb mb-0">
-                                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="/index">Home</a></li>
                                             <li class="breadcrumb-item active"
                                                 aria-current="page">List Kategori</li>
                                         </ol>
@@ -351,35 +351,38 @@
                                     <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
-                                                <th scope="col">No</th>
-                                                <th scope="col">Kategori</th>
-                                                <th scope="col">Gambar</th>
+                                                <th>#</th>
+                                                <th>Kategori</th>
+                                                <th>Gambar</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
+
                                         <tbody>
 
-                                        @php
-                                            $no = 1;
-                                        @endphp
+                                            @php
+                                                $no = 1;
+                                            @endphp
 
-                                        @foreach ($data as $row)
+                                            @foreach ($data as $row)
 
-                                            <tr>
-                                                <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row->kategori }}</td>
-                                                <td>
-                                                    <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 150px">                                                </td>
-                                                <td>
-                                                    <form action="{{ route('delete.kategori', $row->id) }}" method="POST">
-                                                <a href="{{ route('edit.kategori', $row->id) }}" class="btn btn-warning btn sweet-confirm">Edit</a>
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                            </form>
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                                <tr>
+                                                    <th scope="row">{{ $no++ }}</th>
+                                                    <td>{{ $row->kategori }}</td>
+                                                    <td>
+                                                        <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 150px">
+                                                    </td>
+                                                    <td>
+                                                        <form action="{{ route('delete.kategori', $row->id) }}" method="POST">
+                                                            <a href="{{ route('edit.kategori', $row->id) }}" class="btn btn-warning btn sweet-confirm" >Edit</a>
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                
+                                            @endforeach
 
                                         </tbody>
                                     </table>
@@ -431,7 +434,7 @@
                     </div>
                     <!-- // END drawer-layout__content -->
 
-                    <div class="mdk-drawer  js-mdk-drawer"
+                                        <div class="mdk-drawer  js-mdk-drawer"
                          id="default-drawer"
                          data-align="start">
                         <div class="mdk-drawer__content">

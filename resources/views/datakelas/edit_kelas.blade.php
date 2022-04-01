@@ -352,8 +352,8 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Kelas</label>
-                                                            <select class="form-control" value="{{ $kelas->kelas}}" name="kelas">
-                                                                <option>Kelas</option>
+                                                            <select class="form-control" name="kelas">
+                                                                <option value="{{ $kelas->kelas}}">Kelas</option>
                                                                 <option>10</option>
                                                                 <option>11</option>
                                                                 <option>12</option>
@@ -363,21 +363,13 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Jurusan</label>
-                                                        <input id="lname"
-                                                            type="text"
-                                                            name="jurusan"
-                                                            class="form-control"
-                                                            value="{{ $kelas->jurusan}}">
+                                                        <input id="lname" type="text" class="form-control" name="jurusan" value="{{ $kelas->jurusan}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Alfabet</label>
-                                                        <input id="lname"
-                                                            type="text"
-                                                            name="alfabet"
-                                                            class="form-control"
-                                                            value="{{ $kelas->alfabet}}">
+                                                        <input id="lname" type="text" class="form-control" name="alfabet" value="{{ $kelas->alfabet}}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -386,7 +378,11 @@
                                 </div>
 
                                 <div class="text-right mb-5">
+<<<<<<< Updated upstream
                                         <a href="/listkelas" class="btn btn-success" type="submit">Update</a>
+=======
+                                    <a href="/listkelas"><button type="submit" class="btn btn-success">Update</button></a>
+>>>>>>> Stashed changes
                                 </div>
                                 
 

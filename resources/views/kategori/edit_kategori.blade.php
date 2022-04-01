@@ -360,8 +360,9 @@
                                                         <label for="opass">Gambar</label>
                                                         <input type="file" name="file" class="form-control" id="lname" value="{{ $kategori->file}}">
                                                     </div>
+
                                                     <div>
-                                                    <img src="{{ asset('foto/'.$kategori->file)}}">
+                                                        <img src="{{ asset('foto/'.$kategori->file)}}">
                                                     </div>
                                                 </div>
                                             </div>

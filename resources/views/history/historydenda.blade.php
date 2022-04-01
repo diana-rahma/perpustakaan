@@ -343,15 +343,15 @@
                                      data-toggle="lists"
                                      data-lists-values='["js-lists-values-employee-name"]'>
 
-                                     <table class="table mb-0 thead-border-top-0 table-striped">
+                                    <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Nama Siswa</th>
-                                                <th scope="col">Judul Buku</th>
-                                                <th scope="col">Gambar Buku</th>
-                                                <th scope="col">Nominal Denda</th>
-                                                <th scope="col">Keterangan</th>
+                                                <th>#</th>
+                                                <th>Nama Siswa</th>
+                                                <th>Judul Buku</th>
+                                                <th>Gambar</th>
+                                                <th>Nominal Denda</th>
+                                                <th>Keterangan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -361,28 +361,27 @@
                                             $no = 1;
                                         @endphp
 
-                                        @foreach ($data as $row)
+                                         @foreach ($data as $row)
 
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->namasiswa }}</td>
                                                 <td>{{ $row->judulbuku }}</td>
                                                 <td>
-                                                    <img src="{{ Storage::url('public/foto/').$row->file }}" class="rounded" style="width: 150px">                                                </td>
-                                                <td>
+                                                    <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 150px">
+                                                </td>
                                                 <td>{{ $row->nominaldenda }}</td>
                                                 <td>{{ $row->keterangan }}</td>
                                                 <td>
                                                     <form action="{{ route('delete.history', $row->id) }}" method="POST">
-                                                <a href="{{ route('edit.history', $row->id) }}" class="btn btn-warning btn sweet-confirm">Edit</a>
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                            </form>
+                                                        <a href="{{ route('edit.history', $row->id) }}" class="btn btn-warning btn sweet-confirm" >Edit</a>
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
+                                                    </form>
                                                 </td>
                                             </tr>
-                                        @endforeach
-
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
