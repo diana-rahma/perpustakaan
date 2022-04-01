@@ -344,127 +344,124 @@
 
                         <form action="{{ route('insertbuku') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="container-fluid page__container">
-                            <div class="card card-form">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-15 card-form__body card-body">
+                            <div class="container-fluid page__container">
+                                <div class="card card-form">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-15 card-form__body card-body">
 
-                                         <div class="row">
-                                        <div class="col">
+                                            <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="opass">Kode</label>
+                                                    <input 
+                                                        id="opass"
+                                                        type="text"
+                                                        name="kode"
+                                                        class="form-control"
+                                                        placeholder="Kode"
+                                                        value="">
+                                                </div>
+                                            </div>
+
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="opass">Judul Buku</label>
+                                                    <input 
+                                                        id="opass"
+                                                        type="text"
+                                                        name="judulbuku"
+                                                        class="form-control"
+                                                        placeholder="Judul Buku"
+                                                        value="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Pengarang</label>
+                                                        <input id="lname"
+                                                            type="text"
+                                                            name="pengarang"
+                                                            class="form-control"
+                                                            placeholder="Pengarang"
+                                                            value="">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Penerbit</label>
+                                                        <input id="lname"
+                                                            type="text"
+                                                            name="penerbit"
+                                                            class="form-control"
+                                                            placeholder="Penerbit"
+                                                            value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="fname">Tahun</label>
+                                                        <input id="fname"
+                                                            type="number"
+                                                            name="tahun"
+                                                            class="form-control"
+                                                            placeholder="Tahun"
+                                                            value="">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Lokasi</label>
+                                                        <input id="lname"
+                                                            type="text"
+                                                            name="lokasi"
+                                                            class="form-control"
+                                                            placeholder="Lokasi"
+                                                            value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group" >
+                                                <label for="opass">Kategori</label>
+                                                <select class="form-control" name="kategori">
+                                                    <option value="">Kategori</option>
+                                                    <option>Fantasy</option>
+                                                    <option>Romance</option>
+                                                    <option>Horror</option>
+                                                    <option>Adventure</option>
+                                                    <option>Mistery</option>
+                                                    <option>Biography</option>
+                                                    <option>Dictionary</option>
+                                                    <option>Humor</option>
+                                                </select>
+                                            </div>
+                                            
                                             <div class="form-group">
-                                                <label for="opass">Kode</label>
+                                                <label for="opass">Gambar</label>
                                                 <input 
                                                     id="opass"
-                                                    type="text"
-                                                    name="kode"
+                                                    type="file"
+                                                    name="file"
                                                     class="form-control"
-                                                    placeholder="Kode"
+                                                    placeholder="Gambar"
                                                     value="">
                                             </div>
-                                        </div>
-
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="opass">Judul Buku</label>
-                                                <input 
-                                                    id="opass"
-                                                    type="text"
-                                                    name="judulbuku"
-                                                    class="form-control"
-                                                    placeholder="Judul Buku"
-                                                    value="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Pengarang</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           name="pengarang"
-                                                           class="form-control"
-                                                           placeholder="Pengarang"
-                                                           value="">
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Penerbit</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           name="penerbit"
-                                                           class="form-control"
-                                                           placeholder="Penerbit"
-                                                           value="">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="fname">Tahun</label>
-                                                    <input id="fname"
-                                                           type="number"
-                                                           name="tahun"
-                                                           class="form-control"
-                                                           placeholder="Tahun"
-                                                           value="">
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Lokasi</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           name="lokasi"
-                                                           class="form-control"
-                                                           placeholder="Lokasi"
-                                                           value="">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group" >
-                                            <label for="opass">Kategori</label>
-                                            <select class="form-control" name="kategori">
-                                                <option value="">Kategori</option>
-                                                <option>Fantasy</option>
-                                                <option>Romance</option>
-                                                <option>Horror</option>
-                                                <option>Adventure</option>
-                                                <option>Mistery</option>
-                                                <option>Biography</option>
-                                                <option>Dictionary</option>
-                                                <option>Humor</option>
-                                            </select>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="opass">Gambar</label>
-                                            <input 
-                                                   id="opass"
-                                                   type="file"
-                                                   name="file"
-                                                   class="form-control"
-                                                   placeholder="Gambar"
-                                                   value="">
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="text-right mb-5">
+                                        <button type="submit" class="btn btn-success">Save</button>
+                                </div>
+                                
                             </div>
 
-                            
-                             <div class="text-right mb-5">
-<<<<<<< Updated upstream
-                                        <button type="submit" class="btn btn-success">Save</button>
-=======
-                                    <button type="submit" class="btn btn-success">Save</button>
->>>>>>> Stashed changes
-                                </div>
-                        </div>
                         </form>
 
                     </div>

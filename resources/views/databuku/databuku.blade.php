@@ -358,40 +358,44 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
+
                                         <tbody>
 
-                                        @php
-                                            $no = 1;
-                                        @endphp
+                                            @php
+                                                $no = 1;
+                                            @endphp
 
-                                        @foreach ($data as $row)
+                                            @foreach ($data as $row)
 
-                                            <tr>
-                                                <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row->kode }}</td>
-                                                <td>{{ $row->judulbuku }}</td>
-                                                <td>{{ $row->pengarang }}</td>
-                                                <td>{{ $row->penerbit }}</td>
-                                                <td>{{ $row->tahun }}</td>
-                                                <td>{{ $row->lokasi }}</td>
-                                                <td>{{ $row->kategori }}</td>
-                                                <td>
-                                                    <img src="{{ Storage::url('public/foto/').$row->file }}" class="rounded" style="width: 150px">                                                </td>
-                                                <td>
-                                                <td>
-                                                    <form action="{{ route('delete.buku', $row->id) }}" method="POST">
-                                                    <a href="{{ route('edit.buku', $row->id) }} "class="btn btn-warning btn sweet-confirm">Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                                </form>
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                                <tr>
+                                                    <th scope="row">{{ $no++ }}</th>
+                                                    <td class="badge badge-soft-dark">#{{ $row->kode }}</td>
+                                                    <td>{{ $row->judulbuku }}</td>
+                                                    <td>{{ $row->pengarang }}</td>
+                                                    <td>{{ $row->penerbit }}</td>
+                                                    <td>{{ $row->tahun }}</td>
+                                                    <td>{{ $row->lokasi }}</td>
+                                                    <td>{{ $row->kategori }}</td>
+                                                    <td>
+                                                        <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 150px">
+                                                    </td>
+                                                    <td>
+                                                        <form action="{{ route('delete.buku', $row->id) }}" method="POST">
+                                                            <a href="{{ route('edit.buku', $row->id) }}" class="btn btn-warning btn sweet-confirm" >Edit</a>
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                
+                                            @endforeach
 
                                         </tbody>
                                     </table>
+
                                 </div>
+
                             </div>
 
                         <br>

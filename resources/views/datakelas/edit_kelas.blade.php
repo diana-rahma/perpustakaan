@@ -378,13 +378,8 @@
                                 </div>
 
                                 <div class="text-right mb-5">
-<<<<<<< Updated upstream
-                                        <a href="/listkelas" class="btn btn-success" type="submit">Update</a>
-=======
                                     <a href="/listkelas"><button type="submit" class="btn btn-success">Update</button></a>
->>>>>>> Stashed changes
                                 </div>
-                                
 
                             </div>
 
