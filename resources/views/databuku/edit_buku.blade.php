@@ -344,128 +344,117 @@
                         </div>
 
                         <form action="{{ route('updatebuku', $buku->id) }}" method="POST">
-                        <div class="container-fluid page__container">
-                            <div class="card card-form">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-15 card-form__body card-body">
-
-                                    <div class="row">
-<<<<<<< Updated upstream
-                                     @csrf 
-=======
-                                         @csrf 
->>>>>>> Stashed changes
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="opass">Kode</label>
-                                                <input 
-                                                    id="opass"
-                                                    type="text"
-                                                    class="form-control"
-                                                    name="kode"
-                                                    value="{{ $buku->kode}}">
-                                            </div>
-                                        </div>
-
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label for="opass">Judul Buku</label>
-                                                <input 
-                                                    id="opass"
-                                                    type="text"
-                                                    class="form-control"
-                                                    name="judulbuku"
-                                                    value="{{ $buku->judulbuku}}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Pengarang</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           name="pengarang"
-                                                           value="{{ $buku->pengarang}}">
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Penerbit</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           name="penerbit"
-                                                           value="{{ $buku->penerbit}}">
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="container-fluid page__container">
+                                <div class="card card-form">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-15 card-form__body card-body">
 
                                         <div class="row">
+                                        @csrf
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="fname">Tahun</label>
-                                                    <input id="fname"
-                                                           type="number"
-                                                           class="form-control"
-                                                           name="tahun"
-                                                           value="{{ $buku->tahun}}">
+                                                    <label for="opass">Kode</label>
+                                                    <input 
+                                                        id="opass"
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="kode"
+                                                        value="{{ $buku->kode}}">
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Lokasi</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           name="lokasi"
-                                                           value="{{ $buku->lokasi}}">
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="form-group" >
-                                            <label for="opass">Kategori</label>
-                                            <select class="form-control" name="kategori">
-<<<<<<< Updated upstream
-                                                <option value="">Kategori</option>
-=======
-                                                <option value="{{ $buku->kategori}}">Kategori</option>
->>>>>>> Stashed changes
-                                                <option>Fantasy</option>
-                                                <option>Romance</option>
-                                                <option>Horror</option>
-                                                <option>Adventure</option>
-                                                <option>Mistery</option>
-                                                <option>Biography</option>
-                                                <option>Dictionary</option>
-                                                <option>Humor</option>
-                                            </select>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="opass">Judul Buku</label>
+                                                    <input 
+                                                        id="opass"
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="judulbuku"
+                                                        value="{{ $buku->judulbuku}}">
+                                                </div>
+                                            </div>
                                         </div>
                                         
-                                        <div class="form-group">
-                                            <label for="opass">Gambar</label>
-                                            <input 
-                                                   id="opass"
-                                                   type="file"
-                                                   class="form-control"
-                                                   name="file"
-                                                   value="{{ $buku->file}}">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Pengarang</label>
+                                                        <input id="lname"
+                                                            type="text"
+                                                            class="form-control"
+                                                            name="pengarang"
+                                                            value="{{ $buku->pengarang}}">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Penerbit</label>
+                                                        <input id="lname"
+                                                            type="text"
+                                                            class="form-control"
+                                                            name="penerbit"
+                                                            value="{{ $buku->penerbit}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="fname">Tahun</label>
+                                                        <input id="fname"
+                                                            type="number"
+                                                            class="form-control"
+                                                            name="tahun"
+                                                            value="{{ $buku->tahun}}">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Lokasi</label>
+                                                        <input id="lname"
+                                                            type="text"
+                                                            class="form-control"
+                                                            name="lokasi"
+                                                            value="{{ $buku->lokasi}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group" >
+                                                <label for="opass">Kategori</label>
+                                                <select class="form-control" name="kategori">
+                                                    <option value="{{ $buku->kategori}}">Kategori</option>
+                                                    <option>Fantasy</option>
+                                                    <option>Romance</option>
+                                                    <option>Horror</option>
+                                                    <option>Adventure</option>
+                                                    <option>Mistery</option>
+                                                    <option>Biography</option>
+                                                    <option>Dictionary</option>
+                                                    <option>Humor</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="opass">Gambar</label>
+                                                <input 
+                                                    id="opass"
+                                                    type="file"
+                                                    class="form-control"
+                                                    name="file"
+                                                    value="{{ $buku->file}}">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-<<<<<<< Updated upstream
-                            <div class="text-right mb-5">
-=======
-                             <div class="text-right mb-5">
->>>>>>> Stashed changes
-                                    <a href="/databuku"><button type="submit" class="btn btn-success">Update</button></a>
+                                <div class="text-right mb-5">
+                                        <a href="/databuku"><button type="submit" class="btn btn-success">Update</button></a>
                                 </div>
-                        </div>
+
+                            </div>
                         </form>
 
                     </div>
