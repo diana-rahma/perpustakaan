@@ -93,7 +93,24 @@ class BukuController extends Controller
      */
     public function updatebuku(Request $request, Buku $buku)
     {
-        //
+        if ($request->hasFile('file')) {
+            Storage::disk('local')->delete('public/foto/'.$buku->image);
+
+            $image = $request->file('file');
+            $image->storeAs('public/foto', $image->hashName());
+        
+            $buku->update([
+            'kode'     => $request->kode,
+            'judulbuku'     => $request->judulbuku,
+            'pengarang'     => $request->pengarang,
+            'penerbit'     => $request->penerbit,
+            'tahun'     => $request->tahun,
+            'lokasi'     => $request->lokasi,
+            'kategori'     => $request->kategori,
+            'file'     => $image->hashName(),
+        ]);
+
+    } else {
         $buku->update([
             'kode'     => $request->kode,
             'judulbuku'     => $request->judulbuku,
@@ -103,6 +120,7 @@ class BukuController extends Controller
             'lokasi'     => $request->lokasi,
             'kategori'     => $request->kategori,
         ]);
+    }
     
         return redirect()->route('buku.index')->with('success',' Data Berhasil di Update');
     }
@@ -115,7 +133,7 @@ class BukuController extends Controller
      */
     public function deletebuku(Buku $buku)
     {
-        //
+        Storage::delete('public/foto/'.$buku->file);
         $buku->delete();
         //redirect to index
         return redirect()->route('buku.index')->with(['success' => 'Data Berhasil Dihapus!']);

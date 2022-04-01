@@ -346,7 +346,7 @@
                                     <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
+                                                <th>#</th>
                                                 <th>Kode</th>
                                                 <th>Judul Buku</th>
                                                 <th>Pengarang</th>

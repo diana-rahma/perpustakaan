@@ -131,7 +131,7 @@ class HistorydendaController extends Controller
             ]);
         }
         return redirect()->route('history.index')->with('success',' Data Berhasil di Update');
-}
+    }
 
     
 
