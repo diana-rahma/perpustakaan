@@ -358,11 +358,11 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="opass">Gambar</label>
-                                                        <input type="file" name="file" class="form-control" id="lname" value="{{ $kategori->file}}">
+                                                        <input type="file" name="file" class="form-control" id="lname">
                                                     </div>
 
                                                     <div>
-                                                        <img src="{{ asset('foto/'.$kategori->file)}}">
+                                                        <img src="{{ asset('foto/'.$kategori->file) }}" width="150">
                                                     </div>
                                                 </div>
                                             </div>

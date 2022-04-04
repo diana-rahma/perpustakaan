@@ -372,7 +372,7 @@
                                                 <td>{{ $row->namasiswa}}</td>
                                                 <td>{{ $row->judulbuku }}</td>
                                                 <td>
-                                                    <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 150px">
+                                                    <img src="{{ asset('foto/'.$row->file) }}" alt="" style="width: 75px; height: 75;">
                                                 </td>
                                                 <td>{{ $row->status }}</td>
                                                 <td>

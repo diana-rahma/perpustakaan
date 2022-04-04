@@ -1,13 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\HistorydendaController;
 use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\KonfirmasiController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +29,8 @@ Route::get('/index', function () {
 
 // Route Login
 
-// Route::get('/login',[LoginController::class, 'login']);
-// Route::post('/login',[LoginController::class, 'authenticate']);
+Route::get('/login', [LoginController::class, 'index']);
+// Route::post('/login', [LoginController::class, 'authenticate']);
 
 // Route Profile - Backendspo
 

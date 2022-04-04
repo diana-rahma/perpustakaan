@@ -45,15 +45,15 @@ class KonfirmasiController extends Controller
      */
     public function storekonfirmasi(Request $request)
     {
-        //
-        $image = $request->file('file');
-        $image->storeAs('public/foto', $image->hashName());
-        konfirmasi::create([
-            'namasiswa' => $request->namasiswa,
-            'judulbuku' => $request->judulbuku,
-            'file' => $image->hashName(),
-            'status' => $request->status,
-        ]);
+        //dd($request->all());
+
+        $data = Konfirmasi::create($request->all());
+
+        if ($request->hasFile('file')) {
+            $request->file('file')->move('foto/', $request->file('file')->getClientOriginalName());
+            $data->file = $request->file('file')->getClientOriginalName();
+            $data->save();
+        }
         
         return redirect()->route('konfirmasi.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }

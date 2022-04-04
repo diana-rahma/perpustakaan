@@ -374,7 +374,7 @@
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="lname">status</label>
+                                                    <label for="lname">Status</label>
                                                     <input id="lname"
                                                            type="text"
                                                            name="status"
@@ -387,13 +387,7 @@
                                         
                                         <div class="form-group">
                                             <label for="opass">Gambar</label>
-                                            <input 
-                                                   id="opass"
-                                                   type="file"
-                                                   name="file"
-                                                   class="form-control"
-                                                   placeholder="Gambar"
-                                                   value="">
+                                            <input type="file" name="file" class="form-control" id="lname" placeholder="Gambar" value="">
                                         </div>
 
                                     </div>
@@ -403,8 +397,8 @@
 
                             
                             <div class="text-right mb-5">
-                                    <button type="submit" class="btn btn-success">Save</button>
-                                </div>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
                         </div>
 
                     </div>

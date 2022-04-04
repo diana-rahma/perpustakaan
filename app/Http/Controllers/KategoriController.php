@@ -41,12 +41,15 @@ class KategoriController extends Controller
      */
     public function storekategori(Request $request)
     {
-        $image = $request->file('file');
-        $image->storeAs('public/foto', $image->hashName());
-        Kategori::create([
-            'kategori' => $request->kategori,
-            'file' => $image->hashName(),
-        ]);
+        //dd($request->all());
+
+        $data = Kategori::create($request->all());
+
+        if ($request->hasFile('file')) {
+            $request->file('file')->move('foto/', $request->file('file')->getClientOriginalName());
+            $data->file = $request->file('file')->getClientOriginalName();
+            $data->save();
+        }
         
         return redirect()->route('kategori.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
@@ -83,10 +86,15 @@ class KategoriController extends Controller
      */
     public function updatekategori(Request $request, Kategori $kategori)
     {
-        $kategori->update([
-            'kategori'     => $request->kategori,
-            'file'     => $request->file,
-        ]);
+
+        $data = Kategori::find($kategori);
+        $data->update($request->all());
+
+        if ($request->hasFile('file')) {
+            $request->file('file')->move('foto/', $request->file('file')->getClientOriginalName());
+            $data->file = $request->file('file')->getClientOriginalName();
+            $data->update();
+        }
     
         return redirect()->route('kategori.index')->with('success',' Data Berhasil di Update');
     }
@@ -99,11 +107,11 @@ class KategoriController extends Controller
      */
     public function deletekategori(Kategori $kategori)
     {
-        // dd($blog);
-        Storage::delete('public/foto/'.$kategori->file);
-        $kategori->delete();
+
+        $data = Kategori::find($kategori);
+        $data->delete();
 
         //redirect to index
-        return redirect()->route('kategori.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        return redirect()->route('kategori.index')->with('success', 'Data Berhasil Dihapus!');
     }
 }

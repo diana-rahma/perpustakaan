@@ -370,7 +370,7 @@
                                                     <th scope="row">{{ $no++ }}</th>
                                                     <td>{{ $row->kategori }}</td>
                                                     <td>
-                                                        <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 150px">
+                                                        <img src="{{ asset('foto/'.$row->file) }}" alt="" style="width: 125px; height: 85;">
                                                     </td>
                                                     <td>
                                                         <form action="{{ route('delete.kategori', $row->id) }}" method="POST">
