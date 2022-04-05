@@ -43,8 +43,14 @@ class BukuController extends Controller
      */
     public function storebuku(Request $request)
     {
-        //
-        $image = $request->file('file');
+        $data = buku::create($request->all());
+        if ($request->hasFile('file')) {
+            $request->file('file')->move('foto/', $request->file('file')->getClientOriginalName());
+            $data->file = $request->file('file')->getClientOriginalName();
+            $data->save();
+        }
+
+        /*$image = $request->file('file');
         $image->storeAs('public/foto', $image->hashName());
         Buku::create([
             'kode' => $request->kode,
@@ -55,7 +61,7 @@ class BukuController extends Controller
             'lokasi' => $request->lokasi,
             'kategori' => $request->kategori,
             'file' => $image->hashName(),
-        ]);
+        ]);*/
         
         return redirect()->route('buku.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
@@ -133,7 +139,8 @@ class BukuController extends Controller
      */
     public function deletebuku(Buku $buku)
     {
-        Storage::delete('public/foto/'.$buku->file);
+        
+        Storage::delete('foto/'.$buku->file);
         $buku->delete();
         //redirect to index
         return redirect()->route('buku.index')->with(['success' => 'Data Berhasil Dihapus!']);

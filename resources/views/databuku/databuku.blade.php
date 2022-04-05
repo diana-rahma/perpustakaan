@@ -377,7 +377,7 @@
                                                     <td>{{ $row->lokasi }}</td>
                                                     <td>{{ $row->kategori }}</td>
                                                     <td>
-                                                        <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 150px">
+                                                        <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 75px">
                                                     </td>
                                                     <td>
                                                         <form action="{{ route('delete.buku', $row->id) }}" method="POST">

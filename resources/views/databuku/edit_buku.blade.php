@@ -447,7 +447,7 @@
                                                     value="{{ $buku->file}}">
                                             </div>
                                             <div>
-                                                <img src="{{ asset('foto/'.$buku->file)}}">
+                                                <img src="{{ asset('foto/'.$buku->file)}}"style="width: 150px">
                                             </div>
                                         </div>
                                     </div>

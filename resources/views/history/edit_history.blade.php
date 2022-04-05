@@ -369,9 +369,9 @@
                                                 <input type="file" name="file" class="form-control" id="lname" value="{{ $history->file}}">
                                             </div>
                                             <div>
-                                                <img src="{{ asset('foto/'.$history->file)}}">
+                                                <img src="{{ asset('foto/'.$history->file)}}" style="width: 150px">
                                             </div>
-
+                                            <br>
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
