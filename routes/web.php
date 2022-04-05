@@ -137,7 +137,7 @@ Route::get('/indexuser', function () {
 // Route List Buku - Frontend
 
 Route::get('/listbuku', function () {
-    return view('listbuku');
+    return view('listbuku.listbuku');
 });
 
 
@@ -176,44 +176,111 @@ Route::get('/profileuser', function () {
 });
 
 
-// Route Genre - Frontend
+// Route Genre - Fantasy
 
 Route::get('/fantasy', function () {
-    return view('frontend.fantasy');
+    return view('listbuku.fantasy');
 });
+
+Route::get('/the-magic-library', function () {
+    return view('buku.fantasy.the-magic-library');
+});
+
+Route::get('/the-lord-of-the-rings', function () {
+    return view('buku.fantasy.the-lord-of-the-rings');
+});
+
+
+// Route Genre - Romance
+
 Route::get('/romance', function () {
-    return view('frontend.romance');
+    return view('listbuku.romance');
 });
+
+Route::get('/the-book-of-almost', function () {
+    return view('buku.romance.the-book-of-almost');
+});
+
+
+// Route Genre - Horror
+
 Route::get('/horror', function () {
-    return view('frontend.horror');
+    return view('listbuku.horror');
 });
+
+Route::get('/those-eyes', function () {
+    return view('buku.horror.those-eyes');
+});
+
+// Route Genre - Adventure
+
 Route::get('/adventure', function () {
-    return view('frontend.adventure');
+    return view('listbuku.adventure');
 });
+
+Route::get('/adventure-jack', function () {
+    return view('buku.adventure.adventure-jack');
+});
+
+
+// Route Genre - Mistery
+
 Route::get('/mistery', function () {
-    return view('frontend.mistery');
+    return view('listbuku.mistery');
 });
+
+Route::get('/holy-mother', function () {
+    return view('buku.mistery.holy-mother');
+});
+
+
+// Route Genre - Biography
+
 Route::get('/biography', function () {
-    return view('frontend.biography');
+    return view('listbuku.biography');
 });
+
+
+// Route Genre - Dictionary
+
 Route::get('/dictionary', function () {
-    return view('frontend.dictionary');
+    return view('listbuku.dictionary');
 });
+
+
+// Route Genre - Humor
+
 Route::get('/humor', function () {
-    return view('frontend.humor');
+    return view('listbuku.humor');
 });
+
+Route::get('/setengah-jalan', function () {
+    return view('buku.humor.setengah-jalan');
+});
+
+// Route Genre - Paket 1
 Route::get('/paket1', function () {
-    return view('frontend.paket1');
+    return view('listbuku.paket1');
 });
+
+
+// Route Genre - Paket 2
+
 Route::get('/paket2', function () {
-    return view('frontend.paket2');
+    return view('listbuku.paket2');
 });
+
+
+// Route Genre - Paket 3
+
 Route::get('/paket3', function () {
-    return view('frontend.paket3');
+    return view('listbuku.paket3');
 });
+
+
+// Route Genre - Paket Tambahan
+
 Route::get('/pakettambahan', function () {
-    return view('frontend.pakettambahan');
+    return view('listbuku.pakettambahan');
 });
-Route::get('/themagiclibrary', function () {
-    return view('frontend.buku.fantasy.themagiclibrary');
-});
+

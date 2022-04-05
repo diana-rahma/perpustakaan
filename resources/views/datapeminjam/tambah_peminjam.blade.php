@@ -105,14 +105,14 @@
                             </button>
 
                             <!-- Navbar Brand -->
-                            <a href="index.html"
+                            <a href="/index"
                                class="navbar-brand ">
 
                                 <span>Perpustakaan</span>
                             </a>
 
                             <form class="search-form d-none d-sm-flex flex"
-                                  action="index.html">
+                                  action="/index">
                                 <button class="btn"
                                         type="submit"><i class="material-icons">search</i></button>
                                 <input type="text"
@@ -301,10 +301,10 @@
                                         </div>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
-                                           href="profile.html"><i class="material-icons">account_circle</i> My profile</a>
+                                           href="/profile"><i class="material-icons">account_circle</i> My profile</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
-                                           href="login.html"><i class="material-icons">exit_to_app</i> Logout</a>
+                                           href="/login"><i class="material-icons">exit_to_app</i> Logout</a>
                                     </div>
                                 </li>
                             </ul>

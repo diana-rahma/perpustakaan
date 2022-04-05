@@ -8,7 +8,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>List Kategori</title>
+        <title>Setengah Jalan</title>
 
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
@@ -105,14 +105,14 @@
                             </button>
 
                             <!-- Navbar Brand -->
-                            <a href="/index"
+                            <a href="/indexuser"
                                class="navbar-brand ">
 
                                 <span>Perpustakaan</span>
                             </a>
 
                             <form class="search-form d-none d-sm-flex flex"
-                                  action="/index">
+                                  action="/indexuser">
                                 <button class="btn"
                                         type="submit"><i class="material-icons">search</i></button>
                                 <input type="text"
@@ -143,7 +143,8 @@
                                                     <div class="mr-3">
                                                         <div class="avatar avatar-sm"
                                                              style="width: 32px; height: 32px;">
-                                                            <img src="images/256_daniel-gaffey-1060698-unsplash.jpg"
+                                                            <img src="
+                                                            images/256_daniel-gaffey-1060698-unsplash.jpg"
                                                                  alt="Avatar"
                                                                  class="avatar-img rounded-circle">
                                                         </div>
@@ -286,9 +287,9 @@
                                        data-toggle="dropdown"
                                        data-caret="false">
                                         <span class="mr-1 d-flex-inline">
-                                            <span class="text-light">Admin A.</span>
+                                            <span class="text-light">User A.</span>
                                         </span>
-                                        <img src="images/avatar/profile.png"
+                                        <img src="images/avatar/profile-user.jpg"
                                              class="rounded-circle"
                                              width="32"
                                              alt="Frontted">
@@ -296,12 +297,12 @@
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">
                                         <div class="dropdown-item-text dropdown-item-text--lh">
-                                            <div><strong>Admin Account</strong></div>
-                                            <div class="text-muted">@adminacc</div>
+                                            <div><strong>User Account</strong></div>
+                                            <div class="text-muted">@usersacc</div>
                                         </div>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
-                                           href="/profile"><i class="material-icons">account_circle</i> My profile</a>
+                                           href="/profileuser"><i class="material-icons">account_circle</i> My profile</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
                                            href="/login"><i class="material-icons">exit_to_app</i> Logout</a>
@@ -317,6 +318,7 @@
 
             <!-- // END Header -->
 
+
             <!-- Header Layout Content -->
             <div class="mdk-header-layout__content">
 
@@ -326,115 +328,88 @@
                     <div class="mdk-drawer-layout__content page">
 
                         <div class="container-fluid page__heading-container">
-                            <div class="page__heading d-flex align-items-center">
+                            <div class="page__heading d-flex align-items-end">
                                 <div class="flex">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb mb-0">
-                                            <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="/indexuser">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="/listbuku">List Buku</a></li>
+                                            <li class="breadcrumb-item"><a href="/humor">Humor</a></li>
                                             <li class="breadcrumb-item active"
-                                                aria-current="page">List Kategori</li>
-                                        </ol>
+                                                aria-current="page">Book</li>
+                                        </ol><br>
+                                        <a href="/humor"type="button"class="btn btn-primary">Kembali</a>
                                     </nav>
-                                    <h1 class="m-0">List Kategori</h1>
                                 </div>
-                                <a href="/tambah_kategori"
-                                   class="btn btn-success ml-3">Tambah Kategori <i class="material-icons">add</i></a>
+                               
                             </div>
                         </div>
 
                         <div class="container-fluid page__container">
-                            <div class="card">
-                                <div class="table-responsive"
-                                     data-toggle="lists"
-                                     data-lists-values='["js-lists-values-employee-name"]'>
+                            <div class="card card-form">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-4 card-body">
+                                        <img src="images/stories/thelordofthering.jpg" style="width: 250px; height: 250px;">
+                                        
+                                        <br>
+                                        <br>
 
-                                    <table class="table mb-0 thead-border-top-0 table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Kategori</th>
-                                                <th>Gambar</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
+                                        <button type="button"
+                                                    class="btn btn-primary"
+                                                    data-toggle="modal"
+                                                    data-target="#modal-center">Pinjam Buku</button>
+                                                    <div id="modal-center"
+                                                        class="modal fade"
+                                                        tabindex="-1"
+                                                        role="dialog"
+                                                        aria-labelledby="modal-center-title"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered"
+                                                            role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title"
+                                                                        id="modal-center-title">Pinjam Buku</h5>
+                                                                    <button type="button"
+                                                                            class="close"
+                                                                            data-dismiss="modal"
+                                                                            aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div> <!-- // END .modal-header -->
+                                                                <div class="modal-body">
+                                                                    <p>Apakah anda yakin untuk meminjam buku ini?</p>
+                                                                </div> <!-- // END .modal-body -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button"
+                                                                            class="btn btn-light"
+                                                                            data-dismiss="modal">Batal</button>
+                                                                    <button type="button"
+                                                                            class="btn btn-primary">Iya</button>
+                                                                </div> <!-- // END .modal-footer -->
+                                                            </div> <!-- // END .modal-content -->
+                                                        </div> <!-- // END .modal-dialog -->
+                                                    </div> <!-- // END .modal -->
+                                    </div>
 
-                                        <tbody>
-
-                                            @php
-                                                $no = 1;
-                                            @endphp
-
-                                            @foreach ($data as $row)
-
-                                                <tr>
-                                                    <th scope="row">{{ $no++ }}</th>
-                                                    <td>{{ $row->kategori }}</td>
-                                                    <td>
-                                                        <img src="{{ asset('foto/'.$row->file) }}" alt="" style="width: 125px; height: 85;">
-                                                    </td>
-                                                    <td>
-                                                        <form action="{{ route('delete.kategori', $row->id) }}" method="POST">
-                                                            <a href="{{ route('edit.kategori', $row->id) }}" class="btn btn-warning btn sweet-confirm" >Edit</a>
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                
-                                            @endforeach
-
-                                        </tbody>
-                                    </table>
+                                    <div class="col-lg-8 card-form__body card-body">
+                                        <label for="fname"><h6 class="text-muted">Judul Buku :</h6></label><br>
+                                        <label for="fname"><h6 class="text-muted">Pengarang :</h6></label><br>
+                                        <label for="fname"><h6 class="text-muted">Penerbit :</h6></label><br>
+                                        <label for="fname"><h6 class="text-muted">Tahun :</h6></label><br>
+                                        <label for="fname"><h6 class="text-muted">Lokasi :</h6></label><br>
+                                        <label for="fname"><h6 class="text-muted">Kategori :</h6></label><br>
+                                        <label for="fname"><h6 class="text-muted">Deskripsi :</h6></label>
+                                    </div>
                                 </div>
                             </div>
-
-                        <br>
-
-                        <ul class="pagination m-0">
-
-                            <li class="page-item disabled">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="Previous">
-                                    <span aria-hidden="true"
-                                          class="material-icons">chevron_left</span>
-                                    <span>Prev</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item active">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="1">
-                                    <span>1</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="2">
-                                    <span>2</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="Next">
-                                    <span>Next</span>
-                                    <span aria-hidden="true"
-                                          class="material-icons">chevron_right</span>
-                                </a>
-                            </li>
-                        </ul>
-
                         </div>
+
                     </div>
+
                     <!-- // END drawer-layout__content -->
 
-                                        <div class="mdk-drawer  js-mdk-drawer"
+                    <div class="mdk-drawer  js-mdk-drawer"
                          id="default-drawer"
                          data-align="start">
                         <div class="mdk-drawer__content">
@@ -454,32 +429,20 @@
                                             id="dashboards_menu">
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/index">
+                                                   href="/indexuser">
                                                     <span class="sidebar-menu-text">Dashboard</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/datasiswa">
-                                                    <span class="sidebar-menu-text">Data Siswa</span>
+                                                   href="/listbuku">
+                                                    <span class="sidebar-menu-text">List Buku</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/listkelas">
-                                                    <span class="sidebar-menu-text">Data Kelas</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/datapeminjam">
-                                                    <span class="sidebar-menu-text">Data Peminjam</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/databuku">
-                                                    <span class="sidebar-menu-text">Data Buku</span>
+                                                   href="/dipinjam">
+                                                    <span class="sidebar-menu-text">Sedang Dipinjam</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">
@@ -490,14 +453,14 @@
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/listkategori">
-                                                    <span class="sidebar-menu-text">List Kategori</span>
+                                                   href="/history">
+                                                    <span class="sidebar-menu-text">History Peminjaman</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/historydenda">
-                                                    <span class="sidebar-menu-text">History Denda</span>
+                                                   href="/denda">
+                                                    <span class="sidebar-menu-text">Denda</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -516,7 +479,7 @@
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
                                                    href="/login">
-                                                    <span class="sidebar-menu-text">Login User</span>
+                                                    <span class="sidebar-menu-text">Login Admin</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">
@@ -545,10 +508,10 @@
         <div id="app-settings">
             <app-settings layout-active="default"
                           :layout-location="{
-      'default': 'datasiswa.html',
-      'fixed': 'fixed-datasiswa.html',
-      'fluid': 'fluid-datasiswa.html',
-      'mini': 'mini-datasiswa.html'
+      'default': 'index.html',
+      'fixed': 'fixed-dashboard.html',
+      'fluid': 'fluid-dashboard.html',
+      'mini': 'mini-dashboard.html'
     }"></app-settings>
         </div>
 
@@ -585,15 +548,20 @@
         <!-- Global Settings -->
         <script src="js/settings.js"></script>
 
+        <!-- Moment.js -->
+        <script src="vendor/moment.min.js"></script>
+        <script src="vendor/moment-range.js"></script>
+
         <!-- Chart.js -->
         <script src="vendor/Chart.min.js"></script>
 
         <!-- App Charts JS -->
         <script src="js/charts.js"></script>
-        <script src="js/progress-charts.js"></script>
+        <script src="js/chartjs-rounded-bar.js"></script>
 
         <!-- Chart Samples -->
-        <script src="js/page.analytics.js"></script>
+        <script src="js/page.dashboard.js"></script>
+        <script src="js/progress-charts.js"></script>
 
         <!-- Vector Maps -->
         <script src="vendor/jqvmap/jquery.vmap.min.js"></script>
