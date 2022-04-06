@@ -348,7 +348,7 @@
                                      data-toggle="lists"
                                      data-lists-values='["js-lists-values-employee-name"]'>
 
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -373,7 +373,7 @@
                                                 </td>
                                                 <td>
                                             
-                                                    <a href="tampilkategori{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                    <a href="edit_kategori{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
                                                     <a href="/delete/{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-kategori="{{ $row->kategori }}" >Delete</a>
                                                     
                                                 </td>

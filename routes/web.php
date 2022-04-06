@@ -106,7 +106,7 @@ Route::get('/tambah_kategori',[KategoriController::class, 'tambahkategori'])->na
 
 Route::post('/insertkategori',[KategoriController::class, 'insertkategori'])->name('insertkategori');
 
-Route::get('/tampilkategori{id}',[KategoriController::class, 'tampilkategori'])->name('tampilkategori');
+Route::get('/edit_kategori{id}',[KategoriController::class, 'editkategori'])->name('editkategori');
 
 Route::post('/updatekategori/{id}',[KategoriController::class, 'updatekategori'])->name('updatekategori');
 

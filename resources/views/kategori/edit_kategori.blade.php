@@ -342,31 +342,41 @@
                             </div>
                         </div>
 
-
                         <form action="/updatekategori/{{ $data->id }}" method="POST" enctype="multipart/form-data">
-                            
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1" class="form-label">Kategori</label>
-                                    <input type="text" name="kategori" class="form-control" id="exampleInputEmail1" value="{{ $data->kategori }}">
-                                </div>
-                            </div>
-                            
-                            @csrf
-                            
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1" class="form-label">Gambar</label>
-                                    <input type="file" name="file" class="form-control">
-                                    
-                                    <div>
-                                        <img src="{{ asset('foto/'.$data->file) }}" width="100"> <br/>
+                            <div class="container-fluid page__container">
+                                <div class="card card-form">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-15 card-form__body card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1" class="form-label">Kategori</label>
+                                                        <input type="text" name="kategori" class="form-control" id="exampleInputEmail1" value="{{ $data->kategori }}">
+                                                    </div>
+                                                </div>
+                                                
+                                                @csrf
+                                                
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1" class="form-label">Gambar</label>
+                                                        <input type="file" name="file" class="form-control">
+                                                        
+                                                        <br>
+
+                                                        <div>
+                                                            <img src="{{ asset('foto/'.$data->file) }}" width="130" height="90px"> <br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                                <button type="submit" class="btn btn-primary">Save</button>
-
+                                <div class="text-right mb-5">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
                         </form>
 
                     </div>
