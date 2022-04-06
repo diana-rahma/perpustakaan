@@ -353,7 +353,7 @@
                                                     <div class="form-group">
                                                         <label for="lname">Kelas</label>
                                                             <select class="form-control" name="kelas">
-                                                                <option value="{{ $kelas->kelas}}">Kelas</option>
+                                                                <option selected>{{ $kelas->kelas}}</option>
                                                                 <option>10</option>
                                                                 <option>11</option>
                                                                 <option>12</option>
