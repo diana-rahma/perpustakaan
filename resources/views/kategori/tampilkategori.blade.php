@@ -16,31 +16,31 @@
 
         <!-- Perfect Scrollbar -->
         <link type="text/css"
-              href="vendor/perfect-scrollbar.css"
+            href="{{ asset('vendor/perfect-scrollbar.css') }}"
               rel="stylesheet">
 
         <!-- App CSS -->
         <link type="text/css"
-              href="css/app.css"
+              href="{{ asset('css/app.css') }}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/app.rtl.css"
+              href="{{ asset('css/app.rtl.css') }}"
               rel="stylesheet">
 
         <!-- Material Design Icons -->
         <link type="text/css"
-              href="css/vendor-material-icons.css"
+              href="{{ asset('css/vendor-material-icons.css') }}" 
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-material-icons.rtl.css"
+              href="{{ asset('css/vendor-material-icons.rtl.css') }}" 
               rel="stylesheet">
 
         <!-- Font Awesome FREE Icons -->
         <link type="text/css"
-              href="css/vendor-fontawesome-free.css"
+              href="{{ asset('css/vendor-fontawesome-free.css') }}" 
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-fontawesome-free.rtl.css"
+              href="{{ asset('css/vendor-fontawesome-free.rtl.css') }}"
               rel="stylesheet">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -58,21 +58,21 @@
 
         <!-- Flatpickr -->
         <link type="text/css"
-              href="css/vendor-flatpickr.css"
+              href="{{ asset('css/vendor-flatpickr.css') }}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-flatpickr.rtl.css"
+              href="{{ asset('css/vendor-flatpickr.rtl.css') }}" 
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-flatpickr-airbnb.css"
+              href="{{ asset('css/vendor-flatpickr-airbnb.css') }}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-flatpickr-airbnb.rtl.css"
+              href="{{ asset('css/vendor-flatpickr-airbnb.rtl.css') }}"
               rel="stylesheet">
 
         <!-- Vector Maps -->
         <link type="text/css"
-              href="vendor/jqvmap/jqvmap.min.css"
+              href="{{ asset('vendor/jqvmap/jqvmap.min.css') }}" 
               rel="stylesheet">
 
     </head>
@@ -105,14 +105,14 @@
                             </button>
 
                             <!-- Navbar Brand -->
-                            <a href="/index"
+                            <a href="index.html"
                                class="navbar-brand ">
 
                                 <span>Perpustakaan</span>
                             </a>
 
                             <form class="search-form d-none d-sm-flex flex"
-                                  action="/index">
+                                  action="index.html">
                                 <button class="btn"
                                         type="submit"><i class="material-icons">search</i></button>
                                 <input type="text"
@@ -342,38 +342,30 @@
                             </div>
                         </div>
 
-                        <form action="{{ route('updatekategori', $kategori->id) }}" method="POST">
-                            <div class="container-fluid page__container">
-                                <div class="card card-form">
-                                    <div class="row no-gutters">
-                                        <div class="col-lg-15 card-form__body card-body">
-                                            <div class="row">
-                                                @csrf 
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="lname">Kategori</label>
-                                                        <input type="text" name="kategori" class="form-control" id="lname" value="{{ $kategori->kategori}}">
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="opass">Gambar</label>
-                                                        <input type="file" name="file" class="form-control" id="lname">
-                                                    </div>
 
-                                                    <div>
-                                                        <img src="{{ asset('foto/'.$kategori->file) }}" width="150">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-right mb-5">
-                                    <a href="/listkategori"><button type="submit" class="btn btn-success">Update</button></a>
+                        <form action="/updatekategori/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+                            
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="form-label">Kategori</label>
+                                    <input type="text" name="kategori" class="form-control" id="exampleInputEmail1" value="{{ $data->kategori }}">
                                 </div>
                             </div>
+                            
+                            @csrf
+                            
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="form-label">Gambar</label>
+                                    <input type="file" name="file" class="form-control">
+                                    
+                                    <div>
+                                        <img src="{{ asset('foto/'.$data->file) }}" width="100"> <br/>
+                                    </div>
+                                </div>
+                            </div>
+
+                                <button type="submit" class="btn btn-primary">Save</button>
 
                         </form>
 

@@ -330,14 +330,14 @@
                                 <div class="flex">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb mb-0">
-                                            <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Home</a></li>
                                             <li class="breadcrumb-item active"
                                                 aria-current="page">List Kategori</li>
                                         </ol>
                                     </nav>
                                     <h1 class="m-0">List Kategori</h1>
                                 </div>
-                                <a href="/tambah_kategori"
+                                <a href="tambah_kategori"
                                    class="btn btn-success ml-3">Tambah Kategori <i class="material-icons">add</i></a>
                             </div>
                         </div>
@@ -348,7 +348,7 @@
                                      data-toggle="lists"
                                      data-lists-values='["js-lists-values-employee-name"]'>
 
-                                    <table class="table mb-0 thead-border-top-0 table-striped">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -357,35 +357,31 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
+                                    
+                                    <tbody>
 
-                                        <tbody>
+                                        @php
+                                            $no=1;
+                                        @endphp
 
-                                            @php
-                                                $no = 1;
-                                            @endphp
+                                        @foreach ($data as $index => $row)
+                                            <tr>
+                                                <th scope="row">{{ $index + $data->firstItem() }}</th>
+                                                <td>{{ $row->kategori }}</td>
+                                                <td>
+                                                    <img src="{{ asset('foto/'.$row->file) }}" width="125" height="85px">
+                                                </td>
+                                                <td>
+                                            
+                                                    <a href="tampilkategori{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                    <a href="/delete/{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-kategori="{{ $row->kategori }}" >Delete</a>
+                                                    
+                                                </td>
+                                            </tr>
+                                    @endforeach
 
-                                            @foreach ($data as $row)
-
-                                                <tr>
-                                                    <th scope="row">{{ $no++ }}</th>
-                                                    <td>{{ $row->kategori }}</td>
-                                                    <td>
-                                                        <img src="{{ asset('foto/'.$row->file) }}" alt="" style="width: 125px; height: 85;">
-                                                    </td>
-                                                    <td>
-                                                        <form action="{{ route('delete.kategori', $row->id) }}" method="POST">
-                                                            <a href="{{ route('edit.kategori', $row->id) }}" class="btn btn-warning btn sweet-confirm" >Edit</a>
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                
-                                            @endforeach
-
-                                        </tbody>
-                                    </table>
+                                    </tbody>
+                                </table>
                                 </div>
                             </div>
 
@@ -434,7 +430,7 @@
                     </div>
                     <!-- // END drawer-layout__content -->
 
-                                        <div class="mdk-drawer  js-mdk-drawer"
+                    <div class="mdk-drawer  js-mdk-drawer"
                          id="default-drawer"
                          data-align="start">
                         <div class="mdk-drawer__content">

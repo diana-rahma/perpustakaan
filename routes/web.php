@@ -100,15 +100,17 @@ Route::post('/insertkonfirmasi',[KonfirmasiController::class, 'storekonfirmasi']
 
 // Route Kategori - Backend
 
-Route::get('/listkategori', [KategoriController::class, 'index'])->name('kategori.index');
+Route::get('listkategori',[KategoriController::class, 'index'])->name('listkategori');
 
-Route::get('/tambah_kategori',[KategoriController::class, 'createkategori'])->name('tambah_kategori')  ;
-Route::post('/insertkategori',[KategoriController::class, 'storekategori'])->name('insertkategori')  ;
+Route::get('/tambah_kategori',[KategoriController::class, 'tambahkategori'])->name('tambahkategori');
 
-Route::get('/edit_kategori{kategori}',[KategoriController::class, 'editkategori'])->name('edit.kategori')  ;
-Route::post('/updatekategori{kategori}',[KategoriController::class, 'updatekategori'])->name('updatekategori')  ;
+Route::post('/insertkategori',[KategoriController::class, 'insertkategori'])->name('insertkategori');
 
-Route::delete('/delete/{kategori}',[KategoriController::class, 'deletekategori'])->name('delete.kategori')  ;
+Route::get('/tampilkategori{id}',[KategoriController::class, 'tampilkategori'])->name('tampilkategori');
+
+Route::post('/updatekategori/{id}',[KategoriController::class, 'updatekategori'])->name('updatekategori');
+
+Route::get('/delete/{id}',[KategoriController::class, 'delete'])->name('delete');
 
 
 // Route History - Backend

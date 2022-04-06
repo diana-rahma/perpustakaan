@@ -11,107 +11,55 @@ use Illuminate\Support\Facades\Storage;
 
 class KategoriController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $data = Kategori::all();
+    public function index(Request $request){
 
+        if($request->has('search')){
+            $data = Kategori::where('kategori','LIKE','%' .$request->search. '%')->paginate(3);
+        }else{
+            $data = Kategori::paginate(3);
+        }
+        
         return view('kategori.listkategori',compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function createkategori()
-    {
+    public function tambahkategori(){
+
         return view('kategori.tambah_kategori');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StorekategoriRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function storekategori(Request $request)
-    {
+    public function insertkategori(Request $request){
         //dd($request->all());
-
         $data = Kategori::create($request->all());
-
-        if ($request->hasFile('file')) {
-            $request->file('file')->move('foto/', $request->file('file')->getClientOriginalName());
+        if($request->hasFile('file')){
+            $request->file('file')->move('foto/',$request->file('file')->getClientOriginalName());
             $data->file = $request->file('file')->getClientOriginalName();
             $data->save();
         }
+        return redirect()->route('listkategori')->with('success','Data Berhasil Di Tambahkan');
         
-        return redirect()->route('kategori.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\kategori  $kategori
-     * @return \Illuminate\Http\Response
-     */
-    public function show(kategori $kategori)
-    {
-        //
+    public function tampilkategori($id){
+        
+        $data= Kategori::find($id);
+        return view('kategori.tampilkategori', compact('data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\kategori  $kategori
-     * @return \Illuminate\Http\Response
-     */
-    public function editkategori(Kategori $kategori)
-    {
-        $data = $kategori::all();
-        return view('kategori.edit_kategori',compact('data', 'kategori'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdatekategoriRequest  $request
-     * @param  \App\Models\kategori  $kategori
-     * @return \Illuminate\Http\Response
-     */
-    public function updatekategori(Request $request, Kategori $kategori)
-    {
-
-        $data = Kategori::find($kategori);
+    public function updatekategori(Request $request, $id){
+        $data= Kategori::find($id);
         $data->update($request->all());
-
-        if ($request->hasFile('file')) {
-            $request->file('file')->move('foto/', $request->file('file')->getClientOriginalName());
+        if($request->hasFile('file')){
+            $request->file('file')->move('foto/',$request->file('file')->getClientOriginalName());
             $data->file = $request->file('file')->getClientOriginalName();
             $data->update();
         }
-    
-        return redirect()->route('kategori.index')->with('success',' Data Berhasil di Update');
+        return redirect()->route('listkategori')->with('success','Data Berhasil Di Update');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\kategori  $kategori
-     * @return \Illuminate\Http\Response
-     */
-    public function deletekategori(Kategori $kategori)
-    {
-
-        $data = Kategori::find($kategori);
+    public function delete($id){
+        $data= Kategori::find($id);
         $data->delete();
-
-        //redirect to index
-        return redirect()->route('kategori.index')->with('success', 'Data Berhasil Dihapus!');
+        return redirect()->route('listkategori')->with('success','Data Berhasil Di Hapus');
     }
+
 }
