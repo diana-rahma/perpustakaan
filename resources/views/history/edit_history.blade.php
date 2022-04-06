@@ -343,7 +343,7 @@
                             </div>
                         </div>
 
-                        <form action="{{ route('updatehistory', $history->id) }}" method="POST">
+                        <form action="{{ route('updatehistory', $history->id) }}" method="POST"  enctype="multipart/form-data">
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
                                     <div class="row no-gutters">
@@ -369,7 +369,7 @@
                                                 <input type="file" name="file" class="form-control" id="lname" value="{{ $history->file}}">
                                             </div>
                                             <div>
-                                                <img src="{{ asset('foto/'.$history->file)}}" style="width: 150px">
+                                                <img src="{{ asset('foto/'.$history->file)}}" style="width: 75px; height: 75;">
                                             </div>
                                             <br>
                                             <div class="row">
