@@ -332,7 +332,7 @@
                                     </nav>
                                     <h1 class="m-0">Data Buku</h1>
                                 </div>
-                                <a href="/tambah_buku"
+                                <a href="tambahbuku"
                                    class="btn btn-success ml-3">Tambah Buku <i class="material-icons">add</i></a>
                             </div>
                         </div>
@@ -365,10 +365,10 @@
                                                 $no = 1;
                                             @endphp
 
-                                            @foreach ($data as $row)
+                                            @foreach ($data as $index => $row)
 
                                                 <tr>
-                                                    <th scope="row">{{ $no++ }}</th>
+                                                    <th scope="row">{{ $index + $data->firstItem() }}</th>
                                                     <td>{{ $row->kode }}</td>
                                                     <td>{{ $row->judulbuku }}</td>
                                                     <td>{{ $row->pengarang }}</td>
@@ -380,12 +380,8 @@
                                                         <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 75px">
                                                     </td>
                                                     <td>
-                                                        <form action="{{ route('delete.buku', $row->id) }}" method="POST">
-                                                            <a href="{{ route('edit.buku', $row->id) }}" class="btn btn-warning btn sweet-confirm" >Edit</a>
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                                        </form>
+                                                        <a href="editbuku{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                        <a href="/deletebuku/{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-buku="{{ $row->buku }}" >Delete</a>
                                                     </td>
                                                 </tr>
                                                 

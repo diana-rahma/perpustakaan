@@ -343,81 +343,54 @@
                             </div>
                         </div>
 
-                        <form action="{{ route('updatebuku', $buku->id) }}" method="POST">
+                        <form action="/updatebuku/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
                                     <div class="row no-gutters">
                                         <div class="col-lg-15 card-form__body card-body">
 
                                         <div class="row">
-                                        @csrf
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="opass">Kode</label>
-                                                    <input 
-                                                        id="opass"
-                                                        type="text"
-                                                        class="form-control"
-                                                        name="kode"
-                                                        value="{{ $buku->kode}}">
+                                                    <label for="exampleInputEmail1" class="form-label">Kode</label>
+                                                    <input type="text" name="kode" class="form-control" id="exampleInputEmail1" value="{{ $data->kode }}">
                                                 </div>
                                             </div>
 
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="opass">Judul Buku</label>
-                                                    <input 
-                                                        id="opass"
-                                                        type="text"
-                                                        class="form-control"
-                                                        name="judulbuku"
-                                                        value="{{ $buku->judulbuku}}">
+                                                    <label for="exampleInputEmail1" class="form-label">Judul Buku</label>
+                                                    <input type="text" name="judulbuku" class="form-control" id="exampleInputEmail1" value="{{ $data->judulbuku }}">
                                                 </div>
                                             </div>
                                         </div>
                                         
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="lname">Pengarang</label>
-                                                        <input id="lname"
-                                                            type="text"
-                                                            class="form-control"
-                                                            name="pengarang"
-                                                            value="{{ $buku->pengarang}}">
-                                                    </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1" class="form-label">Pengarang</label>
+                                                    <input type="text" name="pengarang" class="form-control" id="exampleInputEmail1" value="{{ $data->pengarang }}">
                                                 </div>
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="lname">Penerbit</label>
-                                                        <input id="lname"
-                                                            type="text"
-                                                            class="form-control"
-                                                            name="penerbit"
-                                                            value="{{ $buku->penerbit}}">
-                                                    </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1" class="form-label">Penerbit</label>
+                                                    <input type="text" name="penerbit" class="form-control" id="exampleInputEmail1" value="{{ $data->penerbit }}">
                                                 </div>
+                                            </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="fname">Tahun</label>
-                                                        <input id="fname"
-                                                            type="number"
-                                                            class="form-control"
-                                                            name="tahun"
-                                                            value="{{ $buku->tahun}}">
+                                                        <label for="exampleInputEmail1" class="form-label">Tahun</label>
+                                                        <input type="text" name="tahun" class="form-control" id="exampleInputEmail1" value="{{ $data->tahun }}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="lname">Lokasi</label>
-                                                        <input id="lname"
-                                                            type="text"
-                                                            class="form-control"
-                                                            name="lokasi"
-                                                            value="{{ $buku->lokasi}}">
+                                                        <label for="exampleInputEmail1" class="form-label">Lokasi</label>
+                                                        <input type="text" name="lokasi" class="form-control" id="exampleInputEmail1" value="{{ $data->lokasi }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -425,7 +398,7 @@
                                             <div class="form-group" >
                                                 <label for="opass">Kategori</label>
                                                 <select class="form-control" name="kategori">
-                                                    <option value="{{ $buku->kategori}}">Kategori</option>
+                                                    <option selected>{{ $data->kategori}}</option>
                                                     <option>Fantasy</option>
                                                     <option>Romance</option>
                                                     <option>Horror</option>
@@ -436,26 +409,20 @@
                                                     <option>Humor</option>
                                                 </select>
                                             </div>
-                                            
+                                            @csrf
                                             <div class="form-group">
-                                                <label for="opass">Gambar</label>
-                                                <input 
-                                                    id="opass"
-                                                    type="file"
-                                                    class="form-control"
-                                                    name="file"
-                                                    value="{{ $buku->file}}">
-                                            </div>
-                                            <div>
-                                                <img src="{{ asset('foto/'.$buku->file)}}"style="width: 150px">
+                                                <label for="exampleInputEmail1" class="form-label">Gambar</label>
+                                                <input type="file" name="file" class="form-control">
+                                                
+                                                <div>
+                                                    <img src="{{ asset('foto/'.$data->file) }}" width="100"> <br/>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="text-right mb-5">
-                                        <a href="/databuku"><button type="submit" class="btn btn-success">Update</button></a>
-                                </div>
+                                <button type="submit" class="btn btn-primary">Save</button>
 
                             </div>
                         </form>

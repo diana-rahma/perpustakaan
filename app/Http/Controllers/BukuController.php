@@ -11,138 +11,52 @@ use Illuminate\Support\Facades\Storage;
 
 class BukuController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $data = Buku::all();
-
+        if($request->has('search')){
+            $data = buku::where('buku','LIKE','%' .$request->search. '%')->paginate(3);
+        }else{
+            $data = buku::paginate(3);
+        }
         return view('databuku.databuku',compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function createbuku()
-    {
-        //
+    public function tambahbuku(){
+
         return view('databuku.tambah_buku');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StorebukuRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function storebuku(Request $request)
-    {
+    public function insertbuku(Request $request){
+        //dd($request->all());
         $data = buku::create($request->all());
-        if ($request->hasFile('file')) {
-            $request->file('file')->move('foto/', $request->file('file')->getClientOriginalName());
+        if($request->hasFile('file')){
+            $request->file('file')->move('foto/',$request->file('file')->getClientOriginalName());
             $data->file = $request->file('file')->getClientOriginalName();
             $data->save();
         }
+        return redirect()->route('databuku')->with(['success' => 'Data Berhasil Disimpan!']);
+    }
 
-        /*$image = $request->file('file');
-        $image->storeAs('public/foto', $image->hashName());
-        Buku::create([
-            'kode' => $request->kode,
-            'judulbuku' => $request->judulbuku,
-            'pengarang' => $request->pengarang,
-            'penerbit' => $request->penerbit,
-            'tahun' => $request->tahun,
-            'lokasi' => $request->lokasi,
-            'kategori' => $request->kategori,
-            'file' => $image->hashName(),
-        ]);*/
+    public function editbuku($id){
         
-        return redirect()->route('buku.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        $data= buku::find($id);
+        return view('databuku.edit_buku',compact('data'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\buku  $buku
-     * @return \Illuminate\Http\Response
-     */
-    public function show(buku $buku)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\buku  $buku
-     * @return \Illuminate\Http\Response
-     */
-    public function editbuku(Buku $buku)
-    {
-        //
-        $data = $buku::all();
-        return view('databuku.edit_buku',compact('data', 'buku'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdatebukuRequest  $request
-     * @param  \App\Models\buku  $buku
-     * @return \Illuminate\Http\Response
-     */
-    public function updatebuku(Request $request, Buku $buku)
-    {
-        if ($request->hasFile('file')) {
-            Storage::disk('local')->delete('public/foto/'.$buku->image);
-
-            $image = $request->file('file');
-            $image->storeAs('public/foto', $image->hashName());
-        
-            $buku->update([
-            'kode'     => $request->kode,
-            'judulbuku'     => $request->judulbuku,
-            'pengarang'     => $request->pengarang,
-            'penerbit'     => $request->penerbit,
-            'tahun'     => $request->tahun,
-            'lokasi'     => $request->lokasi,
-            'kategori'     => $request->kategori,
-            'file'     => $image->hashName(),
-        ]);
-
-    } else {
-        $buku->update([
-            'kode'     => $request->kode,
-            'judulbuku'     => $request->judulbuku,
-            'pengarang'     => $request->pengarang,
-            'penerbit'     => $request->penerbit,
-            'tahun'     => $request->tahun,
-            'lokasi'     => $request->lokasi,
-            'kategori'     => $request->kategori,
-        ]);
+    public function updatebuku(Request $request, $id){
+        $data= buku::find($id);
+        $data->update($request->all());
+        if($request->hasFile('file')){
+            $request->file('file')->move('foto/',$request->file('file')->getClientOriginalName());
+            $data->file = $request->file('file')->getClientOriginalName();
+            $data->update();
+        }
+        return redirect()->route('databuku')->with('success',' Data Berhasil di Update');
     }
     
-        return redirect()->route('buku.index')->with('success',' Data Berhasil di Update');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\buku  $buku
-     * @return \Illuminate\Http\Response
-     */
-    public function deletebuku(Buku $buku)
-    {
-        
-        Storage::delete('foto/'.$buku->file);
-        $buku->delete();
-        //redirect to index
-        return redirect()->route('buku.index')->with(['success' => 'Data Berhasil Dihapus!']);
+    public function deletebuku($id){
+        $data= Buku::find($id);
+        $data->delete();
+        return redirect()->route('databuku')->with('success','Data Berhasil Di Hapus');
     }
 }

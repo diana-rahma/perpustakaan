@@ -75,20 +75,20 @@ Route::post('/insertpeminjam',[PeminjamController::class, 'storepeminjam'])->nam
 Route::get('/edit_peminjam{peminjam}',[PeminjamController::class, 'editpeminjam'])->name('edit.peminjam')  ;
 Route::post('/updatepeminjam{peminjam}',[PeminjamController::class, 'updatepeminjam'])->name('updatepeminjam')  ;
 
-Route::delete('/delete{peminjam}',[PeminjamController::class, 'deletepeminjam'])->name('delete.peminjam')  ;
+Route::get('/delete{id}',[PeminjamController::class, 'delete'])->name('delete')  ;
 
 
 // Route Data Buku - Backend
 
-Route::get('/databuku', [BukuController::class, 'index'])->name('buku.index');
+Route::get('databuku', [BukuController::class, 'index'])->name('databuku');
 
-Route::get('/tambah_buku',[BukuController::class, 'createbuku'])->name('tambah_buku')  ;
-Route::post('/insertbuku',[BukuController::class, 'storebuku'])->name('insertbuku')  ;
+Route::get('/tambahbuku',[BukuController::class, 'tambahbuku'])->name('tambah_buku')  ;
+Route::post('/insertbuku',[BukuController::class, 'insertbuku'])->name('insertbuku')  ;
 
-Route::get('/edit_buku{buku}',[BukuController::class, 'editbuku'])->name('edit.buku')  ;
-Route::post('/updatebuku{buku}',[BukuController::class, 'updatebuku'])->name('updatebuku')  ;
+Route::get('/editbuku{id}',[BukuController::class, 'editbuku'])->name('edit.buku')  ;
+Route::post('/updatebuku/{id}',[BukuController::class, 'updatebuku'])->name('updatebuku')  ;
 
-Route::delete('/delete/{buku}',[BukuController::class, 'deletebuku'])->name('delete.buku')  ;
+Route::get('/deletebuku/{id}',[BukuController::class, 'deletebuku'])->name('deletebuku')  ;
 
 // Route Konfirmasi - Backend
 

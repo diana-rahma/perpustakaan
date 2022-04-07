@@ -410,12 +410,9 @@
                                                 <td>{{ $row->tanggalpinjam }}</td>
                                                 <td>{{ $row->tanggalkembali }}</td>
                                                 <td>
-                                                    <form action="{{ route('delete.peminjam', $row->id) }}" method="POST">
+                                                   
                                                     <a href="{{ route('edit.peminjam', $row->id) }} "class="btn btn-warning btn sweet-confirm">Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                                </form>
+                                                    <a href="/delete{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-peminjam="{{ $row->peminjam }}" >Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -100,18 +100,10 @@ class PeminjamController extends Controller
         return redirect()->route('peminjam.index')->with('success',' Data Berhasil di Update');
     }
 
-
-     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Peminjam  $peminjam
-     * @return \Illuminate\Http\Response
-     */
-    public function deletepeminjam(Peminjam $peminjam)
-    {
-        $peminjam->delete();
-       //redirect to index
-       return redirect()->route('peminjam.index')->with(['success' => 'Data Berhasil Dihapus!']);
+    public function delete($id){
+        $data= Peminjam::find($id);
+        $data->delete();
+        return redirect()->route('peminjam.index')->with('success','Data Berhasil Di Hapus');
     }
 }
 
