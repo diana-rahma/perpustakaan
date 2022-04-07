@@ -434,12 +434,18 @@
                                             <span class="sidebar-menu-text">Akses</span>
                                             <span class="ml-auto sidebar-menu-toggle-icon"></span>
                                         </a>
-                                        <ul class="sidebar-submenu collapse show "
+<ul class="sidebar-submenu collapse show "
                                             id="pages_menu">
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
                                                    href="/login">
                                                     <span class="sidebar-menu-text">Login User</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/signup">
+                                                    <span class="sidebar-menu-text">Sign Up</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">

@@ -626,6 +626,12 @@
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
+                                                   href="/signup">
+                                                    <span class="sidebar-menu-text">Sign Up</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
                                                    href="/login">
                                                     <span class="sidebar-menu-text">Logout</span>
                                                 </a>

@@ -8,7 +8,7 @@ use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\KonfirmasiController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\LoginController;
+// use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ Route::get('/index', function () {
 
 // Route Login
 
-Route::get('/login', [LoginController::class, 'index']);
+// Route::get('/login', [LoginController::class, 'index']);
 // Route::post('/login', [LoginController::class, 'authenticate']);
 
 // Route Profile - Backendspo
@@ -178,6 +178,21 @@ Route::get('/denda', function () {
 Route::get('/profileuser', function () {
     return view('profileuser');
 });
+
+
+// Route Login - Frontend
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+
+// Route Sign Up - Frontend
+
+Route::get('/signup', function () {
+    return view('signup');
+});
+
 
 
 // Route Genre - Fantasy

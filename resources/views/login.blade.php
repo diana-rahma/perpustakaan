@@ -74,21 +74,6 @@
 
             <form action="/index"
                   novalidate>
-                  <div class="form-group">
-                    <label class="text-label"
-                           for="name_2">Name:</label>
-                    <div class="input-group input-group-merge">
-                        <input id="name_2"
-                               type="text"
-                               required=""
-                               class="form-control form-control-prepended">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="far fa-user"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label class="text-label"
                            for="email_2">Email Address:</label>
@@ -96,6 +81,7 @@
                         <input id="email_2"
                                type="email"
                                required=""
+                               placeholder="name@example.com"
                                class="form-control form-control-prepended">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
@@ -136,7 +122,7 @@
                 </div>
                 <div class="form-group text-center">
                     Don't have an account? <a class="text-body text-underline"
-                       href="signup-centered-boxed.html">Sign up!</a>
+                       href="/signup">Sign up!</a>
                 </div>
             </form>
         </div>

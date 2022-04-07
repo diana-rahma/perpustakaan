@@ -8,7 +8,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Login</title>
+        <title>Sign Up</title>
 
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
@@ -58,27 +58,21 @@
 
     </head>
 
-    <body class="layout-login">
+    <body class="layout-login-centered-boxed">
 
-        <div class="layout-login__overlay"></div>
-        <div class="layout-login__form bg-white"
-             data-perfect-scrollbar>
-            <div class="d-flex justify-content-center mt-2 mb-5 navbar-light">
-                <a href="index.html"
-                   class="navbar-brand"
+        <div class="layout-login-centered-boxed__form card">
+            <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-5 navbar-light">
+                <a href="/index"
+                   class="navbar-brand flex-column mb-2 align-items-center mr-0"
                    style="min-width: 0">
-                    <img class="navbar-brand-icon"
-                         src="images/stack-logo-blue.svg"
-                         width="25"
-                         alt="FlowDash">
-                    <span>FlowDash</span>
+                    <span class="text-primary mr-2">
+                    </span>
+                    <span>Perpustakaan</span>
                 </a>
+                <p class="m-0">Sign Up untuk memiliki akun </p>
             </div>
 
-            <h4 class="m-0">Sign up!</h4>
-            <p class="mb-5">Create an account with FlowDash</p>
-
-            <form action="index.html"
+            <form action="/index"
                   novalidate>
                 <div class="form-group">
                     <label class="text-label"
@@ -87,8 +81,8 @@
                         <input id="name_2"
                                type="text"
                                required=""
-                               class="form-control form-control-prepended"
-                               placeholder="John Doe">
+                               placeholder="Your Name"
+                               class="form-control form-control-prepended">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="far fa-user"></span>
@@ -103,8 +97,8 @@
                         <input id="email_2"
                                type="email"
                                required=""
-                               class="form-control form-control-prepended"
-                               placeholder="john@doe.com">
+                               placeholder="name@example.com"
+                               class="form-control form-control-prepended">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="far fa-envelope"></span>
@@ -123,26 +117,18 @@
                                placeholder="Enter your password">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <span class="far fa-key"></span>
+                                <span class="fa fa-key"></span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="form-group mb-5">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox"
-                               checked=""
-                               class="custom-control-input"
-                               id="terms" />
-                        <label class="custom-control-label"
-                               for="terms">I accept <a href="#">Terms and Conditions</a></label>
-                    </div>
+                <div class="form-group">
+                    <button class="btn btn-block btn-primary"
+                            type="submit">Create Account</button>
                 </div>
                 <div class="form-group text-center">
-                    <button class="btn btn-primary mb-2"
-                            type="submit">Create Account</button><br>
-                    <a class="text-body text-underline"
-                       href="login.html">Have an account? Login</a>
+                    Have an account? <a class="text-body text-underline"
+                       href="/login">Login!</a>
                 </div>
             </form>
         </div>
