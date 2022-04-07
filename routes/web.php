@@ -115,15 +115,17 @@ Route::get('/delete/{id}',[KategoriController::class, 'delete'])->name('delete')
 
 // Route History - Backend
 
-Route::get('/historydenda', [HistorydendaController::class, 'index'])->name('history.index');
+Route::get('historydenda',[HistorydendaController::class, 'index'])->name('historydenda');
 
-Route::get('/tambah_history',[HistorydendaController::class, 'createhistory'])->name('tambah_history')  ;
-Route::post('/inserthistory',[HistorydendaController::class, 'storehistory'])->name('inserthistory')  ;
+Route::get('/tambah_history',[HistorydendaController::class, 'tambahhistory'])->name('tambahhistory');
 
-Route::get('/edit_history{history}',[HistorydendaController::class, 'edithistory'])->name('edit.history')  ;
-Route::post('/updatehistory{history}',[HistorydendaController::class, 'updatehistory'])->name('updatehistory')  ;
+Route::post('/inserthistory',[HistorydendaController::class, 'inserthistory'])->name('inserthistory');
 
-Route::delete('/delete/{history}',[HistorydendaController::class, 'deletehistory'])->name('delete.history')  ;
+Route::get('/edit_history{id}',[HistorydendaController::class, 'edithistory'])->name('edithistory');
+
+Route::post('/updatehistory/{id}',[HistorydendaController::class, 'updatehistory'])->name('updatehistory');
+
+Route::get('/deletehistory/{id}',[HistorydendaController::class, 'delete'])->name('delete');
 
 
 

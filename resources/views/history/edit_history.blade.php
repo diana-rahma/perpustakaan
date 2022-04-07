@@ -343,7 +343,7 @@
                             </div>
                         </div>
 
-                        <form action="{{ route('updatehistory', $history->id) }}" method="POST"  enctype="multipart/form-data">
+                        <form action="{{ route('updatehistory', $data->id) }}" method="POST"  enctype="multipart/form-data">
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
                                     <div class="row no-gutters">
@@ -353,36 +353,36 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Nama Siswa</label>
-                                                        <input type="text" name="namasiswa" class="form-control" id="lname" value="{{ $history->namasiswa}}">
+                                                        <input type="text" name="namasiswa" class="form-control" id="lname" value="{{ $data->namasiswa}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Judul Buku</label>
-                                                        <input type="text" name="judulbuku" class="form-control" id="lname" value="{{ $history->judulbuku}}">
+                                                        <input type="text" name="judulbuku" class="form-control" id="lname" value="{{ $data->judulbuku}}">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="opass">Gambar Buku</label>
-                                                <input type="file" name="file" class="form-control" id="lname" value="{{ $history->file}}">
+                                                <input type="file" name="file" class="form-control" id="lname" value="{{ $data->file}}">
                                             </div>
                                             <div>
-                                                <img src="{{ asset('foto/'.$history->file)}}" style="width: 75px; height: 75;">
+                                                <img src="{{ asset('foto/'.$data->file)}}" style="width: 75px; height: 75;">
                                             </div>
                                             <br>
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Nominal Denda</label>
-                                                        <input type="text" name="nominaldenda" class="form-control" id="lname" value="{{ $history->nominaldenda}}">
+                                                        <input type="text" name="nominaldenda" class="form-control" id="lname" value="{{ $data->nominaldenda}}">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Keterangan</label>
-                                                        <input type="text" name="keterangan" class="form-control" id="lname" value="{{ $history->keterangan}}">
+                                                        <input type="text" name="keterangan" class="form-control" id="lname" value="{{ $data->keterangan}}">
                                                     </div>
                                                 </div>
                                             </div>

@@ -355,35 +355,35 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                    
+                                    <tbody>
 
                                         @php
-                                            $no = 1;
+                                            $no=1;
                                         @endphp
 
-                                         @foreach ($data as $row)
-
+                                        @foreach ($data as $index => $row)
                                             <tr>
-                                                <th scope="row">{{ $no++ }}</th>
+                                                <th scope="row">{{ $index + $data->firstItem() }}</th>
                                                 <td>{{ $row->namasiswa }}</td>
                                                 <td>{{ $row->judulbuku }}</td>
                                                 <td>
-                                                    <img src="{{ asset('foto/'.$row->file) }}" alt="" style="width: 75px; height: 75;">
+                                                    <img src="{{ asset('foto/'.$row->file) }}" width="75" >
                                                 </td>
                                                 <td>{{ $row->nominaldenda }}</td>
                                                 <td>{{ $row->keterangan }}</td>
+
                                                 <td>
-                                                    <form action="{{ route('delete.history', $row->id) }}" method="POST">
-                                                        <a href="{{ route('edit.history', $row->id) }}" class="btn btn-warning btn sweet-confirm" >Edit</a>
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn sweet-confirm">Delete</button>
-                                                    </form>
+                                            
+                                                    <a href="edit_history{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                    <a href="/deletehistory/{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-history="{{ $row->history }}" >Delete</a>
+                                                    
                                                 </td>
                                             </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                        @endforeach
+
+                                    </tbody>
+                                </table>
                                 </div>
                             </div>
 
