@@ -72,17 +72,21 @@
                 <p class="m-0">Sign Up untuk memiliki akun </p>
             </div>
 
-            <form action="/index"
-                  novalidate>
+            <form action="signup" method="post"  >
+                @csrf
                 <div class="form-group">
                     <label class="text-label"
-                           for="name_2">Name:</label>
+                           for="name">Name:</label>
                     <div class="input-group input-group-merge">
-                        <input id="name_2"
-                               type="text"
-                               required=""
+                        <input id="name" type="text" name="name"
                                placeholder="Your Name"
-                               class="form-control form-control-prepended">
+                               class="form-control form-control-prepended @error('name') is-invalid @enderror"
+                               value="{{ old('name') }}">
+                            @error('name')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="far fa-user"></span>
@@ -92,13 +96,17 @@
                 </div>
                 <div class="form-group">
                     <label class="text-label"
-                           for="email_2">Email Address:</label>
+                           for="email">Email Address:</label>
                     <div class="input-group input-group-merge">
-                        <input id="email_2"
-                               type="email"
-                               required=""
+                        <input id="email" type="email" name="email"
                                placeholder="name@example.com"
-                               class="form-control form-control-prepended">
+                               class="form-control form-control-prepended @error('email') is-invalid @enderror"
+                               value="{{ old('email') }}">
+                            @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="far fa-envelope"></span>
@@ -108,13 +116,16 @@
                 </div>
                 <div class="form-group">
                     <label class="text-label"
-                           for="password_2">Password:</label>
+                           for="password">Password:</label>
                     <div class="input-group input-group-merge">
-                        <input id="password_2"
-                               type="password"
-                               required=""
-                               class="form-control form-control-prepended"
-                               placeholder="Enter your password">
+                        <input id="password" type="password" name="password" 
+                                class="form-control form-control-prepended @error('password') is-invalid @enderror" 
+                                placeholder="Enter your password">
+                            @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-key"></span>
