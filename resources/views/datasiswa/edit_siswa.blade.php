@@ -356,7 +356,7 @@
                                                     <div class="form-group">
                                                         <label for="lname">Kelas</label>
                                                             <select class="form-control" name="kelas">
-                                                                <option value="">Kelas</option>
+                                                                <option selected>{{ $siswa->kelas }}</option>
                                                                 <option>X</option>
                                                                 <option>XI</option>
                                                                 <option>XII</option>
@@ -367,7 +367,7 @@
                                                     <div class="form-group">
                                                         <label for="lname">Jurusan</label>
                                                             <select class="form-control" name="jurusan">
-                                                                <option value="">Jurusan</option>
+                                                                <option selected>{{ $siswa->jurusan }}</option>
                                                                 <option>MM</option>
                                                                 <option>RPL</option>
                                                                 <option>TKJ</option>
@@ -378,7 +378,7 @@
                                                     <div class="form-group">
                                                         <label for="lname">Alfabet</label>
                                                             <select class="form-control" name="alfabet">
-                                                                <option value="">Alfabet</option>
+                                                                <option selected>{{ $siswa->alfabet }}</option>
                                                                 <option>A</option>
                                                                 <option>B</option>
                                                                 <option>C</option>
@@ -407,7 +407,7 @@
                                                     <div class="form-group">
                                                         <label for="lname">Jenis Kelamin</label>
                                                             <select class="form-control" name="jk" name="jk">
-                                                                <option value="">Jenis Kelamin</option>
+                                                                <option selected>{{ $siswa->jk}}</option>
                                                                 <option>Perempuan</option>
                                                                 <option>Laki-Laki</option>
                                                             </select>
