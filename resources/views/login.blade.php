@@ -71,18 +71,38 @@
                 </a>
                 <p class="m-0">Login untuk mengakses akun anda </p>
             </div>
+            @if(session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    
+                </div>
+            @endif
 
-            <form action="/index"
-                  novalidate>
+            @if(session()->has('loginError'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('loginError') }}
+                    
+                </div>
+            @endif
+
+            <form action="/login" method="post">
+            @csrf
                 <div class="form-group">
                     <label class="text-label"
-                           for="email_2">Email Address:</label>
+                           for="email">Email Address:</label>
                     <div class="input-group input-group-merge">
-                        <input id="email_2"
+                        <input id="email"
                                type="email"
-                               required=""
+                               name="email"
+                               required="" autofocus
                                placeholder="name@example.com"
-                               class="form-control form-control-prepended">
+                               class="form-control form-control-prepended @error('email') is-invalid @enderror"
+                               value="{{ old('email') }}">
+                               @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror   
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="far fa-envelope"></span>
@@ -92,10 +112,11 @@
                 </div>
                 <div class="form-group">
                     <label class="text-label"
-                           for="password_2">Password:</label>
+                           for="password">Password:</label>
                     <div class="input-group input-group-merge">
-                        <input id="password_2"
+                        <input id="password"
                                type="password"
+                               name="password"
                                required=""
                                class="form-control form-control-prepended"
                                placeholder="Enter your password">

@@ -10,6 +10,7 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,7 @@ use App\Http\Controllers\RegisterController;
 
 // Backend
 
-Route::get('/index', function () {
-    return view('index');
-});
+//Route::get('/index', [IndexController::class, 'index']);
 
 // Route Login
 
@@ -183,14 +182,18 @@ Route::get('/profileuser', function () {
 
 // Route Login - Frontend
 
-Route::get('/login', [LoginController::class, 'create']);
-Route::post('/login', [LoginController::class, 'store']);
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 
 // Route Sign Up - Frontend
 
 Route::get('/signup', [RegisterController::class, 'create']);
 Route::post('/signup', [RegisterController::class, 'store']);
+
+
+Route::get('/index', [IndexController::class, 'index'])->middleware('auth');
 
 
 // Route Genre - Fantasy
