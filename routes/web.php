@@ -208,6 +208,21 @@ Route::get('/tambah_peminjam', [PeminjamController::class, 'index'])->middleware
 Route::get('/edit_peminjam', [PeminjamController::class, 'index'])->middleware('auth');
 Route::get('/profildata', [PeminjamController::class, 'index'])->middleware('auth');
 
+Route::get('/databuku', [BukuController::class, 'index'])->middleware('auth');
+Route::get('/tambah_buku', [BukuController::class, 'index'])->middleware('auth');
+Route::get('/edit_buku', [BukuController::class, 'index'])->middleware('auth');
+
+Route::get('/konfirmasi', [KonfirmasiController::class, 'index'])->middleware('auth');
+Route::get('/tambah_konfirmasi', [KonfirmasiController::class, 'index'])->middleware('auth');
+
+Route::get('/listkategori', [KategoriController::class, 'index'])->middleware('auth');
+Route::get('/tambah_kategori', [KategoriController::class, 'index'])->middleware('auth');
+Route::get('/edit_kategori', [KategoriController::class, 'index'])->middleware('auth');
+
+Route::get('/historydenda', [HistorydendaController::class, 'index'])->middleware('auth');
+Route::get('/tambah_history', [HistorydendaController::class, 'index'])->middleware('auth');
+Route::get('/edit_history', [HistorydendaController::class, 'index'])->middleware('auth');
+
 
 
 // Route Genre - Fantasy
