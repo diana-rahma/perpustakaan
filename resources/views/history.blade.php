@@ -306,8 +306,10 @@
                                         <a class="dropdown-item"
                                            href="/profileuser"><i class="material-icons">account_circle</i> My profile</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item"
-                                           href="/login"><i class="material-icons">exit_to_app</i> Logout</a>
+                                       <form action="/logout" method="POST">
+                                        @csrf
+                                            <button type="submit" class="dropdown-item"><i class="material-icons">exit_to_app</i>Logout</button>   
+                                        </form>
                                     </div>
                                 </li>
                             </ul>
