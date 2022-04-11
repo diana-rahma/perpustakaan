@@ -195,33 +195,33 @@ Route::post('/signup', [RegisterController::class, 'store']);
 
 Route::get('/index', [IndexController::class, 'index'])->middleware('auth');
 
-Route::get('/datasiswa', [SiswaController::class, 'index'])->middleware('auth');
-Route::get('/tambah_siswa', [SiswaController::class, 'index'])->middleware('auth');
-Route::get('/edit_siswa', [SiswaController::class, 'index'])->middleware('auth');
+// Route::get('/datasiswa', [SiswaController::class, 'index'])->middleware('auth');
+// Route::get('/tambah_siswa', [SiswaController::class, 'index'])->middleware('auth');
+// Route::get('/edit_siswa', [SiswaController::class, 'index'])->middleware('auth');
 
-Route::get('/listkelas', [KelasController::class, 'index'])->middleware('auth');
-Route::get('/tambah_kelas', [KelasController::class, 'index'])->middleware('auth');
-Route::get('/edit_kelas', [KelasController::class, 'index'])->middleware('auth');
+// Route::get('/listkelas', [KelasController::class, 'index'])->middleware('auth');
+// Route::get('/tambah_kelas', [KelasController::class, 'index'])->middleware('auth');
+// Route::get('/edit_kelas', [KelasController::class, 'index'])->middleware('auth');
 
-Route::get('/datapeminjam', [PeminjamController::class, 'index'])->middleware('auth');
-Route::get('/tambah_peminjam', [PeminjamController::class, 'index'])->middleware('auth');
-Route::get('/edit_peminjam', [PeminjamController::class, 'index'])->middleware('auth');
-Route::get('/profildata', [PeminjamController::class, 'index'])->middleware('auth');
+// Route::get('/datapeminjam', [PeminjamController::class, 'index'])->middleware('auth');
+// Route::get('/tambah_peminjam', [PeminjamController::class, 'index'])->middleware('auth');
+// Route::get('/edit_peminjam', [PeminjamController::class, 'index'])->middleware('auth');
+// Route::get('/profildata', [PeminjamController::class, 'index'])->middleware('auth');
 
-Route::get('/databuku', [BukuController::class, 'index'])->middleware('auth');
-Route::get('/tambah_buku', [BukuController::class, 'index'])->middleware('auth');
-Route::get('/edit_buku', [BukuController::class, 'index'])->middleware('auth');
+// Route::get('/databuku', [BukuController::class, 'index'])->middleware('auth');
+// Route::get('/tambah_buku', [BukuController::class, 'index'])->middleware('auth');
+// Route::get('/edit_buku', [BukuController::class, 'index'])->middleware('auth');
 
-Route::get('/konfirmasi', [KonfirmasiController::class, 'index'])->middleware('auth');
-Route::get('/tambah_konfirmasi', [KonfirmasiController::class, 'index'])->middleware('auth');
+// Route::get('/konfirmasi', [KonfirmasiController::class, 'index'])->middleware('auth');
+// Route::get('/tambah_konfirmasi', [KonfirmasiController::class, 'index'])->middleware('auth');
 
-Route::get('/listkategori', [KategoriController::class, 'index'])->middleware('auth');
-Route::get('/tambah_kategori', [KategoriController::class, 'index'])->middleware('auth');
-Route::get('/edit_kategori', [KategoriController::class, 'index'])->middleware('auth');
+// Route::get('/listkategori', [KategoriController::class, 'index'])->middleware('auth');
+// Route::get('/tambah_kategori', [KategoriController::class, 'index'])->middleware('auth');
+// Route::get('/edit_kategori', [KategoriController::class, 'index'])->middleware('auth');
 
-Route::get('/historydenda', [HistorydendaController::class, 'index'])->middleware('auth');
-Route::get('/tambah_history', [HistorydendaController::class, 'index'])->middleware('auth');
-Route::get('/edit_history', [HistorydendaController::class, 'index'])->middleware('auth');
+// Route::get('/historydenda', [HistorydendaController::class, 'index'])->middleware('auth');
+// Route::get('/tambah_history', [HistorydendaController::class, 'index'])->middleware('auth');
+// Route::get('/edit_history', [HistorydendaController::class, 'index'])->middleware('auth');
 
 
 
