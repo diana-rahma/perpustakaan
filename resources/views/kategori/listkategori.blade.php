@@ -368,7 +368,7 @@
 
                                         @foreach ($data as $index => $row)
                                             <tr>
-                                                <th scope="row">{{ $index + $data->firstItem() }}</th>
+                                                <td scope="row">{{ $index + $data->firstItem() }}</td>
                                                 <td>{{ $row->kategori }}</td>
                                                 <td>
                                                     <img src="{{ asset('foto/'.$row->file) }}" width="125" height="85px">

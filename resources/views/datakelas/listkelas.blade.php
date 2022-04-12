@@ -369,7 +369,7 @@
                                          @foreach ($data as $row)
 
                                             <tr>
-                                            <th scope="row">{{ $no++ }}</th>
+                                                <td scope="row">{{ $no++ }}</td>
                                                 <td>{{ $row->kelas }}</td>
                                                 <td>{{ $row->jurusan }}</td>
                                                 <td>{{ $row->alfabet }}</td>

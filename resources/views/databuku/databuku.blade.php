@@ -370,7 +370,7 @@
                                             @foreach ($data as $index => $row)
 
                                                 <tr>
-                                                    <th scope="row">{{ $index + $data->firstItem() }}</th>
+                                                    <td scope="row">{{ $index + $data->firstItem() }}</td>
                                                     <td>{{ $row->kode }}</td>
                                                     <td>{{ $row->judulbuku }}</td>
                                                     <td>{{ $row->pengarang }}</td>
