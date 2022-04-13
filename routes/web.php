@@ -80,33 +80,33 @@ Route::get('/delete{id}',[PeminjamController::class, 'delete'])->name('delete');
 
 // Route Data Buku - Backend
 
-Route::get('databuku', [BukuController::class, 'index'])->name('databuku');
+Route::get('databuku', [BukuController::class, 'index'])->name('databuku')->middleware('auth');
 
-Route::get('/tambahbuku',[BukuController::class, 'tambahbuku'])->name('tambah_buku')  ;
-Route::post('/insertbuku',[BukuController::class, 'insertbuku'])->name('insertbuku')  ;
+Route::get('/tambahbuku',[BukuController::class, 'tambahbuku'])->name('tambah_buku')->middleware('auth');
+Route::post('/insertbuku',[BukuController::class, 'insertbuku'])->name('insertbuku');
 
-Route::get('/editbuku{id}',[BukuController::class, 'editbuku'])->name('edit.buku')  ;
-Route::post('/updatebuku/{id}',[BukuController::class, 'updatebuku'])->name('updatebuku')  ;
+Route::get('/editbuku{id}',[BukuController::class, 'editbuku'])->name('edit.buku')->middleware('auth');
+Route::post('/updatebuku/{id}',[BukuController::class, 'updatebuku'])->name('updatebuku');
 
-Route::get('/deletebuku/{id}',[BukuController::class, 'deletebuku'])->name('deletebuku')  ;
+Route::get('/deletebuku/{id}',[BukuController::class, 'deletebuku'])->name('deletebuku');
 
 // Route Konfirmasi - Backend
 
-Route::get('/konfirmasi', [KonfirmasiController::class, 'index'])->name('konfirmasi.index');
+Route::get('/konfirmasi', [KonfirmasiController::class, 'index'])->name('konfirmasi.index')->middleware('auth');
 
-Route::get('/tambah_konfirmasi',[KonfirmasiController::class, 'createkonfirmasi'])->name('tambah_konfirmasi')  ;
-Route::post('/insertkonfirmasi',[KonfirmasiController::class, 'storekonfirmasi'])->name('insertkonfirmasi')  ;
+Route::get('/tambah_konfirmasi',[KonfirmasiController::class, 'createkonfirmasi'])->name('tambah_konfirmasi')->middleware('auth');
+Route::post('/insertkonfirmasi',[KonfirmasiController::class, 'storekonfirmasi'])->name('insertkonfirmasi');
 
 
 // Route Kategori - Backend
 
-Route::get('listkategori',[KategoriController::class, 'index'])->name('listkategori');
+Route::get('listkategori',[KategoriController::class, 'index'])->name('listkategori')->middleware('auth');
 
-Route::get('/tambah_kategori',[KategoriController::class, 'tambahkategori'])->name('tambahkategori');
+Route::get('/tambah_kategori',[KategoriController::class, 'tambahkategori'])->name('tambahkategori')->middleware('auth');
 
 Route::post('/insertkategori',[KategoriController::class, 'insertkategori'])->name('insertkategori');
 
-Route::get('/edit_kategori{id}',[KategoriController::class, 'editkategori'])->name('editkategori');
+Route::get('/edit_kategori{id}',[KategoriController::class, 'editkategori'])->name('editkategori')->middleware('auth');
 
 Route::post('/updatekategori/{id}',[KategoriController::class, 'updatekategori'])->name('updatekategori');
 
@@ -115,13 +115,13 @@ Route::get('/delete/{id}',[KategoriController::class, 'delete'])->name('delete')
 
 // Route History - Backend
 
-Route::get('historydenda',[HistorydendaController::class, 'index'])->name('historydenda');
+Route::get('historydenda',[HistorydendaController::class, 'index'])->name('historydenda')->middleware('auth');
 
-Route::get('/tambah_history',[HistorydendaController::class, 'tambahhistory'])->name('tambahhistory');
+Route::get('/tambah_history',[HistorydendaController::class, 'tambahhistory'])->name('tambahhistory')->middleware('auth');
 
 Route::post('/inserthistory',[HistorydendaController::class, 'inserthistory'])->name('inserthistory');
 
-Route::get('/edit_history{id}',[HistorydendaController::class, 'edithistory'])->name('edithistory');
+Route::get('/edit_history{id}',[HistorydendaController::class, 'edithistory'])->name('edithistory')->middleware('auth');
 
 Route::post('/updatehistory/{id}',[HistorydendaController::class, 'updatehistory'])->name('updatehistory');
 
