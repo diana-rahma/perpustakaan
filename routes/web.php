@@ -41,41 +41,41 @@ Route::get('/profile', function () {
 
 // Route Data Siswa - Backend
 
-Route::get('/datasiswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/datasiswa', [SiswaController::class, 'index'])->name('siswa.index')->middleware('auth');
 
-Route::get('/tambah_siswa',[SiswaController::class, 'createsiswa'])->name('tambah_siswa')  ;
-Route::post('/insertsiswa',[SiswaController::class, 'storesiswa'])->name('insertsiswa')  ;
+Route::get('/tambah_siswa',[SiswaController::class, 'createsiswa'])->name('tambah_siswa')->middleware('auth');
+Route::post('/insertsiswa',[SiswaController::class, 'storesiswa'])->name('insertsiswa');
 
-Route::get('/edit_siswa{siswa}',[SiswaController::class, 'editsiswa'])->name('edit.siswa')  ;
-Route::post('/updatekategori{siswa}',[SiswaController::class, 'updatesiswa'])->name('updatesiswa')  ;
+Route::get('/edit_siswa{siswa}',[SiswaController::class, 'editsiswa'])->name('edit.siswa')->middleware('auth');
+Route::post('/updatekategori{siswa}',[SiswaController::class, 'updatesiswa'])->name('updatesiswa');
 
-Route::delete('/delete/{siswa}',[SiswaController::class, 'deletesiswa'])->name('delete.siswa')  ;
+Route::delete('/delete/{siswa}',[SiswaController::class, 'deletesiswa'])->name('delete.siswa');
 
 
 // Route List Kelas - Backend
 
-Route::get('/listkelas', [KelasController::class, 'index'])->name('kelas.index');
+Route::get('/listkelas', [KelasController::class, 'index'])->name('kelas.index')->middleware('auth');
 
-Route::get('/tambah_kelas',[KelasController::class, 'createkelas'])->name('tambah_kelas')  ;
-Route::post('/insertkelas',[KelasController::class, 'storekelas'])->name('insertkelas')  ;
+Route::get('/tambah_kelas',[KelasController::class, 'createkelas'])->name('tambah_kelas')->middleware('auth');
+Route::post('/insertkelas',[KelasController::class, 'storekelas'])->name('insertkelas');
 
-Route::get('/edit_kelas{kelas}',[KelasController::class, 'editkelas'])->name('edit.kelas')  ;
-Route::post('/updatekelas{kelas}',[KelasController::class, 'updatekelas'])->name('updatekelas')  ;
+Route::get('/edit_kelas{kelas}',[KelasController::class, 'editkelas'])->name('edit.kelas')->middleware('auth');
+Route::post('/updatekelas{kelas}',[KelasController::class, 'updatekelas'])->name('updatekelas');
 
-Route::delete('/delete{kelas}',[KelasController::class, 'deletekelas'])->name('delete.kelas')  ;
+Route::delete('/delete{kelas}',[KelasController::class, 'deletekelas'])->name('delete.kelas');
 
 
 // Route Data Peminjam - Backend
 
-Route::get('/datapeminjam', [PeminjamController::class, 'index'])->name('peminjam.index');
+Route::get('/datapeminjam', [PeminjamController::class, 'index'])->name('peminjam.index')->middleware('auth');
 
-Route::get('/tambah_peminjam',[PeminjamController::class, 'createpeminjam'])->name('tambah_peminjam')  ;
-Route::post('/insertpeminjam',[PeminjamController::class, 'storepeminjam'])->name('insertpeminjam')  ;
+Route::get('/tambah_peminjam',[PeminjamController::class, 'createpeminjam'])->name('tambah_peminjam')->middleware('auth');
+Route::post('/insertpeminjam',[PeminjamController::class, 'storepeminjam'])->name('insertpeminjam');
 
-Route::get('/edit_peminjam{peminjam}',[PeminjamController::class, 'editpeminjam'])->name('edit.peminjam')  ;
-Route::post('/updatepeminjam{peminjam}',[PeminjamController::class, 'updatepeminjam'])->name('updatepeminjam')  ;
+Route::get('/edit_peminjam{peminjam}',[PeminjamController::class, 'editpeminjam'])->name('edit.peminjam')->middleware('auth');
+Route::post('/updatepeminjam{peminjam}',[PeminjamController::class, 'updatepeminjam'])->name('updatepeminjam');
 
-Route::get('/delete{id}',[PeminjamController::class, 'delete'])->name('delete')  ;
+Route::get('/delete{id}',[PeminjamController::class, 'delete'])->name('delete');
 
 
 // Route Data Buku - Backend
