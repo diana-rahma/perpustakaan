@@ -72,8 +72,9 @@
                 <p class="m-0">Sign Up untuk memiliki akun </p>
             </div>
 
-            <form action="signup" method="post"  >
+            <form action="signup" method="post" autocomplete="off">
                 @csrf
+
                 <div class="form-group">
                     <label class="text-label"
                            for="name">Name:</label>
@@ -89,11 +90,117 @@
                             @enderror
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <span class="far fa-user"></span>
+                                <span class="fa fa-user"></span>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="text-label"
+                        for="nisn">NISN:</label>
+                    <div class="input-group input-group-merge">
+                        <input id="nisn" type="text" name="nisn"
+                            placeholder="NISN"
+                            class="form-control form-control-prepended @error('nisn') is-invalid @enderror"
+                            value="{{ old('nisn') }}">
+                            @error('nisn')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fa fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="text-label"
+                           for="kelas">Kelas:</label>
+                    <div class="input-group input-group-merge">
+                        <input id="kelas" type="text" name="kelas"
+                               placeholder="Kelas"
+                               class="form-control form-control-prepended @error('kelas') is-invalid @enderror"
+                               value="{{ old('kelas') }}">
+                            @error('kelas')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fa fa-users"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="text-label"
+                           for="telepon">No Telepon:</label>
+                    <div class="input-group input-group-merge">
+                        <input id="telepon" type="text" name="telepon"
+                               placeholder="No. Telepon"
+                               class="form-control form-control-prepended @error('telepon') is-invalid @enderror"
+                               value="{{ old('telepon') }}">
+                            @error('telepon')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fa fa-phone-square-alt"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="text-label"
+                           for="jk">Jenis Kelamin:</label>
+                    <div class="input-group input-group-merge">
+                        <input id="jk" type="text" name="jk"
+                               placeholder="Jenis Kelamin"
+                               class="form-control form-control-prepended @error('jk') is-invalid @enderror"
+                               value="{{ old('jk') }}">
+                            @error('jk')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fa fa-venus-mars"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="text-label"
+                           for="alamat">Alamat:</label>
+                    <div class="input-group input-group-merge">
+                        <input id="alamat" type="text" name="alamat"
+                               placeholder="Alamat"
+                               class="form-control form-control-prepended @error('alamat') is-invalid @enderror"
+                               value="{{ old('alamat') }}">
+                            @error('alamat')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="far fa-address-card"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label class="text-label"
                            for="email">Email Address:</label>
@@ -109,11 +216,12 @@
                             @enderror
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <span class="far fa-envelope"></span>
+                                <span class="fa fa-envelope"></span>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label class="text-label"
                            for="password">Password:</label>
@@ -133,6 +241,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <button class="btn btn-block btn-primary"
                             type="submit">Create Account</button>

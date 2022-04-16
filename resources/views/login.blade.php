@@ -85,7 +85,7 @@
                 </div>
             @endif
 
-            <form action="/login" method="post">
+            <form action="/login" method="post" autocomplete="off">
             @csrf
                 <div class="form-group">
                     <label class="text-label"
@@ -105,11 +105,12 @@
                                 @enderror   
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <span class="far fa-envelope"></span>
+                                <span class="fa fa-envelope"></span>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <label class="text-label"
                            for="password">Password:</label>
@@ -127,6 +128,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <button class="btn btn-block btn-primary"
                             type="submit">Login</button>

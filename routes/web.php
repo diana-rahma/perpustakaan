@@ -11,6 +11,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\IndexuserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,26 +28,48 @@ use App\Http\Controllers\IndexController;
 
 //Route::get('/index', [IndexController::class, 'index']);
 
-// Route Login
+Route::get('/index', function () {
+    return view('index');
+});
 
-// Route::get('/login', [LoginController::class, 'index']);
+
+// Route Login - Backend
+
+// Route::get('/login', [LoginController::class, 'create'])->name('login');
 // Route::post('/login', [LoginController::class, 'authenticate']);
+// Route::post('/logout', [LoginController::class, 'logout']);
 
-// Route Profile - Backendspo
+Route::get('/login', function () {
+    return view('login');
+});
+
+
+// Route Sign Up - Backend
+
+// Route::get('/signup', [RegisterController::class, 'create']);
+// Route::post('/signup', [RegisterController::class, 'store']);
+
+Route::get('/signup', function () {
+    return view('signup');
+});
+
+
+// Route Profile - Backend
 
 Route::get('/profile', function () {
     return view('profile');
 });
 
 
+
 // Route Data Siswa - Backend
 
-Route::get('/datasiswa', [SiswaController::class, 'index'])->name('siswa.index')->middleware('auth');
+Route::get('/datasiswa', [SiswaController::class, 'index'])->name('siswa.index');
 
-Route::get('/tambah_siswa',[SiswaController::class, 'createsiswa'])->name('tambah_siswa')->middleware('auth');
+Route::get('/tambah_siswa',[SiswaController::class, 'createsiswa'])->name('tambah_siswa');
 Route::post('/insertsiswa',[SiswaController::class, 'storesiswa'])->name('insertsiswa');
 
-Route::get('/edit_siswa{siswa}',[SiswaController::class, 'editsiswa'])->name('edit.siswa')->middleware('auth');
+Route::get('/edit_siswa{siswa}',[SiswaController::class, 'editsiswa'])->name('edit.siswa');
 Route::post('/updatekategori{siswa}',[SiswaController::class, 'updatesiswa'])->name('updatesiswa');
 
 Route::delete('/delete/{siswa}',[SiswaController::class, 'deletesiswa'])->name('delete.siswa');
@@ -54,12 +77,12 @@ Route::delete('/delete/{siswa}',[SiswaController::class, 'deletesiswa'])->name('
 
 // Route List Kelas - Backend
 
-Route::get('/listkelas', [KelasController::class, 'index'])->name('kelas.index')->middleware('auth');
+Route::get('/listkelas', [KelasController::class, 'index'])->name('kelas.index');
 
-Route::get('/tambah_kelas',[KelasController::class, 'createkelas'])->name('tambah_kelas')->middleware('auth');
+Route::get('/tambah_kelas',[KelasController::class, 'createkelas'])->name('tambah_kelas');
 Route::post('/insertkelas',[KelasController::class, 'storekelas'])->name('insertkelas');
 
-Route::get('/edit_kelas{kelas}',[KelasController::class, 'editkelas'])->name('edit.kelas')->middleware('auth');
+Route::get('/edit_kelas{kelas}',[KelasController::class, 'editkelas'])->name('edit.kelas');
 Route::post('/updatekelas{kelas}',[KelasController::class, 'updatekelas'])->name('updatekelas');
 
 Route::delete('/delete{kelas}',[KelasController::class, 'deletekelas'])->name('delete.kelas');
@@ -67,12 +90,12 @@ Route::delete('/delete{kelas}',[KelasController::class, 'deletekelas'])->name('d
 
 // Route Data Peminjam - Backend
 
-Route::get('/datapeminjam', [PeminjamController::class, 'index'])->name('peminjam.index')->middleware('auth');
+Route::get('/datapeminjam', [PeminjamController::class, 'index'])->name('peminjam.index');
 
-Route::get('/tambah_peminjam',[PeminjamController::class, 'createpeminjam'])->name('tambah_peminjam')->middleware('auth');
+Route::get('/tambah_peminjam',[PeminjamController::class, 'createpeminjam'])->name('tambah_peminjam');
 Route::post('/insertpeminjam',[PeminjamController::class, 'storepeminjam'])->name('insertpeminjam');
 
-Route::get('/edit_peminjam{peminjam}',[PeminjamController::class, 'editpeminjam'])->name('edit.peminjam')->middleware('auth');
+Route::get('/edit_peminjam{peminjam}',[PeminjamController::class, 'editpeminjam'])->name('edit.peminjam');
 Route::post('/updatepeminjam{peminjam}',[PeminjamController::class, 'updatepeminjam'])->name('updatepeminjam');
 
 Route::get('/delete{id}',[PeminjamController::class, 'delete'])->name('delete');
@@ -80,34 +103,32 @@ Route::get('/delete{id}',[PeminjamController::class, 'delete'])->name('delete');
 
 // Route Data Buku - Backend
 
-Route::get('databuku', [BukuController::class, 'index'])->name('databuku')->middleware('auth');
+Route::get('databuku', [BukuController::class, 'index'])->name('databuku');
 
-Route::get('/tambahbuku',[BukuController::class, 'tambahbuku'])->name('tambah_buku')->middleware('auth');
+Route::get('/tambahbuku',[BukuController::class, 'tambahbuku'])->name('tambah_buku');
 Route::post('/insertbuku',[BukuController::class, 'insertbuku'])->name('insertbuku');
 
-Route::get('/editbuku{id}',[BukuController::class, 'editbuku'])->name('edit.buku')->middleware('auth');
+Route::get('/editbuku{id}',[BukuController::class, 'editbuku'])->name('edit.buku');
 Route::post('/updatebuku/{id}',[BukuController::class, 'updatebuku'])->name('updatebuku');
 
 Route::get('/deletebuku/{id}',[BukuController::class, 'deletebuku'])->name('deletebuku');
 
 // Route Konfirmasi - Backend
 
-Route::get('/konfirmasi', [KonfirmasiController::class, 'index'])->name('konfirmasi.index')->middleware('auth');
+Route::get('/konfirmasi', [KonfirmasiController::class, 'index'])->name('konfirmasi.index');
 
-Route::get('/tambah_konfirmasi',[KonfirmasiController::class, 'createkonfirmasi'])->name('tambah_konfirmasi')->middleware('auth');
+Route::get('/tambah_konfirmasi',[KonfirmasiController::class, 'createkonfirmasi'])->name('tambah_konfirmasi');
 Route::post('/insertkonfirmasi',[KonfirmasiController::class, 'storekonfirmasi'])->name('insertkonfirmasi');
 
 
 // Route Kategori - Backend
 
-Route::get('listkategori',[KategoriController::class, 'index'])->name('listkategori')->middleware('auth');
+Route::get('listkategori',[KategoriController::class, 'index'])->name('listkategori');
 
-Route::get('/tambah_kategori',[KategoriController::class, 'tambahkategori'])->name('tambahkategori')->middleware('auth');
-
+Route::get('/tambah_kategori',[KategoriController::class, 'tambahkategori'])->name('tambahkategori');
 Route::post('/insertkategori',[KategoriController::class, 'insertkategori'])->name('insertkategori');
 
-Route::get('/edit_kategori{id}',[KategoriController::class, 'editkategori'])->name('editkategori')->middleware('auth');
-
+Route::get('/edit_kategori{id}',[KategoriController::class, 'editkategori'])->name('editkategori');
 Route::post('/updatekategori/{id}',[KategoriController::class, 'updatekategori'])->name('updatekategori');
 
 Route::get('/delete/{id}',[KategoriController::class, 'delete'])->name('delete');
@@ -115,14 +136,12 @@ Route::get('/delete/{id}',[KategoriController::class, 'delete'])->name('delete')
 
 // Route History - Backend
 
-Route::get('historydenda',[HistorydendaController::class, 'index'])->name('historydenda')->middleware('auth');
+Route::get('historydenda',[HistorydendaController::class, 'index'])->name('historydenda');
 
-Route::get('/tambah_history',[HistorydendaController::class, 'tambahhistory'])->name('tambahhistory')->middleware('auth');
-
+Route::get('/tambah_history',[HistorydendaController::class, 'tambahhistory'])->name('tambahhistory');
 Route::post('/inserthistory',[HistorydendaController::class, 'inserthistory'])->name('inserthistory');
 
-Route::get('/edit_history{id}',[HistorydendaController::class, 'edithistory'])->name('edithistory')->middleware('auth');
-
+Route::get('/edit_history{id}',[HistorydendaController::class, 'edithistory'])->name('edithistory');
 Route::post('/updatehistory/{id}',[HistorydendaController::class, 'updatehistory'])->name('updatehistory');
 
 Route::get('/deletehistory/{id}',[HistorydendaController::class, 'delete'])->name('delete');
@@ -133,9 +152,21 @@ Route::get('/deletehistory/{id}',[HistorydendaController::class, 'delete'])->nam
 
 // Frontend
 
-Route::get('/indexuser', function () {
-    return view('indexuser');
-});
+Route::get('/indexuser', [IndexuserController::class, 'indexuser'])->middleware('auth');
+
+
+// Route Login - Frontend
+
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+
+// Route Sign Up - Frontend
+
+Route::get('/signup', [RegisterController::class, 'create']);
+Route::post('/signup', [RegisterController::class, 'store']);
+
 
 
 // Route List Buku - Frontend
@@ -178,51 +209,6 @@ Route::get('/denda', function () {
 Route::get('/profileuser', function () {
     return view('profileuser');
 });
-
-
-// Route Login - Frontend
-
-Route::get('/login', [LoginController::class, 'create'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
-
-
-// Route Sign Up - Frontend
-
-Route::get('/signup', [RegisterController::class, 'create']);
-Route::post('/signup', [RegisterController::class, 'store']);
-
-
-Route::get('/index', [IndexController::class, 'index'])->middleware('auth');
-
-// Route::get('/datasiswa', [SiswaController::class, 'index'])->middleware('auth');
-// Route::get('/tambah_siswa', [SiswaController::class, 'index'])->middleware('auth');
-// Route::get('/edit_siswa', [SiswaController::class, 'index'])->middleware('auth');
-
-// Route::get('/listkelas', [KelasController::class, 'index'])->middleware('auth');
-// Route::get('/tambah_kelas', [KelasController::class, 'index'])->middleware('auth');
-// Route::get('/edit_kelas', [KelasController::class, 'index'])->middleware('auth');
-
-// Route::get('/datapeminjam', [PeminjamController::class, 'index'])->middleware('auth');
-// Route::get('/tambah_peminjam', [PeminjamController::class, 'index'])->middleware('auth');
-// Route::get('/edit_peminjam', [PeminjamController::class, 'index'])->middleware('auth');
-// Route::get('/profildata', [PeminjamController::class, 'index'])->middleware('auth');
-
-// Route::get('/databuku', [BukuController::class, 'index'])->middleware('auth');
-// Route::get('/tambah_buku', [BukuController::class, 'index'])->middleware('auth');
-// Route::get('/edit_buku', [BukuController::class, 'index'])->middleware('auth');
-
-// Route::get('/konfirmasi', [KonfirmasiController::class, 'index'])->middleware('auth');
-// Route::get('/tambah_konfirmasi', [KonfirmasiController::class, 'index'])->middleware('auth');
-
-// Route::get('/listkategori', [KategoriController::class, 'index'])->middleware('auth');
-// Route::get('/tambah_kategori', [KategoriController::class, 'index'])->middleware('auth');
-// Route::get('/edit_kategori', [KategoriController::class, 'index'])->middleware('auth');
-
-// Route::get('/historydenda', [HistorydendaController::class, 'index'])->middleware('auth');
-// Route::get('/tambah_history', [HistorydendaController::class, 'index'])->middleware('auth');
-// Route::get('/edit_history', [HistorydendaController::class, 'index'])->middleware('auth');
-
 
 
 // Route Genre - Fantasy
