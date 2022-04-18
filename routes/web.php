@@ -207,10 +207,9 @@ Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->mi
 
 // Route Profile - Frontend
 
-Route::get('/profileuser', function () {
-    return view('profileuser');
-});
+Route::get('/profileuser', [RegisterController::class, 'profileuser'])->name('profileuser')->middleware('auth');
 
+Route::post('/updateprofileuser/{id}', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
 
 // Route Genre - Fantasy
 
