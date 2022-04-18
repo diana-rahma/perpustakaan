@@ -356,20 +356,30 @@
                                                 <th>Tenggat Pengembalian</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="list"
-                                               id="staff">
 
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Erlangga - Bahasa Inggris</td>
-                                                <td>4823</td>
-                                                <td>
-                                                    <img src="images/stories/pakettambahan6.jpg" style="width: 75px; height: 35;">
-                                                </td>
-                                                <td>24/01/2022</td>
-                                                <td>28/01/2022</td>
-                                            </tr>
-                                        </tbody>
+                                        {{-- <tbody>
+
+                                            @php
+                                                $no=1;
+                                            @endphp
+
+                                            @foreach ($data as $index => $row)
+                                                <tr>
+                                                    <td scope="row">{{ $index + $data->firstItem() }}</td>
+                                                    <td>{{ $row->kategori }}</td>
+                                                    <td>
+                                                        <img src="{{ asset('foto/'.$row->file) }}" width="125" height="85px">
+                                                    </td>
+                                                    <td>
+                                                
+                                                        <a href="edit_kategori{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                        <a href="/delete/{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-kategori="{{ $row->kategori }}" >Delete</a>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+
+                                        </tbody> --}}
                                     </table>
                                 </div>
 

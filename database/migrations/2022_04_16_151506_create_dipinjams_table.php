@@ -15,6 +15,11 @@ class CreateDipinjamsTable extends Migration
     {
         Schema::create('dipinjams', function (Blueprint $table) {
             $table->id();
+            $table->string('judul_buku');
+            $table->string('kode_buku');
+            $table->string('file');
+            $table->string('tgl_pinjam');
+            $table->string('tenggat_pengembalian');
             $table->timestamps();
         });
     }

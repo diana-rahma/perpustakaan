@@ -15,6 +15,11 @@ class CreateHistoriesTable extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
+            $table->string('judul_buku');
+            $table->string('file');
+            $table->string('tgl_peminjaman');
+            $table->string('tgl_pengembalian');
+            $table->string('denda');
             $table->timestamps();
         });
     }

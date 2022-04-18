@@ -360,30 +360,31 @@
                                             </tr>
                                         </thead>
                                     
-                                    <tbody>
+                                        <tbody>
 
-                                        @php
-                                            $no=1;
-                                        @endphp
+                                            @php
+                                                $no=1;
+                                            @endphp
 
-                                        @foreach ($data as $index => $row)
-                                            <tr>
-                                                <td scope="row">{{ $index + $data->firstItem() }}</td>
-                                                <td>{{ $row->kategori }}</td>
-                                                <td>
-                                                    <img src="{{ asset('foto/'.$row->file) }}" width="125" height="85px">
-                                                </td>
-                                                <td>
-                                            
-                                                    <a href="edit_kategori{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
-                                                    <a href="/delete/{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-kategori="{{ $row->kategori }}" >Delete</a>
-                                                    
-                                                </td>
-                                            </tr>
-                                    @endforeach
+                                            @foreach ($data as $index => $row)
+                                                <tr>
+                                                    <td scope="row">{{ $index + $data->firstItem() }}</td>
+                                                    <td>{{ $row->kategori }}</td>
+                                                    <td>
+                                                        <img src="{{ asset('foto/'.$row->file) }}" width="125" height="85px">
+                                                    </td>
+                                                    <td>
+                                                
+                                                        <a href="edit_kategori{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                        <a href="/delete/{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-kategori="{{ $row->kategori }}" >Delete</a>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            @endforeach
 
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                    
                                 </div>
                             </div>
 

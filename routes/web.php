@@ -1,17 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KelasController;
-use App\Http\Controllers\SiswaController;
-use App\Http\Controllers\HistorydendaController;
-use App\Http\Controllers\PeminjamController;
-use App\Http\Controllers\KonfirmasiController;
-use App\Http\Controllers\BukuController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\LoginController;
+
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\PeminjamController;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\KonfirmasiController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\HistorydendaController;
+
 use App\Http\Controllers\IndexuserController;
+use App\Http\Controllers\ListbukuController;
+use App\Http\Controllers\DipinjamController;
+use App\Http\Controllers\KonfirmasiuserController;
+use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\DendaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -178,30 +187,22 @@ Route::get('/listbuku', function () {
 
 // Route Dipinjam - Frontend
 
-Route::get('/dipinjam', function () {
-    return view('dipinjam');
-});
+Route::get('/dipinjam', [DipinjamController::class, 'index'])->name('dipinjam.index');
 
 
 // Route Konfirmasi - Frontend
 
-Route::get('/konfirmasiuser', function () {
-    return view('konfirmasiuser');
-});
+Route::get('/konfirmasiuser', [KonfirmasiuserController::class, 'index'])->name('konfirmasiuser.index');
 
 
 // Route History - Frontend
 
-Route::get('/history', function () {
-    return view('history');
-});
+Route::get('/history', [HistoryController::class, 'index'])->name('history.index');
 
 
 // Route Denda - Frontend
 
-Route::get('/denda', function () {
-    return view('denda');
-});
+Route::get('/denda', [DendaController::class, 'index'])->name('denda.index');
 
 
 // Route Profile - Frontend

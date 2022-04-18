@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\dipinjam;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoredipinjamRequest;
 use App\Http\Requests\UpdatedipinjamRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DipinjamController extends Controller
 {
@@ -15,7 +18,7 @@ class DipinjamController extends Controller
      */
     public function index()
     {
-        //
+        return view('dipinjam');
     }
 
     /**

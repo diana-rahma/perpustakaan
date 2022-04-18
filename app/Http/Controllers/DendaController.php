@@ -3,19 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\denda;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoredendaRequest;
 use App\Http\Requests\UpdatedendaRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DendaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index() 
     {
-        //
+        return view('denda');
     }
 
     /**

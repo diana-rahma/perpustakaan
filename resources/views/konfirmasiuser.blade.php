@@ -355,31 +355,30 @@
                                                 <th>Status</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="list"
-                                               id="databuku">
 
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Kamus Bahasa Jawa</td>
-                                                <td><img src="images/stories/dictionary7.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>Pending</td>
-                                            </tr>
+                                        {{-- <tbody>
 
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Kamus Bahasa Inggris</td>
-                                                <td><img src="images/stories/dictionary1.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>Finalized</td>
-                                            </tr>
+                                            @php
+                                                $no=1;
+                                            @endphp
 
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Buku Matahari</td>
-                                                <td><img src="images/stories/matahari.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>Finalized</td>
-                                            </tr>
-                                        
-                                        </tbody>
+                                            @foreach ($data as $index => $row)
+                                                <tr>
+                                                    <td scope="row">{{ $index + $data->firstItem() }}</td>
+                                                    <td>{{ $row->kategori }}</td>
+                                                    <td>
+                                                        <img src="{{ asset('foto/'.$row->file) }}" width="125" height="85px">
+                                                    </td>
+                                                    <td>
+                                                
+                                                        <a href="edit_kategori{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                        <a href="/delete/{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-kategori="{{ $row->kategori }}" >Delete</a>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+
+                                        </tbody> --}}
                                     </table>
                                 </div>
                             </div>

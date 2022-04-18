@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class history extends Model
 {
     use HasFactory;
+
+    protected $table = "histories";
+    protected $primarykey = "id";
+    protected $fillable = ['id','judul_buku','file','tgl_peminjaman','tgl_pengembalian','denda'];
 }

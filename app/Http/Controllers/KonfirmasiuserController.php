@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\konfirmasiuser;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorekonfirmasiuserRequest;
 use App\Http\Requests\UpdatekonfirmasiuserRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class KonfirmasiuserController extends Controller
 {
@@ -15,7 +18,7 @@ class KonfirmasiuserController extends Controller
      */
     public function index()
     {
-        //
+        return view('konfirmasiuser');
     }
 
     /**

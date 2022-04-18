@@ -15,6 +15,10 @@ class CreateDendasTable extends Migration
     {
         Schema::create('dendas', function (Blueprint $table) {
             $table->id();
+            $table->string('judul_buku');
+            $table->string('file');
+            $table->string('nominal_denda');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }

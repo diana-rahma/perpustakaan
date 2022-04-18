@@ -15,6 +15,9 @@ class CreateKonfirmasiusersTable extends Migration
     {
         Schema::create('konfirmasiusers', function (Blueprint $table) {
             $table->id();
+            $table->string('judul_buku');
+            $table->string('file');
+            $table->string('status');
             $table->timestamps();
         });
     }

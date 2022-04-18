@@ -298,6 +298,7 @@
                                         <a class="dropdown-item"
                                            href="/profileuser"><i class="material-icons">account_circle</i> My profile</a>
                                         <div class="dropdown-divider"></div>
+
                                        <form action="/logout" method="POST">
                                         @csrf
                                             <button type="submit" class="dropdown-item"><i class="material-icons">exit_to_app</i>Logout</button>   
@@ -353,23 +354,30 @@
                                                 <th>Keterangan</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="list"
-                                               id="companies">
 
-                                            <tr>
-                                                <td>1</td>
-                                                <td>
-                                                    <div class="">Tujuh Kelana</div>
-                                                </td>
-                                                <td>
-                                                    <img src="images/stories/tujuhkelana.jpg" style="width: 75px; height: 35;">
-                                                </td>
-                                                <td>Rp. 10000</td>
-                                                <td>Telat 2 Hari</td>
+                                        {{-- <tbody>
+
+                                            @php
+                                                $no=1;
+                                            @endphp
+
+                                            @foreach ($data as $index => $row)
+                                                <tr>
+                                                    <td scope="row">{{ $index + $data->firstItem() }}</td>
+                                                    <td>{{ $row->kategori }}</td>
+                                                    <td>
+                                                        <img src="{{ asset('foto/'.$row->file) }}" width="125" height="85px">
+                                                    </td>
+                                                    <td>
                                                 
-                                            </tr>
+                                                        <a href="edit_kategori{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
+                                                        <a href="/delete/{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-kategori="{{ $row->kategori }}" >Delete</a>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            @endforeach
 
-                                        </tbody>
+                                        </tbody> --}}
                                     </table>
                                 </div>
 

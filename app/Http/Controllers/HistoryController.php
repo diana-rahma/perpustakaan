@@ -3,19 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\history;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorehistoryRequest;
 use App\Http\Requests\UpdatehistoryRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HistoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+
+    public function index() {
+        
+        return view('history');
     }
 
     /**
