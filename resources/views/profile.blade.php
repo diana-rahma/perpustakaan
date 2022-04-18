@@ -277,6 +277,7 @@
                                         <a class="dropdown-item"
                                            href="/profile"><i class="material-icons">account_circle</i> My profile</a>
                                         <div class="dropdown-divider"></div>
+                                        
                                         <form action="/logout" method="POST">
                                         @csrf
                                             <button type="submit" class="dropdown-item"><i class="material-icons">exit_to_app</i>Logout</button>   

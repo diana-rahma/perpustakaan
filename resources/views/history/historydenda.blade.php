@@ -334,8 +334,6 @@
                                     </nav>
                                     <h1 class="m-0">History Denda</h1>
                                 </div>
-                                <a href="/tambah_history"
-                                   class="btn btn-success ml-3">Tambah History<i class="material-icons">add</i></a>
                             </div>
                         </div>
 
@@ -498,37 +496,6 @@
                                                 <a class="sidebar-menu-button"
                                                    href="/historydenda">
                                                     <span class="sidebar-menu-text">History Denda</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="sidebar-menu-item active open">
-                                        <a class="sidebar-menu-button"
-                                           data-toggle="collapse"
-                                           href="#pages_menu">
-                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">description</i>
-                                            <span class="sidebar-menu-text">Akses</span>
-                                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
-                                        </a>
-                                        <ul class="sidebar-submenu collapse show "
-                                            id="pages_menu">
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/login">
-                                                    <span class="sidebar-menu-text">Login User</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/signup">
-                                                    <span class="sidebar-menu-text">Sign Up</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/login">
-                                                    <span class="sidebar-menu-text">Logout</span>
                                                 </a>
                                             </li>
                                         </ul>
