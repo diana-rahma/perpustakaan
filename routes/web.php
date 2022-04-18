@@ -187,22 +187,22 @@ Route::get('/listbuku', function () {
 
 // Route Dipinjam - Frontend
 
-Route::get('/dipinjam', [DipinjamController::class, 'index'])->name('dipinjam.index');
+Route::get('/dipinjam', [DipinjamController::class, 'index'])->name('dipinjam.index')->middleware('auth');
 
 
 // Route Konfirmasi - Frontend
 
-Route::get('/konfirmasiuser', [KonfirmasiuserController::class, 'index'])->name('konfirmasiuser.index');
+Route::get('/konfirmasiuser', [KonfirmasiuserController::class, 'index'])->name('konfirmasiuser.index')->middleware('auth');
 
 
 // Route History - Frontend
 
-Route::get('/history', [HistoryController::class, 'index'])->name('history.index');
+Route::get('/history', [HistoryController::class, 'index'])->name('history.index')->middleware('auth');
 
 
 // Route Denda - Frontend
 
-Route::get('/denda', [DendaController::class, 'index'])->name('denda.index');
+Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->middleware('auth');
 
 
 // Route Profile - Frontend
