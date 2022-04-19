@@ -267,7 +267,7 @@
                                        data-toggle="dropdown"
                                        data-caret="false">
                                         <span class="mr-1 d-flex-inline">
-                                            <span class="text-light">User A.</span>
+                                            <span class="text-light">{{ auth()->user()->name }}</span>
                                         </span>
                                         <img src="images/avatar/profile-user.jpg"
                                              class="rounded-circle"
@@ -277,8 +277,8 @@
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">
                                         <div class="dropdown-item-text dropdown-item-text--lh">
-                                            <div><strong>User Account</strong></div>
-                                            <div class="text-muted">@usersacc</div>
+                                            <div><strong>{{ auth()->user()->name }}</strong></div>
+                                            <div class="text-muted">{{ auth()->user()->email }}</div>
                                         </div>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
@@ -326,8 +326,8 @@
                         <div class="container-fluid page__container">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <h1 class="h4 mb-1">User Account</h1>
-                                    <p class="text-muted">@usersacc</p>
+                                    <h1 class="h4 mb-1">{{ auth()->user()->name }}</h1>
+                                    <p class="text-muted">{{ auth()->user()->email }}</p>
                                 </div>
                                 <div class="col-lg-9">
                                     <div class="tab-content">
