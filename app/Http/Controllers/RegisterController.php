@@ -45,4 +45,11 @@ class RegisterController extends Controller
 
         return redirect('/login')->with('success','Registration successfull! Please login');
     }
+
+    public function profileuser(){
+        
+        return view('profileuser');
+    }
+
+
 }

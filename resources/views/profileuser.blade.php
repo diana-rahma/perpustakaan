@@ -267,7 +267,7 @@
                                        data-toggle="dropdown"
                                        data-caret="false">
                                         <span class="mr-1 d-flex-inline">
-                                            <span class="text-light">User A.</span>
+                                            <span class="text-light">{{ auth()->user()->name }}</span>
                                         </span>
                                         <img src="images/avatar/profile-user.jpg"
                                              class="rounded-circle"
@@ -277,8 +277,8 @@
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">
                                         <div class="dropdown-item-text dropdown-item-text--lh">
-                                            <div><strong>User Account</strong></div>
-                                            <div class="text-muted">@usersacc</div>
+                                            <div><strong>{{ auth()->user()->name }}</strong></div>
+                                            <div class="text-muted">{{ auth()->user()->email }}</div>
                                         </div>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
@@ -326,8 +326,8 @@
                         <div class="container-fluid page__container">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <h1 class="h4 mb-1">User Account</h1>
-                                    <p class="text-muted">@usersacc</p>
+                                    <h1 class="h4 mb-1">{{ auth()->user()->name }}</h1>
+                                    <p class="text-muted">{{ auth()->user()->email }}</p>
                                 </div>
                                 <div class="col-lg-9">
                                     <div class="tab-content">
@@ -347,6 +347,8 @@
                                         <p><strong class="headings-color">Basic Information</strong></p>
                                     </div>
                                     <div class="col-lg-8 card-form__body card-body">
+
+                                    
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
@@ -355,7 +357,7 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="User Account"
-                                                           value="">
+                                                           value="{{ auth()->user()->name }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -368,7 +370,7 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="123456"
-                                                           value="">
+                                                           value="{{ auth()->user()->nisn }}">
                                                 </div>
                                             </div>
                                             <div class="col">
@@ -378,7 +380,7 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="XI TKJ B"
-                                                           value="">
+                                                           value="{{ auth()->user()->kelas }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -391,14 +393,14 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="083831432980"
-                                                           value="">
+                                                           value="{{ auth()->user()->telepon }}">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="lname">Jenis Kelamin</label>
                                                         <select class="form-control" name="jk">
-                                                            <option value="">Jenis Kelamin</option>
+                                                            <option selected>{{ auth()->user()->jk }}</option>
                                                             <option>Perempuan</option>
                                                             <option>Laki-Laki</option>
                                                         </select>
@@ -414,11 +416,12 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="Jl Anggrek"
-                                                           value="">
+                                                           value="{{ auth()->user()->alamat }}">
                                                 </div>
                                             </div>
                                         </div>
-                                        
+                                    
+                                      
                                         
                                     </div>
                                 </div>
@@ -475,7 +478,7 @@
                                                 <div class="dz-preview dz-file-preview dz-clickable mr-3">
                                                     <div class="avatar"
                                                          style="width: 80px; height: 80px;">
-                                                        <img src="images/account-add-photo.svg"
+                                                        <img src="{{ asset('images/'. auth()->user()->foto) }}"
                                                              class="avatar-img rounded"
                                                              alt="..."
                                                              data-dz-thumbnail>

@@ -309,7 +309,7 @@
                                        data-toggle="dropdown"
                                        data-caret="false">
                                         <span class="mr-1 d-flex-inline">
-                                            <span class="text-light">User A.</span>
+                                            <span class="text-light">{{ auth()->user()->name }}</span>
                                         </span>
                                         <img src="images/avatar/profile-user.jpg"
                                              class="rounded-circle"
@@ -319,8 +319,8 @@
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">
                                         <div class="dropdown-item-text dropdown-item-text--lh">
-                                            <div><strong>User Account</strong></div>
-                                            <div class="text-muted">@usersacc</div>
+                                            <div><strong>{{ auth()->user()->name }}</strong></div>
+                                            <div class="text-muted">{{ auth()->user()->email }}</div>
                                         </div>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
