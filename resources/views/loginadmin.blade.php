@@ -8,7 +8,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Login</title>
+        <title>Login Admin</title>
 
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
@@ -85,7 +85,7 @@
                 </div>
             @endif
 
-            <form action="/loginadmin" method="post" autocomplete="off">
+           <form action="{{ route('admin.check') }}" method="POST" autocomplete="off">
             @csrf
                 <div class="form-group">
                     <label class="text-label"
@@ -130,7 +130,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <button class="btn btn-block btn-primary"
+                    <button class="btn btn-block btn-primary" 
                             type="submit">Login</button>
                 </div>
                 <div class="form-group text-center">
