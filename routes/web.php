@@ -13,6 +13,10 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KonfirmasiController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\HistorydendaController;
+use App\Http\Controllers\DipinjamController;
+use App\Http\Controllers\KonfirmasiuserController;
+use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\DendaController;
 
 use App\Http\Controllers\IndexuserController;
 use App\Http\Controllers\AdminController;
@@ -315,26 +319,26 @@ Route::get('/pakettambahan', function () {
     return view('listbuku.pakettambahan');
 });
 
-//Auth::routes();
+Auth::routes();
 
-Route::prefix('admin')->name('admin.')->group(function(){
+ Route::prefix('admin')->name('admin.')->group(function(){
 
-    Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
-        Route::view('/loginadmin','loginadmin')->name('loginadmin');
-        Route::post('/check',[AdminController::class, 'check'])->name('check');
-    });
+     Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
+         Route::view('/loginadmin','loginadmin')->name('login');
+         Route::post('/check',[AdminController::class, 'check'])->name('check');
+     });
 
-    Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
-        Route::view('/index','index')->name('index');
-        Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
-    });
-});
+     Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
+         Route::view('/index','index')->name('index');
+         Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
+     });
+ });
 
 // Route::view('/loginadmin', 'loginadmin')->name('loginadmin');
 // Route::view('/loginadmin', [AdminController::class, 'loginadmin'])->name('loginadmin');
-Route::post('/check',[AdminController::class, 'check'])->name('check');
-Route::view('/index','index')->name('index');
-Route::post('/logoutadmin',[AdminController::class, 'logout'])->name('logout');
+// Route::post('/check',[AdminController::class, 'check'])->name('check');
+// Route::view('/index','index')->name('index');
+// Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
 
 // Route::get('/signupadmin', function () {
 //     return view('signupadmin');

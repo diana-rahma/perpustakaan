@@ -10,25 +10,25 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     function check(Request $request){
-        //Validate inputs
+        //Validate Inputs
         $request->validate([
-            'email'=>'required|email|exist:admins,email',
-            'password'=>'requiredmin:4|max:255'
+           'email'=>'required|email|exists:admins,email',
+           'password'=>'required|min:4|max:30'
         ],[
-            'email.exists'=>'This email is not exist in admin table'
+            'email.exists'=>'This email is not exists in admins table'
         ]);
 
         $creds = $request->only('email','password');
 
-        if(Auth::guard('admin')->attempt($creds)){
-            return redirect()->route('/index');
+        if( Auth::guard('admin')->attempt($creds) ){
+            return redirect()->route('admin.index');
         }else{
-            return redirect()->route('/loginadmin')->with('fail','Incorrect credentials');
+            return redirect()->route('admin.login')->with('fail','Incorrect credentials');
         }
+   }
 
-        function logoutadmin(){
-            Auth::guard('admin')->logout();
-            return redirect('/loginadmin');
-        }
-    }
+   function logout(){
+       Auth::guard('admin')->logout();
+       return redirect('/loginadmin');
+   }
 }

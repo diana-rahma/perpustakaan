@@ -16,24 +16,24 @@
 
         <!-- Perfect Scrollbar -->
         <link type="text/css"
-              href="vendor/perfect-scrollbar.css"
+              href="{{url('vendor/perfect-scrollbar.css')}}"
               rel="stylesheet">
 
         <!-- App CSS -->
         <link type="text/css"
-              href="css/app.css"
+              href="{{url('css/app.css')}}"
               rel="stylesheet">
         
 
         <!-- Material Design Icons -->
         <link type="text/css"
-              href="css/vendor-material-icons.css"
+              href="{{url('css/vendor-material-icons.css')}}"
               rel="stylesheet">
         
 
         <!-- Font Awesome FREE Icons -->
         <link type="text/css"
-              href="css/vendor-fontawesome-free.css"
+              href="{{url('css/vendor-fontawesome-free.css')}}"
               rel="stylesheet">
         
 
@@ -558,30 +558,30 @@
         </div>
 
         <!-- jQuery -->
-        <script src="vendor/jquery.min.js"></script>
+        <script src="{{url('vendor/jquery.min.js')}}"></script>
 
         <!-- Bootstrap -->
-        <script src="vendor/popper.min.js"></script>
-        <script src="vendor/bootstrap.min.js"></script>
+        <script src="{{url('vendor/popper.min.js')}}"></script>
+        <script src="{{url('vendor/bootstrap.min.js')}}"></script>
 
         <!-- Perfect Scrollbar -->
-        <script src="vendor/perfect-scrollbar.min.js"></script>
+        <script src="{{url('vendor/perfect-scrollbar.min.js')}}"></script>
 
         <!-- DOM Factory -->
-        <script src="vendor/dom-factory.js"></script>
+        <script src="{{url('vendor/dom-factory.js')}}"></script>
 
         <!-- MDK -->
-        <script src="vendor/material-design-kit.js"></script>
+        <script src="{{url('vendor/material-design-kit.js')}}"></script>
 
         <!-- App -->
-        <script src="js/toggle-check-all.js"></script>
-        <script src="js/check-selected-row.js"></script>
-        <script src="js/dropdown.js"></script>
-        <script src="js/sidebar-mini.js"></script>
-        <script src="js/app.js"></script>
+        <script src="{{url('js/toggle-check-all.js')}}"></script>
+        <script src="{{url('/check-selected-row.js')}}"></script>
+        <script src="{{url('js/dropdown.js')}}"></script>
+        <script src="{{url('js/sidebar-mini.js')}}"></script>
+        <script src="{{url('js/app.js')}}"></script>
 
         <!-- App Settings (safe to remove) -->
-        <script src="js/app-settings.js"></script>
+        <script src="{{url('js/app-settings.js')}}"></script>
 
     </body>
 

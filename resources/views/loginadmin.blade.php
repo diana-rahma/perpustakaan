@@ -121,6 +121,11 @@
                                required=""
                                class="form-control form-control-prepended"
                                placeholder="Enter your password">
+                               @error('password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror   
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-key"></span>
