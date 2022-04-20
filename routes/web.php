@@ -325,6 +325,13 @@ Route::get('/login', [LoginController::class, 'create'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+Route::get('/konfirmasiuser', [KonfirmasiuserController::class, 'index'])->name('konfirmasiuser.index')->middleware('auth');
+Route::get('/dipinjam', [DipinjamController::class, 'index'])->name('dipinjam.index')->middleware('auth');
+Route::get('/history', [HistoryController::class, 'index'])->name('history.index')->middleware('auth');
+Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->middleware('auth');
+Route::get('/profileuser', [RegisterController::class, 'profileuser'])->name('profileuser')->middleware('auth');
+Route::post('/updateprofileuser/{id}', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
+
  Route::prefix('admin')->name('admin.')->group(function(){
 
      Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){

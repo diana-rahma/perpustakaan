@@ -263,7 +263,7 @@
                                         <span class="mr-1 d-flex-inline">
                                             <span class="text-light">Admin A.</span>
                                         </span>
-                                        <img src="images/avatar/profile.png"
+                                        <img src="{{url('images/avatar/profile.png')}}"
                                              class="rounded-circle"
                                              width="32"
                                              alt="Frontted">
