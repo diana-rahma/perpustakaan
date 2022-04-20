@@ -321,6 +321,10 @@ Route::get('/pakettambahan', function () {
 
 Auth::routes();
 
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
  Route::prefix('admin')->name('admin.')->group(function(){
 
      Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
