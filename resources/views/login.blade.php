@@ -85,7 +85,7 @@
                 </div>
             @endif
 
-            <form action="/loginadmin" method="post" autocomplete="off">
+            <form action="/login" method="post" autocomplete="off">
             @csrf
                 <div class="form-group">
                     <label class="text-label"

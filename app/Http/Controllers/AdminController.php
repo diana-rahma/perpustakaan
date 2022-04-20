@@ -26,7 +26,7 @@ class AdminController extends Controller
             return redirect()->route('/loginadmin')->with('fail','Incorrect credentials');
         }
 
-        function logout(){
+        function logoutadmin(){
             Auth::guard('admin')->logout();
             return redirect('/loginadmin');
         }

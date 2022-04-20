@@ -334,7 +334,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 // Route::view('/loginadmin', [AdminController::class, 'loginadmin'])->name('loginadmin');
 Route::post('/check',[AdminController::class, 'check'])->name('check');
 Route::view('/index','index')->name('index');
-Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
+Route::post('/logoutadmin',[AdminController::class, 'logout'])->name('logout');
 
 // Route::get('/signupadmin', function () {
 //     return view('signupadmin');

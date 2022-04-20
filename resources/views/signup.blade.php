@@ -118,23 +118,33 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="text-label"
-                           for="kelas">Kelas:</label>
-                    <div class="input-group input-group-merge">
-                        <input id="kelas" type="text" name="kelas"
-                               placeholder="Kelas"
+                    <label class="text-label" id="kelas" type="text" name="kelas"
                                class="form-control form-control-prepended @error('kelas') is-invalid @enderror"
-                               value="{{ old('kelas') }}">
+                               value="{{ old('kelas') }}"
+                           for="kelas">Kelas:</label>
+                           <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fa fa-users"></span>
+                            </div>
+                           <select class="form-control" name="kelas">
+                                <option selected>Kelas</option>
+                                <option>X RPL</option>
+                                <option>XI RPL</option>
+                                <option>XII RPL</option>
+                                <option>X TKJ</option>
+                                <option>XI TKJ</option>
+                                <option>XII TKJ</option>
+                                <option>X MM</option>
+                                <option>XI MM</option>
+                                <option>XII MM</option>
+                            </select>
+                             </div>
+                    <div class="input-group input-group-merge">
                             @error('kelas')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="fa fa-users"></span>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -160,23 +170,27 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="text-label"
-                           for="jk">Jenis Kelamin:</label>
-                    <div class="input-group input-group-merge">
-                        <input id="jk" type="text" name="jk"
-                               placeholder="Jenis Kelamin"
+                    <label class="text-label" id="jk" type="text" name="jk"
                                class="form-control form-control-prepended @error('jk') is-invalid @enderror"
-                               value="{{ old('jk') }}">
+                               value="{{ old('jk') }}"
+                           for="jk">Jenis Kelamin:</label>
+                            <div class="input-group-prepend">
+                       
+                           <div class="input-group-text">
+                                <span class="fa fa-venus-mars"></span>
+                            </div>
+                           <select class="form-control" name="jk" name="jk">
+                                <option selected>Jenis Kelamin</option>
+                                <option>Perempuan</option>
+                                <option>Laki-Laki</option>
+                            </select>
+                             </div>
+                    <div class="input-group input-group-merge">
                             @error('jk')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="fa fa-venus-mars"></span>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
