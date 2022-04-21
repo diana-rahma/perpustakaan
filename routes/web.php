@@ -19,6 +19,7 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\DendaController;
 
 use App\Http\Controllers\IndexuserController;
+use App\Http\Controllers\SignupadminController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 
@@ -321,6 +322,8 @@ Route::get('/pakettambahan', function () {
 
 Auth::routes();
 
+//User
+
 Route::get('/login', [LoginController::class, 'create'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
@@ -332,18 +335,23 @@ Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->mi
 Route::get('/profileuser', [RegisterController::class, 'profileuser'])->name('profileuser')->middleware('auth');
 Route::post('/updateprofileuser/{id}', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
 
- Route::prefix('admin')->name('admin.')->group(function(){
 
-     Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
-         Route::view('/loginadmin','loginadmin')->name('login');
-         Route::post('/check',[AdminController::class, 'check'])->name('check');
-     });
+//Admin
 
-     Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
-         Route::view('/index','index')->name('index');
-         Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
-     });
- });
+Route::prefix('admin')->name('admin.')->group(function(){
+
+    Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
+        Route::view('/loginadmin','loginadmin')->name('login');
+        Route::view('/signupadmin','signupadmin')->name('signup');
+        Route::post('/create',[SignupAdminController::class,'create'])->name('create');
+        Route::post('/check',[AdminController::class, 'check'])->name('check');
+    });
+
+    Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
+        Route::view('/index','index')->name('index');
+        Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
+    });
+});
 
 // Route::view('/loginadmin', 'loginadmin')->name('loginadmin');
 // Route::view('/loginadmin', [AdminController::class, 'loginadmin'])->name('loginadmin');

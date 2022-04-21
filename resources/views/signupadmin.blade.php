@@ -16,31 +16,31 @@
 
         <!-- Perfect Scrollbar -->
         <link type="text/css"
-              href="vendor/perfect-scrollbar.css"
+              href="{{url('vendor/perfect-scrollbar.css')}}"
               rel="stylesheet">
 
         <!-- App CSS -->
         <link type="text/css"
-              href="css/app.css"
+              href="{{url('css/app.css')}}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/app.rtl.css"
+              href="{{url('css/app.rtl.css')}}"
               rel="stylesheet">
 
         <!-- Material Design Icons -->
         <link type="text/css"
-              href="css/vendor-material-icons.css"
+              href="{{url('css/vendor-material-icons.css')}}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-material-icons.rtl.css"
+              href="{{url('css/vendor-material-icons.rtl.css')}}"
               rel="stylesheet">
 
         <!-- Font Awesome FREE Icons -->
         <link type="text/css"
-              href="css/vendor-fontawesome-free.css"
+              href="{{url('css/vendor-fontawesome-free.css')}}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-fontawesome-free.rtl.css"
+              href="{{url('css/vendor-fontawesome-free.rtl.css')}}"
               rel="stylesheet">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -72,7 +72,7 @@
                 <p class="m-0">Sign Up untuk memiliki akun </p>
             </div>
 
-            <form action="signup" method="post" autocomplete="off">
+            <form action="{{ route('admin.create') }}" method="post" autocomplete="off">
                 @csrf
 
                 <div class="form-group">
@@ -118,23 +118,27 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="text-label"
-                           for="jk">Jenis Kelamin:</label>
-                    <div class="input-group input-group-merge">
-                        <input id="jk" type="text" name="jk"
-                               placeholder="Jenis Kelamin"
+                    <label class="text-label" id="jk" type="text" name="jk"
                                class="form-control form-control-prepended @error('jk') is-invalid @enderror"
-                               value="{{ old('jk') }}">
+                               value="{{ old('jk') }}"
+                           for="jk">Jenis Kelamin:</label>
+                            <div class="input-group-prepend">
+                       
+                           <div class="input-group-text">
+                                <span class="fa fa-venus-mars"></span>
+                            </div>
+                           <select class="form-control" name="jk" name="jk">
+                                <option selected>Jenis Kelamin</option>
+                                <option>Perempuan</option>
+                                <option>Laki-Laki</option>
+                            </select>
+                             </div>
+                    <div class="input-group input-group-merge">
                             @error('jk')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="fa fa-venus-mars"></span>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -206,36 +210,36 @@
                 </div>
                 <div class="form-group text-center">
                     Have an account? <a class="text-body text-underline"
-                       href="/login">Login!</a>
+                       href="/admin/loginadmin">Login!</a>
                 </div>
             </form>
         </div>
 
         <!-- jQuery -->
-        <script src="vendor/jquery.min.js"></script>
+        <script src="{{url('vendor/jquery.min.js')}}"></script>
 
         <!-- Bootstrap -->
-        <script src="vendor/popper.min.js"></script>
-        <script src="vendor/bootstrap.min.js"></script>
+        <script src="{{url('vendor/popper.min.js')}}"></script>
+        <script src="{{url('vendor/bootstrap.min.js')}}"></script>
 
         <!-- Perfect Scrollbar -->
-        <script src="vendor/perfect-scrollbar.min.js"></script>
+        <script src="{{url('vendor/perfect-scrollbar.min.js')}}"></script>
 
         <!-- DOM Factory -->
-        <script src="vendor/dom-factory.js"></script>
+        <script src="{{url('vendor/dom-factory.js')}}"></script>
 
         <!-- MDK -->
-        <script src="vendor/material-design-kit.js"></script>
+        <script src="{{url('vendor/material-design-kit.js')}}"></script>
 
         <!-- App -->
-        <script src="js/toggle-check-all.js"></script>
-        <script src="js/check-selected-row.js"></script>
-        <script src="js/dropdown.js"></script>
-        <script src="js/sidebar-mini.js"></script>
-        <script src="js/app.js"></script>
+        <script src="{{url('js/toggle-check-all.js')}}"></script>
+        <script src="{{url('js/check-selected-row.js')}}"></script>
+        <script src="{{url('js/dropdown.js')}}"></script>
+        <script src="{{url('js/sidebar-mini.js')}}"></script>
+        <script src="{{url('js/app.js')}}"></script>
 
         <!-- App Settings (safe to remove) -->
-        <script src="js/app-settings.js"></script>
+        <script src="{{url('js/app-settings.js')}}"></script>
 
     </body>
 

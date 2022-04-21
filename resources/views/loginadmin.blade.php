@@ -150,7 +150,7 @@
                 </div>
                 <div class="form-group text-center">
                     Don't have an account? <a class="text-body text-underline"
-                       href="/signup">Sign up!</a>
+                       href="/admin/signupadmin">Sign up!</a>
                 </div>
             </form>
         </div>
