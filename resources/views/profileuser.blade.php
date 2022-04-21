@@ -480,7 +480,7 @@
                                                          style="width: 80px; height: 80px;">
                                                         <img src="{{ asset('images/'. auth()->user()->foto) }}"
                                                              class="avatar-img rounded"
-                                                             alt="..."
+                                                             alt=""
                                                              data-dz-thumbnail>
                                                     </div>
                                                 </div>
@@ -494,8 +494,8 @@
                                 </div>
                             </div>
                             <div class="text-right mb-5">
-                                <a href=""
-                                   class="btn btn-success">Save</a>
+                                <a href="/edit_profileuser"
+                                   class="btn btn-success">Update</a>
                             </div>
                         </div>
 

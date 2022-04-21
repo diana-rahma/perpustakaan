@@ -21,7 +21,8 @@ use App\Http\Controllers\KonfirmasiuserController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\DendaController;
 use App\Http\Controllers\AdminController;
-// user
+use App\Http\Controllers\ProfileuserController;
+
 use App\Http\Controllers\SignupadminController;
 use Illuminate\Support\Facades\Auth;
 
@@ -212,7 +213,13 @@ Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->mi
 
 Route::get('/profileuser', [RegisterController::class, 'profileuser'])->name('profileuser')->middleware('auth');
 
-Route::post('/updateprofileuser/{id}', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
+Route::post('/updateprofileuser', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
+
+
+Route::get('/profileuser',[ProfileuserController::class, 'index'])->name('profileuser')->middleware('auth');
+
+Route::get('/edit_profileuser',[ProfileuserController::class, 'editprofileuser'])->name('editprofileuser');
+// Route::post('/updateprofileuser',[ProfileuserController::class, 'updateprofileuser'])->name('updateprofileuser');
 
 // Route Genre - Fantasy
 
