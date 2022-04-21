@@ -13,14 +13,16 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KonfirmasiController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\HistorydendaController;
+
+
+use App\Http\Controllers\IndexuserController;
 use App\Http\Controllers\DipinjamController;
 use App\Http\Controllers\KonfirmasiuserController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\DendaController;
-
-use App\Http\Controllers\IndexuserController;
-use App\Http\Controllers\SignupadminController;
 use App\Http\Controllers\AdminController;
+// user
+use App\Http\Controllers\SignupadminController;
 use Illuminate\Support\Facades\Auth;
 
 /* 
@@ -336,14 +338,30 @@ Route::get('/profileuser', [RegisterController::class, 'profileuser'])->name('pr
 Route::post('/updateprofileuser/{id}', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
 
 
-//Admin
+// Route::prefix('user')->name('user.')->group(function(){
+
+//     // Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
+//     //     Route::view('/loginadmin','loginadmin')->name('login');
+//     //     Route::post('/check',[AdminController::class, 'check'])->name('check');
+//     // });
+
+//     // Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
+//     //     Route::view('/index','index')->name('index');
+//     //     Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
+//     // });
+
+//     Route::post('change-profile-info',[UserController::class,'updateInfo'])->name('userUpdateInfo');
+//     Route::post('change-profile-picture',[UserController::class,'updatePicture'])->name('userPictureUpdate');
+//     Route::get('/profileuser', [UserController::class, 'index'])->name('profileuser.index')->middleware('auth');
+// });
+
 
 Route::prefix('admin')->name('admin.')->group(function(){
 
     Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
         Route::view('/loginadmin','loginadmin')->name('login');
         Route::view('/signupadmin','signupadmin')->name('signup');
-        Route::post('/create',[SignupAdminController::class,'create'])->name('create');
+        Route::post('/create',[SignupadminController::class, 'create'])->name('create');
         Route::post('/check',[AdminController::class, 'check'])->name('check');
     });
 
