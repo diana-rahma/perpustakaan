@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Hash;
 
 
@@ -51,5 +52,39 @@ class RegisterController extends Controller
         return view('profileuser');
     }
 
+
+
+
+    public function index(Request $request){
+
+        // if($request->has('search')){
+        //     $data = Kategori::where('kategori','LIKE','%' .$request->search. '%')->paginate(3);
+        // }else{
+        //     $data = Kategori::paginate(3);
+        // }
+        
+        return view('profileuser',);
+    }
+
+    public function editprofileuser(Request $request){
+        
+        //$data= Profileuser::find();
+        return view('/edit_profileuser', [
+            'user' => $request->user()
+        ]);
+    }
+
+    public function updateprofileuser(Request $request, $id){
+        dd($data);
+
+        $data= User::find( Auth::user()->id );
+        $data->update($request->all());
+        if($request->hasFile('file')){
+            $request->file('file')->move('foto/',$request->file('file')->getClientOriginalName());
+            $data->file = $request->file('file')->getClientOriginalName();
+            $data->update();
+        }
+        return redirect()->route('/edit_profileuser')->with('success','Data Berhasil Di Update');
+    }
 
 }

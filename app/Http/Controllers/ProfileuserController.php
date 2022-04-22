@@ -31,7 +31,7 @@ class ProfileuserController extends Controller
     }
 
     public function updateprofileuser(Request $request){
-        $data= Profileuser::find();
+        $data= Profileuser::find( auth()->user()->name );
         $data->update($request->all());
         if($request->hasFile('file')){
             $request->file('file')->move('foto/',$request->file('file')->getClientOriginalName());

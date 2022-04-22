@@ -340,7 +340,7 @@
                             </div>
                         </div>
 
-                        <form action="/updateprofileuser" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('updateprofileuser', $data->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
@@ -496,7 +496,7 @@
                                     </div>
                                 </div>
                                 <div class="text-right mb-5">
-                                    <a href="/profiluser"><button type="submit" class="btn btn-success">Save</button></a>
+                                    <a href="/profiluser"><button type="submit" class="btn btn-success">Update</button></a>
                                 </div>
                             </div>
 
