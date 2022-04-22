@@ -341,6 +341,7 @@
                         </div>
 
                         <form action="/updateprofileuser" method="POST" enctype="multipart/form-data">
+                        @csrf
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
                                     <div class="row no-gutters">
@@ -495,8 +496,7 @@
                                     </div>
                                 </div>
                                 <div class="text-right mb-5">
-                                    <a href="/edit_profileuser"
-                                    class="btn btn-success">Update</a>
+                                    <a href="/profiluser"><button type="submit" class="btn btn-success">Save</button></a>
                                 </div>
                             </div>
 

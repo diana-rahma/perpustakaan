@@ -329,6 +329,9 @@ Route::get('/pakettambahan', function () {
     return view('listbuku.pakettambahan');
 });
 
+Route::get('/edit_profileuser', [ProfileuserController::class, 'editprofileuser'])->name('editprofileuser')->middleware('auth');
+Route::post('/updateprofileuser/{id}', [ProfileuserController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
+
 Auth::routes();
 
 //User
@@ -341,8 +344,8 @@ Route::get('/konfirmasiuser', [KonfirmasiuserController::class, 'index'])->name(
 Route::get('/dipinjam', [DipinjamController::class, 'index'])->name('dipinjam.index')->middleware('auth');
 Route::get('/history', [HistoryController::class, 'index'])->name('history.index')->middleware('auth');
 Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->middleware('auth');
-Route::get('/profileuser', [RegisterController::class, 'profileuser'])->name('profileuser')->middleware('auth');
-Route::post('/updateprofileuser/{id}', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
+// Route::get('/edit_profileuser', [RegisterController::class, 'profileuser'])->name('profileuser')->middleware('auth');
+// Route::post('/updateprofileuser/{id}', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
 
 
 // Route::prefix('user')->name('user.')->group(function(){

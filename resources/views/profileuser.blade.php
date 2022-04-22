@@ -495,7 +495,7 @@
                             </div>
                             <div class="text-right mb-5">
                                 <a href="/edit_profileuser"
-                                   class="btn btn-success">Update</a>
+                                   class="btn btn-success">Edit</a>
                             </div>
                         </div>
 

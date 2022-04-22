@@ -19,13 +19,15 @@ class ProfileuserController extends Controller
         //     $data = Kategori::paginate(3);
         // }
         
-        return view('profileuser',compact('data'));
+        return view('profileuser',);
     }
 
-    public function editprofileuser(){
+    public function editprofileuser(Request $request){
         
-        $data= Profileuser::find();
-        return view('profileuser', compact('data'));
+        //$data= Profileuser::find();
+        return view('/edit_profileuser', [
+            'user' => $request->user()
+        ]);
     }
 
     public function updateprofileuser(Request $request){
@@ -36,7 +38,7 @@ class ProfileuserController extends Controller
             $data->file = $request->file('file')->getClientOriginalName();
             $data->update();
         }
-        return redirect()->route('profileuser')->with('success','Data Berhasil Di Update');
+        return redirect()->route('/profileuser')->with('success','Data Berhasil Di Update');
     }
 
 }
