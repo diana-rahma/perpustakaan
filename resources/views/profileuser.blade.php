@@ -380,7 +380,7 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="XI TKJ B"
-                                                           value="{{ auth()->user()->kelas }}">
+                                                           value="{{ auth()->user()->kelas->kelas }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -393,7 +393,7 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="083831432980"
-                                                           value="{{ auth()->user()->telepon }}">
+                                                           value="{{ auth()->user()->telephone }}">
                                                 </div>
                                             </div>
                                             <div class="col">

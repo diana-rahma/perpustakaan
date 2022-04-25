@@ -344,49 +344,20 @@ Route::get('/dipinjam', [DipinjamController::class, 'index'])->name('dipinjam.in
 Route::get('/history', [HistoryController::class, 'index'])->name('history.index')->middleware('auth');
 Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->middleware('auth');
 
-// Route::get('/edit_profileuser', [RegisterController::class, 'profileuser'])->name('profileuser')->middleware('auth');
-// Route::post('/updateprofileuser/{id}', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
 
+// Route::prefix('admin')->name('admin.')->group(function(){
 
-// Route::prefix('user')->name('user.')->group(function(){
+//     Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
+//         Route::view('/loginadmin','loginadmin')->name('login');
+//         Route::view('/signupadmin','signupadmin')->name('signup');
+//         Route::post('/create',[SignupadminController::class, 'create'])->name('create');
+//         Route::post('/check',[AdminController::class, 'check'])->name('check');
+//     });
 
-//     // Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
-//     //     Route::view('/loginadmin','loginadmin')->name('login');
-//     //     Route::post('/check',[AdminController::class, 'check'])->name('check');
-//     // });
-
-//     // Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
-//     //     Route::view('/index','index')->name('index');
-//     //     Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
-//     // });
-
-//     Route::post('change-profile-info',[UserController::class,'updateInfo'])->name('userUpdateInfo');
-//     Route::post('change-profile-picture',[UserController::class,'updatePicture'])->name('userPictureUpdate');
-//     Route::get('/profileuser', [UserController::class, 'index'])->name('profileuser.index')->middleware('auth');
+//     Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
+//         Route::view('/index','index')->name('index');
+//         Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
+//     });
 // });
 
-
-Route::prefix('admin')->name('admin.')->group(function(){
-
-    Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
-        Route::view('/loginadmin','loginadmin')->name('login');
-        Route::view('/signupadmin','signupadmin')->name('signup');
-        Route::post('/create',[SignupadminController::class, 'create'])->name('create');
-        Route::post('/check',[AdminController::class, 'check'])->name('check');
-    });
-
-    Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
-        Route::view('/index','index')->name('index');
-        Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
-    });
-});
-
-// Route::view('/loginadmin', 'loginadmin')->name('loginadmin');
-// Route::view('/loginadmin', [AdminController::class, 'loginadmin'])->name('loginadmin');
-// Route::post('/check',[AdminController::class, 'check'])->name('check');
-// Route::view('/index','index')->name('index');
-// Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
-
-// Route::get('/signupadmin', function () {
-//     return view('signupadmin');
-// });
+Route::get('/index', [IndexController::class, 'index'])->name('index');

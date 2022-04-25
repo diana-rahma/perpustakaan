@@ -410,6 +410,12 @@
                                                     <option>Dictionary</option>
                                                     <option>Humor</option>
                                                 </select>
+                                                <select class="form-control" name="kategori">
+                                                    <option value="">Kategori</option>
+                                                        @foreach($kategori as $key => $value)
+                                                            <option value="{{ $value->id }}" {{ $value->id == $kategori->kategori->id ? "selected":""}}>{{ $value->kategori }}</option>
+                                                        @endforeach
+                                                </select>
                                             </div>
                                             @csrf
                                             <div class="form-group">

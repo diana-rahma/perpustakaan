@@ -42,10 +42,11 @@ class KategoriController extends Controller
     public function editkategori($id){
         
         $data= Kategori::find($id);
-        return view('kategori.edit_kategori', compact('data'));
+        $data = $kategori::all();
+        return view('kategori.edit_kategori', compact('data', 'kategori'));
     }
 
-    public function updatekategori(Request $request, $id){
+    public function updatekategori(Request $request, $id, Kategori $kategori){
         $data= Kategori::find($id);
         $data->update($request->all());
         if($request->hasFile('file')){
@@ -56,7 +57,7 @@ class KategoriController extends Controller
         return redirect()->route('listkategori')->with('success','Data Berhasil Di Update');
     }
 
-    public function delete($id){
+    public function delete($id, Kategori $kategori){
         $data= Kategori::find($id);
         $data->delete();
         return redirect()->route('listkategori')->with('success','Data Berhasil Di Hapus');
