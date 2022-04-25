@@ -378,7 +378,7 @@
                                                     <td>{{ $row->penerbit }}</td>
                                                     <td>{{ $row->tahun }}</td>
                                                     <td>{{ $row->lokasi }}</td>
-                                                    <td>{{ $row->kategori }}</td>
+                                                    <td>{{ $row->kategori->kategori }}</td>
                                                     <td>
                                                         <img src="{{ asset('foto/'.$row->file) }}" class="rounded" style="width: 75px">
                                                     </td>
@@ -400,7 +400,7 @@
                         <br>
 
                         <ul class="pagination m-0">
-
+                        {{$data->links()}}
                             <li class="page-item disabled">
                                 <a class="page-link"
                                    href="#"

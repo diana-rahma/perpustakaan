@@ -503,121 +503,26 @@
                             <div class="my-3"></div>
                             <div class="row">
 
+                            @foreach($buku as $key => $value)
                                 <div class="col-sm-6 col-md-3">
                                     <div class="card stories-card-popular">
-                                        <a href="/paket1"><img src="images/stories/paket1.jpg" alt="" class="card-img"></a>
+                                        <a href="/paket1"><img src="{{asset('foto/'.$value->file)}}" alt="" class="card-img"></a>
                                         <div class="stories-card-popular__title card-body">
-                                            <h4 class="card-title m-0"><a href="/paket1">Paket 1</a></h4>
+                                            <h4 class="card-title m-0"><a href="/paket1">{{ $value->judulbuku }}</a></h4>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="card stories-card-popular">
-                                        <a href="/paket2"><img src="images/stories/paket2.jpg" alt="" class="card-img"></a>
-                                        <div class="stories-card-popular__title card-body">
-                                            <h4 class="card-title m-0"><a href="/paket2">Paket 2</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="card stories-card-popular">
-                                        <a href="/paket3"><img src="images/stories/paket3.jpg" alt="" class="card-img"></a>
-                                        <div class="stories-card-popular__title card-body">
-                                            <h4 class="card-title m-0"><a href="/paket3">Paket 3</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="card stories-card-popular">
-                                        <a href="/pakettambahan"><img src="images/stories/pakettambahan.jpg" alt="" class="card-img"></a>
-                                        <div class="stories-card-popular__title card-body">
-                                            <h4 class="card-title m-0"><a href="/pakettambahan">Paket Tambahan</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="card stories-card-popular">
-                                        <a href="/the-book-of-almost"><img src="images/stories/romance8.jpg" alt="" class="card-img"></a>
-                                        <div class="stories-card-popular__title card-body">
-                                            <h4 class="card-title m-0"><a href="/the-book-of-almost">The Book Of Almost</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="card stories-card-popular">
-                                        <a href="/bone"><img src="images/stories/misteri3.jpg" alt="" class="card-img"></a>
-                                        <div class="stories-card-popular__title card-body">
-                                            <h4 class="card-title m-0"><a href="/bone">Bone</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="card stories-card-popular">
-                                        <a href="/marmut-merah-jambu"><img src="images/stories/humor5.jpg" alt="" class="card-img"></a>
-                                        <div class="stories-card-popular__title card-body">
-                                            <h4 class="card-title m-0"><a href="/marmut-merah-jambu">Marmut Merah Jambu</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="card stories-card-popular">
-                                        <a href="/the-lord-of-the-rings"><img src="images/stories/thelordofthering.jpeg" alt="" class="card-img"></a>
-                                        <div class="stories-card-popular__title card-body">
-                                            <h4 class="card-title m-0"><a href="/the-lord-of-the-rings">The Lord Of The Ring</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
+                            @endforeach
                                 
                             </div>
 
                         <br>
 
-                        <ul class="pagination m-0">
+                        
+                        {{$buku->links('vendor.pagination.custom')}}
+                            
 
-                            <li class="page-item disabled">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="Previous">
-                                    <span aria-hidden="true"
-                                          class="material-icons">chevron_left</span>
-                                    <span>Prev</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item active">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="1">
-                                    <span>1</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="2">
-                                    <span>2</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="Next">
-                                    <span>Next</span>
-                                    <span aria-hidden="true"
-                                          class="material-icons">chevron_right</span>
-                                </a>
-                            </li>
-
-                        </ul>
+                        
 
                         </div>
 

@@ -13,11 +13,13 @@ class CreateDendasTable extends Migration
      */
     public function up()
     {
-        Schema::create('dendas', function (Blueprint $table) {
+        Schema::create('denda', function (Blueprint $table) {
             $table->id();
-            $table->string('judul_buku');
-            $table->string('file');
-            $table->string('nominal_denda');
+            $table->foreignId('id_pinjam')
+            ->constrained('pinjam')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->double('denda');
             $table->string('keterangan');
             $table->timestamps();
         });

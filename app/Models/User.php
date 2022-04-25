@@ -20,8 +20,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'nisn',
-        'kelas',
-        'telepon',
+        'id_kelas',
+        'telephone',
         'jk',
         'alamat',
         'email',
@@ -46,4 +46,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function pinjam (){
+        return $this->hasMany(dipinjam::class, "id_user","id");
+    }
+
+    public function kelas (){
+        return $this->belongsTo(kelas::class, "id_kelas","id");
+    }
 }

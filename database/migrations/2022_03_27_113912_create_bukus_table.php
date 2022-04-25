@@ -13,7 +13,7 @@ class CreateBukusTable extends Migration
      */
     public function up()
     {
-        Schema::create('bukus', function (Blueprint $table) {
+        Schema::create('buku', function (Blueprint $table) {
             $table->id();
             $table->integer('kode')-> nullable() ;
             $table->string('judulbuku');
@@ -21,7 +21,10 @@ class CreateBukusTable extends Migration
             $table->string('penerbit');
             $table->integer('tahun');
             $table->string('lokasi');
-            $table->string('kategori');
+            $table->foreignId('id_kategori')
+            ->constrained('kategori')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->string('file');
             $table->timestamps();
         });

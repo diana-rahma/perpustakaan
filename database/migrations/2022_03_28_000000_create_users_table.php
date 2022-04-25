@@ -18,10 +18,13 @@ class CreateUsersTable extends Migration
             $table->string('foto')->nullable();
             $table->string('name');
             $table->string('nisn');
-            $table->string('kelas');
-            $table->string('telepon');
-            $table->string('jk');
-            $table->string('alamat');
+            $table->foreignId('id_kelas')
+            ->constrained('kelas')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->string('telephone');
+            $table->enum('jk', ['Perempuan','Laki-laki']);
+            $table->text('alamat');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

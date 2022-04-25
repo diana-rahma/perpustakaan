@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\listbuku;
+use App\Models\buku;
 use App\Http\Requests\StorelistbukuRequest;
 use App\Http\Requests\UpdatelistbukuRequest;
 
@@ -15,7 +15,13 @@ class ListbukuController extends Controller
      */
     public function index()
     {
-        //
+        $buku = buku::paginate(2);
+        return view('listbuku.listbuku',compact('buku'));
+    }
+
+    public function detail($id) {
+        $buku = buku::find($id);
+        return view('buku.detail',compact('buku'));
     }
 
     /**
@@ -45,7 +51,7 @@ class ListbukuController extends Controller
      * @param  \App\Models\listbuku  $listbuku
      * @return \Illuminate\Http\Response
      */
-    public function show(listbuku $listbuku)
+    public function show(buku $listbuku)
     {
         //
     }
@@ -56,7 +62,7 @@ class ListbukuController extends Controller
      * @param  \App\Models\listbuku  $listbuku
      * @return \Illuminate\Http\Response
      */
-    public function edit(listbuku $listbuku)
+    public function edit(buku $listbuku)
     {
         //
     }
@@ -68,7 +74,7 @@ class ListbukuController extends Controller
      * @param  \App\Models\listbuku  $listbuku
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatelistbukuRequest $request, listbuku $listbuku)
+    public function update(UpdatelistbukuRequest $request, buku $listbuku)
     {
         //
     }
@@ -79,7 +85,7 @@ class ListbukuController extends Controller
      * @param  \App\Models\listbuku  $listbuku
      * @return \Illuminate\Http\Response
      */
-    public function destroy(listbuku $listbuku)
+    public function destroy(buku $listbuku)
     {
         //
     }

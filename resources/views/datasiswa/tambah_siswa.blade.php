@@ -356,31 +356,9 @@
                                                         <label for="lname">Kelas</label>
                                                             <select class="form-control" name="kelas">
                                                                 <option value="">Kelas</option>
-                                                                <option>X</option>
-                                                                <option>XI</option>
-                                                                <option>XII</option>
-                                                            </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="lname">Jurusan</label>
-                                                            <select class="form-control" name="jurusan">
-                                                                <option value="">Jurusan</option>
-                                                                <option>MM</option>
-                                                                <option>RPL</option>
-                                                                <option>TKJ</option>
-                                                            </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="lname">Alfabet</label>
-                                                            <select class="form-control" name="alfabet">
-                                                                <option value="">Alfabet</option>
-                                                                <option>A</option>
-                                                                <option>B</option>
-                                                                <option>C</option>
+                                                                @foreach($kelas as $key => $value)
+                                                                    <option value="{{ $value->id }}">{{ $value->kelas ." ".$value->jurusan ." ".$value->alfabet }}</option>
+                                                                @endforeach
                                                             </select>
                                                     </div>
                                                 </div>
@@ -416,6 +394,30 @@
                                                     <div class="form-group">
                                                         <label for="lname">No Telepon</label>
                                                         <input type="text" name="telp" class="form-control" id="lname" placeholder="No Telepon" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Alamat</label>
+                                                        <textarea name="alamat" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Email</label>
+                                                        <input type="email" name="email" class="form-control" id="lname" placeholder="Email" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Password</label>
+                                                        <input type="password" name="password" class="form-control" id="lname" placeholder="Password" value="">
                                                     </div>
                                                 </div>
                                             </div>

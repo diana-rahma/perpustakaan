@@ -13,13 +13,20 @@ class CreateDipinjamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dipinjams', function (Blueprint $table) {
+        Schema::create('pinjam', function (Blueprint $table) {
             $table->id();
-            $table->string('judul_buku');
-            $table->string('kode_buku');
-            $table->string('file');
-            $table->string('tgl_pinjam');
-            $table->string('tenggat_pengembalian');
+            $table->foreignId('id_buku')
+            ->constrained('buku')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreignId('id_user')
+            ->constrained('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->enum('status', ['Finalized','Pending','Aborted']);
+            $table->date('tenggat_pengembalian');
+            $table->date('tanggal_pinjam');
+            $table->date('tanggal_kembali');
             $table->timestamps();
         });
     }

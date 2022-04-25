@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\peminjam;
+use App\Models\dipinjam;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorepeminjamRequest;
 use App\Http\Requests\UpdatepeminjamRequest;
@@ -20,7 +20,7 @@ class PeminjamController extends Controller
     {
         //
 
-        $data = Peminjam::all();
+        $data = dipinjam::all();
 
         return view('datapeminjam.datapeminjam',compact('data'));
     }
@@ -46,7 +46,7 @@ class PeminjamController extends Controller
     public function storepeminjam(Request $request)
     {
         //
-        Peminjam::create([
+        dipinjam::create([
             'namasiswa' => $request->namasiswa,
             'judulbuku' => $request->judulbuku,
             'tanggalpinjam' => $request->tanggalpinjam,
@@ -62,7 +62,7 @@ class PeminjamController extends Controller
      * @param  \App\Models\Peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function show(peminjam $peminjam)
+    public function show(dipinjam $peminjam)
     {
         // 
     }
@@ -73,7 +73,7 @@ class PeminjamController extends Controller
      * @param  \App\Models\Peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function editpeminjam(Peminjam $peminjam)
+    public function editpeminjam(dipinjam $peminjam)
     {
         //
         $data = $peminjam::all();
@@ -88,7 +88,7 @@ class PeminjamController extends Controller
      * @param  \App\Models\Peminjam  $peminjam
      * @return \Illuminate\Http\Response
      */
-    public function updatepeminjam(Request $request, Peminjam $peminjam)
+    public function updatepeminjam(Request $request, dipinjam $peminjam)
     {
         //
         $peminjam->update([
@@ -101,7 +101,7 @@ class PeminjamController extends Controller
     }
 
     public function delete($id){
-        $data= Peminjam::find($id);
+        $data= dipinjam::find($id);
         $data->delete();
         return redirect()->route('peminjam.index')->with('success','Data Berhasil Di Hapus');
     }

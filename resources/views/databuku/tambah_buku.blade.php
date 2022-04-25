@@ -431,17 +431,12 @@
 
                                             <div class="form-group" >
                                                 <label for="opass">Kategori</label>
-                                                <select class="form-control" name="kategori">
-                                                    <option value="">Kategori</option>
-                                                    <option>Fantasy</option>
-                                                    <option>Romance</option>
-                                                    <option>Horror</option>
-                                                    <option>Adventure</option>
-                                                    <option>Mistery</option>
-                                                    <option>Biography</option>
-                                                    <option>Dictionary</option>
-                                                    <option>Humor</option>
-                                                </select>
+                                                <select class="form-control" name="id_kategori">
+                                                                <option value="">Kategori</option>
+                                                                @foreach($kategori as $key => $value)
+                                                                    <option value="{{ $value->id }}">{{ $value->kategori }}</option>
+                                                                @endforeach
+                                                            </select>
                                             </div>
                                             
                                             <div class="form-group">

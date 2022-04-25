@@ -12,4 +12,8 @@ class kelas extends Model
     protected $table = "kelas";
     protected $primarykey = "id";
     protected $fillable = ['id','kelas','jurusan', 'alfabet'];
+
+    public function user (){
+        return $this->hasMany(User::class, "id_kelas","id");
+    }
 }

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\siswa;
+use App\Models\User;
+use App\Models\kelas;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoresiswaRequest;
 use App\Http\Requests\UpdatesiswaRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 
 class SiswaController extends Controller
 {
@@ -20,7 +22,7 @@ class SiswaController extends Controller
     {
         //
 
-        $data = Siswa::all();
+        $data = User::all();
 
         return view('datasiswa.datasiswa',compact('data'));
     }
@@ -32,8 +34,10 @@ class SiswaController extends Controller
      */
     public function createsiswa()
     {
-        //
-        return view('datasiswa.tambah_siswa');
+        
+        $kelas = kelas::all();
+        return view('datasiswa.tambah_siswa',compact('kelas'));
+
     }
 
     /**
@@ -45,14 +49,15 @@ class SiswaController extends Controller
     public function storesiswa(Request $request)
     {
         //
-        Siswa::create([
+        User::create([
             'nisn' => $request->nisn,
-            'nama_siswa' => $request->nama,
-            'kelas' => $request->kelas,
-            'jurusan' => $request->jurusan,
-            'alfabet' => $request->alfabet,
+            'name' => $request->nama,
+            'id_kelas' => $request->kelas,
             'jk' => $request->jk,
-            'telp' => $request->telp,
+            'telephone' => $request->telp,
+            'alamat' => $request->alamat,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
         
         return redirect()->route('siswa.index')->with(['success' => 'Data Berhasil Disimpan!']);
@@ -64,7 +69,7 @@ class SiswaController extends Controller
      * @param  \App\Models\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function show(siswa $siswa)
+    public function show(User $siswa)
     {
         //
     }
@@ -75,11 +80,12 @@ class SiswaController extends Controller
      * @param  \App\Models\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function editsiswa(Siswa $siswa)
+    public function editsiswa(User $siswa)
     {
         //
         $data = $siswa::all();
-        return view('datasiswa.edit_siswa',compact('data', 'siswa'));
+        $kelas = kelas::all();
+        return view('datasiswa.edit_siswa',compact('data', 'siswa', 'kelas'));
     }
 
     /**
@@ -89,17 +95,18 @@ class SiswaController extends Controller
      * @param  \App\Models\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function updatesiswa(Request $request, Siswa $siswa)
+    public function updatesiswa(Request $request, User $siswa)
     {
         //
         $siswa->update([
             'nisn'     => $request->nisn,
-            'nama_siswa'     => $request->nama_siswa,
-            'kelas'     => $request->kelas,
-            'jurusan'     => $request->jurusan,
-            'alfabet'     => $request->alfabet,
+            'name'     => $request->nama_siswa,
+            'id_kelas'     => $request->kelas,
             'jk'     => $request->jk,
             'telp'     => $request->telp,
+            'telephone' => $request->telp,
+            'alamat' => $request->alamat,
+            'email' => $request->email,
         ]);
     
         return redirect()->route('siswa.index')->with('success',' Data Berhasil di Update');
@@ -111,7 +118,7 @@ class SiswaController extends Controller
      * @param  \App\Models\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function deletesiswa(Siswa $siswa)
+    public function deletesiswa(User $siswa)
     {
         //
         $siswa->delete();

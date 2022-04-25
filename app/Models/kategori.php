@@ -9,7 +9,10 @@ class kategori extends Model
 {
     use HasFactory;
 
-    protected $table = "kategoris";
-    protected $primarykey = "id";
+    protected $table = "kategori";
     protected $fillable = ['id','kategori','file'];
+
+    public function buku (){
+        return $this->hasMany(buku::class, "id_kategori","id");
+    }
 }

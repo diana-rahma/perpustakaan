@@ -21,6 +21,7 @@ use App\Http\Controllers\KonfirmasiuserController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\DendaController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ListbukuController;
 // use App\Http\Controllers\ProfileuserController;
 
 use App\Http\Controllers\SignupadminController;
@@ -184,9 +185,8 @@ Route::post('/signup', [RegisterController::class, 'store']);
 
 // Route List Buku - Frontend
 
-Route::get('/listbuku', function () {
-    return view('listbuku.listbuku');
-});
+Route::get('/listbuku', [ListbukuController::class, 'index'])->name('listbuku')->middleware('auth');
+
 
 
 // Route Dipinjam - Frontend
@@ -219,7 +219,7 @@ Route::get('/profileuser',[RegisterController::class, 'index'])->name('profileus
 Route::get('/edit_profileuser',[RegisterController::class, 'editprofileuser'])->name('editprofileuser');
 Route::post('/updateprofileuser/{id}', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
 
-
+Route::get('detail/{id}',[ListbukuController::class, 'detail'])->name('detailbuku');
 // Route Genre - Fantasy
 
 Route::get('/fantasy', function () {

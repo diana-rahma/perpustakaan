@@ -356,32 +356,10 @@
                                                     <div class="form-group">
                                                         <label for="lname">Kelas</label>
                                                             <select class="form-control" name="kelas">
-                                                                <option selected>{{ $siswa->kelas }}</option>
-                                                                <option>X</option>
-                                                                <option>XI</option>
-                                                                <option>XII</option>
-                                                            </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="lname">Jurusan</label>
-                                                            <select class="form-control" name="jurusan">
-                                                                <option selected>{{ $siswa->jurusan }}</option>
-                                                                <option>MM</option>
-                                                                <option>RPL</option>
-                                                                <option>TKJ</option>
-                                                            </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="lname">Alfabet</label>
-                                                            <select class="form-control" name="alfabet">
-                                                                <option selected>{{ $siswa->alfabet }}</option>
-                                                                <option>A</option>
-                                                                <option>B</option>
-                                                                <option>C</option>
+                                                                <option value="">Kelas</option>
+                                                                @foreach($kelas as $key => $value)
+                                                                    <option value="{{ $value->id }}" {{ $value->id == $siswa->kelas->id ? "selected":""}}>{{ $value->kelas ." ".$value->jurusan ." ".$value->alfabet }}</option>
+                                                                @endforeach
                                                             </select>
                                                     </div>
                                                 </div>
@@ -397,7 +375,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Nama Siswa</label>
-                                                        <input id="lname" type="text" class="form-control" name="nama_siswa" value="{{ $siswa->nama_siswa}}">
+                                                        <input id="lname" type="text" class="form-control" name="nama_siswa" value="{{ $siswa->name}}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -416,7 +394,23 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">No Telepon</label>
-                                                        <input id="lname" type="text" class="form-control" name="telp" value="{{ $siswa->telp}}">
+                                                        <input id="lname" type="text" class="form-control" name="telp" value="{{ $siswa->telephone}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Alamat</label>
+                                                        <textarea name="alamat" class="form-control">{{ $siswa->alamat}}</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Email</label>
+                                                        <input type="email" name="email" class="form-control" id="lname" placeholder="Email" value="{{ $siswa->email}}">
                                                     </div>
                                                 </div>
                                             </div>

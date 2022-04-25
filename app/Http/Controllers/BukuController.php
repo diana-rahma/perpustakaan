@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\buku;
+use App\Models\kategori;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorebukuRequest;
 use App\Http\Requests\UpdatebukuRequest;
@@ -23,7 +24,8 @@ class BukuController extends Controller
 
     public function tambahbuku(){
 
-        return view('databuku.tambah_buku');
+        $kategori = kategori::all();
+        return view('databuku.tambah_buku',compact('kategori'));
     }
 
     public function insertbuku(Request $request){

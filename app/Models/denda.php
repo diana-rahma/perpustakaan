@@ -9,7 +9,11 @@ class denda extends Model
 {
     use HasFactory;
 
-    protected $table = "dendas";
+    protected $table = "denda";
     protected $primarykey = "id";
-    protected $fillable = ['id','judul_buku','file','nominal_denda','keterangan'];
+    protected $fillable = ['id','id_pinjam','denda','keterangan'];
+
+    public function pinjam (){
+        return $this->belongsTo(pinjam::class, "id_pinjam","id");
+    }
 }

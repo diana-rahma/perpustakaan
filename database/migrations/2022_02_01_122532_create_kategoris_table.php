@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePeminjamsTable extends Migration
+class CreateKategorisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreatePeminjamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('peminjams', function (Blueprint $table) {
+        Schema::create('kategori', function (Blueprint $table) {
             $table->id();
-            $table->string('namasiswa');
-            $table->string('judulbuku');
-            $table->date('tanggalpinjam');
-            $table->date('tanggalkembali');
+            $table->string('kategori');
+            $table->string('file');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreatePeminjamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('peminjams');
+        Schema::dropIfExists('kategoris');
     }
 }
