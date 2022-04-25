@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\konfirmasi;
+use App\Models\dipinjam;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorekonfirmasiRequest;
 use App\Http\Requests\UpdatekonfirmasiRequest;
@@ -19,7 +19,7 @@ class KonfirmasiController extends Controller
      */
     public function index()
     {
-            $data = konfirmasi::all();
+            $data = dipinjam::all();
 
         return view('konfirmasi.konfirmasi',compact('data'));
     }
@@ -32,7 +32,7 @@ class KonfirmasiController extends Controller
     public function createkonfirmasi()
     {
         //
-        $data = konfirmasi::all();
+        $data = dipinjam::all();
         return view('konfirmasi.tambah_konfirmasi');
 
     }
@@ -47,7 +47,7 @@ class KonfirmasiController extends Controller
     {
         //dd($request->all());
 
-        $data = Konfirmasi::create($request->all());
+        $data = dipinjam::create($request->all());
 
         if ($request->hasFile('file')) {
             $request->file('file')->move('foto/', $request->file('file')->getClientOriginalName());
@@ -64,7 +64,7 @@ class KonfirmasiController extends Controller
      * @param  \App\Models\konfirmasi  $konfirmasi
      * @return \Illuminate\Http\Response
      */
-    public function show(konfirmasi $konfirmasi)
+    public function show(dipinjam $konfirmasi)
     {
         //
     }
@@ -75,7 +75,7 @@ class KonfirmasiController extends Controller
      * @param  \App\Models\konfirmasi  $konfirmasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(konfirmasi $konfirmasi)
+    public function edit(dipinjam $konfirmasi)
     {
         //
     }
@@ -87,7 +87,7 @@ class KonfirmasiController extends Controller
      * @param  \App\Models\konfirmasi  $konfirmasi
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatekonfirmasiRequest $request, konfirmasi $konfirmasi)
+    public function update(UpdatekonfirmasiRequest $request, dipinjam $konfirmasi)
     {
         //
     }
@@ -98,7 +98,7 @@ class KonfirmasiController extends Controller
      * @param  \App\Models\konfirmasi  $konfirmasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(konfirmasi $konfirmasi)
+    public function destroy(dipinjam $konfirmasi)
     {
         //
     }
