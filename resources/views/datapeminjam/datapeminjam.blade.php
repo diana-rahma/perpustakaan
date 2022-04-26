@@ -337,8 +337,6 @@
                                     </nav>
                                     <h1 class="m-0">Data Peminjam</h1>
                                 </div>
-                                <a href="/tambah_peminjam"
-                                   class="btn btn-success ml-3">Tambah Data Peminjam <i class="material-icons">add</i></a>
                             </div>
                         </div>
 

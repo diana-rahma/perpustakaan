@@ -143,10 +143,6 @@
                                for="remember">Remember me for 30 days</label>
                     </div>
                 </div>
-                <div class="form-group text-center">
-                    Don't have an account? <a class="text-body text-underline"
-                       href="/signup">Sign up!</a>
-                </div>
             </form>
         </div>
 
