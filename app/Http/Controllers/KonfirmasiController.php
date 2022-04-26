@@ -19,7 +19,7 @@ class KonfirmasiController extends Controller
      */
     public function index()
     {
-            $data = dipinjam::all();
+            $data = dipinjam::paginate(5);
 
         return view('konfirmasi.konfirmasi',compact('data'));
     }

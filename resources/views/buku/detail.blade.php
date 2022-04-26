@@ -8,7 +8,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Setengah Jalan</title>
+        <title>{{$buku->judulbuku}}</title>
 
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
@@ -16,31 +16,24 @@
 
         <!-- Perfect Scrollbar -->
         <link type="text/css"
-              href="vendor/perfect-scrollbar.css"
+              href="{{url('vendor/perfect-scrollbar.css')}}"
               rel="stylesheet">
 
         <!-- App CSS -->
         <link type="text/css"
-              href="css/app.css"
+              href="{{url('css/app.css')}}"
               rel="stylesheet">
-        <link type="text/css"
-              href="css/app.rtl.css"
-              rel="stylesheet">
+        
 
         <!-- Material Design Icons -->
         <link type="text/css"
-              href="css/vendor-material-icons.css"
+              href="{{url('css/vendor-material-icons.css')}}"
               rel="stylesheet">
-        <link type="text/css"
-              href="css/vendor-material-icons.rtl.css"
-              rel="stylesheet">
+        
 
         <!-- Font Awesome FREE Icons -->
         <link type="text/css"
-              href="css/vendor-fontawesome-free.css"
-              rel="stylesheet">
-        <link type="text/css"
-              href="css/vendor-fontawesome-free.rtl.css"
+              href="{{url('css/vendor-fontawesome-free.css')}}"
               rel="stylesheet">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -58,16 +51,16 @@
 
         <!-- Flatpickr -->
         <link type="text/css"
-              href="css/vendor-flatpickr.css"
+              href="{{url('css/vendor-flatpickr.css')}}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-flatpickr.rtl.css"
+              href="{{url('css/vendor-flatpickr.rtl.css')}}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-flatpickr-airbnb.css"
+              href="{{url('css/vendor-flatpickr-airbnb.css')}}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-flatpickr-airbnb.rtl.css"
+              href="{{url('css/vendor-flatpickr-airbnb.rtl.css')}}"
               rel="stylesheet">
 
         <!-- Vector Maps -->
@@ -78,6 +71,7 @@
     </head>
 
     <body class="layout-default">
+
 
         <div class="preloader"></div>
 
@@ -289,7 +283,7 @@
                                         <span class="mr-1 d-flex-inline">
                                             <span class="text-light">{{ auth()->user()->name }}</span>
                                         </span>
-                                        <img src="images/avatar/profile-user.jpg"
+                                        <img src="{{url('images/avatar/profile-user.jpg')}}"
                                              class="rounded-circle"
                                              width="32"
                                              alt="Frontted">
@@ -325,6 +319,7 @@
             <!-- Header Layout Content -->
             <div class="mdk-header-layout__content">
 
+            
                 <div class="mdk-drawer-layout js-mdk-drawer-layout"
                      data-push
                      data-responsive-width="992px">
@@ -332,6 +327,7 @@
 
                         <div class="container-fluid page__heading-container">
                             <div class="page__heading d-flex align-items-end">
+                            
                                 <div class="flex">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb mb-0">
@@ -349,10 +345,16 @@
                         </div>
 
                         <div class="container-fluid page__container">
+                        @if(session('success'))
+                            <div class="alert alert-success"
+                                    role="alert">
+                                {{session('success')}}
+                            </div>
+                        @endif
                             <div class="card card-form">
                                 <div class="row no-gutters">
                                     <div class="col-lg-4 card-body">
-                                        <img src="images/stories/thelordofthering.jpg" style="width: 250px; height: 250px;">
+                                        <img src="{{asset('foto/'.$buku->file)}}" alt="" class="card-img">
                                         
                                         <br>
                                         <br>
@@ -361,48 +363,17 @@
                                                     class="btn btn-primary"
                                                     data-toggle="modal"
                                                     data-target="#modal-center">Pinjam Buku</button>
-                                                    <div id="modal-center"
-                                                        class="modal fade"
-                                                        tabindex="-1"
-                                                        role="dialog"
-                                                        aria-labelledby="modal-center-title"
-                                                        aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered"
-                                                            role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title"
-                                                                        id="modal-center-title">Pinjam Buku</h5>
-                                                                    <button type="button"
-                                                                            class="close"
-                                                                            data-dismiss="modal"
-                                                                            aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div> <!-- // END .modal-header -->
-                                                                <div class="modal-body">
-                                                                    <p>Apakah anda yakin untuk meminjam buku ini?</p>
-                                                                </div> <!-- // END .modal-body -->
-                                                                <div class="modal-footer">
-                                                                    <button type="button"
-                                                                            class="btn btn-light"
-                                                                            data-dismiss="modal">Batal</button>
-                                                                    <button type="button"
-                                                                            class="btn btn-primary">Iya</button>
-                                                                </div> <!-- // END .modal-footer -->
-                                                            </div> <!-- // END .modal-content -->
-                                                        </div> <!-- // END .modal-dialog -->
-                                                    </div> <!-- // END .modal -->
+                                                    
                                     </div>
 
                                     <div class="col-lg-8 card-form__body card-body">
                                         <label for="fname"><h6 class="text-muted">Judul Buku :{{$buku->judulbuku}}</h6></label><br>
-                                        <label for="fname"><h6 class="text-muted">Pengarang :</h6></label><br>
-                                        <label for="fname"><h6 class="text-muted">Penerbit :</h6></label><br>
-                                        <label for="fname"><h6 class="text-muted">Tahun :</h6></label><br>
-                                        <label for="fname"><h6 class="text-muted">Lokasi :</h6></label><br>
-                                        <label for="fname"><h6 class="text-muted">Kategori :</h6></label><br>
-                                        <label for="fname"><h6 class="text-muted">Deskripsi :</h6></label>
+                                        <label for="fname"><h6 class="text-muted">Pengarang :{{$buku->pengarang}}</h6></label><br>
+                                        <label for="fname"><h6 class="text-muted">Penerbit :{{$buku->penerbit}}</h6></label><br>
+                                        <label for="fname"><h6 class="text-muted">Tahun :{{$buku->tahun}}</h6></label><br>
+                                        <label for="fname"><h6 class="text-muted">Lokasi :{{$buku->lokasi}}</h6></label><br>
+                                        <label for="fname"><h6 class="text-muted">Kategori :{{$buku->kategori->kategori}}</h6></label><br>
+                                        <label for="fname"><h6 class="text-muted">Deskripsi :{{$buku->deskripsi}}</h6></label>
                                     </div>
                                 </div>
                             </div>
@@ -494,30 +465,30 @@
         </div>
 
         <!-- jQuery -->
-        <script src="vendor/jquery.min.js"></script>
+        <script src="{{url('vendor/jquery.min.js')}}"></script>
 
         <!-- Bootstrap -->
-        <script src="vendor/popper.min.js"></script>
-        <script src="vendor/bootstrap.min.js"></script>
+        <script src="{{url('vendor/popper.min.js')}}"></script>
+        <script src="{{url('vendor/bootstrap.min.js')}}"></script>
 
         <!-- Perfect Scrollbar -->
-        <script src="vendor/perfect-scrollbar.min.js"></script>
+        <script src="{{url('vendor/perfect-scrollbar.min.js')}}"></script>
 
         <!-- DOM Factory -->
-        <script src="vendor/dom-factory.js"></script>
+        <script src="{{url('vendor/dom-factory.js')}}"></script>
 
         <!-- MDK -->
-        <script src="vendor/material-design-kit.js"></script>
+        <script src="{{url('vendor/material-design-kit.js')}}"></script>
 
         <!-- App -->
-        <script src="js/toggle-check-all.js"></script>
-        <script src="js/check-selected-row.js"></script>
-        <script src="js/dropdown.js"></script>
-        <script src="js/sidebar-mini.js"></script>
-        <script src="js/app.js"></script>
+        <script src="{{url('js/toggle-check-all.js')}}"></script>
+        <script src="{{url('/check-selected-row.js')}}"></script>
+        <script src="{{url('js/dropdown.js')}}"></script>
+        <script src="{{url('js/sidebar-mini.js')}}"></script>
+        <script src="{{url('js/app.js')}}"></script>
 
         <!-- App Settings (safe to remove) -->
-        <script src="js/app-settings.js"></script>
+        <script src="{{url('js/app-settings.js')}}"></script>
 
         <!-- Flatpickr -->
         <script src="vendor/flatpickr/flatpickr.min.js"></script>
@@ -545,6 +516,42 @@
         <script src="vendor/jqvmap/jquery.vmap.min.js"></script>
         <script src="vendor/jqvmap/maps/jquery.vmap.world.js"></script>
         <script src="js/vector-maps.js"></script>
+
+        <div id="modal-center"
+                class="modal fade"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="modal-center-title"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered"
+                    role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"
+                                id="modal-center-title">Pinjam Buku</h5>
+                            <button type="button"
+                                    class="close"
+                                    data-dismiss="modal"
+                                    aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div> <!-- // END .modal-header -->
+                        <div class="modal-body">
+                            <p>Apakah anda yakin untuk meminjam buku ini?</p>
+                        </div> <!-- // END .modal-body -->
+                        <div class="modal-footer">
+                            <button type="button"
+                                    class="btn btn-light"
+                                    data-dismiss="modal">Batal</button>
+                            <form action="{{route('pinjambuku',['id'=>$buku->id])}}" method="POST">
+                            @csrf
+                                <button type="submit" 
+                                        class="btn btn-primary">Iya</button>
+                            </form>
+                        </div> <!-- // END .modal-footer -->
+                    </div> <!-- // END .modal-content -->
+                </div> <!-- // END .modal-dialog -->
+            </div> <!-- // END .modal -->
 
     </body>
 

@@ -398,19 +398,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-
-                                        @php
-                                            $no = 1;
-                                        @endphp
-
+                                        
                                         @foreach ($data as $row)
 
                                             <tr>
-                                                <td scope="row">{{ $no++ }}</td>
-                                                <td>{{ $row->namasiswa }}</td>
-                                                <td>{{ $row->judulbuku }}</td>
-                                                <td>{{ $row->tanggalpinjam }}</td>
-                                                <td>{{ $row->tanggalkembali }}</td>
+                                                <td scope="row">{{ $loop->iteration }}</td>
+                                                <td>{{ $row->user->name }}</td>
+                                                <td>{{ $row->buku->judulbuku }}</td>
+                                                <td>{{ $row->tanggal_pinjam }}</td>
+                                                <td>{{ $row->tanggal_kembali }}</td>
                                                 <td>
                                                    
                                                     <a href="{{ route('edit.peminjam', $row->id) }} "class="btn btn-warning btn sweet-confirm">Edit</a>

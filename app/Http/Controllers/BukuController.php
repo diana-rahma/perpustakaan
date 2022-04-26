@@ -7,8 +7,10 @@ use App\Models\kategori;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorebukuRequest;
 use App\Http\Requests\UpdatebukuRequest;
+use App\Models\dipinjam;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class BukuController extends Controller
 {
@@ -60,5 +62,18 @@ class BukuController extends Controller
         $data= Buku::find($id);
         $data->delete();
         return redirect()->route('databuku')->with('success','Data Berhasil Di Hapus');
+    }
+
+    public function pinjambuku($id) {
+        $user = auth()->user();
+        $data = new dipinjam();
+        $data->id_buku=$id;
+        $data->id_user=$user->id;
+        $data->status='Pending';
+        $data->tenggat_pengembalian=Carbon::now()->addDays(7);
+        $data->tanggal_pinjam=Carbon::now();
+        $data->save();
+        return redirect()->back()->with('success','Buku berhasil dipinjam, silahkan ambil di perpustakaan');
+        
     }
 }

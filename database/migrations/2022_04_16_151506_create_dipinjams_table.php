@@ -26,7 +26,7 @@ class CreateDipinjamsTable extends Migration
             $table->enum('status', ['Finalized','Pending','Aborted']);
             $table->date('tenggat_pengembalian');
             $table->date('tanggal_pinjam');
-            $table->date('tanggal_kembali');
+            $table->date('tanggal_kembali')->nullable();
             $table->timestamps();
         });
     }

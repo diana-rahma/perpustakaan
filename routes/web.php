@@ -220,6 +220,8 @@ Route::get('/edit_profileuser',[RegisterController::class, 'editprofileuser'])->
 Route::post('/updateprofileuser/{id}', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
 
 Route::get('detail/{id}',[ListbukuController::class, 'detail'])->name('detailbuku');
+
+Route::post('/pinjambuku/{id}',[BukuController::class, 'pinjambuku'])->name('pinjambuku');
 // Route Genre - Fantasy
 
 Route::get('/fantasy', function () {
