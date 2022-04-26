@@ -399,29 +399,20 @@
 
                                             <div class="form-group" >
                                                 <label for="opass">Kategori</label>
-                                                <select class="form-control" name="kategori">
-                                                    <option selected>{{ $data->kategori}}</option>
-                                                    <option>Fantasy</option>
-                                                    <option>Romance</option>
-                                                    <option>Horror</option>
-                                                    <option>Adventure</option>
-                                                    <option>Mistery</option>
-                                                    <option>Biography</option>
-                                                    <option>Dictionary</option>
-                                                    <option>Humor</option>
-                                                </select>
+
                                                 <select class="form-control" name="kategori">
                                                     <option value="">Kategori</option>
-                                                        @foreach($kategori as $key => $value)
-                                                            <option value="{{ $value->id }}" {{ $value->id == $kategori->kategori->id ? "selected":""}}>{{ $value->kategori }}</option>
-                                                        @endforeach
+                                                    @foreach($kategori as $key => $value)
+                                                        <option value="{{ $value->id }}" {{ $value->id == $data->kategori->id ? "selected":""}}>{{ $value->kategori }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1" class="form-label">Gambar</label>
                                                 <input type="file" name="file" class="form-control">
-                                                
+                                                <br>
+
                                                 <div>
                                                     <img src="{{ asset('foto/'.$data->file) }}" width="100"> <br/>
                                                 </div>

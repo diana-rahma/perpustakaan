@@ -44,7 +44,8 @@ class BukuController extends Controller
     public function editbuku($id){
         
         $data= buku::find($id);
-        return view('databuku.edit_buku',compact('data'));
+        $kategori = kategori::all();
+        return view('databuku.edit_buku',compact('data', 'kategori'));
     }
 
     public function updatebuku(Request $request, $id){
