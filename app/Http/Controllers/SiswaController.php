@@ -23,6 +23,7 @@ class SiswaController extends Controller
         //
 
         $data = User::all();
+        $data = User::paginate(3);
 
         return view('datasiswa.datasiswa',compact('data'));
     }

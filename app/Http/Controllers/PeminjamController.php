@@ -20,7 +20,7 @@ class PeminjamController extends Controller
     {
         //
 
-        $data = dipinjam::all();
+        $data = dipinjam::paginate(5);
 
         return view('datapeminjam.datapeminjam',compact('data'));
     }
