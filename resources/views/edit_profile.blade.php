@@ -8,7 +8,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Edit Profile</title>
+        <title>Profile</title>
 
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
@@ -340,167 +340,166 @@
                             </div>
                         </div>
 
-                        <form action="{{ route('updateprofileuser', $data->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                            <div class="container-fluid page__container">
-                                <div class="card card-form">
-                                    <div class="row no-gutters">
-                                        <div class="col-lg-4 card-body">
-                                            <p><strong class="headings-color">Basic Information</strong></p>
+                        <form action="{{ route('updateprofile', $user->id) }}" method="POST">
+                        <div class="container-fluid page__container">
+                            <div class="card card-form">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-4 card-body">
+                                        <p><strong class="headings-color">Basic Information</strong></p>
+                                    </div>
+                                    <div class="col-lg-8 card-form__body card-body">
+
+                                    
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="fname">Nama Siswa</label>
+                                                    <input id="fname"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="User Account"
+                                                           value="{{ auth()->user()->name }}">
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-lg-8 card-form__body card-body">
 
-                                        
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="fname">Nama Siswa</label>
-                                                        <input id="fname"
-                                                            type="text"
-                                                            class="form-control"
-                                                            placeholder="User Account"
-                                                            value="{{ auth()->user()->name }}">
-                                                    </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="fname">NISN</label>
+                                                    <input id="fname"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="123456"
+                                                           value="{{ auth()->user()->nisn }}">
                                                 </div>
                                             </div>
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="fname">NISN</label>
-                                                        <input id="fname"
-                                                            type="text"
-                                                            class="form-control"
-                                                            placeholder="123456"
-                                                            value="{{ auth()->user()->nisn }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="lname">Kelas</label>
-                                                        <input id="lname"
-                                                            type="text"
-                                                            class="form-control"
-                                                            placeholder="XI TKJ B"
-                                                            value="{{ auth()->user()->kelas }}">
-                                                    </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="lname">Kelas</label>
+                                                    <input id="lname"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="XI TKJ B"
+                                                           value="{{ auth()->user()->kelas->kelas }}">
                                                 </div>
                                             </div>
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="fname">No Telepon</label>
-                                                        <input id="fname"
-                                                            type="text"
-                                                            class="form-control"
-                                                            placeholder="083831432980"
-                                                            value="{{ auth()->user()->telepon }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="lname">Jenis Kelamin</label>
-                                                            <select class="form-control" name="jk">
-                                                                <option selected>{{ auth()->user()->jk }}</option>
-                                                                <option>Perempuan</option>
-                                                                <option>Laki-Laki</option>
-                                                            </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="fname">Alamat</label>
-                                                        <input id="fname"
-                                                            type="text"
-                                                            class="form-control"
-                                                            placeholder="Jl Anggrek"
-                                                            value="{{ auth()->user()->alamat }}">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                        
-                                            
                                         </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="fname">No Telepon</label>
+                                                    <input id="fname"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="083831432980"
+                                                           value="{{ auth()->user()->telephone }}">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="lname">Jenis Kelamin</label>
+                                                        <select class="form-control" name="jk">
+                                                            <option selected>{{ auth()->user()->jk }}</option>
+                                                            <option>Perempuan</option>
+                                                            <option>Laki-Laki</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="fname">Alamat</label>
+                                                    <input id="fname"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="Jl Anggrek"
+                                                           value="{{ auth()->user()->alamat }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                      
+                                        
                                     </div>
                                 </div>
+                            </div>
+                            </form>
 
-                                <div class="card card-form">
-                                    <div class="row no-gutters">
-                                        <div class="col-lg-4 card-body">
-                                            <p><strong class="headings-color">Update Your Password</strong></p>
+                            <div class="card card-form">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-4 card-body">
+                                        <p><strong class="headings-color">Update Your Password</strong></p>
+                                    </div>
+                                    <div class="col-lg-8 card-form__body card-body">
+                                        <div class="form-group">
+                                            <label for="opass">Old Password</label>
+                                            <input style="width: 270px;"
+                                                   id="opass"
+                                                   type="password"
+                                                   class="form-control"
+                                                   placeholder="Old password"
+                                                   value="{{ auth()->user()->]password }}">
                                         </div>
-                                        <div class="col-lg-8 card-form__body card-body">
-                                            <div class="form-group">
-                                                <label for="opass">Old Password</label>
-                                                <input style="width: 270px;"
-                                                    id="opass"
-                                                    type="password"
-                                                    class="form-control"
-                                                    placeholder="Old password"
-                                                    value="****">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="npass">New Password</label>
-                                                <input style="width: 270px;"
-                                                    id="npass"
-                                                    type="password"
-                                                    class="form-control is-invalid">
-                                                <small class="invalid-feedback">The new password must not be empty.</small>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="cpass">Confirm Password</label>
-                                                <input style="width: 270px;"
-                                                    id="cpass"
-                                                    type="password"
-                                                    class="form-control"
-                                                    placeholder="Confirm password">
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="npass">New Password</label>
+                                            <input style="width: 270px;"
+                                                   id="npass"
+                                                   type="password"
+                                                   class="form-control is-invalid">
+                                            <small class="invalid-feedback">The new password must not be empty.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cpass">Confirm Password</label>
+                                            <input style="width: 270px;"
+                                                   id="cpass"
+                                                   type="password"
+                                                   class="form-control"
+                                                   placeholder="Confirm password">
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="card card-form">
-                                    <div class="row no-gutters">
-                                        <div class="col-lg-4 card-body">
-                                            <p><strong class="headings-color">Profile Settings</strong></p>
-                                        </div>
-                                        <div class="col-lg-8 card-form__body card-body">
-                                            <div class="form-group">
-                                                <label>Avatar</label>
-                                                <div class="dz-clickable media align-items-center"
-                                                    data-toggle="dropzone"
-                                                    data-dropzone-url="http://"
-                                                    data-dropzone-clickable=".dz-clickable"
-                                                    data-dropzone-files='["images/account-add-photo.svg"]'>
-                                                    <div class="dz-preview dz-file-preview dz-clickable mr-3">
-                                                        <div class="avatar"
-                                                            style="width: 80px; height: 80px;">
-                                                            <img src="{{ asset('images/'. auth()->user()->foto) }}"
-                                                                class="avatar-img rounded"
-                                                                alt=""
-                                                                data-dz-thumbnail>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <input type="file" class="input">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-right mb-5">
-                                    <a href="/profiluser"><button type="submit" class="btn btn-success">Update</button></a>
                                 </div>
                             </div>
 
-                        </form>
+                            <div class="card card-form">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-4 card-body">
+                                        <p><strong class="headings-color">Profile Settings</strong></p>
+                                    </div>
+                                    <div class="col-lg-8 card-form__body card-body">
+                                        <div class="form-group">
+                                            <label>Avatar</label>
+                                            <div class="dz-clickable media align-items-center"
+                                                 data-toggle="dropzone"
+                                                 data-dropzone-url="http://"
+                                                 data-dropzone-clickable=".dz-clickable"
+                                                 data-dropzone-files='["images/account-add-photo.svg"]'>
+                                                <div class="dz-preview dz-file-preview dz-clickable mr-3">
+                                                    <div class="avatar"
+                                                         style="width: 80px; height: 80px;">
+                                                        <img src="{{ asset('images/'. auth()->user()->foto) }}"
+                                                             class="avatar-img rounded"
+                                                             alt=""
+                                                             data-dz-thumbnail>
+                                                    </div>
+                                                </div>
+                                                <div class="media-body">
+                                                    <input type="file" class="input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right mb-5">
+                                <a href="/edit_profileuser"
+                                   class="btn btn-success">Edit</a>
+                            </div>
+                        </div>
 
                     </div>
                     <!-- // END drawer-layout__content -->

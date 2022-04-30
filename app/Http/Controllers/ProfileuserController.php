@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\profileuser;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorekategoriRequest;
 use App\Http\Requests\UpdatekategoriRequest;
@@ -11,34 +12,29 @@ use Illuminate\Support\Facades\Storage;
 
 class ProfileuserController extends Controller
 {
-    public function index(Request $request){
-
-        // if($request->has('search')){
-        //     $data = Kategori::where('kategori','LIKE','%' .$request->search. '%')->paginate(3);
-        // }else{
-        //     $data = Kategori::paginate(3);
-        // }
-        
-        return view('profileuser',);
+    public function index() {
+        return view('profileuser');
     }
 
-    public function editprofileuser(Request $request){
-        
-        //$data= Profileuser::find();
-        return view('/edit_profileuser', [
-            'user' => $request->user()
+    public function edit_profile(User $user)
+    {
+        $data = $user::all();
+        return view('edit_profile',compact('data', 'User'));
+    }
+
+    public function updateprofile(Request $request, User $user)
+    {
+        //
+        $user->update([
+            'name'     => $request->name,
+            'nisn'     => $request->nisn,
+            'kelas'     => $request->kelas,
+            'telephone'     => $request->telephone,
+            'jk'     => $request->jk,
+            'alamat'     => $request->alamat,
+            'password'     => $request->password,
         ]);
-    }
-
-    public function updateprofileuser(Request $request){
-        $data= Profileuser::find( auth()->user()->name );
-        $data->update($request->all());
-        if($request->hasFile('file')){
-            $request->file('file')->move('foto/',$request->file('file')->getClientOriginalName());
-            $data->file = $request->file('file')->getClientOriginalName();
-            $data->update();
-        }
-        return redirect()->route('/profileuser')->with('success','Data Berhasil Di Update');
+    return redirect()->route('index')->with('success',' Data Berhasil di Update');
     }
 
 }

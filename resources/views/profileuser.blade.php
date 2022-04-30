@@ -440,7 +440,7 @@
                                                    type="password"
                                                    class="form-control"
                                                    placeholder="Old password"
-                                                   value="****">
+                                                   value="{{ auth()->user()->password }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="npass">New Password</label>
@@ -494,8 +494,8 @@
                                 </div>
                             </div>
                             <div class="text-right mb-5">
-                                <a href="/edit_profileuser"
-                                   class="btn btn-success">Edit</a>
+                                <a href="/edit_profile"
+                                   class="btn btn-success">Update</a>
                             </div>
                         </div>
 

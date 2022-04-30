@@ -22,6 +22,7 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\DendaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ListbukuController;
+use App\Http\Controllers\ProfileuserController;
 // use App\Http\Controllers\ProfileuserController;
 
 use App\Http\Controllers\SignupadminController;
@@ -210,18 +211,15 @@ Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->mi
 
 
 // Route Profile - Frontend
+Route::get('/profileuser',[ProfileuserController::class, 'index'])->name('profileuser')->middleware('auth');
 
-Route::get('/profileuser', [RegisterController::class, 'profileuser'])->name('profileuser')->middleware('auth');
+Route::get('/edit_profile',[ProfileuserController::class, 'editprofile'])->name('editprofile');
+Route::post('/updateprofile/{id}', [ProfileuserController::class, 'updateprofile'])->name('updateprofile')->middleware('auth');
 
-
-Route::get('/profileuser',[RegisterController::class, 'index'])->name('profileuser')->middleware('auth');
-
-Route::get('/edit_profileuser',[RegisterController::class, 'editprofileuser'])->name('editprofileuser');
-Route::post('/updateprofileuser/{id}', [RegisterController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');
 
 Route::get('detail/{id}',[ListbukuController::class, 'detail'])->name('detailbuku');
-
 Route::post('/pinjambuku/{id}',[BukuController::class, 'pinjambuku'])->name('pinjambuku');
+
 // Route Genre - Fantasy
 
 Route::get('/fantasy', function () {
