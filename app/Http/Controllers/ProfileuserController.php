@@ -16,24 +16,32 @@ class ProfileuserController extends Controller
         return view('profileuser');
     }
 
-    public function edit_profile(User $user)
+    public function editprofile(User $user)
     {
         $data = $user::all();
-        return view('edit_profile',compact('data', 'User'));
+        return view('edit_profile',compact('data', 'user'));
     }
 
-    public function updateprofile(Request $request, User $user)
+    public function updateprofile(Request $request, $data)
     {
-        //
-        $user->update([
-            'name'     => $request->name,
-            'nisn'     => $request->nisn,
-            'kelas'     => $request->kelas,
-            'telephone'     => $request->telephone,
-            'jk'     => $request->jk,
-            'alamat'     => $request->alamat,
-            'password'     => $request->password,
-        ]);
+        $data->name = $request->name;
+        $data->nisn = $request->nisn;
+        $data->kelas = $request->kelas;
+        $data->telephone = $request->telephone;
+        $data->jk = $request->jk;
+        $data->alamat = $request->alamat;
+        $data->password = $request->password;
+        $data->save();
+
+        // $user->update([
+        //     'name'     => $request->name,
+        //     'nisn'     => $request->nisn,
+        //     'kelas'     => $request->kelas,
+        //     'telephone'     => $request->telephone,
+        //     'jk'     => $request->jk,
+        //     'alamat'     => $request->alamat,
+        //     'password'     => $request->password,
+        // ]);
     return redirect()->route('index')->with('success',' Data Berhasil di Update');
     }
 

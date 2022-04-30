@@ -8,7 +8,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Profile</title>
+        <title>Edit Profile</title>
 
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
@@ -442,7 +442,7 @@
                                                    type="password"
                                                    class="form-control"
                                                    placeholder="Old password"
-                                                   value="{{ auth()->user()->]password }}">
+                                                   value="{{ auth()->user()->password }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="npass">New Password</label>
@@ -496,7 +496,7 @@
                                 </div>
                             </div>
                             <div class="text-right mb-5">
-                                <a href="/edit_profileuser"
+                                <a href="profileuser" type="submit"
                                    class="btn btn-success">Edit</a>
                             </div>
                         </div>

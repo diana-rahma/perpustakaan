@@ -214,7 +214,7 @@ Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->mi
 Route::get('/profileuser',[ProfileuserController::class, 'index'])->name('profileuser')->middleware('auth');
 
 Route::get('/edit_profile',[ProfileuserController::class, 'editprofile'])->name('editprofile');
-Route::post('/updateprofile/{id}', [ProfileuserController::class, 'updateprofile'])->name('updateprofile')->middleware('auth');
+Route::post('/updateprofile', [ProfileuserController::class, 'updateprofile'])->name('updateprofile')->middleware('auth');
 
 
 Route::get('detail/{id}',[ListbukuController::class, 'detail'])->name('detailbuku');
