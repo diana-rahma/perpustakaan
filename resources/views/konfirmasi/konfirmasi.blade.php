@@ -376,14 +376,29 @@
                                                 </td>
                                                 <td>{{ $row->status }}</td>
                                                 <td>
-                                                    <form action="{{ route('konfirmasi.index', $row->id) }}" method="POST">
-                                                        <a href="{{ route('konfirmasi.index', $row->id) }}" type="button" class="btn btn-success">F</a>
-                                                        <a href="{{ route('konfirmasi.index', $row->id) }}" type="button" class="btn btn-warning">P</a>
-                                                        <a href="{{ route('konfirmasi.index', $row->id) }}" type="button" class="btn btn-danger">A</a>
-                                                    </form>    
+                                                    <form action="{{ route('setstatus', ['id' => $row->id]) }}" method="POST">
+                                                    @csrf
+                                                        <input type="hidden" name="status" value="Finalized">
+                                                        <a href="javascript:void(0)" type="button" class="btn btn-success" onclick='this.parentElement.submit()'>F</a>
+                                                    </form>
+
+                                                    <form action="{{ route('setstatus', ['id' => $row->id]) }}" method="POST">
+                                                    @csrf
+                                                        <input type="hidden" name="status" value="Pending">
+                                                        <a href="javascript:void(0)" type="button" class="btn btn-warning" onclick='this.parentElement.submit()'>P</a>
+                                                    </form>
+                                                    
+                                                    <form action="{{ route('setstatus', ['id' => $row->id]) }}" method="POST">
+                                                    @csrf
+                                                        <input type="hidden" name="status" value="Aborted">
+                                                        <a href="javascript:void(0)" type="button" class="btn btn-danger" onclick='this.parentElement.submit()'>A</a>
+                                                    </form>
+                                                        
                                                 </td>
                                             </tr>
+
                                             @endforeach
+
                                         </tbody>
                                     </table>
                                 </div>

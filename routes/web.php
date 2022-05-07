@@ -135,6 +135,7 @@ Route::get('/konfirmasi', [KonfirmasiController::class, 'index'])->name('konfirm
 Route::get('/tambah_konfirmasi',[KonfirmasiController::class, 'createkonfirmasi'])->name('tambah_konfirmasi');
 Route::post('/insertkonfirmasi',[KonfirmasiController::class, 'storekonfirmasi'])->name('insertkonfirmasi');
 
+Route::post('/setstatus/{id}',[KonfirmasiController::class, 'setstatus'])->name('setstatus');
 
 // Route Kategori - Backend
 

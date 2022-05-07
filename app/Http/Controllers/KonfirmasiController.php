@@ -102,4 +102,14 @@ class KonfirmasiController extends Controller
     {
         //
     }
+
+    public function setstatus(Request $request, $id) {
+
+        $pinjam = dipinjam::find($id);
+
+        $pinjam->status = $request->status;
+        $pinjam->save();
+        
+        return redirect()->back();
+    }
 }
