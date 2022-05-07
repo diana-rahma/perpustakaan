@@ -355,13 +355,13 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Nama Siswa</label>
-                                                        <input id="lname" type="text" class="form-control" name="namasiswa" value="{{ $peminjam->namasiswa}}">
+                                                        <input id="lname" type="text" class="form-control" name="namasiswa" value="{{ $peminjam->user->name}}" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Judul Buku</label>
-                                                        <input id="lname" type="text" class="form-control" name="judulbuku" value="{{ $peminjam->judulbuku}}">
+                                                        <input id="lname" type="text" class="form-control" name="judulbuku" value="{{ $peminjam->buku->judulbuku}}" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -370,16 +370,22 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Tgl Pinjam</label>
-                                                        <input id="lname" type="date" class="form-control" name="tanggalpinjam" value="{{ $peminjam->tanggalpinjam}}">
+                                                        <input id="lname" type="date" class="form-control" name="tanggalpinjam" value="{{ $peminjam->tanggal_pinjam}}" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Tgl kembali</label>
-                                                        <input id="lname" type="date" class="form-control" name="tanggalkembali" value="{{ $peminjam->tanggalkembali}}">
+                                                        <input id="lname" type="date" class="form-control" name="tanggalkembali" value="{{ $peminjam->tanggal_kembali}}">
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="lname">Denda</label>
+                                                        <input id="lname" type="number" class="form-control" name="denda" value="{{ property_exists($peminjam->denda, 'denda') ? $peminjam->denda->denda : 0}}">
+                                                    </div>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>

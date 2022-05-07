@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\dipinjam;
+use App\Models\denda;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorepeminjamRequest;
 use App\Http\Requests\UpdatepeminjamRequest;
@@ -92,11 +93,15 @@ class PeminjamController extends Controller
     {
         //
         $peminjam->update([
-            'namasiswa'     => $request->namasiswa,
-            'judulbuku'     => $request->judulbuku,
-            'tanggalpinjam'     => $request->tanggalpinjam,
-            'tanggalkembali'     => $request->tanggalkembali,
+            'tanggal_kembali'     => $request->tanggalkembali,
         ]);
+        if($request->denda!=0){
+            $denda=new denda;
+            $denda->id_pinjam=$peminjam->id;
+            $denda->denda=$request->denda;
+            $denda->keterangan="Telat mengembalikan buku";
+            $denda->save();
+        }
         return redirect()->route('peminjam.index')->with('success',' Data Berhasil di Update');
     }
 

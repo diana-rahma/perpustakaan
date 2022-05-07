@@ -365,12 +365,12 @@
                                         @foreach ($data as $index => $row)
                                             <tr>
                                                 <td scope="row">{{ $index + $data->firstItem() }}</td>
-                                                <td>{{ $row->namasiswa }}</td>
-                                                <td>{{ $row->judulbuku }}</td>
+                                                <td>{{ $row->pinjam->user->name }}</td>
+                                                <td>{{ $row->pinjam->buku->judulbuku }}</td>
                                                 <td>
-                                                    <img src="{{ asset('foto/'.$row->file) }}" width="75" >
+                                                    <img src="{{asset('foto/'.$row->pinjam->buku->file)}}" alt="" class="card-img" style="width:75px;">
                                                 </td>
-                                                <td>{{ $row->nominaldenda }}</td>
+                                                <td>{{ $row->denda }}</td>
                                                 <td>{{ $row->keterangan }}</td>
 
                                                 <td>
