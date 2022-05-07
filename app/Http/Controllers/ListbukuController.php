@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\buku;
+use App\Models\kategori;
 use App\Http\Requests\StorelistbukuRequest;
 use App\Http\Requests\UpdatelistbukuRequest;
+use Illuminate\Database\Eloquent\Builder;
 
 class ListbukuController extends Controller
 {
@@ -16,12 +18,22 @@ class ListbukuController extends Controller
     public function index()
     {
         $buku = buku::paginate(2);
-        return view('listbuku.listbuku',compact('buku'));
+        $kategori = kategori::all();
+        return view('listbuku.listbuku',compact('buku', 'kategori'));
     }
 
     public function detail($id) {
         $buku = buku::find($id);
         return view('buku.detail',compact('buku'));
+    }
+
+    public function detailkategori($id) {
+        $kategori = kategori::find($id);
+        $buku = buku::whereHas('kategori', function(Builder $query) use($id) {
+
+        return $query->where('id', $id);
+        })->paginate(1);
+        return view('kategori.detail',compact('buku'));
     }
 
     /**

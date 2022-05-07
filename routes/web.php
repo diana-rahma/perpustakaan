@@ -220,6 +220,9 @@ Route::post('/updateprofile', [ProfileuserController::class, 'updateprofile'])->
 Route::get('detail/{id}',[ListbukuController::class, 'detail'])->name('detailbuku');
 Route::post('/pinjambuku/{id}',[BukuController::class, 'pinjambuku'])->name('pinjambuku');
 
+Route::get('detailkategori/{id}',[ListbukuController::class, 'detailkategori'])->name('detailkategori');
+
+
 // Route Genre - Fantasy
 
 Route::get('/fantasy', function () {

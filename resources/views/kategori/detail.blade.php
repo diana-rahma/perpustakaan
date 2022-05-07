@@ -16,31 +16,24 @@
 
         <!-- Perfect Scrollbar -->
         <link type="text/css"
-              href="vendor/perfect-scrollbar.css"
+              href="{{url('vendor/perfect-scrollbar.css')}}"
               rel="stylesheet">
 
         <!-- App CSS -->
         <link type="text/css"
-              href="css/app.css"
+              href="{{url('css/app.css')}}"
               rel="stylesheet">
-        <link type="text/css"
-              href="css/app.rtl.css"
-              rel="stylesheet">
+        
 
         <!-- Material Design Icons -->
         <link type="text/css"
-              href="css/vendor-material-icons.css"
+              href="{{url('css/vendor-material-icons.css')}}"
               rel="stylesheet">
-        <link type="text/css"
-              href="css/vendor-material-icons.rtl.css"
-              rel="stylesheet">
+        
 
         <!-- Font Awesome FREE Icons -->
         <link type="text/css"
-              href="css/vendor-fontawesome-free.css"
-              rel="stylesheet">
-        <link type="text/css"
-              href="css/vendor-fontawesome-free.rtl.css"
+              href="{{url('css/vendor-fontawesome-free.css')}}"
               rel="stylesheet">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -58,44 +51,23 @@
 
         <!-- Flatpickr -->
         <link type="text/css"
-              href="css/vendor-flatpickr.css"
+              href="{{url('css/vendor-flatpickr.css')}}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-flatpickr.rtl.css"
+              href="{{url('css/vendor-flatpickr.rtl.css')}}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-flatpickr-airbnb.css"
+              href="{{url('css/vendor-flatpickr-airbnb.css')}}"
               rel="stylesheet">
         <link type="text/css"
-              href="css/vendor-flatpickr-airbnb.rtl.css"
+              href="{{url('css/vendor-flatpickr-airbnb.rtl.css')}}"
               rel="stylesheet">
 
-        <!-- Quill Theme -->
+        <!-- Vector Maps -->
         <link type="text/css"
-              href="css/vendor-quill.css"
+              href="vendor/jqvmap/jqvmap.min.css"
               rel="stylesheet">
-        <link type="text/css"
-              href="css/vendor-quill.rtl.css"
-              rel="stylesheet">
-
-        <!-- Dropzone -->
-        <link type="text/css"
-              href="css/vendor-dropzone.css"
-              rel="stylesheet">
-        <link type="text/css"
-              href="css/vendor-dropzone.rtl.css"
-              rel="stylesheet">
-
-        <!-- Select2 -->
-        <link type="text/css"
-              href="css/vendor-select2.css"
-              rel="stylesheet">
-        <link type="text/css"
-              href="css/vendor-select2.rtl.css"
-              rel="stylesheet">
-        <link type="text/css"
-              href="vendor/select2/select2.min.css"
-              rel="stylesheet">
+        
 
     </head>
 
@@ -415,26 +387,6 @@
                             </div>
                         </div>
 
-                        <div class="container-fluid page__container">
-                            <div class="mb-3"><strong class="text-dark-gray">KATEGORI</strong></div>
-                            <div class="stories-cards mb-4"></div>
-                            <div class="my-3"></div>
-                            <div class="row">
-
-                            @foreach($kategori as $key => $value)
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="card stories-card-popular">
-                                        <a href="{{route('detailkategori',['id'=>$value->id])}}"><img src="{{asset('foto/'.$value->file)}}" alt="" class="card-img"></a>
-                                        <div class="stories-card-popular__title card-body">
-                                            <h4 class="card-title m-0"><a href="{{route('detailkategori',['id'=>$value->id])}}">{{ $value->kategori }}</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                            </div>
-                        </div>
-
                         <br>
 
                         <div class="container-fluid page__container">
@@ -548,49 +500,58 @@
         </div>
 
         <!-- jQuery -->
-        <script src="vendor/jquery.min.js"></script>
+        <script src="{{url('vendor/jquery.min.js')}}"></script>
 
         <!-- Bootstrap -->
-        <script src="vendor/popper.min.js"></script>
-        <script src="vendor/bootstrap.min.js"></script>
+        <script src="{{url('vendor/popper.min.js')}}"></script>
+        <script src="{{url('vendor/bootstrap.min.js')}}"></script>
 
         <!-- Perfect Scrollbar -->
-        <script src="vendor/perfect-scrollbar.min.js"></script>
+        <script src="{{url('vendor/perfect-scrollbar.min.js')}}"></script>
 
         <!-- DOM Factory -->
-        <script src="vendor/dom-factory.js"></script>
+        <script src="{{url('vendor/dom-factory.js')}}"></script>
 
         <!-- MDK -->
-        <script src="vendor/material-design-kit.js"></script>
+        <script src="{{url('vendor/material-design-kit.js')}}"></script>
 
         <!-- App -->
-        <script src="js/toggle-check-all.js"></script>
-        <script src="js/check-selected-row.js"></script>
-        <script src="js/dropdown.js"></script>
-        <script src="js/sidebar-mini.js"></script>
-        <script src="js/app.js"></script>
+        <script src="{{url('js/toggle-check-all.js')}}"></script>
+        <script src="{{url('/check-selected-row.js')}}"></script>
+        <script src="{{url('js/dropdown.js')}}"></script>
+        <script src="{{url('js/sidebar-mini.js')}}"></script>
+        <script src="{{url('js/app.js')}}"></script>
 
         <!-- App Settings (safe to remove) -->
-        <script src="js/app-settings.js"></script>
+        <script src="{{url('js/app-settings.js')}}"></script>
 
         <!-- Flatpickr -->
         <script src="vendor/flatpickr/flatpickr.min.js"></script>
         <script src="js/flatpickr.js"></script>
 
-        <!-- jQuery Mask Plugin -->
-        <script src="vendor/jquery.mask.min.js"></script>
+        <!-- Global Settings -->
+        <script src="js/settings.js"></script>
 
-        <!-- Quill -->
-        <script src="vendor/quill.min.js"></script>
-        <script src="js/quill.js"></script>
+        <!-- Moment.js -->
+        <script src="vendor/moment.min.js"></script>
+        <script src="vendor/moment-range.js"></script>
 
-        <!-- Dropzone -->
-        <script src="vendor/dropzone.min.js"></script>
-        <script src="js/dropzone.js"></script>
+        <!-- Chart.js -->
+        <script src="vendor/Chart.min.js"></script>
 
-        <!-- Select2 -->
-        <script src="vendor/select2/select2.min.js"></script>
-        <script src="js/select2.js"></script>
+        <!-- App Charts JS -->
+        <script src="js/charts.js"></script>
+        <script src="js/chartjs-rounded-bar.js"></script>
+
+        <!-- Chart Samples -->
+        <script src="js/page.dashboard.js"></script>
+        <script src="js/progress-charts.js"></script>
+
+        <!-- Vector Maps -->
+        <script src="vendor/jqvmap/jquery.vmap.min.js"></script>
+        <script src="vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+        <script src="js/vector-maps.js"></script>
+
 
     </body>
 
