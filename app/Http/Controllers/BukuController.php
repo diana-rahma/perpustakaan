@@ -77,4 +77,11 @@ class BukuController extends Controller
         return redirect()->back()->with('success','Buku berhasil dipinjam, silahkan ambil di perpustakaan');
         
     }
+
+    public function historydenda($id) {
+        $user = auth()->user();
+        $data = new dipinjam();
+        $data->id_buku=$id;
+        $data->id_user=$user->id;
+    }
 }

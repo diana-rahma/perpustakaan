@@ -14,6 +14,6 @@ class denda extends Model
     protected $fillable = ['id','id_pinjam','denda','keterangan'];
 
     public function pinjam (){
-        return $this->belongsTo(pinjam::class, "id_pinjam","id");
+        return $this->belongsTo(dipinjam::class, "id_pinjam","id");
     }
 }
