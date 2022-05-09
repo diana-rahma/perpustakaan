@@ -333,7 +333,6 @@
                                         <ol class="breadcrumb mb-0">
                                             <li class="breadcrumb-item"><a href="/indexuser">Home</a></li>
                                             <li class="breadcrumb-item"><a href="/listbuku">List Buku</a></li>
-                                            <li class="breadcrumb-item"><a href="/humor">Humor</a></li>
                                             <li class="breadcrumb-item active"
                                                 aria-current="page">Book</li>
                                         </ol><br>
@@ -354,7 +353,7 @@
                             <div class="card card-form">
                                 <div class="row no-gutters">
                                     <div class="col-lg-4 card-body">
-                                        <img src="{{asset('foto/'.$buku->file)}}" alt="" class="card-img">
+                                        <img src="{{asset('foto/'.$buku->file)}}" class="card-img" style="width: 125px">
                                         
                                         <br>
                                         <br>
@@ -373,7 +372,6 @@
                                         <label for="fname"><h6 class="text-muted">Tahun :{{$buku->tahun}}</h6></label><br>
                                         <label for="fname"><h6 class="text-muted">Lokasi :{{$buku->lokasi}}</h6></label><br>
                                         <label for="fname"><h6 class="text-muted">Kategori :{{$buku->kategori->kategori}}</h6></label><br>
-                                        <label for="fname"><h6 class="text-muted">Deskripsi :{{$buku->deskripsi}}</h6></label>
                                     </div>
                                 </div>
                             </div>

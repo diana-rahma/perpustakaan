@@ -352,7 +352,6 @@
                                                 <th>Gambar</th>
                                                 <th>Nominal Denda</th>
                                                 <th>Keterangan</th>
-                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                     
@@ -373,12 +372,6 @@
                                                 <td>{{ $row->denda }}</td>
                                                 <td>{{ $row->keterangan }}</td>
 
-                                                <td>
-                                            
-                                                    <a href="edit_history{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
-                                                    <a href="/deletehistory/{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-history="{{ $row->history }}" >Delete</a>
-                                                    
-                                                </td>
                                             </tr>
                                         @endforeach
 

@@ -17,7 +17,7 @@ class ListbukuController extends Controller
      */
     public function index()
     {
-        $buku = buku::paginate(2);
+        $buku = buku::paginate(8);
         $kategori = kategori::all();
         return view('listbuku.listbuku',compact('buku', 'kategori'));
     }
@@ -32,7 +32,7 @@ class ListbukuController extends Controller
         $buku = buku::whereHas('kategori', function(Builder $query) use($id) {
 
         return $query->where('id', $id);
-        })->paginate(1);
+        })->paginate(8);
         return view('kategori.detail',compact('buku'));
     }
 
