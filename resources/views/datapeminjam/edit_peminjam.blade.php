@@ -344,7 +344,7 @@
                                 
                             </div>
                         </div>
-{
+                        
                         <form action="{{ route('updatepeminjam', $peminjam->id) }}" method="POST">
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
