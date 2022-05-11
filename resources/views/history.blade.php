@@ -366,29 +366,26 @@
                                             </tr>
                                         </thead>
 
-                                        {{-- <tbody>
+                                        <tbody>
 
                                             @php
                                                 $no=1;
                                             @endphp
 
-                                            @foreach ($data as $index => $row)
-                                                <tr>
-                                                    <td scope="row">{{ $index + $data->firstItem() }}</td>
-                                                    <td>{{ $row->kategori }}</td>
-                                                    <td>
-                                                        <img src="{{ asset('foto/'.$row->file) }}" width="125" height="85px">
-                                                    </td>
-                                                    <td>
-                                                
-                                                        <a href="edit_kategori{{ $row->id }}" class="btn btn-warning btn sweet-confirm">Edit</a>
-                                                        <a href="/delete/{{ $row->id }}" class="btn btn-danger btn sweet-confirm" data-id="{{ $row->id }}" data-kategori="{{ $row->kategori }}" >Delete</a>
-                                                        
-                                                    </td>
-                                                </tr>
-                                            @endforeach
+                                            @foreach ($data as $row)
+                                            <tr>
+                                                <td scope="row">{{ $no++ }}</td>
+                                                <td>{{ $row->buku->judulbuku }}</td>
+                                                <td>
+                                                    <img src="{{asset('foto/'.$row->buku->file)}}" alt="" class="card-img" style="width:75px;">
+                                                </td>
+                                                <td>{{ $row->tanggal_pinjam }}</td>
+                                                <td>{{ $row->tenggat_pengembalian }}</td>
+                                                <td>{{ $row->denda }}</td>
+                                            </tr>
+                                        @endforeach
 
-                                        </tbody> --}}
+                                        </tbody>
                                         
                                     </table>
                                 </div>
@@ -397,45 +394,7 @@
 
                         <br>
 
-                        <ul class="pagination m-0">
-
-                            <li class="page-item disabled">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="Previous">
-                                    <span aria-hidden="true"
-                                          class="material-icons">chevron_left</span>
-                                    <span>Prev</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item active">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="1">
-                                    <span>1</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="2">
-                                    <span>2</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="Next">
-                                    <span>Next</span>
-                                    <span aria-hidden="true"
-                                          class="material-icons">chevron_right</span>
-                                </a>
-                            </li>
-
-                        </ul>
+                        {{$data->links('vendor.pagination.custom')}}
 
                         </div>
 

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\denda;
+use App\Models\dipinjam;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoredendaRequest;
 use App\Http\Requests\UpdatedendaRequest;
@@ -13,7 +14,11 @@ class DendaController extends Controller
 {
     public function index() 
     {
-        return view('denda');
+        $data = dipinjam::whereHas('user',function(Builder $query){
+            return $query->where('id',Auth::user()->id);
+        })->paginate(5);
+
+        return view('denda',compact('data'));
     }
 
     /**

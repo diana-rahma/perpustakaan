@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\konfirmasiuser;
+use App\Models\dipinjam;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorekonfirmasiuserRequest;
 use App\Http\Requests\UpdatekonfirmasiuserRequest;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class KonfirmasiuserController extends Controller
@@ -18,7 +20,11 @@ class KonfirmasiuserController extends Controller
      */
     public function index()
     {
-        return view('konfirmasiuser');
+        $data = dipinjam::whereHas('user',function(Builder $query){
+            return $query->where('id',Auth::user()->id);
+        })->paginate(5);
+        
+        return view('konfirmasiuser',compact('data'));
     }
 
     /**

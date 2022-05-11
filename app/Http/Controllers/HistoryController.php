@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\history;
+use App\Models\dipinjam;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorehistoryRequest;
 use App\Http\Requests\UpdatehistoryRequest;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class HistoryController extends Controller
 {
 
-    public function index() {
+    public function index() 
+    {
+        $data = dipinjam::whereHas('user',function(Builder $query){
+            return $query->where('id',Auth::user()->id);
+        })->paginate(5);
         
-        return view('history');
+        return view('history',compact('data'));
     }
 
     /**
