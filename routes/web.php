@@ -23,6 +23,8 @@ use App\Http\Controllers\DendaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ListbukuController;
 use App\Http\Controllers\ProfileuserController;
+use App\Models\dipinjam;
+use App\Models\denda;
 // use App\Http\Controllers\ProfileuserController;
 
 use App\Http\Controllers\SignupadminController;
@@ -349,19 +351,45 @@ Route::get('/history', [HistoryController::class, 'index'])->name('history.index
 Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->middleware('auth');
 
 
-// Route::prefix('admin')->name('admin.')->group(function(){
+Route::prefix('admin')->name('admin.')->group(function(){
 
-//     Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
-//         Route::view('/loginadmin','loginadmin')->name('login');
-//         Route::view('/signupadmin','signupadmin')->name('signup');
-//         Route::post('/create',[SignupadminController::class, 'create'])->name('create');
-//         Route::post('/check',[AdminController::class, 'check'])->name('check');
-//     });
+    Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
+        Route::view('/loginadmin','loginadmin')->name('login');
+        Route::view('/signupadmin','signupadmin')->name('signup');
+        Route::post('/create',[SignupadminController::class, 'create'])->name('create');
+        Route::post('/check',[AdminController::class, 'check'])->name('check');
+    });
 
-//     Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
-//         Route::view('/index','index')->name('index');
-//         Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
-//     });
-// });
+    Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
+        Route::view('/index','index')->name('index');
+        Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
+    });
+});
 
 Route::get('/index', [IndexController::class, 'index'])->name('index');
+
+Route::get('/test',function(){
+    $now = Carbon\Carbon::now();
+            
+            //$telat = denda::whereHas('pinjam',function(Builder $query){
+            //     return $query->where('tenggat_pengembalian','<',$now);
+            // })->get();
+            $telat = dipinjam::where('tenggat_pengembalian','<',$now)->get();
+            
+            foreach($telat as $terlambat){
+                print_r("ada");
+                $haritelat = Carbon\Carbon::parse($terlambat->tenggat_pengembalian);
+                $hari = $haritelat->diffinDays($now);
+                $data = denda::where('id_pinjam', $terlambat->id)->first();
+                if ($data){
+                    $data->denda=$data->denda+3000;
+                    $data->save();
+                }else {
+                    $data=new denda;
+                    $data->id_pinjam=$terlambat->id;
+                    $data->denda=3000;
+                    $data->keterangan="Terlambat $hari hari";
+                    $data->save();
+                }
+            }
+});

@@ -371,16 +371,16 @@
                             <div class="card card-form">
                                 <div class="row no-gutters">
                                     <div class="col-lg-15 card-form__body card-body">
-
+                                    <form method="get" action="{{ route('siswa.index') }}">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="lname">Kelas</label>
-                                                        <select class="form-control" name="jk">
+                                                        <select class="form-control" name="kelas">
                                                             <option value="">Kelas</option>
-                                                            <option>X</option>
-                                                            <option>XI</option>
-                                                            <option>XII</option>
+                                                            @foreach($kelas as $key => $value)
+                                                                <option value="{{ $value->kelas }}">{{ $value->kelas }}</option>
+                                                            @endforeach
                                                         </select>
                                                 </div>
                                             </div>
@@ -388,22 +388,22 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="lname">Jurusan</label>
-                                                        <select class="form-control" name="jk">
+                                                        <select class="form-control" name="jurusan">
                                                             <option value="">Jurusan</option>
-                                                            <option>MM</option>
-                                                            <option>RPL</option>
-                                                            <option>TKJ</option>
+                                                            @foreach($jurusan as $key => $value)
+                                                                <option value="{{ $value->jurusan }}">{{ $value->jurusan }}</option>
+                                                            @endforeach
                                                         </select>
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="lname">Alfabet</label>
-                                                        <select class="form-control" name="jk">
+                                                        <select class="form-control" name="alfabet">
                                                             <option value="">Alfabet</option>
-                                                            <option>A</option>
-                                                            <option>B</option>
-                                                            <option>C</option>
+                                                            @foreach($alfabet as $key => $value)
+                                                                <option value="{{ $value->alfabet }}">{{ $value->alfabet }}</option>
+                                                            @endforeach
                                                         </select>
                                                 </div>
                                             </div>
@@ -414,27 +414,27 @@
                                             <div class="row no-gutters">
                                                 <div class="col-lg-15 card-form__body card-body">
                                                     <label for="select05">Nama Siswa</label>
+                                                    
+
                                                     <select id="select05"
                                                             style="height: 35px;"
                                                             data-toggle="select"
-                                                            class="form-control form-control-sm">
-                                                        <option>Nama Siswa</option>
-                                                        <option>Christiana Inggit</option>
-                                                        <option>Clarissa Putri</option>
-                                                        <option>Jesika Novanda</option>
-                                                        <option>Michael Putra</option>
-                                                        <option>Rahmalia Putri</option>
-                                                        <option>Vania Bunga</option>
-                                                    </select>
+                                                            class="form-control form-control-sm"
+                                                            name="name">
+                                                            <option value="">Nama Siswa</option>
+                                                            @foreach($user as $key => $value)
+                                                                <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                                            @endforeach
+                                                        </select>
                                                 </div>
                                             </div>
                                             
                                         </div>
 
                                         <div class="text-right mb-15">
-                                            <a href=""
-                                               class="btn btn-success">Enter</a>
+                                             <button type="submit" class="btn btn-success">Enter</button>
                                         </div>
+                                    </form>
 
                                     </div>
                                 </div>

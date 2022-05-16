@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Console;
+use App\Models\denda;
+use App\Models\dipinjam;
+use Carbon\Carbon;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -15,7 +18,31 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function(){
+            $now = Carbon\Carbon::now();
+            
+            //$telat = denda::whereHas('pinjam',function(Builder $query){
+            //     return $query->where('tenggat_pengembalian','<',$now);
+            // })->get();
+            $telat = dipinjam::where('tenggat_pengembalian','<',$now)->get();
+            
+            foreach($telat as $terlambat){
+                print_r("ada");
+                $haritelat = Carbon\Carbon::parse($terlambat->tenggat_pengembalian);
+                $hari = $haritelat->diffinDays($now);
+                $data = denda::where('id_pinjam', $terlambat->id)->first();
+                if ($data){
+                    $data->denda=$data->denda+3000;
+                    $data->save();
+                }else {
+                    $data=new denda;
+                    $data->id_pinjam=$terlambat->id;
+                    $data->denda=3000;
+                    $data->keterangan="Terlambat $hari hari";
+                    $data->save();
+                }
+            }
+        })->everyMinute();
     }
 
     /**

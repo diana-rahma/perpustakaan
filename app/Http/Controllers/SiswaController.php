@@ -7,6 +7,7 @@ use App\Models\kelas;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoresiswaRequest;
 use App\Http\Requests\UpdatesiswaRequest;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
@@ -18,13 +19,55 @@ class SiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
- 
         $data = User::paginate(3);
+        if (
+            $request->query('kelas')!='' ||
+            $request->query('jurusan')!='' ||
+            $request->query('alfabet')!='' ||
+            $request->query('name')!=''
+        ) {
+            $data = User::where('id',$request->query('name'));
+            if (
+                $request->query('kelas')!='' ||
+                $request->query('jurusan')!='' ||
+                $request->query('alfabet')!='' ){
+                
+                    $data=$data->orWhereHas('kelas',function(Builder $query) use($request){
+                        $data=$query;
+                        if($request->query('kelas')!='') { 
+                            $data = $query->where('kelas', $request->query('kelas'));
+                        }
+                        if($request->query('jurusan')!='') {
+                            $data=$data->where('jurusan',$request->query('jurusan'));
+                        }
+                        if ($request->query('alfabet')!='') {
+                            $data=$data->where('alfabet',$request->query('alfabet'));
+                        }
+                        if (
+                            $request->query('kelas')!='' ||
+                            $request->query('jurusan')!='' ||
+                            $request->query('alfabet')!='' 
+                        ){
+                            return $data;
+                        } 
+                       
+                    });
+                }
+                $data=$data->paginate(10);
+            
+            
+        }
+ 
+        
+        $kelas = kelas::select('kelas')->distinct()->get();
+        $user = User::all();
+        $alfabet = kelas::select('alfabet')->distinct()->get();
+        $jurusan = kelas::select('jurusan')->distinct()->get();
+        
 
-        return view('datasiswa.datasiswa',compact('data'));
+        return view('datasiswa.datasiswa',compact('data','kelas','user','alfabet','jurusan'));
     }
 
     /**

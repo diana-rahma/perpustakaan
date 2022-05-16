@@ -12,7 +12,7 @@ class AdminController extends Controller
     function check(Request $request){
         //Validate Inputs
         $request->validate([
-           'email'=>'required|email|exists:admins,email',
+           'email'=>'required|email|exists:admin,email',
            'password'=>'required|min:4|max:30'
         ],[
             'email.exists'=>'This email is not exists in admins table'
