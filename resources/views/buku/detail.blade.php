@@ -353,7 +353,7 @@
                             <div class="card card-form">
                                 <div class="row no-gutters">
                                     <div class="col-lg-4 card-body">
-                                        <img src="{{asset('foto/'.$buku->file)}}" class="card-img" style="width: 125px">
+                                        <img src="{{asset('foto/'.$buku->file)}}" class="card-img" style="width: 145px">
                                         
                                         <br>
                                         <br>

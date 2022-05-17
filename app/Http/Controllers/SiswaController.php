@@ -21,7 +21,7 @@ class SiswaController extends Controller
      */
     public function index(Request $request)
     {
-        $data = User::paginate(3);
+        $data = User::paginate(5);
         if (
             $request->query('kelas')!='' ||
             $request->query('jurusan')!='' ||

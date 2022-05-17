@@ -74,7 +74,7 @@ class BukuController extends Controller
         $data->tenggat_pengembalian=Carbon::now()->addDays(7);
         $data->tanggal_pinjam=Carbon::now();
         $data->save();
-        return redirect()->back()->with('success','Buku berhasil dipinjam, silahkan ambil di perpustakaan');
+        return redirect()->back()->with('success','Buku berhasil dipinjam, silahkan ambil di perpustakaan!');
         
     }
 

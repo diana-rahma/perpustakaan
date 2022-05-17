@@ -16,4 +16,8 @@ class denda extends Model
     public function pinjam (){
         return $this->belongsTo(dipinjam::class, "id_pinjam","id");
     }
+
+    // public function buku (){
+    //     return $this->belongsTo(buku::class, "id_buku","id");
+    // }
 }
