@@ -336,7 +336,7 @@
                                             <li class="breadcrumb-item active"
                                                 aria-current="page">Book</li>
                                         </ol><br>
-                                        <a href="/humor"type="button"class="btn btn-primary">Kembali</a>
+                                        <a href="/listbuku"type="button"class="btn btn-primary">Kembali</a>
                                     </nav>
                                 </div>
                                
