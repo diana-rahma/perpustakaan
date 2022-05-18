@@ -350,7 +350,7 @@
                                         <!-- <div><i class="material-icons icon-muted icon-40pt mr-3">gps_fixed</i></div> -->
                                         <div class="flex">
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Sedang Dipinjam</div>
-                                            <div class="text-muted mt-1">5 Buku</div>
+                                            <div class="text-muted mt-1">{{ $dipinjam }} Buku</div>
                                             <!-- <div class="text-stats text-success">31.5% <i class="material-icons">arrow_upward</i></div> -->
                                         </div>
                                         <div data-v-da9425c4 data-v-70995076 class="icon">
@@ -364,7 +364,7 @@
                                         <!-- <div><i class="material-icons icon-muted icon-40pt mr-3">monetization_on</i></div> -->
                                         <div class="flex">
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Terlambat Mengembalikan</div>
-                                            <div class="text-muted mt-1">3 Buku</div>
+                                            <div class="text-muted mt-1">Buku</div>
                                             <!-- <div class="text-stats text-success">51.5% <i class="material-icons">arrow_upward</i></div> -->
                                         </div>
                                         <div data-v-da9425c4 data-v-70995076 class="icon">
