@@ -19,7 +19,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function(){
-            $now = Carbon\Carbon::now();
+            $now = Carbon::now();
             
             //$telat = denda::whereHas('pinjam',function(Builder $query){
             //     return $query->where('tenggat_pengembalian','<',$now);
@@ -28,11 +28,12 @@ class Kernel extends ConsoleKernel
             
             foreach($telat as $terlambat){
                 print_r("ada");
-                $haritelat = Carbon\Carbon::parse($terlambat->tenggat_pengembalian);
+                $haritelat = Carbon::parse($terlambat->tenggat_pengembalian);
                 $hari = $haritelat->diffinDays($now);
                 $data = denda::where('id_pinjam', $terlambat->id)->first();
                 if ($data){
                     $data->denda=$data->denda+3000;
+                    $data->keterangan="Terlambat $hari hari";
                     $data->save();
                 }else {
                     $data=new denda;
@@ -42,7 +43,7 @@ class Kernel extends ConsoleKernel
                     $data->save();
                 }
             }
-        })->everyMinute();
+        })->daily();
     }
 
     /**

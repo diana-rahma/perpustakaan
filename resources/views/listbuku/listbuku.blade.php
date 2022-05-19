@@ -442,7 +442,7 @@
                             @foreach($buku as $key => $value)
                                 <div class="col-sm-6 col-md-3">
                                     <div class="card stories-card-popular">
-                                        <a href="{{route('detailbuku',['id'=>$value->id])}}"><img src="{{asset('foto/'.$value->file)}}" alt="" class="card-img"></a>
+                                        <a href="{{route('detailbuku',['id'=>$value->id])}}"><img src="{{asset('foto/'.$value->file)}}" alt="" style="height:350px; object-fit:unset" class="card-img"></a>
                                         <div class="stories-card-popular__title card-body">
                                             <h4 class="card-title m-0"><a href="{{route('detailbuku',['id'=>$value->id])}}">{{ $value->judulbuku }}</a></h4>
                                         </div>

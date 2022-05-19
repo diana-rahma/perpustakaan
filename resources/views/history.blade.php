@@ -381,7 +381,7 @@
                                                 </td>
                                                 <td>{{ $row->tanggal_pinjam }}</td>
                                                 <td>{{ $row->tenggat_pengembalian }}</td>
-                                                <td>{{ $row->denda }}</td>
+                                                <td>{{ @$row->denda->denda }}</td>
                                             </tr>
                                         @endforeach
 

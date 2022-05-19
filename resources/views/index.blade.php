@@ -323,7 +323,7 @@
                                         <!-- <div><i class="material-icons icon-muted icon-40pt mr-3">gps_fixed</i></div> -->
                                         <div class="flex">
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Buku Tersimpan</div>
-                                            <div class="text-muted mt-1">{{ $tersimpan }} Buku</div>
+                                            <div class="text-muted mt-1"> Buku</div>
                                             <!-- <div class="text-stats text-success">31.5% <i class="material-icons">arrow_upward</i></div> -->
                                         </div>
                                         <div data-v-da9425c4 data-v-70995076 class="icon">
@@ -337,7 +337,7 @@
                                         <!-- <div><i class="material-icons icon-muted icon-40pt mr-3">monetization_on</i></div> -->
                                         <div class="flex">
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Kategori Buku</div>
-                                            <div class="text-muted mt-1">{{ $kategori }} Kategori</div>
+                                            <div class="text-muted mt-1"> Kategori</div>
                                             <!-- <div class="text-stats text-success">51.5% <i class="material-icons">arrow_upward</i></div> -->
                                         </div>
                                         <div data-v-da9425c4 data-v-70995076 class="icon">
@@ -350,7 +350,7 @@
                                         
                                         <div class="flex">
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Siswa Telat Bayar</div>
-                                            <div class="text-muted mt-1">{{ $siswatelat }} Siswa</div>
+                                            <div class="text-muted mt-1"> Siswa</div>
                                         </div>
                                         <div data-v-da9425c4 data-v-70995076 class="icon">
                                             <i data-v-da9425c4 class="material-icons icon-40pt ">access_time</i>
@@ -362,7 +362,7 @@
                                         
                                         <div class="flex">
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Jumlah Siswa</div>
-                                            <div class="text-muted mt-1">{{ $siswa }} Siswa</div>
+                                            <div class="text-muted mt-1"> Siswa</div>
                                         </div>
                                         <div data-v-da9425c4 data-v-70995076 class="icon">
                                             <i data-v-da9425c4 class="material-icons icon-40pt ">person</i>
@@ -472,61 +472,65 @@
                                  data-perfect-scrollbar>
                                 <div class="sidebar-heading">Menu</div>
                                 <ul class="sidebar-menu">
-                                    <li class="sidebar-menu-item">
+                                    <li class="sidebar-menu-item active open">
                                         <a class="sidebar-menu-button"
-                                            href="/index">
-                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">pie_chart_outlined</i>
-                                            <span class="sidebar-menu-text">Dashboard</span>
+                                           data-toggle="collapse"
+                                           href="#dashboards_menu">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i>
+                                            <span class="sidebar-menu-text">Menu Utama</span>
+                                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
                                         </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button"
-                                            href="/datasiswa">
-                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">people</i>
-                                            <span class="sidebar-menu-text">Data Siswa</span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button"
-                                            href="/listkelas">
-                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">account_balance</i>
-                                            <span class="sidebar-menu-text">Data Kelas</span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button"
-                                            href="/datapeminjam">
-                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">folder_shared</i>
-                                            <span class="sidebar-menu-text">Data Peminjam</span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button"
-                                            href="/databuku">
-                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">library_books</i>
-                                            <span class="sidebar-menu-text">Data Buku</span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button"
-                                            href="/konfirmasi">
-                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">system_update_alt</i>
-                                            <span class="sidebar-menu-text">Konfirmasi</span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button"
-                                            href="/listkategori">
-                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">format_list_bulleted</i>
-                                            <span class="sidebar-menu-text">List Kategori</span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a class="sidebar-menu-button"
-                                            href="/historydenda">
-                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">history</i>
-                                            <span class="sidebar-menu-text">History Denda</span>
-                                        </a>
+                                        <ul class="sidebar-submenu collapse show "
+                                            id="dashboards_menu">
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/index">
+                                                    <span class="sidebar-menu-text">Dashboard</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/datasiswa">
+                                                    <span class="sidebar-menu-text">Data Siswa</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/listkelas">
+                                                    <span class="sidebar-menu-text">Data Kelas</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/datapeminjam">
+                                                    <span class="sidebar-menu-text">Data Peminjam</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/databuku">
+                                                    <span class="sidebar-menu-text">Data Buku</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/konfirmasi">
+                                                    <span class="sidebar-menu-text">Konfirmasi</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/listkategori">
+                                                    <span class="sidebar-menu-text">List Kategori</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/historydenda">
+                                                    <span class="sidebar-menu-text">History Denda</span>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
                                 

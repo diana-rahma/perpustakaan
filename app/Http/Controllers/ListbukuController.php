@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\buku;
+use App\Models\dipinjam;
 use App\Models\kategori;
 use App\Http\Requests\StorelistbukuRequest;
 use App\Http\Requests\UpdatelistbukuRequest;
@@ -23,8 +24,9 @@ class ListbukuController extends Controller
     }
 
     public function detail($id) {
+        $pinjambuku = dipinjam::where('id_buku', $id)->where('status','Pending')->first();
         $buku = buku::find($id);
-        return view('buku.detail',compact('buku'));
+        return view('buku.detail',compact('buku','pinjambuku'));
     }
 
     public function detailkategori($id) {

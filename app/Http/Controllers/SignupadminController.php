@@ -28,7 +28,7 @@ class SignupadminController extends Controller
         $admin->jk = $request->jk;
         $admin->alamat = $request->alamat;
         $admin->email = $request->email;
-        $admin->password = Hash::make($request->name);
+        $admin->password = Hash::make($request->password);
         $save = $admin->save();
 
         if($save) {

@@ -361,12 +361,13 @@ Route::prefix('admin')->name('admin.')->group(function(){
     });
 
     Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
-        Route::view('/index','index')->name('index');
+        //Route::view('/index','index')->name('index');
+        Route::get('/index', [IndexController::class, 'index'])->name('index');
         Route::post('/logout',[AdminController::class, 'logout'])->name('logout');
     });
 });
 
-Route::get('/index', [IndexController::class, 'index'])->name('index');
+
 
 Route::get('/test',function(){
     $now = Carbon\Carbon::now();

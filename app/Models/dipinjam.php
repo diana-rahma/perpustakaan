@@ -22,6 +22,6 @@ class dipinjam extends Model
     }
 
     public function denda (){
-        return $this->hasMany(denda::class, "id_pinjam","id");
+        return $this->hasOne(denda::class, "id_pinjam","id");
     }
 }

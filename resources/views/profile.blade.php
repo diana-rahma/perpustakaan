@@ -53,6 +53,8 @@
 
     <body class="layout-default">
 
+    @dd(auth()->user())
+
         <div class="preloader"></div>
 
         <!-- Header Layout -->
@@ -349,7 +351,7 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="Admin Account"
-                                                           value="">
+                                                           value="{{ auth()->user()->name }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -362,14 +364,14 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="083831432980"
-                                                           value="">
+                                                           value="{{ auth()->user()->telephone }}">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="lname">Jenis Kelamin</label>
                                                         <select class="form-control" name="jk">
-                                                            <option value="">Jenis Kelamin</option>
+                                                            <option selected>{{ auth()->user()->jk }}</option>
                                                             <option>Perempuan</option>
                                                             <option>Laki-Laki</option>
                                                         </select>
@@ -385,7 +387,7 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="Jl Anggrek"
-                                                           value="">
+                                                           value="{{ auth()->user()->alamat }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -406,7 +408,7 @@
                                                    type="password"
                                                    class="form-control"
                                                    placeholder="Old password"
-                                                   value="****">
+                                                   value="{{ auth()->user()->password }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="npass">New Password</label>

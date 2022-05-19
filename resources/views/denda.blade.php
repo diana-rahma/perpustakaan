@@ -364,9 +364,9 @@
                                             @foreach ($data as $row)
                                             <tr>
                                                 <td scope="row">{{ $no++ }}</td>
-                                                <td>{{ $row->buku->judulbuku }}</td>
+                                                <td>{{ $row->pinjam->buku->judulbuku }}</td>
                                                 <td>
-                                                    <img src="{{asset('foto/'.$row->buku->file)}}" alt="" class="card-img" style="width:75px;">
+                                                    <img src="{{asset('foto/'.$row->pinjam->buku->file)}}" alt="" class="card-img" style="width:75px;">
                                                 </td>
                                                 <td>{{ $row->denda }}</td>
                                                 <td>{{ $row->keterangan }}</td>

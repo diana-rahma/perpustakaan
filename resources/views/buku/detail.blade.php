@@ -358,10 +358,14 @@
                                         <br>
                                         <br>
 
+                                        @if(!$pinjambuku)
+                                            
+                                        
                                         <button type="button"
                                                     class="btn btn-primary"
                                                     data-toggle="modal"
                                                     data-target="#modal-center">Pinjam Buku</button>
+                                        @endif
                                                     
                                     </div>
 
