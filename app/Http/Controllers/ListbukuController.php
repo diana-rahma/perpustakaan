@@ -17,7 +17,7 @@ class ListbukuController extends Controller
      */
     public function index()
     {
-        $buku = buku::paginate(8);
+        $buku = buku::paginate(12);
         $kategori = kategori::all();
         return view('listbuku.listbuku',compact('buku', 'kategori'));
     }

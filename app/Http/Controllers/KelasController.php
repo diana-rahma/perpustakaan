@@ -18,7 +18,7 @@ class KelasController extends Controller
      */
     public function index()
     {
-        $data = Kelas::paginate(3);
+        $data = Kelas::paginate(10);
 
         return view('datakelas.listkelas',compact('data'));
     }

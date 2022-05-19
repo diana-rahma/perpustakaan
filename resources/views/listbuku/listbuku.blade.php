@@ -375,19 +375,15 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="lname">Kategori</label>
-                                                        <select class="form-control" name="jk">
+                                                        <select class="form-control" name="kategori">
                                                             <option value="">Kategori</option>
-                                                            <option>Fantasy</option>
-                                                            <option>Romance</option>
-                                                            <option>Horror</option>
-                                                            <option>Adventure</option>
-                                                            <option>Mistery</option>
-                                                            <option>Biography</option>
-                                                            <option>Dictionary</option>
-                                                            <option>Humor</option>
+                                                            @foreach($kategori as $key => $value)
+                                                                <option value="{{ $value->kategori }}">{{ $value->kategori }}</option>
+                                                            @endforeach
                                                         </select>
                                                 </div>
                                             </div>
+
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="select05">Penulis</label>
@@ -473,49 +469,42 @@
                                  data-perfect-scrollbar>
                                 <div class="sidebar-heading">Menu</div>
                                 <ul class="sidebar-menu">
-                                    <li class="sidebar-menu-item active open">
+                                    <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
-                                           data-toggle="collapse"
-                                           href="#dashboards_menu">
-                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i>
-                                            <span class="sidebar-menu-text">Menu Utama</span>
-                                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                            href="/indexuser">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">pie_chart_outlined</i>
+                                            <span class="sidebar-menu-text">Dashboard</span>
                                         </a>
-                                        
-                                        <ul class="sidebar-submenu collapse show "
-                                            id="dashboards_menu">
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/indexuser">
-                                                    <span class="sidebar-menu-text">Dashboard</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/listbuku">
-                                                    <span class="sidebar-menu-text">List Buku</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/dipinjam">
-                                                    <span class="sidebar-menu-text">Sedang Dipinjam</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/history">
-                                                    <span class="sidebar-menu-text">History Peminjaman</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/denda">
-                                                    <span class="sidebar-menu-text">Denda</span>
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                            href="listbuku">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">library_books</i>
+                                            <span class="sidebar-menu-text">List Buku</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                            href="/dipinjam">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">book</i>
+                                            <span class="sidebar-menu-text">Sedang Dipinjam</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                            href="/history">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">history</i>
+                                            <span class="sidebar-menu-text">History Peminjaman</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                            href="/denda">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">attach_money</i>
+                                            <span class="sidebar-menu-text">Denda</span>
+                                        </a>
+                                    </li>
+
                                 </ul>
                                 
                             </div>

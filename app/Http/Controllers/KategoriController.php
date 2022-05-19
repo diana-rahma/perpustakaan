@@ -16,7 +16,7 @@ class KategoriController extends Controller
         if($request->has('search')){
             $data = Kategori::where('kategori','LIKE','%' .$request->search. '%')->paginate(3);
         }else{
-            $data = Kategori::paginate(3);
+            $data = Kategori::paginate(8);
         }
         
         return view('kategori.listkategori',compact('data'));

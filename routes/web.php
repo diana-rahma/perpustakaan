@@ -393,3 +393,7 @@ Route::get('/test',function(){
                 }
             }
 });
+
+Route::get('/sidebar', function () {
+    return view('sidebar');
+});

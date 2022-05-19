@@ -19,7 +19,7 @@ class BukuController extends Controller
         if($request->has('search')){
             $data = buku::where('buku','LIKE','%' .$request->search. '%')->paginate(3);
         }else{
-            $data = buku::paginate(3);
+            $data = buku::paginate(6);
         }
         return view('databuku.databuku',compact('data'));
     }
