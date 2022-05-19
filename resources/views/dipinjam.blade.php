@@ -355,6 +355,7 @@
                                                 <th>Gambar Buku</th>
                                                 <th>Tanggal Pinjam</th>
                                                 <th>Tenggat Pengembalian</th>
+                                                <th>Status Pengambilan</th>
                                             </tr>
                                         </thead>
 
@@ -374,6 +375,7 @@
                                                     </td>
                                                     <td>{{ $row->tanggal_pinjam }}</td>
                                                     <td>{{ $row->tenggat_pengembalian }}</td>
+                                                    <td>{{ $row->status }}</td>
                                                 </tr>
                                             @endforeach
 
@@ -427,12 +429,6 @@
                                                 <a class="sidebar-menu-button"
                                                    href="/dipinjam">
                                                     <span class="sidebar-menu-text">Sedang Dipinjam</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
-                                                   href="/konfirmasiuser">
-                                                    <span class="sidebar-menu-text">Konfirmasi</span>
                                                 </a>
                                             </li>
                                             <li class="sidebar-menu-item">

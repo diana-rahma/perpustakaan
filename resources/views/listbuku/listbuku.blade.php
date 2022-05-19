@@ -504,12 +504,6 @@
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="/konfirmasiuser">
-                                                    <span class="sidebar-menu-text">Konfirmasi</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-menu-item">
-                                                <a class="sidebar-menu-button"
                                                    href="/history">
                                                     <span class="sidebar-menu-text">History Peminjaman</span>
                                                 </a>
