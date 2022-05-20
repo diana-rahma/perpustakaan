@@ -78,7 +78,6 @@ Route::get('/profile', function () {
 });
 
 
-
 // Route Data Siswa - Backend
 
 Route::get('/datasiswa', [SiswaController::class, 'index'])->name('siswa.index');
@@ -167,7 +166,6 @@ Route::get('/deletehistory/{id}',[HistorydendaController::class, 'delete'])->nam
 
 
 
-
 // Frontend
 
 Route::get('/indexuser', [IndexuserController::class, 'indexuser'])->middleware('auth');
@@ -186,11 +184,9 @@ Route::get('/signup', [RegisterController::class, 'create']);
 Route::post('/signup', [RegisterController::class, 'store']);
 
 
-
 // Route List Buku - Frontend
 
 Route::get('/listbuku', [ListbukuController::class, 'index'])->name('listbuku')->middleware('auth');
-
 
 
 // Route Dipinjam - Frontend
@@ -226,113 +222,6 @@ Route::post('/pinjambuku/{id}',[BukuController::class, 'pinjambuku'])->name('pin
 Route::get('detailkategori/{id}',[ListbukuController::class, 'detailkategori'])->name('detailkategori');
 
 
-// Route Genre - Fantasy
-
-Route::get('/fantasy', function () {
-    return view('listbuku.fantasy');
-});
-
-Route::get('/the-magic-library', function () {
-    return view('buku.fantasy.the-magic-library');
-});
-
-Route::get('/the-lord-of-the-rings', function () {
-    return view('buku.fantasy.the-lord-of-the-rings');
-});
-
-
-// Route Genre - Romance
-
-Route::get('/romance', function () {
-    return view('listbuku.romance');
-});
-
-Route::get('/the-book-of-almost', function () {
-    return view('buku.romance.the-book-of-almost');
-});
-
-
-// Route Genre - Horror
-
-Route::get('/horror', function () {
-    return view('listbuku.horror');
-});
-
-Route::get('/those-eyes', function () {
-    return view('buku.horror.those-eyes');
-});
-
-// Route Genre - Adventure
-
-Route::get('/adventure', function () {
-    return view('listbuku.adventure');
-});
-
-Route::get('/adventure-jack', function () {
-    return view('buku.adventure.adventure-jack');
-});
-
-
-// Route Genre - Mistery
-
-Route::get('/mistery', function () {
-    return view('listbuku.mistery');
-});
-
-Route::get('/holy-mother', function () {
-    return view('buku.mistery.holy-mother');
-});
-
-
-// Route Genre - Biography
-
-Route::get('/biography', function () {
-    return view('listbuku.biography');
-});
-
-
-// Route Genre - Dictionary
-
-Route::get('/dictionary', function () {
-    return view('listbuku.dictionary');
-});
-
-
-// Route Genre - Humor
-
-Route::get('/humor', function () {
-    return view('listbuku.humor');
-});
-
-Route::get('/setengah-jalan', function () {
-    return view('buku.humor.setengah-jalan');
-});
-
-// Route Genre - Paket 1
-Route::get('/paket1', function () {
-    return view('listbuku.paket1');
-});
-
-
-// Route Genre - Paket 2
-
-Route::get('/paket2', function () {
-    return view('listbuku.paket2');
-});
-
-
-// Route Genre - Paket 3
-
-Route::get('/paket3', function () {
-    return view('listbuku.paket3');
-});
-
-
-// Route Genre - Paket Tambahan
-
-Route::get('/pakettambahan', function () {
-    return view('listbuku.pakettambahan');
-});
 
 // Route::get('/edit_profileuser', [ProfileuserController::class, 'editprofileuser'])->name('editprofileuser')->middleware('auth');
 // Route::post('/updateprofileuser/{id}', [ProfileuserController::class, 'updateprofileuser'])->name('updateprofileuser')->middleware('auth');

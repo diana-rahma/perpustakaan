@@ -383,10 +383,10 @@
                                             <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname">Denda</label>
-                                                        <input id="lname" type="number" class="form-control" name="denda" value="{{ property_exists($peminjam->denda, 'denda') ? $peminjam->denda->denda : 0}}">
+                                                        <input id="lname" type="number" class="form-control" name="denda" value="{{ @property_exists($peminjam->denda, 'denda') ? $peminjam->denda->denda : 0}}" readonly>
                                                     </div>
                                                 </div>
-                                        </div>
+                                            </div>
                                     </div>
                                 </div>
 
