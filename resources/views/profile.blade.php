@@ -53,7 +53,7 @@
 
     <body class="layout-default">
 
-    @dd(auth()->user())
+    {{-- @dd(auth()->user()) --}}
 
         <div class="preloader"></div>
 
@@ -262,7 +262,7 @@
                                        data-toggle="dropdown"
                                        data-caret="false">
                                         <span class="mr-1 d-flex-inline">
-                                            <span class="text-light">Admin A.</span>
+                                            <span class="text-light">Name</span>
                                         </span>
                                         <img src="images/avatar/profile.png"
                                              class="rounded-circle"
@@ -272,8 +272,8 @@
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">
                                         <div class="dropdown-item-text dropdown-item-text--lh">
-                                            <div><strong>Admin Account</strong></div>
-                                            <div class="text-muted">@adminacc</div>
+                                            <div><strong>Admin Name</strong></div>
+                                            <div class="text-muted">{{ auth()->user()->email }}</div>
                                         </div>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
@@ -322,8 +322,8 @@
                         <div class="container-fluid page__container">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <h1 class="h4 mb-1">Admin Account</h1>
-                                    <p class="text-muted">@adminacc</p>
+                                    <h1 class="h4 mb-1">Admin Name</h1>
+                                    <p class="text-muted">{{ auth()->user()->email }}</p>
                                 </div>
                                 <div class="col-lg-9">
                                     <div class="tab-content">
