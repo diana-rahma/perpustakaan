@@ -262,7 +262,7 @@
                                        data-toggle="dropdown"
                                        data-caret="false">
                                         <span class="mr-1 d-flex-inline">
-                                            <span class="text-light">Name</span>
+                                            <span class="text-light">{{ auth('admin')->user()->name }}</span>
                                         </span>
                                         <img src="images/avatar/profile.png"
                                              class="rounded-circle"
@@ -272,8 +272,8 @@
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">
                                         <div class="dropdown-item-text dropdown-item-text--lh">
-                                            <div><strong>Admin Name</strong></div>
-                                            <div class="text-muted">{{ auth()->user()->email }}</div>
+                                            <div><strong>{{ auth('admin')->user()->name }}</strong></div>
+                                            <div class="text-muted">{{ auth('admin')->user()->email }}</div>
                                         </div>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item"
@@ -322,8 +322,8 @@
                         <div class="container-fluid page__container">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <h1 class="h4 mb-1">Admin Name</h1>
-                                    <p class="text-muted">{{ auth()->user()->email }}</p>
+                                    <h1 class="h4 mb-1">{{ auth('admin')->user()->name }}</h1>
+                                    <p class="text-muted">{{ auth('admin')->user()->email }}</p>
                                 </div>
                                 <div class="col-lg-9">
                                     <div class="tab-content">
@@ -351,7 +351,7 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="Admin Account"
-                                                           value="{{ auth()->user()->name }}">
+                                                           value="{{ auth('admin')->user()->name }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -364,14 +364,14 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="083831432980"
-                                                           value="{{ auth()->user()->telephone }}">
+                                                           value="{{ auth('admin')->user()->telepon }}">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="lname">Jenis Kelamin</label>
                                                         <select class="form-control" name="jk">
-                                                            <option selected>{{ auth()->user()->jk }}</option>
+                                                            <option selected>{{ auth('admin')->user()->jk }}</option>
                                                             <option>Perempuan</option>
                                                             <option>Laki-Laki</option>
                                                         </select>
@@ -387,7 +387,7 @@
                                                            type="text"
                                                            class="form-control"
                                                            placeholder="Jl Anggrek"
-                                                           value="{{ auth()->user()->alamat }}">
+                                                           value="{{ auth('admin')->user()->alamat }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -401,15 +401,6 @@
                                         <p><strong class="headings-color">Update Your Password</strong></p>
                                     </div>
                                     <div class="col-lg-8 card-form__body card-body">
-                                        <div class="form-group">
-                                            <label for="opass">Old Password</label>
-                                            <input style="width: 270px;"
-                                                   id="opass"
-                                                   type="password"
-                                                   class="form-control"
-                                                   placeholder="Old password"
-                                                   value="{{ auth()->user()->password }}">
-                                        </div>
                                         <div class="form-group">
                                             <label for="npass">New Password</label>
                                             <input style="width: 270px;"
