@@ -344,11 +344,11 @@
                             <div class="card card-form">
                                 <div class="row no-gutters">
                                     <div class="col-lg-15 card-form__body card-body">
-
+                                    <form method="get" action="{{ route('peminjam.index') }}">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="fname">Tgl Awal</label>
+                                                    <label for="fname">Tgl Pinjam</label>
                                                     <input id="fname"
                                                            type="date"
                                                            class="form-control"
@@ -358,7 +358,7 @@
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="lname">Tgl Akhir</label>
+                                                    <label for="lname">Tgl Kembali</label>
                                                     <input id="lname"
                                                            type="date"
                                                            class="form-control"
@@ -369,10 +369,9 @@
                                         </div>
 
                                         <div class="text-right mb-15">
-                                            <a href=""
-                                               class="btn btn-success">Enter</a>
+                                            <button type="submit" class="btn btn-success">Enter</button>
                                         </div>
-
+                                    </form>
                                     </div>
                                 </div>
                             </div>

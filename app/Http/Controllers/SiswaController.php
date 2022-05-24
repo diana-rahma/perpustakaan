@@ -57,7 +57,6 @@ class SiswaController extends Controller
                 }
                 $data=$data->paginate(10);
             
-            
         }
  
         

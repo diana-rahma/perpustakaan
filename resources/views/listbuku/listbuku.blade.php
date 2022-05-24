@@ -370,7 +370,7 @@
                             <div class="card card-form">
                                 <div class="row no-gutters">
                                     <div class="col-lg-15 card-form__body card-body">
-
+                                    <form method="get" action="{{ route('listbuku') }}">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
@@ -386,26 +386,25 @@
 
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="select05">Penulis</label>
-                                                    <select id="select05"
-                                                            style="height: 35px;"
-                                                            data-toggle="select"
-                                                            class="form-control form-control-sm">
-                                                        <option>Penulis</option>
-                                                        <option>Diana</option>
-                                                        <option>Meita</option>
-                                                        <option>Jesika</option>
-                                                        <option>Vani</option>
-                                                    </select>
+                                                    <label for="select05">Pengarang</label>
+                                                        <select id="select05"
+                                                                style="height: 35px;"
+                                                                data-toggle="select"
+                                                                class="form-control form-control-sm"
+                                                                name="penulis">
+                                                                <option value="">Pengarang</option>
+                                                                @foreach($buku as $key => $value)
+                                                                    <option value="{{ $value->id }}">{{ $value->pengarang }}</option>
+                                                                @endforeach
+                                                        </select>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="text-right mb-15">
-                                            <a href=""
-                                               class="btn btn-success">Enter</a>
+                                            <button type="submit" class="btn btn-success">Enter</button>
                                         </div>
-
+                                    </form>
                                     </div>
                                 </div>
                             </div>

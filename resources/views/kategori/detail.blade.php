@@ -339,59 +339,12 @@
                         </div>
 
                         <div class="container-fluid page__container">
-                            <div class="card card-form">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-15 card-form__body card-body">
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="lname">Kategori</label>
-                                                        <select class="form-control" name="jk">
-                                                            <option value="">Kategori</option>
-                                                            <option>Fantasy</option>
-                                                            <option>Romance</option>
-                                                            <option>Horror</option>
-                                                            <option>Adventure</option>
-                                                            <option>Mistery</option>
-                                                            <option>Biography</option>
-                                                            <option>Dictionary</option>
-                                                            <option>Humor</option>
-                                                        </select>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="select05">Penulis</label>
-                                                    <select id="select05"
-                                                            style="height: 35px;"
-                                                            data-toggle="select"
-                                                            class="form-control form-control-sm">
-                                                        <option>Penulis</option>
-                                                        <option>Diana</option>
-                                                        <option>Meita</option>
-                                                        <option>Jesika</option>
-                                                        <option>Vani</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-right mb-15">
-                                            <a href=""
-                                               class="btn btn-success">Enter</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
                             <a href="/listbuku"type="button"class="btn btn-primary">Kembali</a>
                         </div>
 
                         <br>
 
                         <div class="container-fluid page__container">
-                            <div class="mb-3"><strong class="text-dark-gray">LIST BUKU</strong></div>
                             <div class="stories-cards mb-4"></div>
                             <div class="my-3"></div>
                             <div class="row">
@@ -399,7 +352,7 @@
                             @foreach($buku as $key => $value)
                                 <div class="col-sm-6 col-md-3">
                                     <div class="card stories-card-popular">
-                                        <a href="{{route('detailbuku',['id'=>$value->id])}}"><img src="{{asset('foto/'.$value->file)}}" alt="" class="card-img"></a>
+                                        <a href="{{route('detailbuku',['id'=>$value->id])}}"><img src="{{asset('foto/'.$value->file)}}" alt="" style="height:350px; object-fit:unset" class="card-img"></a>
                                         <div class="stories-card-popular__title card-body">
                                             <h4 class="card-title m-0"><a href="{{route('detailbuku',['id'=>$value->id])}}">{{ $value->judulbuku }}</a></h4>
                                         </div>

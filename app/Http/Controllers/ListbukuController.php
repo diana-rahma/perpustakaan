@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\buku;
 use App\Models\dipinjam;
 use App\Models\kategori;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
 use App\Http\Requests\StorelistbukuRequest;
 use App\Http\Requests\UpdatelistbukuRequest;
-use Illuminate\Database\Eloquent\Builder;
 
 class ListbukuController extends Controller
 {
@@ -16,10 +17,37 @@ class ListbukuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $buku = buku::paginate(12);
         $kategori = kategori::all();
+
+        if (
+            $request->query('kategori')!='' ||
+            $request->query('pengarang')!=''
+        ) {
+            $data = buku::where('id',$request->query('pengarang'));
+            if (
+                $request->query('kategori')!='' ){
+                
+                    $data=$data->orWhereHas('kategori',function(Builder $query) use($request){
+                        $data=$query;
+                        if($request->query('kategori')!='') { 
+                            $data = $query->where('kategori', $request->query('kategori'));
+                        }
+                        if (
+                            $request->query('kategori')!='' 
+                        ){
+                            return $data;
+                        } 
+                       
+                    });
+                }
+        }
+
+        // $kategori = kategori::select('kategori')->distinct()->get();
+        // $pengarang = buku::all();
+
         return view('listbuku.listbuku',compact('buku', 'kategori'));
     }
 
