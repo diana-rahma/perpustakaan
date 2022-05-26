@@ -8,7 +8,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Profile</title>
+        <title>Profile User</title>
 
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
@@ -341,6 +341,8 @@
                         </div>
 
                         <div class="container-fluid page__container">
+                        <form method="post" action="{{ route('profile.update', ['id'=> auth()->user()->id]) }}">
+                        @csrf
                             <div class="card card-form">
                                 <div class="row no-gutters">
                                     <div class="col-lg-4 card-body">
@@ -356,6 +358,7 @@
                                                     <input id="fname"
                                                            type="text"
                                                            class="form-control"
+                                                           name="name"
                                                            placeholder="User Account"
                                                            value="{{ auth()->user()->name }}">
                                                 </div>
@@ -369,6 +372,7 @@
                                                     <input id="fname"
                                                            type="text"
                                                            class="form-control"
+                                                           name="nisn"
                                                            placeholder="123456"
                                                            value="{{ auth()->user()->nisn }}">
                                                 </div>
@@ -376,11 +380,11 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="lname">Kelas</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="XI TKJ B"
-                                                           value="{{ auth()->user()->kelas->kelas }}">
+                                                        <select class="form-control" name="kelas">
+                                                            @foreach($kelas as $key => $value)
+                                                                <option value="{{ $value->id }}" {{ auth()->user()->kelas->id==$value->id ?'selected':'' }}>{{ $value->kelas ." ".$value->jurusan ." ".$value->alfabet }}</option>
+                                                            @endforeach
+                                                        </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -392,6 +396,7 @@
                                                     <input id="fname"
                                                            type="text"
                                                            class="form-control"
+                                                           name="telephone"
                                                            placeholder="083831432980"
                                                            value="{{ auth()->user()->telephone }}">
                                                 </div>
@@ -415,6 +420,7 @@
                                                     <input id="fname"
                                                            type="text"
                                                            class="form-control"
+                                                           name="alamat"
                                                            placeholder="Jl Anggrek"
                                                            value="{{ auth()->user()->alamat }}">
                                                 </div>
@@ -434,19 +440,11 @@
                                     </div>
                                     <div class="col-lg-8 card-form__body card-body">
                                         <div class="form-group">
-                                            <label for="opass">Old Password</label>
-                                            <input style="width: 270px;"
-                                                   id="opass"
-                                                   type="password"
-                                                   class="form-control"
-                                                   placeholder="Old password"
-                                                   value="{{ auth()->user()->password }}">
-                                        </div>
-                                        <div class="form-group">
                                             <label for="npass">New Password</label>
                                             <input style="width: 270px;"
                                                    id="npass"
                                                    type="password"
+                                                   name="password"
                                                    class="form-control is-invalid">
                                             <small class="invalid-feedback">The new password must not be empty.</small>
                                         </div>
@@ -456,6 +454,7 @@
                                                    id="cpass"
                                                    type="password"
                                                    class="form-control"
+                                                   name="password"
                                                    placeholder="Confirm password">
                                         </div>
                                     </div>
@@ -494,9 +493,9 @@
                                 </div>
                             </div>
                             <div class="text-right mb-5">
-                                <a href="/edit_profile"
-                                   class="btn btn-success">Update</a>
+                                <button type="submit" class="btn btn-success">Save</button>
                             </div>
+                        </form>
                         </div>
 
                     </div>

@@ -26,29 +26,30 @@ class ListbukuController extends Controller
             $request->query('kategori')!='' ||
             $request->query('pengarang')!=''
         ) {
-            $data = buku::where('id',$request->query('pengarang'));
+            $buku = buku::where('pengarang',$request->query('pengarang'));
             if (
                 $request->query('kategori')!='' ){
                 
-                    $data=$data->orWhereHas('kategori',function(Builder $query) use($request){
-                        $data=$query;
+                    $buku=$buku->orWhereHas('kategori',function(Builder $query) use($request){
+                        $buku=$query;
                         if($request->query('kategori')!='') { 
-                            $data = $query->where('kategori', $request->query('kategori'));
+                            $buku = $query->where('kategori', $request->query('kategori'));
                         }
                         if (
                             $request->query('kategori')!='' 
                         ){
-                            return $data;
+                            return $buku;
                         } 
                        
                     });
                 }
+            $buku = $buku->paginate(12);
         }
 
-        // $kategori = kategori::select('kategori')->distinct()->get();
-        // $pengarang = buku::all();
+        $pengarang = buku::select('pengarang')->distinct()->get();
 
-        return view('listbuku.listbuku',compact('buku', 'kategori'));
+
+        return view('listbuku.listbuku',compact('buku', 'kategori', 'pengarang'));
     }
 
     public function detail($id) {

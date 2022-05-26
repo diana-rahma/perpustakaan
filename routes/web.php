@@ -13,6 +13,7 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KonfirmasiController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\HistorydendaController;
+use App\Http\Controllers\ProfileController;
 
 
 use App\Http\Controllers\IndexuserController;
@@ -44,9 +45,7 @@ use Illuminate\Support\Facades\Auth;
 
 //Route::get('/index', [IndexController::class, 'index']);
 
-Route::get('/index', function () {
-    return view('index');
-});
+Route::get('/index',[IndexController::class, 'index'])->name('index')->middleware('auth');
 
 
 // Route Login - Backend
@@ -71,10 +70,8 @@ Route::get('/signup', function () {
 
 
 // Route Profile - Backend
-
-Route::get('/profile', function () {
-    return view('profile');
-});
+Route::get('/profile',[ProfileController::class, 'index'])->name('profile')->middleware('auth');
+Route::post('updateprofile/{id}', [ProfileController::class, 'updateprofile'])->name('profileadmin.update')->middleware('auth');
 
 
 // Route Data Siswa - Backend
@@ -208,11 +205,9 @@ Route::get('/history', [HistoryController::class, 'index'])->name('history.index
 Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->middleware('auth');
 
 
-// Route Profile - Frontend
+// Route Profile User - Frontend
 Route::get('/profileuser',[ProfileuserController::class, 'index'])->name('profileuser')->middleware('auth');
-
-Route::get('/edit_profile',[ProfileuserController::class, 'editprofile'])->name('editprofile');
-Route::post('/updateprofile', [ProfileuserController::class, 'updateprofile'])->name('updateprofile')->middleware('auth');
+Route::post('updateprofile/{id}', [ProfileuserController::class, 'updateprofile'])->name('profile.update')->middleware('auth');
 
 
 Route::get('detail/{id}',[ListbukuController::class, 'detail'])->name('detailbuku');

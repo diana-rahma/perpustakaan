@@ -337,6 +337,8 @@
                         </div>
 
                         <div class="container-fluid page__container">
+                        <form method="post" action="{{ route('profileadmin.update', ['id'=> auth('admin')->user()->id]) }}">
+                        @csrf
                             <div class="card card-form">
                                 <div class="row no-gutters">
                                     <div class="col-lg-4 card-body">
@@ -350,6 +352,7 @@
                                                     <input id="fname"
                                                            type="text"
                                                            class="form-control"
+                                                           name="name"
                                                            placeholder="Admin Account"
                                                            value="{{ auth('admin')->user()->name }}">
                                                 </div>
@@ -363,6 +366,7 @@
                                                     <input id="fname"
                                                            type="text"
                                                            class="form-control"
+                                                           name="telepon"
                                                            placeholder="083831432980"
                                                            value="{{ auth('admin')->user()->telepon }}">
                                                 </div>
@@ -386,6 +390,7 @@
                                                     <input id="fname"
                                                            type="text"
                                                            class="form-control"
+                                                           name="alamat"
                                                            placeholder="Jl Anggrek"
                                                            value="{{ auth('admin')->user()->alamat }}">
                                                 </div>
@@ -406,6 +411,7 @@
                                             <input style="width: 270px;"
                                                    id="npass"
                                                    type="password"
+                                                   name="password"
                                                    class="form-control is-invalid">
                                             <small class="invalid-feedback">The new password must not be empty.</small>
                                         </div>
@@ -415,6 +421,7 @@
                                                    id="cpass"
                                                    type="password"
                                                    class="form-control"
+                                                   name="password"
                                                    placeholder="Confirm password">
                                         </div>
                                     </div>
@@ -453,9 +460,9 @@
                                 </div>
                             </div>
                             <div class="text-right mb-5">
-                                <a href="/profile"
-                                   class="btn btn-success">Save</a>
+                                <button type="submit" class="btn btn-success">Save</button>
                             </div>
+                        </form>
                         </div>
 
                     </div>

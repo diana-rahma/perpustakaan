@@ -352,6 +352,7 @@
                                                     <input id="fname"
                                                            type="date"
                                                            class="form-control"
+                                                           name="tanggal_pinjam"
                                                            placeholder="Tgl Pinjam"
                                                            value="">
                                                 </div>
@@ -362,6 +363,7 @@
                                                     <input id="lname"
                                                            type="date"
                                                            class="form-control"
+                                                           name="tanggal_kembali"
                                                            placeholder="Tgl Kembali"
                                                            value="">
                                                 </div>

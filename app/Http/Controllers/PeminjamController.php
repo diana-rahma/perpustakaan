@@ -22,39 +22,21 @@ class PeminjamController extends Controller
 
         $data = dipinjam::paginate(5);
 
-        if (
-            $request->query('tanggal_pinjam')!='' ||
-            $request->query('tanggal_kembali')!=''
-        ) {
-            // $data = User::where('id',$request->query('name'));
             if (
                 $request->query('tanggal_pinjam')!='' ||
                 $request->query('tanggal_kembali')!='' ){
                 
-                    $data=$data->orWhereHas('tanggal_pinjam',function(Builder $query) use($request){
-                        $data=$query;
-                        if($request->query('tanggal_pinjam')!='') { 
-                            $data = $query->where('tanggal_pinjam', $request->query('tanggal_pinjam'));
-                        }
-                        if($request->query('tanggal_kembali')!='') {
-                            $data=$data->where('tanggal_kembali',$request->query('tanggal_kembali'));
-                        }
-                        if (
-                            $request->query('tanggal_pinjam')!='' ||
-                            $request->query('tanggal_kembali')!='' 
-                        ){
-                            return $data;
-                        } 
-                       
-                    });
+                    $data = dipinjam::where('tanggal_pinjam',$request->query('tanggal_pinjam'))->orWhere('tanggal_kembali',$request->query('tanggal_kembali'));
+
+                    $data = $data->paginate(5);
+
                 }
-        }
+            
+        // $tanggal_pinjam = dipinjam::select('tanggal_pinjam')->distinct()->get();
+        // $tanggal_kembali = dipinjam::select('tanggal_kembali')->distinct()->get();
 
-        $tanggal_pinjam = dipinjam::select('tanggal_pinjam')->distinct()->get();
-        $tanggal_kembali = dipinjam::select('tanggal_kembali')->distinct()->get();
 
-
-        return view('datapeminjam.datapeminjam',compact('data','tanggal_pinjam','tanggal_kembali'));
+        return view('datapeminjam.datapeminjam',compact('data'));
     }
 
     /**

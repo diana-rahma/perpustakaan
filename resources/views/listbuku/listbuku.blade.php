@@ -371,6 +371,7 @@
                                 <div class="row no-gutters">
                                     <div class="col-lg-15 card-form__body card-body">
                                     <form method="get" action="{{ route('listbuku') }}">
+                                    @csrf
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
@@ -391,10 +392,10 @@
                                                                 style="height: 35px;"
                                                                 data-toggle="select"
                                                                 class="form-control form-control-sm"
-                                                                name="penulis">
+                                                                name="pengarang">
                                                                 <option value="">Pengarang</option>
-                                                                @foreach($buku as $key => $value)
-                                                                    <option value="{{ $value->id }}">{{ $value->pengarang }}</option>
+                                                                @foreach($pengarang as $key => $value)
+                                                                    <option value="{{ $value->pengarang }}">{{ $value->pengarang }}</option>
                                                                 @endforeach
                                                         </select>
                                                 </div>
@@ -416,7 +417,7 @@
                             <div class="my-3"></div>
                             <div class="row">
 
-                            @foreach($kategori as $key => $value)
+                            @foreach($kategori as $key => $value) 
                                 <div class="col-sm-6 col-md-3">
                                     <div class="card stories-card-popular">
                                         <a href="{{route('detailkategori',['id'=>$value->id])}}"><img src="{{asset('foto/'.$value->file)}}" alt="" class="card-img"></a>

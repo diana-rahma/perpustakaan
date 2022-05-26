@@ -17,7 +17,7 @@ class DendaController extends Controller
     public function index() 
     {
         $data = denda::whereHas('pinjam',function(Builder $query){
-            return $query->where('id',Auth::user()->id);
+            return $query->where('id_user',Auth::user()->id);
         })->paginate(5);
 
         return view('denda',compact('data'));

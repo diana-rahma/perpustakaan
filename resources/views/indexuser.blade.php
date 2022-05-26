@@ -364,7 +364,7 @@
                                         <!-- <div><i class="material-icons icon-muted icon-40pt mr-3">monetization_on</i></div> -->
                                         <div class="flex">
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Terlambat Mengembalikan</div>
-                                            <div class="text-muted mt-1">Buku</div>
+                                            <div class="text-muted mt-1">{{ $telatkembali }} Buku</div>
                                             <!-- <div class="text-stats text-success">51.5% <i class="material-icons">arrow_upward</i></div> -->
                                         </div>
                                         <div data-v-da9425c4 data-v-70995076 class="icon">
@@ -376,7 +376,7 @@
                                     <div class="card card-group-row__card card-body flex-row align-items-center">
                                         <div class="flex">
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Total Denda</div>
-                                            <div class="text-muted mt-1">15.000</div>
+                                            <div class="text-muted mt-1">{{ $totaldenda }}</div>
                                         </div>
                                         <div data-v-da9425c4 data-v-70995076 class="icon">
                                             <i data-v-da9425c4 class="material-icons icon-40pt ">attach_money</i>
