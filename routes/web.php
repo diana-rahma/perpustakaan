@@ -54,24 +54,14 @@ Route::get('/index',[IndexController::class, 'index'])->name('index')->middlewar
 // Route::post('/login', [LoginController::class, 'authenticate']);
 // Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/login', function () {
-    return view('login');
-});
-
-
 // Route Sign Up - Backend
 
 // Route::get('/signup', [RegisterController::class, 'create']);
 // Route::post('/signup', [RegisterController::class, 'store']);
 
-Route::get('/signup', function () {
-    return view('signup');
-});
-
-
 // Route Profile - Backend
 Route::get('/profile',[ProfileController::class, 'index'])->name('profile')->middleware('auth');
-Route::post('updateprofile/{id}', [ProfileController::class, 'updateprofile'])->name('profileadmin.update')->middleware('auth');
+Route::post('updateprofileadmin/{id}',[ProfileController::class, 'index'] )->name('profileadmin.update')->middleware('auth');
 
 
 // Route Data Siswa - Backend
@@ -237,7 +227,7 @@ Route::get('/denda', [DendaController::class, 'index'])->name('denda.index')->mi
 Route::prefix('admin')->name('admin.')->group(function(){
 
     Route::middleware(['guest:admin','PreventBackHistory'])->group(function(){
-        Route::view('/loginadmin','loginadmin')->name('login');
+        Route::view('/loginadmin','loginadmin')->name('loginadmin');
         Route::view('/signupadmin','signupadmin')->name('signup');
         Route::post('/create',[SignupadminController::class, 'create'])->name('create');
         Route::post('/check',[AdminController::class, 'check'])->name('check');

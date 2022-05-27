@@ -314,8 +314,9 @@
                                 <div class="d-flex align-items-end container-fluid page__container"
                                      style="position: absolute; left: 0; right: 0; bottom: 0;">
                                     <div class="avatar avatar-xl">
-                                        <img src="images/avatar/profile-user.jpg"
-                                             alt="avatar"
+                                        <img src="{{ asset('foto/'. auth()->user()->foto) }}"
+                                             alt="Profile"
+                                             name="foto"
                                              class="avatar-img rounded"
                                              style="border: 2px solid white;">
                                     </div>
@@ -477,9 +478,10 @@
                                                 <div class="dz-preview dz-file-preview dz-clickable mr-3">
                                                     <div class="avatar"
                                                          style="width: 80px; height: 80px;">
-                                                        <img src="{{ asset('images/'. auth()->user()->foto) }}"
+                                                        <img src="{{ asset('foto/'. auth()->user()->foto) }}"
                                                              class="avatar-img rounded"
                                                              alt=""
+                                                             name="foto"
                                                              data-dz-thumbnail>
                                                     </div>
                                                 </div>
