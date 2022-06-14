@@ -134,10 +134,10 @@
                                         <span class="mr-1 d-flex-inline">
                                             <span class="text-light">{{ auth()->user()->name }}</span>
                                         </span>
-                                        <img src="images/avatar/profile-user.jpg"
+                                        <img src="{{ asset('foto/'. auth()->user()->foto) }}"
                                              class="rounded-circle"
                                              width="32"
-                                             alt="Frontted">
+                                             alt="">
                                     </a>
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">

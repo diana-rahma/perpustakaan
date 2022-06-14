@@ -16,7 +16,7 @@ class HistorydendaController extends Controller
         if($request->has('search')){
             $data = denda::where('namasiswa','LIKE','%' .$request->search. '%')->paginate(3);
         }else{
-            $data = denda::paginate(5);
+            $data = denda::paginate(10);
         }
         
         return view('history.historydenda',compact('data'));

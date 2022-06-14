@@ -137,7 +137,7 @@
                                         <img src="{{url('images/avatar/profile-user.jpg')}}"
                                              class="rounded-circle"
                                              width="32"
-                                             alt="Frontted">
+                                             alt="">
                                     </a>
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">

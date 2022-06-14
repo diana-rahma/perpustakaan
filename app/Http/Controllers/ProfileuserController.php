@@ -27,6 +27,7 @@ class ProfileuserController extends Controller
     {
         // dd($request->all());
         $data= User::find($data);
+        $data->update($request->all());
 
         $data->name = $request->name;
         $data->nisn = $request->nisn;
@@ -39,21 +40,11 @@ class ProfileuserController extends Controller
         ) {
             $data->password = Hash::make($request->password);
         } 
-        // if($request->hasFile('foto')){
-        //     $request->file('foto')->move('foto/',$request->file('foto')->getClientOriginalName());
-        //     $data->foto = $request->file('foto')->getClientOriginalName();
-        // }
-
-        // if(
-        //     $request->file('foto')
-        // ) {
-        //     $file = $request->file('foto');
-        //     $namafile = time().str_replace(" ","",$file->getClientOriginalName());
-        //     $file->move('foto', $namafile);
-
-        //     File::delete(public_path()."/foto/", $data->foto);
-        //     $data->foto = $namafile;
-        // }
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('foto/',$request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            $data->update();
+        }
         
         $data->save();
 

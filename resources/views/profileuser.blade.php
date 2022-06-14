@@ -120,10 +120,10 @@
                                         <span class="mr-1 d-flex-inline">
                                             <span class="text-light">{{ auth()->user()->name }}</span>
                                         </span>
-                                        <img src="images/avatar/profile-user.jpg"
+                                        <img src="{{ asset('foto/'. auth()->user()->foto) }}"
                                              class="rounded-circle"
                                              width="32"
-                                             alt="Frontted">
+                                             alt="">
                                     </a>
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">
@@ -193,7 +193,7 @@
                         </div>
 
                         <div class="container-fluid page__container">
-                        <form method="post" action="{{ route('profile.update', ['id'=> auth()->user()->id]) }}">
+                        <form method="post" action="{{ route('profile.update', ['id'=> auth()->user()->id]) }}" enctype="multipart/form-data">
                         @csrf
                             <div class="card card-form">
                                 <div class="row no-gutters">
@@ -277,10 +277,12 @@
                                                            value="{{ auth()->user()->alamat }}">
                                                 </div>
                                             </div>
+                                        </div><br>
+
+                                        <div class="text-right mb-5">
+                                            <button type="submit" class="btn btn-success">Save</button>
                                         </div>
-                                    
                                       
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -308,6 +310,10 @@
                                                    class="form-control"
                                                    name="password"
                                                    placeholder="Confirm password">
+                                        </div><br>
+
+                                        <div class="text-right mb-5">
+                                            <button type="submit" class="btn btn-success">Save</button>
                                         </div>
                                     </div>
                                 </div>
@@ -333,20 +339,22 @@
                                                              class="avatar-img rounded"
                                                              alt=""
                                                              name="foto"
-                                                             data-dz-thumbnail>
+                                                             data-dz-thumbnail> 
+                                                        {{-- <img src="{{ asset('foto/'.$data->file) }}"> --}}
                                                     </div>
                                                 </div>
                                                 <div class="media-body">
-                                                    <input type="file" class="input">
+                                                    <input type="file" class="input" name="foto">
                                                 </div>
                                             </div>
+                                        </div><br>
+
+                                        <div class="text-right mb-5">
+                                            <button type="submit" class="btn btn-success">Save</button>
                                         </div>
                                         
                                     </div>
                                 </div>
-                            </div>
-                            <div class="text-right mb-5">
-                                <button type="submit" class="btn btn-success">Save</button>
                             </div>
                         </form>
                         </div>

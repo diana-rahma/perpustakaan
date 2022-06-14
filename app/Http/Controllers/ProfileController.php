@@ -15,12 +15,6 @@ class ProfileController extends Controller
         return view('profile');
     }
 
-    public function editprofile(Admin $admin)
-    {
-        $data = $admin::all();
-        return view('edit_profile',compact('data', 'admin'));
-    }
-
     public function updateprofile(Request $request, $data)
     {
         // dd($data);
@@ -33,6 +27,11 @@ class ProfileController extends Controller
             $request->password!=''
         ) {
             $data->password = Hash::make($request->password);
+        }
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('foto/',$request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            $data->update();
         }
         
         $data->save();

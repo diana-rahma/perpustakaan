@@ -16,23 +16,23 @@
 
         <!-- Perfect Scrollbar -->
         <link type="text/css"
-              href="vendor/perfect-scrollbar.css"
+              href="{{url('vendor/perfect-scrollbar.css')}}"
               rel="stylesheet">
 
         <!-- App CSS -->
         <link type="text/css"
-              href="css/app.css"
+              href="{{url('css/app.css')}}"
               rel="stylesheet">
        
         <!-- Material Design Icons -->
         <link type="text/css"
-              href="css/vendor-material-icons.css"
+              href="{{url('css/vendor-material-icons.css')}}"
               rel="stylesheet">
         
 
         <!-- Font Awesome FREE Icons -->
         <link type="text/css"
-              href="css/vendor-fontawesome-free.css"
+              href="{{url('css/vendor-fontawesome-free.css')}}"
               rel="stylesheet">
         
 
@@ -115,10 +115,10 @@
                                         <span class="mr-1 d-flex-inline">
                                             <span class="text-light">{{ auth('admin')->user()->name }}</span>
                                         </span>
-                                        <img src="images/avatar/profile.png"
+                                        <img src="{{ asset('foto/'. auth('admin')->user()->foto) }}"
                                              class="rounded-circle"
                                              width="32"
-                                             alt="Frontted">
+                                             alt="">
                                     </a>
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">
@@ -161,7 +161,7 @@
                                 <div class="d-flex align-items-end container-fluid page__container"
                                      style="position: absolute; left: 0; right: 0; bottom: 0;">
                                     <div class="avatar avatar-xl">
-                                        <img src="images/avatar/profile.png"
+                                        <img src="{{ asset('foto/'. auth('admin')->user()->foto) }}"
                                              alt="avatar"
                                              class="avatar-img rounded"
                                              style="border: 2px solid white;">
@@ -188,7 +188,7 @@
                         </div>
 
                         <div class="container-fluid page__container">
-                        <form method="post" action="{{ route('profileadmin.update', ['id'=> auth('admin')->user()->id]) }}">
+                        <form method="post" action="{{ route('profileadmin.update', ['id'=> auth('admin')->user()->id]) }}" enctype="multipart/form-data">
                         @csrf
                             <div class="card card-form">
                                 <div class="row no-gutters">
@@ -247,6 +247,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="text-right mb-5">
+                                            <button type="submit" class="btn btn-success">Save</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -275,6 +278,9 @@
                                                    name="password"
                                                    placeholder="Confirm password">
                                         </div>
+                                        <div class="text-right mb-5">
+                                            <button type="submit" class="btn btn-success">Save</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -295,24 +301,25 @@
                                                 <div class="dz-preview dz-file-preview dz-clickable mr-3">
                                                     <div class="avatar"
                                                          style="width: 80px; height: 80px;">
-                                                        <img src="images/account-add-photo.svg"
+                                                        <img src="{{ asset('foto/'. auth('admin')->user()->foto) }}"
                                                              class="avatar-img rounded"
-                                                             alt="..."
-                                                             data-dz-thumbnail>
+                                                             alt=""
+                                                             name="foto"
+                                                             data-dz-thumbnail> 
                                                     </div>
                                                 </div>
                                                 <div class="media-body">
-                                                    <input type="file" class="input">
+                                                    <input type="file" class="input" name="foto">
                                                 </div>
                                             </div>
                                         </div>
-                                        
+                                        <div class="text-right mb-5">
+                                            <button type="submit" class="btn btn-success">Save</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="text-right mb-5">
-                                <button type="submit" class="btn btn-success">Save</button>
-                            </div>
+                            
                         </form>
                         </div>
 
@@ -409,30 +416,57 @@
         </div>
 
         <!-- jQuery -->
-        <script src="vendor/jquery.min.js"></script>
+        <script src="{{url('vendor/jquery.min.js')}}"></script>
 
         <!-- Bootstrap -->
-        <script src="vendor/popper.min.js"></script>
-        <script src="vendor/bootstrap.min.js"></script>
+        <script src="{{url('vendor/popper.min.js')}}"></script>
+        <script src="{{url('vendor/bootstrap.min.js')}}"></script>
 
         <!-- Perfect Scrollbar -->
-        <script src="vendor/perfect-scrollbar.min.js"></script>
+        <script src="{{url('vendor/perfect-scrollbar.min.js')}}"></script>
 
         <!-- DOM Factory -->
-        <script src="vendor/dom-factory.js"></script>
+        <script src="{{url('vendor/dom-factory.js')}}"></script>
 
         <!-- MDK -->
-        <script src="vendor/material-design-kit.js"></script>
+        <script src="{{url('vendor/material-design-kit.js')}}"></script>
 
         <!-- App -->
-        <script src="js/toggle-check-all.js"></script>
-        <script src="js/check-selected-row.js"></script>
-        <script src="js/dropdown.js"></script>
-        <script src="js/sidebar-mini.js"></script>
-        <script src="js/app.js"></script>
+        <script src="{{url('js/toggle-check-all.js')}}"></script>
+        <script src="{{url('/check-selected-row.js')}}"></script>
+        <script src="{{url('js/dropdown.js')}}"></script>
+        <script src="{{url('js/sidebar-mini.js')}}"></script>
+        <script src="{{url('js/app.js')}}"></script>
 
         <!-- App Settings (safe to remove) -->
-        <script src="js/app-settings.js"></script>
+        <script src="{{url('js/app-settings.js')}}"></script>
+
+        <!-- Flatpickr -->
+        <script src="vendor/flatpickr/flatpickr.min.js"></script>
+        <script src="js/flatpickr.js"></script>
+
+        <!-- Global Settings -->
+        <script src="js/settings.js"></script>
+
+        <!-- Moment.js -->
+        <script src="vendor/moment.min.js"></script>
+        <script src="vendor/moment-range.js"></script>
+
+        <!-- Chart.js -->
+        <script src="vendor/Chart.min.js"></script>
+
+        <!-- App Charts JS -->
+        <script src="js/charts.js"></script>
+        <script src="js/chartjs-rounded-bar.js"></script>
+
+        <!-- Chart Samples -->
+        <script src="js/page.dashboard.js"></script>
+        <script src="js/progress-charts.js"></script>
+
+        <!-- Vector Maps -->
+        <script src="vendor/jqvmap/jquery.vmap.min.js"></script>
+        <script src="vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+        <script src="js/vector-maps.js"></script>
 
     </body>
 

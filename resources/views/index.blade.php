@@ -101,156 +101,8 @@
                                        class="nav-link dropdown-toggle"
                                        data-toggle="dropdown"
                                        data-caret="false">
-                                        <i class="material-icons nav-icon navbar-notifications-indicator">notifications</i>
+                                        
                                     </a>
-                                    <div id="notifications_menu"
-                                         class="dropdown-menu dropdown-menu-right navbar-notifications-menu">
-                                        <div class="dropdown-item d-flex align-items-center py-2">
-                                            <span class="flex navbar-notifications-menu__title m-0">Notifications</span>
-                                            <a href="javascript:void(0)"
-                                               class="text-muted"><small>Clear all</small></a>
-                                        </div>
-                                        <div class="navbar-notifications-menu__content"
-                                             data-perfect-scrollbar>
-                                            <div class="py-2">
-
-                                                <div class="dropdown-item d-flex">
-                                                    <div class="mr-3">
-                                                        <div class="avatar avatar-sm"
-                                                             style="width: 32px; height: 32px;">
-                                                            <img src="images/256_daniel-gaffey-1060698-unsplash.jpg"
-                                                                 alt="Avatar"
-                                                                 class="avatar-img rounded-circle">
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex">
-                                                        <a href="">A.Demian</a> left a comment on <a href="">FlowDash</a><br>
-                                                        <small class="text-muted">1 minute ago</small>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown-item d-flex">
-                                                    <div class="mr-3">
-                                                        <a href="#">
-                                                            <div class="avatar avatar-xs"
-                                                                 style="width: 32px; height: 32px;">
-                                                                <span class="avatar-title bg-purple rounded-circle"><i class="material-icons icon-16pt">person_add</i></span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="flex">
-                                                        New user <a href="#">Peter Parker</a> signed up.<br>
-                                                        <small class="text-muted">1 hour ago</small>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown-item d-flex">
-                                                    <div class="mr-3">
-                                                        <a href="#">
-                                                            <div class="avatar avatar-xs"
-                                                                 style="width: 32px; height: 32px;">
-                                                                <span class="avatar-title rounded-circle">JD</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="flex">
-                                                        <a href="#">Big Joe</a> <small class="text-muted">wrote:</small><br>
-                                                        <div>Hey, how are you? What about our next meeting</div>
-                                                        <small class="text-muted">2 minutes ago</small>
-                                                    </div>
-                                                </div>
-
-                                                <div class="dropdown-item d-flex">
-                                                    <div class="mr-3">
-                                                        <div class="avatar avatar-sm"
-                                                             style="width: 32px; height: 32px;">
-                                                            <img src="images/256_daniel-gaffey-1060698-unsplash.jpg"
-                                                                 alt="Avatar"
-                                                                 class="avatar-img rounded-circle">
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex">
-                                                        <a href="">A.Demian</a> left a comment on <a href="">FlowDash</a><br>
-                                                        <small class="text-muted">1 minute ago</small>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown-item d-flex">
-                                                    <div class="mr-3">
-                                                        <a href="#">
-                                                            <div class="avatar avatar-xs"
-                                                                 style="width: 32px; height: 32px;">
-                                                                <span class="avatar-title bg-purple rounded-circle"><i class="material-icons icon-16pt">person_add</i></span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="flex">
-                                                        New user <a href="#">Peter Parker</a> signed up.<br>
-                                                        <small class="text-muted">1 hour ago</small>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown-item d-flex">
-                                                    <div class="mr-3">
-                                                        <a href="#">
-                                                            <div class="avatar avatar-xs"
-                                                                 style="width: 32px; height: 32px;">
-                                                                <span class="avatar-title rounded-circle">JD</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="flex">
-                                                        <a href="#">Big Joe</a> <small class="text-muted">wrote:</small><br>
-                                                        <div>Hey, how are you? What about our next meeting</div>
-                                                        <small class="text-muted">2 minutes ago</small>
-                                                    </div>
-                                                </div>
-
-                                                <div class="dropdown-item d-flex">
-                                                    <div class="mr-3">
-                                                        <div class="avatar avatar-sm"
-                                                             style="width: 32px; height: 32px;">
-                                                            <img src="images/256_daniel-gaffey-1060698-unsplash.jpg"
-                                                                 alt="Avatar"
-                                                                 class="avatar-img rounded-circle">
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex">
-                                                        <a href="">A.Demian</a> left a comment on <a href="">FlowDash</a><br>
-                                                        <small class="text-muted">1 minute ago</small>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown-item d-flex">
-                                                    <div class="mr-3">
-                                                        <a href="#">
-                                                            <div class="avatar avatar-xs"
-                                                                 style="width: 32px; height: 32px;">
-                                                                <span class="avatar-title bg-purple rounded-circle"><i class="material-icons icon-16pt">person_add</i></span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="flex">
-                                                        New user <a href="#">Peter Parker</a> signed up.<br>
-                                                        <small class="text-muted">1 hour ago</small>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown-item d-flex">
-                                                    <div class="mr-3">
-                                                        <a href="#">
-                                                            <div class="avatar avatar-xs"
-                                                                 style="width: 32px; height: 32px;">
-                                                                <span class="avatar-title rounded-circle">JD</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="flex">
-                                                        <a href="#">Big Joe</a> <small class="text-muted">wrote:</small><br>
-                                                        <div>Hey, how are you? What about our next meeting</div>
-                                                        <small class="text-muted">2 minutes ago</small>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <a href="javascript:void(0);"
-                                           class="dropdown-item text-center navbar-notifications-menu__footer">View All</a>
-                                    </div>
                                 </li>
                             </ul>
 
@@ -263,10 +115,10 @@
                                         <span class="mr-1 d-flex-inline">
                                             <span class="text-light">{{ auth('admin')->user()->name }}</span>
                                         </span>
-                                        <img src="{{url('images/avatar/profile.png')}}"
+                                        <img src="{{ asset('foto/'. auth('admin')->user()->foto) }}"
                                              class="rounded-circle"
                                              width="32"
-                                             alt="Frontted">
+                                             alt="">
                                     </a>
                                     <div id="account_menu"
                                          class="dropdown-menu dropdown-menu-right">
@@ -370,6 +222,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="card">
                                 <div class="card-header bg-white">
                                     <h4 class="card-header__title m-0">Jumlah Peminjam Buku Perbulan</h4>
@@ -579,6 +432,17 @@
 
         <!-- App Settings (safe to remove) -->
         <script src="{{url('js/app-settings.js')}}"></script>
+
+        <!-- Chart.js -->
+        <script src="{{url('assets/vendor/Chart.min.js')}}"></script>
+
+        <!-- UI Charts Page JS -->
+        <script src="{{url('assets/js/chartjs-rounded-bar.js')}}"></script>
+        <script src="{{url('assets/js/charts.js')}}"></script>
+
+        <!-- Chart.js Samples -->
+        <script src="{{url('assets/js/page.ui-charts.js')}}"></script>
+
 
     </body>
 

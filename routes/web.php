@@ -61,7 +61,7 @@ Route::get('/index',[IndexController::class, 'index'])->name('index')->middlewar
 
 // Route Profile - Backend
 Route::get('/profile',[ProfileController::class, 'index'])->name('profile')->middleware('auth');
-Route::post('updateprofileadmin/{id}',[ProfileController::class, 'index'] )->name('profileadmin.update')->middleware('auth');
+Route::post('updateprofileadmin/{id}',[ProfileController::class, 'updateprofile'] )->name('profileadmin.update')->middleware('auth');
 
 
 // Route Data Siswa - Backend

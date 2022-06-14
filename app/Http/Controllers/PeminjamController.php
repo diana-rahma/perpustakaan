@@ -20,7 +20,7 @@ class PeminjamController extends Controller
     public function index(Request $request)
     {
 
-        $data = dipinjam::paginate(5);
+        $data = dipinjam::paginate(10);
 
             if (
                 $request->query('tanggal_pinjam')!='' ||
