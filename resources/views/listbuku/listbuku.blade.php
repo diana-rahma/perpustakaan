@@ -268,7 +268,7 @@
                             <div class="my-3"></div>
                             <div class="row">
 
-                            @foreach($kategori as $key => $value) 
+                            @foreach($kategori as $key => $value)
                                 <div class="col-sm-6 col-md-3">
                                     <div class="card stories-card-popular">
                                         <a href="{{route('detailkategori',['id'=>$value->id])}}"><img src="{{asset('foto/'.$value->file)}}" alt="" class="card-img"></a>
