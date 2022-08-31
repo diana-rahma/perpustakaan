@@ -268,7 +268,7 @@
                                 <ul class="sidebar-menu">
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
-                                            href="/index">
+                                            href="admin/index">
                                             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">pie_chart_outlined</i>
                                             <span class="sidebar-menu-text">Dashboard</span>
                                         </a>

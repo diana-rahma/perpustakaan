@@ -32,7 +32,7 @@ class SignupadminController extends Controller
         $save = $admin->save();
 
         if($save) {
-            return redirect()->route('admin.login')->with('success','Registration successfull! Please login');
+            return redirect()->route('admin.loginadmin')->with('success','Registration successfull! Please login');
         }else {
             return redirect()->route('admin.signupadmin')->with('fail','Incorrect credentials');
         }
